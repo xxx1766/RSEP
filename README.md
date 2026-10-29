@@ -212,8 +212,8 @@ publication steps are tracked in [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHEC
 
 ## 8. License and citation
 
-Code is released under the Apache License 2.0 (`LICENSE`); the measurement
-data and figures are released under CC BY 4.0. If you use this artifact,
+All code, measurement data and figures in this repository are released under
+the Apache License 2.0 (`LICENSE`). If you use this artifact,
 please cite the manuscript; see `CITATION.cff`.
 
 This is a single-blind TMC submission, so author identities are not removed.

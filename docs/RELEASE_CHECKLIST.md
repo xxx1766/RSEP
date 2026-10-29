@@ -18,16 +18,15 @@ below are the remaining publication steps.
 
 ## Before upload
 
-- [ ] Confirm the license choice (Apache-2.0 for code, CC BY 4.0 for data).
-      The repository currently ships Apache-2.0 as `LICENSE`.
+- [x] License confirmed: Apache-2.0 for code, data and figures (`LICENSE`).
 - [ ] Confirm author list/order in `CITATION.cff`.
-- [ ] Add a repository URL to the manuscript's data-availability sentence and
-      to the response letter (replacing the "available on request" wording for
-      the curated artifact).
-- [ ] Confirm that the private repository contains only the processed
+- [x] Repository created (private) at https://github.com/xxx1766/RSEP.
+- [x] Response letter Major 5 now points to the repository URL; the paper has
+      no separate data-availability statement.
+- [x] Confirmed: the private repository contains only the processed
       plotting exports (no raw per-request logs, no 16 GB campaign trees).
-- [ ] Create the GitHub/GitLab repository, `git init`, first commit, tag
-      `v1.0.0`.
+- [x] `git init`, first commit and push to https://github.com/xxx1766/RSEP.
+- [ ] Tag `v1.0.0` at submission.
 - [ ] Mint a DOI (Zenodo or institutional) and add it to `README.md` and
       `CITATION.cff`.
 - [ ] Archive a `.zip`/`.tar.gz` of the tagged tree with the DOI.
