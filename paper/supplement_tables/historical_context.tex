@@ -1,0 +1,29 @@
+\section*{Conference-era mechanism and platform context}
+The following summaries are reanalyses of the conference study identified in the main manuscript. They document the original deployment and complement the full historical figures above.
+
+\paragraph{Mechanism trends.}
+The original ablation used an i7-8565U with three physical cores assigned to the experiment, ten two-core YOLOX tasks per request, and 1/2/4/8/16 requests/s. Figure~\ref{fig:archived-ablation} reports enabled/disabled mean-latency ratios from six settings and five rates. The archived summaries have distinct timing boundaries whose equivalence cannot be established from the retained records; the current main-text ablation uses a common end-to-end timing protocol.
+
+In the archived summaries at 2--16 requests/s, enabling CC corresponds to lower reported mean latency in the three matched settings. PI has a smaller reported effect with CC/EI enabled and higher reported latency without CC. EI corresponds to lower reported latency with and without CC; its no-CC setting also has lower reported throughput. These are descriptive patterns in retained aggregates. Missing request records and statistical scripts prevent verifying common end-to-end timing scopes, so these ratios do not establish current mechanism speedup magnitudes. The complete new NJ-k1 experiment supplies the primary quantitative evidence.
+
+\paragraph{Heterogeneous platform trends.}
+The heterogeneous platform uses ARM Raspberry Pi clients, x86 UP Xtreme edges, an x86 desktop and a Dell PowerEdge R750 cloud server. The thesis descriptions specify YOLOX for distributed latency/goodput; FaceNet appears separately in sliding-window tests and the service-development example, without establishing a combined-model request graph. Main-text Fig.~12 restores the recorded latency means/P95; Fig.~\ref{fig:end2end_latency} retains the compact supplementary view. Tide's recorded mean rises from 175~ms at 10 requests/s to 304~ms at 50; at 30 requests/s Bare/default KubeEdge exceed 14~s while Ray Actor-40 stays below 0.5~s. Main-text Figs.~6--8 restore placement, allocation and goodput results with the recovered thesis sources. The placement summary table is available; request-level routing and scaling-stage causal traces remain unavailable.
+
+The prior Beijing--Nanjing study reports 1~Gbps, 65-ms RTT, 7-ms jitter, and 0.1\% loss. Complete manifests and goodput windows are unavailable in its retained archive. The present fixed-resource goodput result uses the separately specified NJ two-host image experiment.
+
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{revision-figs/evaluation/archived_ablation_compact.pdf}
+\caption{Historical reported mean-latency ratios (enabled/disabled), recomputed from archived case summaries. Panels show CC, PI, and EI; 0/1 denote off/on. The dashed line marks one. Timing scopes are unverified; these ratios are descriptive.}
+\label{fig:archived-ablation}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{revision-figs/evaluation/archived_latency_compact.pdf}
+\caption{Conference-era platform mean and 95th-percentile latency trends replotted from archived case summaries at 5--50 offered requests/s.}
+\label{fig:end2end_latency}
+\end{minipage}
+\end{figure}

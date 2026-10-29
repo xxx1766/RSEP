@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the manuscript and this repository."
+title: "RSEP / Tide: Request-Centric Task Scheduling and Resource Allocation for the Things-Edge-Cloud Continuum - Artifact"
+abstract: >-
+  Curated artifact for the IEEE TMC manuscript. Contains the Tide runtime,
+  experiment drivers, audited summary exports behind the reported figures and
+  tables, and representative raw measurements.
+type: software
+version: 1.0.0
+date-released: 2026-10-29
+license: Apache-2.0
+authors:
+  - family-names: Xu
+    given-names: Qingru
+    affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
+  - family-names: Peng
+    given-names: Xiaohui
+    affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
+  - family-names: Wang
+    given-names: Yifan
+    affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
+  - family-names: Yan
+    given-names: Wenkai
+    affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
+  - family-names: Guo
+    given-names: Deke
+    affiliation: "National University of Defense Technology"
+  - family-names: Xu
+    given-names: Zhiwei
+    affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
+  - family-names: Sun
+    given-names: Ninghui
+    affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
+keywords:
+  - edge computing
+  - task scheduling
+  - resource allocation
+  - reproducibility

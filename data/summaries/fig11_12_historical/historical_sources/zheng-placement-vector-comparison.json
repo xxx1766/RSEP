@@ -1,0 +1,1612 @@
+{
+  "status": "PASS",
+  "comparisons": 200,
+  "tolerance_percentage_points": 0.015,
+  "maximum_absolute_percentage_point_error": 0.003518123073206425,
+  "method": "Axis calibration uses five native SVG grid lines per pane, independently of table values. Ten platform colors identify original polyline paths. Values read from native vector geometry; no pixel digitization or outcome selection.",
+  "table_sha256": "2bb8421f266336c3e29f5e35c577ab3e45736b710962e2f4afceb517b084bc4b",
+  "original_figure_sha256": "fd3db1727d4597177a045debc2134d70b7d7428d6b5dbaa0f6868ed80505a709",
+  "svg_sha256": "a279f5632dede60c12057b9d4edf6d599b678a1d1412011e0464d8b8cd75df29",
+  "details": [
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 74.47,
+      "pdf_curve_value": 74.4703780531165,
+      "absolute_percentage_point_error": 0.0003780531165062939
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 75.03,
+      "pdf_curve_value": 75.03029480642219,
+      "absolute_percentage_point_error": 0.00029480642218970843
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 74.76,
+      "pdf_curve_value": 74.76090219213057,
+      "absolute_percentage_point_error": 0.0009021921305674141
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 75.1,
+      "pdf_curve_value": 75.10059455345223,
+      "absolute_percentage_point_error": 0.0005945534522311391
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 73.84,
+      "pdf_curve_value": 73.84059678416679,
+      "absolute_percentage_point_error": 0.0005967841667882112
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 81.47,
+      "pdf_curve_value": 81.47026521833548,
+      "absolute_percentage_point_error": 0.0002652183354854287
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 82.95,
+      "pdf_curve_value": 82.9513572622268,
+      "absolute_percentage_point_error": 0.0013572622267901124
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 83.3,
+      "pdf_curve_value": 83.30039638423867,
+      "absolute_percentage_point_error": 0.0003963842386696115
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 83.32,
+      "pdf_curve_value": 83.31917807478274,
+      "absolute_percentage_point_error": 0.0008219252172523284
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 83.44,
+      "pdf_curve_value": 83.44100499994178,
+      "absolute_percentage_point_error": 0.0010049999417844901
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 98.09,
+      "pdf_curve_value": 98.09060809661187,
+      "absolute_percentage_point_error": 0.0006080966118702236
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 95.7,
+      "pdf_curve_value": 95.70094706362256,
+      "absolute_percentage_point_error": 0.0009470636225614726
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 95.82,
+      "pdf_curve_value": 95.82041680043771,
+      "absolute_percentage_point_error": 0.0004168004377191892
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 95.45,
+      "pdf_curve_value": 95.45025924591846,
+      "absolute_percentage_point_error": 0.00025924591845694067
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 94.58,
+      "pdf_curve_value": 94.5810994012942,
+      "absolute_percentage_point_error": 0.0010994012941978326
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 94.99,
+      "pdf_curve_value": 94.99104477017873,
+      "absolute_percentage_point_error": 0.0010447701787370534
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 95.42,
+      "pdf_curve_value": 95.4198026384947,
+      "absolute_percentage_point_error": 0.00019736150530036412
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 94.45,
+      "pdf_curve_value": 94.44998900777311,
+      "absolute_percentage_point_error": 1.099222689049384e-05
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 94.67,
+      "pdf_curve_value": 94.6700902030098,
+      "absolute_percentage_point_error": 9.0203009804668e-05
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 94.76,
+      "pdf_curve_value": 94.76147260520497,
+      "absolute_percentage_point_error": 0.001472605204966726
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 100.0,
+      "pdf_curve_value": 100.0,
+      "absolute_percentage_point_error": 0.0
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 94.61,
+      "pdf_curve_value": 94.61166489399027,
+      "absolute_percentage_point_error": 0.0016648939902665916
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 96.93,
+      "pdf_curve_value": 96.9307844424034,
+      "absolute_percentage_point_error": 0.0007844424033862651
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 90.6,
+      "pdf_curve_value": 90.60063852449653,
+      "absolute_percentage_point_error": 0.0006385244965372294
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 87.84,
+      "pdf_curve_value": 87.84052566580094,
+      "absolute_percentage_point_error": 0.0005256658009358262
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 82.93,
+      "pdf_curve_value": 82.93055194290838,
+      "absolute_percentage_point_error": 0.0005519429083733485
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 86.48,
+      "pdf_curve_value": 86.47963225999041,
+      "absolute_percentage_point_error": 0.000367740009593831
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 80.97,
+      "pdf_curve_value": 80.96996694448802,
+      "absolute_percentage_point_error": 3.305551197740897e-05
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 84.06,
+      "pdf_curve_value": 84.05933100217001,
+      "absolute_percentage_point_error": 0.0006689978299903032
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 84.61,
+      "pdf_curve_value": 84.61006819584247,
+      "absolute_percentage_point_error": 6.81958424735285e-05
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 75.06,
+      "pdf_curve_value": 75.0607667843851,
+      "absolute_percentage_point_error": 0.0007667843850924783
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 75.02,
+      "pdf_curve_value": 75.02093832891194,
+      "absolute_percentage_point_error": 0.0009383289119426763
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 75.01,
+      "pdf_curve_value": 75.00922539813816,
+      "absolute_percentage_point_error": 0.000774601861849078
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 75.0,
+      "pdf_curve_value": 74.99985353173369,
+      "absolute_percentage_point_error": 0.00014646826630837495
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 73.29,
+      "pdf_curve_value": 73.28960346163282,
+      "absolute_percentage_point_error": 0.00039653836718400726
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 73.33,
+      "pdf_curve_value": 73.32942670549517,
+      "absolute_percentage_point_error": 0.0005732945048322335
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 78.14,
+      "pdf_curve_value": 78.13922181350085,
+      "absolute_percentage_point_error": 0.0007781864991471821
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 80.42,
+      "pdf_curve_value": 80.42086037983748,
+      "absolute_percentage_point_error": 0.0008603798374764438
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 80.32,
+      "pdf_curve_value": 80.32038536525502,
+      "absolute_percentage_point_error": 0.0003853652550276365
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 80.23,
+      "pdf_curve_value": 80.23135287090395,
+      "absolute_percentage_point_error": 0.0013528709039434261
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 21.18,
+      "pdf_curve_value": 21.178434369507304,
+      "absolute_percentage_point_error": 0.0015656304926956466
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 21.44,
+      "pdf_curve_value": 21.438533294844913,
+      "absolute_percentage_point_error": 0.0014667051550887322
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 22.26,
+      "pdf_curve_value": 22.258424068493525,
+      "absolute_percentage_point_error": 0.0015759315064762802
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 22.98,
+      "pdf_curve_value": 22.98005714417846,
+      "absolute_percentage_point_error": 5.714417845936737e-05
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 20.72,
+      "pdf_curve_value": 20.719328793760184,
+      "absolute_percentage_point_error": 0.000671206239815092
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 22.22,
+      "pdf_curve_value": 22.21855750291641,
+      "absolute_percentage_point_error": 0.0014424970835875683
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 22.23,
+      "pdf_curve_value": 22.22801420290221,
+      "absolute_percentage_point_error": 0.001985797097791675
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 30.56,
+      "pdf_curve_value": 30.558103287211704,
+      "absolute_percentage_point_error": 0.0018967127882945078
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 30.47,
+      "pdf_curve_value": 30.470031786713978,
+      "absolute_percentage_point_error": 3.17867139791872e-05
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 31.41,
+      "pdf_curve_value": 31.409494353782506,
+      "absolute_percentage_point_error": 0.0005056462174941601
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 20.06,
+      "pdf_curve_value": 20.058570134669576,
+      "absolute_percentage_point_error": 0.0014298653304223308
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 19.99,
+      "pdf_curve_value": 19.988292611834474,
+      "absolute_percentage_point_error": 0.0017073881655242928
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 20.1,
+      "pdf_curve_value": 20.098391644517676,
+      "absolute_percentage_point_error": 0.0016083554823254076
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 19.97,
+      "pdf_curve_value": 19.969543386868054,
+      "absolute_percentage_point_error": 0.0004566131319450051
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 20.02,
+      "pdf_curve_value": 20.018742347213223,
+      "absolute_percentage_point_error": 0.0012576527867764753
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 20.02,
+      "pdf_curve_value": 20.018742347213223,
+      "absolute_percentage_point_error": 0.0012576527867764753
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 20.03,
+      "pdf_curve_value": 20.028114119939623,
+      "absolute_percentage_point_error": 0.0018858800603780423
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 29.96,
+      "pdf_curve_value": 29.958160883411672,
+      "absolute_percentage_point_error": 0.001839116588328693
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 29.42,
+      "pdf_curve_value": 29.42047760896544,
+      "absolute_percentage_point_error": 0.00047760896543991294
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 32.57,
+      "pdf_curve_value": 32.56918637607659,
+      "absolute_percentage_point_error": 0.0008136239234133313
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 20.0,
+      "pdf_curve_value": 20.0,
+      "absolute_percentage_point_error": 0.0
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 20.1,
+      "pdf_curve_value": 20.09839792212593,
+      "absolute_percentage_point_error": 0.001602077874071739
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 20.1,
+      "pdf_curve_value": 20.09839792212593,
+      "absolute_percentage_point_error": 0.001602077874071739
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 20.1,
+      "pdf_curve_value": 20.098397921100517,
+      "absolute_percentage_point_error": 0.0016020788994843826
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 20.03,
+      "pdf_curve_value": 20.028107304651147,
+      "absolute_percentage_point_error": 0.0018926953488538345
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 19.91,
+      "pdf_curve_value": 19.908636973875982,
+      "absolute_percentage_point_error": 0.001363026124018063
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 20.07,
+      "pdf_curve_value": 20.070284398947628,
+      "absolute_percentage_point_error": 0.000284398947627551
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 20.02,
+      "pdf_curve_value": 20.01874822567911,
+      "absolute_percentage_point_error": 0.0012517743208881882
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 20.06,
+      "pdf_curve_value": 20.058567863064848,
+      "absolute_percentage_point_error": 0.0014321369351506519
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 20.7,
+      "pdf_curve_value": 20.698157827001143,
+      "absolute_percentage_point_error": 0.0018421729988560287
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 19.14,
+      "pdf_curve_value": 19.140187930143526,
+      "absolute_percentage_point_error": 0.00018793014352525006
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 20.16,
+      "pdf_curve_value": 20.159278684782684,
+      "absolute_percentage_point_error": 0.0007213152173157766
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 19.59,
+      "pdf_curve_value": 19.590040315538175,
+      "absolute_percentage_point_error": 4.031553817540612e-05
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 19.97,
+      "pdf_curve_value": 19.969543391824256,
+      "absolute_percentage_point_error": 0.0004566081757424456
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 20.36,
+      "pdf_curve_value": 20.35843191273109,
+      "absolute_percentage_point_error": 0.0015680872689110004
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 20.04,
+      "pdf_curve_value": 20.039845961832444,
+      "absolute_percentage_point_error": 0.00015403816755465982
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 19.98,
+      "pdf_curve_value": 19.978914560645567,
+      "absolute_percentage_point_error": 0.001085439354433504
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 19.94,
+      "pdf_curve_value": 19.939091314732785,
+      "absolute_percentage_point_error": 0.0009086852672162138
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 20.03,
+      "pdf_curve_value": 20.02810904234152,
+      "absolute_percentage_point_error": 0.0018909576584817955
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 20.02,
+      "pdf_curve_value": 20.018742347213223,
+      "absolute_percentage_point_error": 0.0012576527867764753
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 57.93,
+      "pdf_curve_value": 57.930125999528045,
+      "absolute_percentage_point_error": 0.00012599952804492887
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 50.89,
+      "pdf_curve_value": 50.88904686930144,
+      "absolute_percentage_point_error": 0.0009531306985621768
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 34.6,
+      "pdf_curve_value": 34.601332825765226,
+      "absolute_percentage_point_error": 0.0013328257652247544
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 17.74,
+      "pdf_curve_value": 17.73918671456332,
+      "absolute_percentage_point_error": 0.000813285436677802
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 19.47,
+      "pdf_curve_value": 19.46825964467529,
+      "absolute_percentage_point_error": 0.0017403553247099524
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 20.83,
+      "pdf_curve_value": 20.82927781398895,
+      "absolute_percentage_point_error": 0.0007221860110497857
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 28.91,
+      "pdf_curve_value": 28.909713601236472,
+      "absolute_percentage_point_error": 0.0002863987635279841
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 27.67,
+      "pdf_curve_value": 27.670508070975824,
+      "absolute_percentage_point_error": 0.0005080709758225055
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 25.05,
+      "pdf_curve_value": 25.04890915624875,
+      "absolute_percentage_point_error": 0.0010908437512497926
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 29.34,
+      "pdf_curve_value": 29.338448806795597,
+      "absolute_percentage_point_error": 0.0015511932044027787
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 5,
+      "metric": "edge_percent",
+      "printed_value": 98.05,
+      "pdf_curve_value": 98.05078030915551,
+      "absolute_percentage_point_error": 0.000780309155516079
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 10,
+      "metric": "edge_percent",
+      "printed_value": 76.52,
+      "pdf_curve_value": 76.52029079634386,
+      "absolute_percentage_point_error": 0.00029079634386164344
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 15,
+      "metric": "edge_percent",
+      "printed_value": 75.68,
+      "pdf_curve_value": 75.67931698697771,
+      "absolute_percentage_point_error": 0.0006830130222965636
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 20,
+      "metric": "edge_percent",
+      "printed_value": 60.98,
+      "pdf_curve_value": 60.98046699405346,
+      "absolute_percentage_point_error": 0.0004669940534611783
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 25,
+      "metric": "edge_percent",
+      "printed_value": 62.03,
+      "pdf_curve_value": 62.02969254541875,
+      "absolute_percentage_point_error": 0.00030745458125380765
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 30,
+      "metric": "edge_percent",
+      "printed_value": 55.82,
+      "pdf_curve_value": 55.81960633268163,
+      "absolute_percentage_point_error": 0.0003936673183702055
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 35,
+      "metric": "edge_percent",
+      "printed_value": 51.72,
+      "pdf_curve_value": 51.71933131290048,
+      "absolute_percentage_point_error": 0.0006686870995196159
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 40,
+      "metric": "edge_percent",
+      "printed_value": 43.36,
+      "pdf_curve_value": 43.3611312553021,
+      "absolute_percentage_point_error": 0.001131255302098566
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 45,
+      "metric": "edge_percent",
+      "printed_value": 39.58,
+      "pdf_curve_value": 39.579095034332425,
+      "absolute_percentage_point_error": 0.0009049656675728102
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 50,
+      "metric": "edge_percent",
+      "printed_value": 35.86,
+      "pdf_curve_value": 35.85849408002715,
+      "absolute_percentage_point_error": 0.0015059199728497674
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 25.53,
+      "pdf_curve_value": 25.528874431516016,
+      "absolute_percentage_point_error": 0.001125568483985262
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 24.97,
+      "pdf_curve_value": 24.969011915283286,
+      "absolute_percentage_point_error": 0.000988084716713189
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 25.24,
+      "pdf_curve_value": 25.240711423153723,
+      "absolute_percentage_point_error": 0.0007114231537244109
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 24.9,
+      "pdf_curve_value": 24.89871537770535,
+      "absolute_percentage_point_error": 0.0012846222946478747
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 26.16,
+      "pdf_curve_value": 26.159024570230663,
+      "absolute_percentage_point_error": 0.0009754297693369551
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 18.53,
+      "pdf_curve_value": 18.528700785928056,
+      "absolute_percentage_point_error": 0.0012992140719454426
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 17.05,
+      "pdf_curve_value": 17.05057022274079,
+      "absolute_percentage_point_error": 0.0005702227407908822
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 16.7,
+      "pdf_curve_value": 16.69907447743135,
+      "absolute_percentage_point_error": 0.0009255225686501944
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 16.68,
+      "pdf_curve_value": 16.680321077668662,
+      "absolute_percentage_point_error": 0.0003210776686621841
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 16.56,
+      "pdf_curve_value": 16.560852572656177,
+      "absolute_percentage_point_error": 0.0008525726561785518
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 1.91,
+      "pdf_curve_value": 1.9093359957920832,
+      "absolute_percentage_point_error": 0.0006640042079166797
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 4.3,
+      "pdf_curve_value": 4.298706799785924,
+      "absolute_percentage_point_error": 0.0012932002140759735
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 4.18,
+      "pdf_curve_value": 4.179456277364699,
+      "absolute_percentage_point_error": 0.0005437226353004476
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 4.55,
+      "pdf_curve_value": 4.5495653050733775,
+      "absolute_percentage_point_error": 0.00043469492662229214
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 5.42,
+      "pdf_curve_value": 5.418732266987026,
+      "absolute_percentage_point_error": 0.001267733012974226
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 5.01,
+      "pdf_curve_value": 5.008768881026172,
+      "absolute_percentage_point_error": 0.0012311189738278827
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 4.58,
+      "pdf_curve_value": 4.580087685553221,
+      "absolute_percentage_point_error": 8.768555322102856e-05
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 5.55,
+      "pdf_curve_value": 5.549954912803861,
+      "absolute_percentage_point_error": 4.5087196138382524e-05
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 5.33,
+      "pdf_curve_value": 5.329732711828023,
+      "absolute_percentage_point_error": 0.00026728817197696486
+    },
+    {
+      "platform": "KubeEdge-2C4C",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 5.24,
+      "pdf_curve_value": 5.24071703348719,
+      "absolute_percentage_point_error": 0.0007170334871897666
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 0.0,
+      "pdf_curve_value": 0.0,
+      "absolute_percentage_point_error": 0.0
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 5.39,
+      "pdf_curve_value": 5.390140370668545,
+      "absolute_percentage_point_error": 0.00014037066854566405
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 3.07,
+      "pdf_curve_value": 3.0690375529053466,
+      "absolute_percentage_point_error": 0.0009624470946532071
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 9.4,
+      "pdf_curve_value": 9.398364229529562,
+      "absolute_percentage_point_error": 0.0016357704704379472
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 12.16,
+      "pdf_curve_value": 12.1587326699406,
+      "absolute_percentage_point_error": 0.0012673300594006065
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 17.07,
+      "pdf_curve_value": 17.069092811356498,
+      "absolute_percentage_point_error": 0.0009071886435023657
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 13.52,
+      "pdf_curve_value": 13.520174138150265,
+      "absolute_percentage_point_error": 0.00017413815026579016
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 19.03,
+      "pdf_curve_value": 19.030045472504657,
+      "absolute_percentage_point_error": 4.547250465591901e-05
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 15.94,
+      "pdf_curve_value": 15.939973066327333,
+      "absolute_percentage_point_error": 2.693367266637381e-05
+    },
+    {
+      "platform": "KubeEdge-3C8C",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 15.39,
+      "pdf_curve_value": 15.389481182109455,
+      "absolute_percentage_point_error": 0.000518817890545975
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 24.94,
+      "pdf_curve_value": 24.938502987015326,
+      "absolute_percentage_point_error": 0.0014970129846751945
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 24.98,
+      "pdf_curve_value": 24.980668026356806,
+      "absolute_percentage_point_error": 0.0006680263568057399
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 24.99,
+      "pdf_curve_value": 24.990043353968208,
+      "absolute_percentage_point_error": 4.335396820920323e-05
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 25.0,
+      "pdf_curve_value": 24.99941336234257,
+      "absolute_percentage_point_error": 0.000586637657431055
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 26.71,
+      "pdf_curve_value": 26.70955169014521,
+      "absolute_percentage_point_error": 0.000448309854789386
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 26.67,
+      "pdf_curve_value": 26.669607242313948,
+      "absolute_percentage_point_error": 0.00039275768605406824
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 21.86,
+      "pdf_curve_value": 21.860412207139905,
+      "absolute_percentage_point_error": 0.00041220713990597346
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 19.58,
+      "pdf_curve_value": 19.58065098700187,
+      "absolute_percentage_point_error": 0.0006509870018724939
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 19.68,
+      "pdf_curve_value": 19.679052841293288,
+      "absolute_percentage_point_error": 0.0009471587067118037
+    },
+    {
+      "platform": "KubeEdge-Full",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 19.77,
+      "pdf_curve_value": 19.770411321308252,
+      "absolute_percentage_point_error": 0.00041132130825261015
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 78.82,
+      "pdf_curve_value": 78.81925771023761,
+      "absolute_percentage_point_error": 0.0007422897623854396
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 78.56,
+      "pdf_curve_value": 78.55923787049467,
+      "absolute_percentage_point_error": 0.0007621295053326094
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 77.74,
+      "pdf_curve_value": 77.73926845837941,
+      "absolute_percentage_point_error": 0.0007315416205813108
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 77.02,
+      "pdf_curve_value": 77.02011271119505,
+      "absolute_percentage_point_error": 0.00011271119505806837
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 79.28,
+      "pdf_curve_value": 79.27834949048965,
+      "absolute_percentage_point_error": 0.0016505095103553913
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 77.78,
+      "pdf_curve_value": 77.77907915167833,
+      "absolute_percentage_point_error": 0.0009208483216696095
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 77.77,
+      "pdf_curve_value": 77.7697091429358,
+      "absolute_percentage_point_error": 0.0002908570642006225
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 69.44,
+      "pdf_curve_value": 69.43891502881704,
+      "absolute_percentage_point_error": 0.0010849711829621356
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 69.53,
+      "pdf_curve_value": 69.53019032222065,
+      "absolute_percentage_point_error": 0.0001903222206465216
+    },
+    {
+      "platform": "Ray-Actor-15",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 68.59,
+      "pdf_curve_value": 68.58849729461951,
+      "absolute_percentage_point_error": 0.0015027053804885782
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 79.94,
+      "pdf_curve_value": 79.93908855585899,
+      "absolute_percentage_point_error": 0.0009114441410105201
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 80.01,
+      "pdf_curve_value": 80.00936422061017,
+      "absolute_percentage_point_error": 0.0006357793898388309
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 79.9,
+      "pdf_curve_value": 79.89926402563206,
+      "absolute_percentage_point_error": 0.0007359743679415942
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 80.03,
+      "pdf_curve_value": 80.0280986005258,
+      "absolute_percentage_point_error": 0.0019013994742067553
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 79.98,
+      "pdf_curve_value": 79.97891704792359,
+      "absolute_percentage_point_error": 0.001082952076416177
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 79.98,
+      "pdf_curve_value": 79.97891482087392,
+      "absolute_percentage_point_error": 0.0010851791260790833
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 79.97,
+      "pdf_curve_value": 79.96954481213139,
+      "absolute_percentage_point_error": 0.0004551878686100963
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 70.04,
+      "pdf_curve_value": 70.03866593441907,
+      "absolute_percentage_point_error": 0.001334065580934407
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 70.58,
+      "pdf_curve_value": 70.57952939633199,
+      "absolute_percentage_point_error": 0.0004706036680062198
+    },
+    {
+      "platform": "Ray-Actor-20",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 67.43,
+      "pdf_curve_value": 67.42883922847292,
+      "absolute_percentage_point_error": 0.0011607715270827157
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 80.0,
+      "pdf_curve_value": 80.0,
+      "absolute_percentage_point_error": 0.0
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 79.9,
+      "pdf_curve_value": 79.8992715072445,
+      "absolute_percentage_point_error": 0.0007284927554991327
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 79.9,
+      "pdf_curve_value": 79.89926193457279,
+      "absolute_percentage_point_error": 0.0007380654272139964
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 79.9,
+      "pdf_curve_value": 79.89926193457279,
+      "absolute_percentage_point_error": 0.0007380654272139964
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 79.97,
+      "pdf_curve_value": 79.969541605415,
+      "absolute_percentage_point_error": 0.00045839458499585817
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 80.09,
+      "pdf_curve_value": 80.08901808513087,
+      "absolute_percentage_point_error": 0.0009819148691292412
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 79.93,
+      "pdf_curve_value": 79.92972673814343,
+      "absolute_percentage_point_error": 0.0002732618565772782
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 79.98,
+      "pdf_curve_value": 79.97891441906194,
+      "absolute_percentage_point_error": 0.00108558093806721
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 79.94,
+      "pdf_curve_value": 79.93902775259713,
+      "absolute_percentage_point_error": 0.0009722474028706074
+    },
+    {
+      "platform": "Ray-Actor-25",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 79.3,
+      "pdf_curve_value": 79.2995195908564,
+      "absolute_percentage_point_error": 0.000480409143591487
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 80.86,
+      "pdf_curve_value": 80.85978689428839,
+      "absolute_percentage_point_error": 0.00021310571160881864
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 79.84,
+      "pdf_curve_value": 79.83844815198377,
+      "absolute_percentage_point_error": 0.001551848016234203
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 80.41,
+      "pdf_curve_value": 80.40996928079812,
+      "absolute_percentage_point_error": 3.071920187380783e-05
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 80.03,
+      "pdf_curve_value": 80.02815685135505,
+      "absolute_percentage_point_error": 0.0018431486449514978
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 79.64,
+      "pdf_curve_value": 79.63923217192506,
+      "absolute_percentage_point_error": 0.0007678280749416899
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 79.96,
+      "pdf_curve_value": 79.96017560542066,
+      "absolute_percentage_point_error": 0.00017560542066519247
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 80.02,
+      "pdf_curve_value": 80.01873845965264,
+      "absolute_percentage_point_error": 0.0012615403473574816
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 80.06,
+      "pdf_curve_value": 80.05856732440745,
+      "absolute_percentage_point_error": 0.0014326755925537782
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 79.97,
+      "pdf_curve_value": 79.96954516881269,
+      "absolute_percentage_point_error": 0.0004548311873122657
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 79.98,
+      "pdf_curve_value": 79.97891517714518,
+      "absolute_percentage_point_error": 0.0010848228548212546
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 42.07,
+      "pdf_curve_value": 42.068642181317394,
+      "absolute_percentage_point_error": 0.0013578186826066485
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 49.11,
+      "pdf_curve_value": 49.10791727267986,
+      "absolute_percentage_point_error": 0.0020827273201362573
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 65.4,
+      "pdf_curve_value": 65.39971398111079,
+      "absolute_percentage_point_error": 0.000286018889212869
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 82.26,
+      "pdf_curve_value": 82.2564818769268,
+      "absolute_percentage_point_error": 0.003518123073206425
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 80.53,
+      "pdf_curve_value": 80.52952574418018,
+      "absolute_percentage_point_error": 0.0004742558198245206
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 79.17,
+      "pdf_curve_value": 79.16801920524222,
+      "absolute_percentage_point_error": 0.0019807947577845653
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 71.09,
+      "pdf_curve_value": 71.08866475490794,
+      "absolute_percentage_point_error": 0.0013352450920649517
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 72.33,
+      "pdf_curve_value": 72.32990832395159,
+      "absolute_percentage_point_error": 9.167604841309185e-05
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 74.95,
+      "pdf_curve_value": 74.9486373687297,
+      "absolute_percentage_point_error": 0.001362631270296788
+    },
+    {
+      "platform": "Ray-Task",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 70.66,
+      "pdf_curve_value": 70.65948220074083,
+      "absolute_percentage_point_error": 0.00051779925917117
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 5,
+      "metric": "cloud_percent",
+      "printed_value": 1.95,
+      "pdf_curve_value": 1.9491626170782825,
+      "absolute_percentage_point_error": 0.0008373829217174222
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 10,
+      "metric": "cloud_percent",
+      "printed_value": 23.48,
+      "pdf_curve_value": 23.47692787078944,
+      "absolute_percentage_point_error": 0.0030721292105617692
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 15,
+      "metric": "cloud_percent",
+      "printed_value": 24.32,
+      "pdf_curve_value": 24.32000287273349,
+      "absolute_percentage_point_error": 2.8727334893119405e-06
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 20,
+      "metric": "cloud_percent",
+      "printed_value": 39.02,
+      "pdf_curve_value": 39.01671406938127,
+      "absolute_percentage_point_error": 0.0032859306187305037
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 25,
+      "metric": "cloud_percent",
+      "printed_value": 37.97,
+      "pdf_curve_value": 37.96888132507413,
+      "absolute_percentage_point_error": 0.0011186749258698114
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 30,
+      "metric": "cloud_percent",
+      "printed_value": 44.18,
+      "pdf_curve_value": 44.179610177876704,
+      "absolute_percentage_point_error": 0.00038982212329585764
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 35,
+      "metric": "cloud_percent",
+      "printed_value": 48.28,
+      "pdf_curve_value": 48.279021358573104,
+      "absolute_percentage_point_error": 0.0009786414268972976
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 40,
+      "metric": "cloud_percent",
+      "printed_value": 56.64,
+      "pdf_curve_value": 56.638235063770786,
+      "absolute_percentage_point_error": 0.0017649362292146975
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 45,
+      "metric": "cloud_percent",
+      "printed_value": 60.42,
+      "pdf_curve_value": 60.419704569381445,
+      "absolute_percentage_point_error": 0.0002954306185571909
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 50,
+      "metric": "cloud_percent",
+      "printed_value": 64.14,
+      "pdf_curve_value": 64.13962783648743,
+      "absolute_percentage_point_error": 0.00037216351256574853
+    }
+  ]
+}

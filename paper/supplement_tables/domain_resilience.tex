@@ -1,0 +1,66 @@
+\section{End-Device Domain Service during Cloud-Link Interruption}
+\label{sec:supp-domain-resilience}
+This three-host study extends the native endpoint-gate study with a separate workload, control placement and packet-drop intervention. The primary matrix contains three systems, two initial deployments, two connectivity conditions and three repetitions: 36 qualified runs, 33,480 offered requests. Each run lasts 150~s and offers the same 930-request schedule. The main domain-autonomy figure displays all nine Edge1-only-start interrupted runs as three system means; Tables~\ref{tab:domain-paired}--\ref{tab:domain-individual} retain both initial deployments and their connected controls.
+
+\paragraph{Hardware, paths and scaling.}
+Edge1=NJ-k2 and Edge2=NJ-k3 constitute one end-device domain; cloud=NJ-k1 hosts control only. All three expose 16 vCPUs. Edge1/cloud report Xeon Platinum~8163 and Edge2 reports Xeon Gold~6442Y. Each Edge1/Edge2 application is restricted to vCPUs~0--1, a two-vCPU quota and 512~MiB without swap; controls use vCPUs~8--15. Go parallelism is one. Kernel calibration medians are approximately 208.97~ms on Edge1 and 41.57~ms on Edge2; hardware speeds are not equalized. Equal application allocations do not imply equal whole-system overhead. Every request runs the same Go SHA kernel, 1000 iterations over 65536 bytes, with checksum and physical-host journal validation.
+
+KubeEdge~1.23.1 and EdgeMesh~1.17.0 use the actual domain Service path with Edge1/Edge2 relay nodes. The Edge1-only condition uses Kubernetes Horizontal Pod Autoscaler (HPA) CPU target 30\%, minimum one and maximum two application replicas, with one replica per host. Native metrics and Pod delivery depend on the cloud control path. Ray Serve~2.58.0 places head/GCS and Serve control on cloud, with zero application CPU there; Edge1/Edge2 provide the application workers. Its Edge1-only autoscaler has minimum/initial one and maximum two replicas, target one ongoing request, 1-s metric intervals, 3-s lookback, zero upscaling delay and 3600-s downscaling delay. Edge1/Edge2-predeployed conditions keep two replicas. Tide uses native scheduling, Stub creation and Executor management. No core scheduler or C4 change is introduced. Images are cached; Edge1-only initialization means no Edge2 application executor at the first offer, not a missing runtime or image. No manual in-window repair or scaling occurs.
+
+\paragraph{Intervention and counting.}
+Arrivals are 2/s for 0--30~s, increase linearly to 8/s over 30--60~s, then remain 8/s through 150~s. cloud applies bidirectional packet drops for the owned Edge1/Edge2 experiment communication ports during 20--110~s; Edge1--Edge2 and administrative SSH remain reachable. This is a scoped cloud-link interruption, not complete physical loss of cloud. Actual fault-rule installation/removal brackets determine the stable-outage arrival cohort. Connected runs use the matched planned 20--110~s window. Each request is submitted once, with a 2-s client timeout. $R_{\rm srv}$ divides all correct results received at Edge1 within 500~ms of planned arrival by all scheduled arrivals in the relevant cohort. Rejections, failures, timeouts and late returns stay in the denominator. Duplicate framework executions add no extra credited request. Execution location is joined from request ID, worker instance and matching result/start/end records collected on the physical hosts; an application node label alone is insufficient. The main figure counts actual return times in nonoverlapping 5-s bins, so its bins are not arrival-cohort yield estimates.
+
+\begin{table}[htbp]
+\centering\small
+\caption{All deployment/connectivity comparisons. $R_{\rm srv}$ columns are three-run mean percentages; the last column is interrupted minus connected, in percentage points, with an unbounded run-paired 95\% $t$(2) interval. No request-level pseudoreplication is used.}
+\label{tab:domain-paired}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrr}
+\toprule
+System & Initially active & Connected & Interrupted & Paired difference [95\% CI]\\
+\midrule
+Tide & Edge1+Edge2 & 88.30 & 87.95 & $-0.35\;[-1.86, +1.16]$\\
+KubeEdge/EdgeMesh & Edge1+Edge2 & 100.00 & 100.00 & $+0.00\;[+0.00, +0.00]$\\
+Ray Serve & Edge1+Edge2 & 99.94 & 99.94 & $+0.00\;[-0.44, +0.44]$\\
+Tide & Edge1 only & 88.13 & 88.77 & $+0.64\;[-2.19, +3.48]$\\
+KubeEdge/EdgeMesh & Edge1 only & 49.77 & 14.97 & $-34.80\;[-57.37, -12.22]$\\
+Ray Serve & Edge1 only & 99.12 & 14.27 & $-84.85\;[-88.07, -81.64]$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Individual $R_{\rm srv}$ percentages for all 36 primary runs. Column $r$ identifies the paired repetition; each cell is the full stable-interruption arrival cohort or its connected matched window. All runs and failed requests are retained.}
+\label{tab:domain-individual}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lllrrr}
+\toprule
+System & Initially active & Link condition & $r=1$ & $r=2$ & $r=3$\\
+\midrule
+Tide & Edge1+Edge2 & Connected & 89.12 & 88.07 & 87.72\\
+Tide & Edge1+Edge2 & Interrupted & 89.47 & 87.37 & 87.02\\
+KubeEdge/EdgeMesh & Edge1+Edge2 & Connected & 100.00 & 100.00 & 100.00\\
+KubeEdge/EdgeMesh & Edge1+Edge2 & Interrupted & 100.00 & 100.00 & 100.00\\
+Ray Serve & Edge1+Edge2 & Connected & 100.00 & 99.82 & 100.00\\
+Ray Serve & Edge1+Edge2 & Interrupted & 99.82 & 100.00 & 100.00\\
+Tide & Edge1 only & Connected & 89.30 & 88.07 & 87.02\\
+Tide & Edge1 only & Interrupted & 90.00 & 87.54 & 88.77\\
+KubeEdge/EdgeMesh & Edge1 only & Connected & 60.18 & 45.09 & 44.04\\
+KubeEdge/EdgeMesh & Edge1 only & Interrupted & 14.91 & 14.91 & 15.09\\
+Ray Serve & Edge1 only & Connected & 99.30 & 99.30 & 98.77\\
+Ray Serve & Edge1 only & Interrupted & 14.91 & 12.98 & 14.91\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Events and load dependence.}
+All event times below are elapsed seconds from the first scheduled arrival ($t=0$), rather than per-request processing durations. For Edge1-only starts, Tide's first timely Edge2 returns occur at 47.62/47.62/47.44~s during interruption and 47.44/47.62/47.25~s while connected (repetitions 1/2/3). Connected KubeEdge first returns through Edge2 at 60.54/67.38/67.92~s; connected Ray does so at 48.59/48.34/48.55~s. Neither baseline has a ready Edge2 application instance or timely Edge2 return in any interrupted 150-s run. During the interrupted low/ramping/high-load arrival cohorts, Tide yields are 100.00/92.00/87.03\%; KubeEdge gives 100.00/44.22/0.00\% and Ray 100.00/41.56/0.00\%. KubeEdge's connected Edge1-only yield is also reduced by delayed scaling and queueing, so paired changes are needed to interpret the fault effect. With predeployed Edge1/Edge2 replicas, KubeEdge and Ray retain high outage yield; existing domain routing and autonomous creation of new serving capacity are different properties. Post-restoration Edge1-only yields are 87.74/0.11/0.00\% for Tide/KubeEdge/Ray. In a predeployed Ray run, native logs show cloud-side missed-heartbeat node-death decisions during disconnection followed by replica removal and a request error after reconnection; this does not imply that Ray's warm data path fails immediately when cloud is cut.
+
+\paragraph{Isolation, provenance and limitations.}
+All 36 primary cells pass independent checks of offered IDs, physical execution provenance, initial state, resource limits, fault bounds and measurement completeness. Eight previously collected KubeEdge episodes are retained only as diagnostics after cross-episode request contamination was found. The entire twelve-cell KubeEdge family was prospectively replaced under a frozen reset protocol, without selecting on performance or Edge2 usage. Fourteen already collected Tide/Ray cells passed strict isolation checks and were retained; ten remaining Tide/Ray cells followed the original frozen method. The matrix therefore spans acquisition epochs. KubeEdge resets use fresh edge-node/database state and verified cloud/edge readiness; an additional read-only SQLite sampler runs on control vCPUs and can still impose I/O interference. Four zero-offer preparation failures and a separate successful diagnostic are excluded from primary inference but preserved. No in-window restart or administrative cleanup is credited as service recovery. Cleanup begins after observation and cannot increase a measured yield.
+
+The CPU-only stateless kernel does not test sensing/actuation feasibility, checkpointing, stateful recovery or other control placements such as an edge-hosted Ray head. Under the fixed compatible inventory, $R_{\rm cap}=1$ for all systems. Current C4 screens the originating Edge1's total CPU; this experiment does not implement a general domain-wide eligibility search or show that C4 causes Edge2 activation. An indivisible request must fit on one physical host, rather than pooling Edge1/Edge2 capacities. The results support achieved domain-local service $R_{\rm srv}$ under these conditions, not optimization of the constant structural metric or an indefinite offline guarantee.
+
+\paragraph{Retained artifacts.}
+The local campaign directory \texttt{code/Tide/results-domain-resilience-20261027/} retains the frozen protocols and execution order, raw per-host logs, all request outcomes, the independent audit, all run-level intervals, the figure source and per-run 5-s counts. Its report files \texttt{comparison-v3-results.json} and \texttt{comparison-v3-audit.json} are the numerical and qualification sources. Artifacts remain locally retained rather than publicly released.

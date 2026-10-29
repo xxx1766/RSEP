@@ -1,0 +1,32 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "tmc-ke-worker",
+    "namespace": "tmc-ke-revision",
+    "labels": {"app": "tmc-ke-worker"}
+  },
+  "spec": {
+    "nodeName": "tmc-ke-worker",
+    "hostNetwork": true,
+    "dnsPolicy": "Default",
+    "restartPolicy": "Never",
+    "automountServiceAccountToken": false,
+    "terminationGracePeriodSeconds": 1,
+    "containers": [{
+      "name": "worker",
+      "image": "docker.io/tide/revision-worker:amd64",
+      "imagePullPolicy": "Never",
+      "command": ["/worker", "--mode=http", "--listen=0.0.0.0:19280"],
+      "env": [{"name": "GOMAXPROCS", "value": "1"}],
+      "resources": {
+        "requests": {"cpu": "2", "memory": "512Mi"},
+        "limits": {"cpu": "2", "memory": "512Mi"}
+      },
+      "readinessProbe": {
+        "httpGet": {"host": "127.0.0.1", "path": "/health", "port": 19280},
+        "periodSeconds": 1
+      }
+    }]
+  }
+}

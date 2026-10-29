@@ -1,0 +1,692 @@
+[
+  {
+    "id": "latency-1",
+    "phase": "http_enter",
+    "ns": 143843263,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "submit",
+    "ns": 143863587,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "enqueue",
+    "ns": 143873283,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "dispatch",
+    "ns": 143891687,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "resource_acquired",
+    "ns": 143900692,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "pool_get",
+    "ns": 143908740,
+    "related": ""
+  },
+  {
+    "id": "3f180800-0546-4512-b7e1-f972eb570ba9",
+    "phase": "container_create_start",
+    "ns": 144049515,
+    "related": ""
+  },
+  {
+    "id": "3f180800-0546-4512-b7e1-f972eb570ba9",
+    "phase": "container_create_end",
+    "ns": 242835454,
+    "related": ""
+  },
+  {
+    "id": "3f180800-0546-4512-b7e1-f972eb570ba9",
+    "phase": "container_start_start",
+    "ns": 242837753,
+    "related": ""
+  },
+  {
+    "id": "3f180800-0546-4512-b7e1-f972eb570ba9",
+    "phase": "container_start_end",
+    "ns": 252794773,
+    "related": ""
+  },
+  {
+    "id": "3f180800-0546-4512-b7e1-f972eb570ba9",
+    "phase": "executor_ready",
+    "ns": 255553744,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "pool_acquired",
+    "ns": 255580502,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-1",
+    "phase": "execute",
+    "ns": 304838166,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "exit_received",
+    "ns": 325865580,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-1",
+    "phase": "http_result",
+    "ns": 325887362,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "http_written",
+    "ns": 325892666,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "http_enter",
+    "ns": 377230830,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "submit",
+    "ns": 377247086,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "enqueue",
+    "ns": 377258104,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "dispatch",
+    "ns": 377269128,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "resource_acquired",
+    "ns": 377279505,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "pool_get",
+    "ns": 377288460,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "pool_acquired",
+    "ns": 377290186,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-2",
+    "phase": "execute",
+    "ns": 386358298,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "exit_received",
+    "ns": 407335194,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-2",
+    "phase": "http_result",
+    "ns": 407355005,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "http_written",
+    "ns": 407360133,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "http_enter",
+    "ns": 458669709,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "submit",
+    "ns": 458677144,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "enqueue",
+    "ns": 458684374,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "dispatch",
+    "ns": 458692567,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "resource_acquired",
+    "ns": 458700686,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "pool_get",
+    "ns": 458707205,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "pool_acquired",
+    "ns": 458708621,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-3",
+    "phase": "execute",
+    "ns": 467311584,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "exit_received",
+    "ns": 488102276,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-3",
+    "phase": "http_result",
+    "ns": 488131425,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "http_written",
+    "ns": 488141085,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "http_enter",
+    "ns": 539583751,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "submit",
+    "ns": 539610387,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "enqueue",
+    "ns": 539627091,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "dispatch",
+    "ns": 539641479,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "resource_acquired",
+    "ns": 539660343,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "pool_get",
+    "ns": 539684450,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "pool_acquired",
+    "ns": 539685601,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-4",
+    "phase": "execute",
+    "ns": 549274334,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "exit_received",
+    "ns": 570188501,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-4",
+    "phase": "http_result",
+    "ns": 570212734,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "http_written",
+    "ns": 570217548,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "http_enter",
+    "ns": 621240618,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "submit",
+    "ns": 621255490,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "enqueue",
+    "ns": 621263686,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "dispatch",
+    "ns": 621272238,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "resource_acquired",
+    "ns": 621281088,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "pool_get",
+    "ns": 621287861,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "pool_acquired",
+    "ns": 621288906,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-5",
+    "phase": "execute",
+    "ns": 633651529,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "exit_received",
+    "ns": 654558262,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-5",
+    "phase": "http_result",
+    "ns": 654582199,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "http_written",
+    "ns": 654587502,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "http_enter",
+    "ns": 706050093,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "submit",
+    "ns": 706066423,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "enqueue",
+    "ns": 706075975,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "dispatch",
+    "ns": 706084769,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "resource_acquired",
+    "ns": 706095061,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "pool_get",
+    "ns": 706104185,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "pool_acquired",
+    "ns": 706105263,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-6",
+    "phase": "execute",
+    "ns": 716762473,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "exit_received",
+    "ns": 737577403,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-6",
+    "phase": "http_result",
+    "ns": 737592894,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "http_written",
+    "ns": 737595995,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "http_enter",
+    "ns": 788804400,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "submit",
+    "ns": 788815853,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "enqueue",
+    "ns": 788821801,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "dispatch",
+    "ns": 788831418,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "resource_acquired",
+    "ns": 788838571,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "pool_get",
+    "ns": 788852285,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "pool_acquired",
+    "ns": 788853172,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-7",
+    "phase": "execute",
+    "ns": 800673941,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "exit_received",
+    "ns": 821512947,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-7",
+    "phase": "http_result",
+    "ns": 821533670,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "http_written",
+    "ns": 821537222,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "http_enter",
+    "ns": 872670252,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "submit",
+    "ns": 872679585,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "enqueue",
+    "ns": 872692411,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "dispatch",
+    "ns": 872699691,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "resource_acquired",
+    "ns": 872707603,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "pool_get",
+    "ns": 872715771,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "pool_acquired",
+    "ns": 872717077,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-8",
+    "phase": "execute",
+    "ns": 884214171,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "exit_received",
+    "ns": 905133975,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-8",
+    "phase": "http_result",
+    "ns": 905151072,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "http_written",
+    "ns": 905154595,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "http_enter",
+    "ns": 956395678,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "submit",
+    "ns": 956407025,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "enqueue",
+    "ns": 956432157,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "dispatch",
+    "ns": 956437790,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "resource_acquired",
+    "ns": 956443065,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "pool_get",
+    "ns": 956449574,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "pool_acquired",
+    "ns": 956450315,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-9",
+    "phase": "execute",
+    "ns": 967962793,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "exit_received",
+    "ns": 988834541,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-9",
+    "phase": "http_result",
+    "ns": 988851386,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "http_written",
+    "ns": 988855062,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "http_enter",
+    "ns": 1040335398,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "submit",
+    "ns": 1040350075,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "enqueue",
+    "ns": 1040356571,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "dispatch",
+    "ns": 1040362260,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "resource_acquired",
+    "ns": 1040369138,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "pool_get",
+    "ns": 1040375771,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "pool_acquired",
+    "ns": 1040376521,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-10",
+    "phase": "execute",
+    "ns": 1049368284,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "exit_received",
+    "ns": 1070288145,
+    "related": "3f180800-0546-4512-b7e1-f972eb570ba9"
+  },
+  {
+    "id": "latency-10",
+    "phase": "http_result",
+    "ns": 1070314424,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "http_written",
+    "ns": 1070317856,
+    "related": ""
+  }
+]

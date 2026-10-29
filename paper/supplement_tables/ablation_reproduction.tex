@@ -1,0 +1,138 @@
+% S2-REPRODUCTION-20261016: all 105 old/new points and all 105 paired intervals.
+\clearpage
+\section*{CC/PI/EI reproduction and original-study comparison}
+\label{sec:s2-reproduction}
+\paragraph{Protocol and scope.}
+This independent reproduction retains all 150 treatments: five blocks, each with a frozen random permutation of six configurations at 1, 2, 4, 8 and 16 offered requests/s. Every request performs ten real YOLOX inferences. Each treatment uses a nominal 20-s offered window and a 180-s request deadline. The complete campaign has 18,600 measured requests, 2,700 separately retained warmups and zero measured failures; warmups are excluded from every estimate. Application execution shares six vCPUs (2--7); the driver uses CPUs 0--1. Configuration triples $(\mathrm{CC},\mathrm{PI},\mathrm{EI})$ are C1=(0,0,0), C2=(1,0,0), C3=(0,0,1), C4=(1,0,1), C5=(0,1,1), and C6=(1,1,1).
+
+Client latency runs from actual submission to return; mean and linearly interpolated P95 latency use successful requests. Throughput is successful requests divided by the larger of the nominal window and final client reply time, including drain. Every ratio is mechanism on/off: below one is favorable for latency, above one for throughput. The plotted reproduction estimate divides the on-cell mean of five run statistics by the off-cell mean. Tables~\ref{tab:s2-reproduction-ratios} and~\ref{tab:s2-reproduction-ci} retain all contrasts and distinguish this estimate from paired-ratio uncertainty.
+
+\paragraph{Comparability and observed limits.}
+The original study reports Intel i7 hardware; this run uses Xeon Platinum 8163 under KVM. Original detailed timing and source/binary identities cannot be verified, so differences cannot identify a hardware or mechanism cause. EI also bundles transport and runtime/container path changes. At 16 requests/s, mean-latency on/off ratios are 0.533569 for CC (C3$\to$C4; 46.6\% lower), 1.184493 for PI (C4$\to$C6; 18.4\% higher), and 1.100934 for EI (C2$\to$C4; 10.1\% higher). These are conditional point estimates, not universal or significance claims. Of 105 descriptive directions relative to one, 67 agree with the original and 38 flip; near-one signs carry no significance implication. All planned points and adverse effects are retained; no outcome-based reruns or result selection were used.
+
+\paragraph{Configuration and phase checks.}
+All 150 runs preserve their prescribed worker counts, CPU bindings and inference counts. In every 16 requests/s run, measured application concurrency peaks at three with CC and six without CC. With CC/PI enabled, active inference intervals have no overlapping allocated CPU pairs; sampled Tide cgroups show no CPU-quota throttling. CC limits active execution, not admission or queue length. In C6, 2,907 of 3,100 measured binding calls reapply the preceding CPU set. At 16 requests/s, C4/C6 resource-binding calls average 0.01/10.61~ms, execution-notification-to-exit intervals 263.29/267.51~ms, and waits for a Processor/Executor and dispatch lock 4.041/4.820~s. These observations locate binding cost and overload waiting; they do not causally assign the entire PI difference. Both selected PI and EI paired-mean latency intervals at this rate include one (Table~\ref{tab:s2-reproduction-ci}).
+
+The original C6/16 requests/s row reports 320 requests, 186.835~s elapsed and 1.886~s maximum latency. With all arrivals in 20~s, a common submission-to-completion boundary would imply completion by 21.886~s. This conditional discrepancy suggests different timing scopes or extra time in the elapsed field; missing original traces prevent identifying the exact boundary. Thus, the original EI latency advantage cannot establish an equivalent end-to-end gain over the replay's HTTP path. The original ratios remain descriptive historical records. The main manuscript's current quantitative mechanism claims use the separate complete 4+12-vCPU experiment; its 32-requests/s results are not combined with the original 1--16-requests/s summaries.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{revision-figs/evaluation/ablation_reproduction_comparison.pdf}
+\caption{Complete original-study and reproduction CC/PI/EI comparison: 105 original and 105 new on/off ratios. Columns denote mechanisms and rows denote mean latency, P95 latency and throughput. Colors fix the other mechanisms; dashed circles show original case summaries and solid squares show reproduction ratios of run means. Both axes are logarithmic; the horizontal line marks one. Lower latency and higher throughput ratios are favorable. Original uncertainty is unavailable; no paired-ratio confidence bars are attached to this different estimand.}
+\label{fig:s2-reproduction}
+\end{figure}
+
+\clearpage
+\begin{table}[p]
+\centering\small
+\caption{All 35 matched contrasts at five offered rates (105 metric pairs). O: original archived case-summary ratio. R: reproduction ratio of five-run means, on/off. Latency ratios below one and throughput ratios above one are favorable. Four decimal places are display rounding only. The other mechanisms are fixed as defined by the configuration triples in the protocol.}
+\label{tab:s2-reproduction-ratios}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrrrr@{}}
+\toprule
+ & & \multicolumn{2}{c}{Mean latency} & \multicolumn{2}{c}{P95 latency} & \multicolumn{2}{c}{Throughput}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Off$\to$on & Rate & O & R & O & R & O & R\\
+\midrule
+CC C1$\to$C2 & 1 & 0.9986 & 0.9922 & 1.0056 & 1.0021 & 0.9989 & 0.9988\\
+CC C1$\to$C2 & 2 & 0.4280 & 1.0627 & 0.4292 & 1.0159 & 1.1413 & 0.9981\\
+CC C1$\to$C2 & 4 & 0.3914 & 1.0074 & 0.6195 & 1.0057 & 1.2032 & 1.0008\\
+CC C1$\to$C2 & 8 & 0.4119 & 0.9741 & 0.7206 & 0.9293 & 1.1803 & 1.0007\\
+CC C1$\to$C2 & 16 & 0.4426 & 0.4942 & 0.7973 & 0.5345 & 1.1682 & 1.2466\\
+\midrule
+CC C3$\to$C4 & 1 & 1.0030 & 0.9626 & 0.9895 & 0.8956 & 0.9985 & 0.9992\\
+CC C3$\to$C4 & 2 & 0.3081 & 1.0819 & 0.1919 & 1.0678 & 1.6283 & 1.0007\\
+CC C3$\to$C4 & 4 & 0.3203 & 1.0616 & 0.2740 & 1.0122 & 1.5741 & 0.9992\\
+CC C3$\to$C4 & 8 & 0.2894 & 1.0408 & 0.2587 & 1.0241 & 1.6805 & 0.9999\\
+CC C3$\to$C4 & 16 & 0.3135 & 0.5336 & 0.2685 & 0.5335 & 1.5839 & 1.2538\\
+\midrule
+CC C5$\to$C6 & 1 & 0.9922 & 0.9276 & 1.0064 & 0.8978 & 1.0041 & 1.0009\\
+CC C5$\to$C6 & 2 & 0.1119 & 0.9017 & 0.0221 & 0.8938 & 4.7531 & 1.0016\\
+CC C5$\to$C6 & 4 & 0.0969 & 0.9348 & 0.0235 & 0.9644 & 4.1608 & 1.0026\\
+CC C5$\to$C6 & 8 & 0.1450 & 0.8815 & 0.0513 & 0.7039 & 3.3223 & 1.0025\\
+CC C5$\to$C6 & 16 & 0.1829 & 0.6730 & 0.1161 & 0.6828 & 2.5715 & 1.1604\\
+\midrule
+PI C3$\to$C5 & 1 & 1.3434 & 1.1130 & 1.3705 & 1.0511 & 0.9865 & 0.9979\\
+PI C3$\to$C5 & 2 & 2.7055 & 1.0387 & 8.3928 & 1.0431 & 0.3511 & 0.9993\\
+PI C3$\to$C5 & 4 & 3.2218 & 1.0484 & 11.2692 & 1.0395 & 0.3895 & 0.9971\\
+PI C3$\to$C5 & 8 & 1.9277 & 1.4098 & 4.8325 & 1.5751 & 0.5244 & 0.9951\\
+PI C3$\to$C5 & 16 & 1.6466 & 0.9390 & 2.2056 & 0.9339 & 0.6417 & 1.0308\\
+\midrule
+PI C4$\to$C6 & 1 & 1.3290 & 1.0726 & 1.3939 & 1.0536 & 0.9920 & 0.9996\\
+PI C4$\to$C6 & 2 & 0.9829 & 0.8657 & 0.9657 & 0.8731 & 1.0250 & 1.0003\\
+PI C4$\to$C6 & 4 & 0.9743 & 0.9232 & 0.9655 & 0.9903 & 1.0295 & 1.0005\\
+PI C4$\to$C6 & 8 & 0.9657 & 1.1940 & 0.9586 & 1.0826 & 1.0367 & 0.9977\\
+PI C4$\to$C6 & 16 & 0.9606 & 1.1845 & 0.9537 & 1.1953 & 1.0418 & 0.9541\\
+\midrule
+EI C1$\to$C3 & 1 & 1.0110 & 0.9930 & 1.0425 & 0.9567 & 1.0324 & 1.0000\\
+EI C1$\to$C3 & 2 & 0.6674 & 1.0610 & 0.7492 & 0.9495 & 0.7121 & 0.9978\\
+EI C1$\to$C3 & 4 & 0.1396 & 0.9965 & 0.1492 & 0.9377 & 0.7805 & 1.0025\\
+EI C1$\to$C3 & 8 & 0.0637 & 0.8272 & 0.0705 & 0.8450 & 0.7210 & 1.0019\\
+EI C1$\to$C3 & 16 & 0.0288 & 1.0198 & 0.0339 & 1.0246 & 0.7579 & 0.9880\\
+\midrule
+EI C2$\to$C4 & 1 & 1.0155 & 0.9634 & 1.0257 & 0.8550 & 1.0319 & 1.0004\\
+EI C2$\to$C4 & 2 & 0.4804 & 1.0801 & 0.3350 & 0.9980 & 1.0160 & 1.0004\\
+EI C2$\to$C4 & 4 & 0.1142 & 1.0500 & 0.0660 & 0.9438 & 1.0212 & 1.0010\\
+EI C2$\to$C4 & 8 & 0.0447 & 0.8839 & 0.0253 & 0.9312 & 1.0266 & 1.0011\\
+EI C2$\to$C4 & 16 & 0.0204 & 1.1009 & 0.0114 & 1.0226 & 1.0275 & 0.9938\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\clearpage
+\begin{table}[p]
+\centering\footnotesize
+\caption{All 105 reproduction means of paired block ratios with pointwise 95\% confidence intervals. Each entry is $\overline{q}\,[L,U]$, where $q_b=M_{\mathrm{on},b}/M_{\mathrm{off},b}$ for five paired blocks and $[L,U]=\overline{q}\pm t_{0.975,4}s_q/\sqrt{5}$. This estimates the mean paired ratio, distinct from the ratio of run means in Fig.~\ref{fig:s2-reproduction} and Table~\ref{tab:s2-reproduction-ratios}. Intervals have no multiplicity correction or simultaneous-coverage guarantee; the original archive has no run-level uncertainty for an old/new significance test. Four-decimal display rounding retains all unfavorable estimates.}
+\label{tab:s2-reproduction-ci}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrr@{}}
+\toprule
+Off$\to$on & Rate & Mean latency & P95 latency & Throughput\\
+\midrule
+CC C1$\to$C2 & 1 & $0.9924\,[0.9525,1.0322]$ & $1.0022\,[0.9884,1.0159]$ & $0.9988\,[0.9957,1.0019]$\\
+CC C1$\to$C2 & 2 & $1.0621\,[1.0106,1.1137]$ & $1.0164\,[0.9778,1.0550]$ & $0.9981\,[0.9954,1.0007]$\\
+CC C1$\to$C2 & 4 & $1.0090\,[0.9587,1.0593]$ & $1.0060\,[0.9719,1.0401]$ & $1.0008\,[0.9984,1.0032]$\\
+CC C1$\to$C2 & 8 & $0.9748\,[0.9086,1.0411]$ & $0.9300\,[0.8913,0.9687]$ & $1.0007\,[0.9988,1.0025]$\\
+CC C1$\to$C2 & 16 & $0.5196\,[0.2455,0.7937]$ & $0.5663\,[0.2278,0.9049]$ & $1.2562\,[1.0293,1.4831]$\\
+\midrule
+CC C3$\to$C4 & 1 & $0.9643\,[0.8329,1.0957]$ & $0.9010\,[0.7295,1.0726]$ & $0.9992\,[0.9969,1.0015]$\\
+CC C3$\to$C4 & 2 & $1.0995\,[0.8865,1.3125]$ & $1.0846\,[0.8706,1.2986]$ & $1.0007\,[0.9962,1.0052]$\\
+CC C3$\to$C4 & 4 & $1.0690\,[0.8916,1.2465]$ & $1.0111\,[0.9846,1.0375]$ & $0.9992\,[0.9970,1.0014]$\\
+CC C3$\to$C4 & 8 & $1.0434\,[0.9246,1.1622]$ & $1.0450\,[0.7538,1.3362]$ & $0.9999\,[0.9955,1.0043]$\\
+CC C3$\to$C4 & 16 & $0.5453\,[0.3189,0.7716]$ & $0.5461\,[0.3150,0.7772]$ & $1.2578\,[1.0887,1.4269]$\\
+\midrule
+CC C5$\to$C6 & 1 & $0.9445\,[0.6535,1.2354]$ & $0.9150\,[0.6184,1.2115]$ & $1.0009\,[0.9967,1.0051]$\\
+CC C5$\to$C6 & 2 & $0.9168\,[0.6891,1.1445]$ & $0.9131\,[0.6154,1.2107]$ & $1.0016\,[0.9967,1.0066]$\\
+CC C5$\to$C6 & 4 & $0.9509\,[0.7278,1.1741]$ & $0.9763\,[0.6813,1.2713]$ & $1.0026\,[0.9995,1.0057]$\\
+CC C5$\to$C6 & 8 & $1.0108\,[0.5505,1.4711]$ & $0.8066\,[0.4717,1.1415]$ & $1.0026\,[0.9882,1.0171]$\\
+CC C5$\to$C6 & 16 & $0.6650\,[0.4423,0.8878]$ & $0.6709\,[0.4450,0.8969]$ & $1.1592\,[1.0331,1.2853]$\\
+\midrule
+PI C3$\to$C5 & 1 & $1.1163\,[0.9854,1.2472]$ & $1.0528\,[1.0212,1.0843]$ & $0.9979\,[0.9951,1.0008]$\\
+PI C3$\to$C5 & 2 & $1.0523\,[0.8294,1.2751]$ & $1.0603\,[0.8036,1.3171]$ & $0.9993\,[0.9957,1.0029]$\\
+PI C3$\to$C5 & 4 & $1.0551\,[0.8689,1.2412]$ & $1.0602\,[0.7731,1.3473]$ & $0.9971\,[0.9940,1.0002]$\\
+PI C3$\to$C5 & 8 & $1.3932\,[0.6817,2.1047]$ & $1.5590\,[0.7652,2.3528]$ & $0.9951\,[0.9857,1.0045]$\\
+PI C3$\to$C5 & 16 & $0.9489\,[0.6885,1.2094]$ & $0.9456\,[0.6750,1.2162]$ & $1.0334\,[0.8917,1.1752]$\\
+\midrule
+PI C4$\to$C6 & 1 & $1.1057\,[0.7197,1.4917]$ & $1.0907\,[0.6931,1.4883]$ & $0.9997\,[0.9946,1.0047]$\\
+PI C4$\to$C6 & 2 & $0.8710\,[0.6699,1.0721]$ & $0.8741\,[0.6949,1.0533]$ & $1.0003\,[0.9959,1.0047]$\\
+PI C4$\to$C6 & 4 & $0.9323\,[0.7609,1.1038]$ & $0.9929\,[0.7695,1.2164]$ & $1.0005\,[0.9983,1.0026]$\\
+PI C4$\to$C6 & 8 & $1.1934\,[1.0289,1.3579]$ & $1.0924\,[0.9684,1.2163]$ & $0.9977\,[0.9929,1.0025]$\\
+PI C4$\to$C6 & 16 & $1.1792\,[0.7978,1.5606]$ & $1.1876\,[0.7733,1.6020]$ & $0.9530\,[0.8422,1.0638]$\\
+\midrule
+EI C1$\to$C3 & 1 & $0.9931\,[0.8603,1.1260]$ & $0.9565\,[0.8219,1.0911]$ & $1.0000\,[0.9964,1.0036]$\\
+EI C1$\to$C3 & 2 & $1.0674\,[0.8360,1.2988]$ & $0.9503\,[0.7983,1.1024]$ & $0.9978\,[0.9946,1.0010]$\\
+EI C1$\to$C3 & 4 & $0.9946\,[0.8920,1.0973]$ & $0.9374\,[0.7943,1.0804]$ & $1.0026\,[0.9995,1.0056]$\\
+EI C1$\to$C3 & 8 & $0.8285\,[0.7662,0.8907]$ & $0.8477\,[0.6976,0.9977]$ & $1.0019\,[0.9995,1.0043]$\\
+EI C1$\to$C3 & 16 & $1.0392\,[0.8056,1.2727]$ & $1.0398\,[0.8468,1.2327]$ & $0.9905\,[0.9202,1.0608]$\\
+\midrule
+EI C2$\to$C4 & 1 & $0.9687\,[0.7473,1.1901]$ & $0.8560\,[0.6780,1.0341]$ & $1.0004\,[0.9991,1.0016]$\\
+EI C2$\to$C4 & 2 & $1.0852\,[0.9672,1.2032]$ & $0.9981\,[0.9747,1.0214]$ & $1.0004\,[0.9968,1.0041]$\\
+EI C2$\to$C4 & 4 & $1.0531\,[0.8632,1.2430]$ & $0.9433\,[0.7891,1.0975]$ & $1.0010\,[0.9985,1.0035]$\\
+EI C2$\to$C4 & 8 & $0.8847\,[0.8192,0.9501]$ & $0.9303\,[0.7986,1.0620]$ & $1.0011\,[0.9986,1.0037]$\\
+EI C2$\to$C4 & 16 & $1.1194\,[0.8499,1.3889]$ & $1.0558\,[0.7516,1.3600]$ & $0.9972\,[0.8959,1.0985]$\\
+\bottomrule
+\end{tabular*}
+\end{table}
+\clearpage

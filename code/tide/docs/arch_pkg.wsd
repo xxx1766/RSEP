@@ -1,0 +1,50 @@
+@startuml arch
+
+package Server {
+    [EventServer] as svr
+    [EventHandler] as hdlr
+}
+package Cmnct {
+    [Communicator] as cmnct
+}
+package Event {
+    [Dispatcher] as dispr
+    [Event] as evt
+}
+[StubM] as stubm
+[ProcM] as procm
+package Stub {
+    [Scheduler] as sched
+    [Stub] as stub
+}
+[Processor] as proc
+[ClusterStat] as clsstat
+
+
+hdlr --> stubm
+hdlr --> stub
+hdlr --> clsstat
+hdlr --> Event
+hdlr --> dispr
+hdlr --> Cmnct
+
+svr --> dispr
+
+stubm --> stub
+stubm --> procm
+
+stub --> sched
+
+procm --> proc
+procm --> Event
+procm --> Cmnct
+
+Stub --> clsstat
+Stub --> Event
+Stub --> Cmnct
+
+Cmnct --> Event
+
+@enduml
+
+

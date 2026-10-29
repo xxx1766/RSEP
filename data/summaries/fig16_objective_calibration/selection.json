@@ -1,0 +1,116 @@
+[
+  {
+    "Name": "equal",
+    "Lambda": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "WeightID": 9,
+    "Weights": [
+      0,
+      0.9,
+      0.1
+    ],
+    "CalibrationReward": 0.3114955567916569,
+    "TestReward": 0.31241636161921676,
+    "DefaultTestReward": 0.23730204730795063,
+    "BestGridTestReward": 0.31886127452046265
+  },
+  {
+    "Name": "prior_draft_ratio",
+    "Lambda": [
+      1,
+      1,
+      0.5,
+      1
+    ],
+    "WeightID": 9,
+    "Weights": [
+      0,
+      0.9,
+      0.1
+    ],
+    "CalibrationReward": 0.34169124769244913,
+    "TestReward": 0.34265939715807314,
+    "DefaultTestReward": 0.2568122136139219,
+    "BestGridTestReward": 0.3500833950225777
+  },
+  {
+    "Name": "throughput",
+    "Lambda": [
+      0.55,
+      0.15,
+      0.1,
+      0.2
+    ],
+    "WeightID": 9,
+    "Weights": [
+      0,
+      0.9,
+      0.1
+    ],
+    "CalibrationReward": 0.504224102139403,
+    "TestReward": 0.5044522463935341,
+    "DefaultTestReward": 0.42188898668977576,
+    "BestGridTestReward": 0.5122151986454434
+  },
+  {
+    "Name": "resilience",
+    "Lambda": [
+      0.15,
+      0.55,
+      0.1,
+      0.2
+    ],
+    "WeightID": 9,
+    "Weights": [
+      0,
+      0.9,
+      0.1
+    ],
+    "CalibrationReward": 0.47545354119073224,
+    "TestReward": 0.4788083610467595,
+    "DefaultTestReward": 0.40989406664366174,
+    "BestGridTestReward": 0.4873239781446702
+  },
+  {
+    "Name": "utilization",
+    "Lambda": [
+      0.15,
+      0.15,
+      0.55,
+      0.15
+    ],
+    "WeightID": 9,
+    "Weights": [
+      0,
+      0.9,
+      0.1
+    ],
+    "CalibrationReward": 0.22694762226943865,
+    "TestReward": 0.22773586211041896,
+    "DefaultTestReward": 0.18267358165123126,
+    "BestGridTestReward": 0.231439337114541
+  },
+  {
+    "Name": "latency",
+    "Lambda": [
+      0.15,
+      0.15,
+      0.1,
+      0.6
+    ],
+    "WeightID": 9,
+    "Weights": [
+      0,
+      0.9,
+      0.1
+    ],
+    "CalibrationReward": -0.05443836878413824,
+    "TestReward": -0.05586446566597783,
+    "DefaultTestReward": -0.18920945945491477,
+    "BestGridTestReward": -0.049019792291476426
+  }
+]

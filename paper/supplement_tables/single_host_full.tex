@@ -1,0 +1,31 @@
+\section*{Complete single-host goodput results}
+\begin{table}[htbp]\centering\footnotesize
+\caption{Complete homogeneous single-host on-time goodput (requests/s). Cells show the three-run mean above its run-level 95\% interval; intervals are reproduced without clipping. All cells use a 500-ms deadline.}
+\label{tab:full-single-host}
+\begin{tabular}{llrrrr}\toprule
+Workload & Rate & Tide & Bare & Ray Serve & KubeEdge\\\midrule
+CPU & 5/s & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}}\\[3pt]
+CPU & 10/s & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}}\\[3pt]
+CPU & 20/s & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{20.00\\{[20.00, 20.00]}}\\[3pt]
+CPU & 40/s & \shortstack{10.79\\{[10.15, 11.44]}} & \shortstack{40.00\\{[40.00, 40.00]}} & \shortstack{14.12\\{[12.70, 15.55]}} & \shortstack{40.00\\{[40.00, 40.00]}}\\[3pt]
+I/O & 5/s & \shortstack{4.96\\{[4.78, 5.14]}} & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{4.88\\{[4.34, 5.41]}}\\[3pt]
+I/O & 10/s & \shortstack{7.58\\{[-0.15, 15.32]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{9.88\\{[9.34, 10.41]}}\\[3pt]
+I/O & 20/s & \shortstack{7.96\\{[3.41, 12.50]}} & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{12.96\\{[4.53, 21.39]}}\\[3pt]
+I/O & 40/s & \shortstack{7.12\\{[-5.45, 19.70]}} & \shortstack{40.00\\{[40.00, 40.00]}} & \shortstack{40.00\\{[40.00, 40.00]}} & \shortstack{1.96\\{[1.78, 2.14]}}\\[3pt]
+Memory & 5/s & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}} & \shortstack{5.00\\{[5.00, 5.00]}}\\[3pt]
+Memory & 10/s & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}}\\[3pt]
+Memory & 20/s & \shortstack{1.58\\{[0.80, 2.36]}} & \shortstack{1.88\\{[1.56, 2.19]}} & \shortstack{1.33\\{[1.15, 1.51]}} & \shortstack{1.83\\{[1.65, 2.01]}}\\[3pt]
+Memory & 40/s & \shortstack{0.75\\{[0.75, 0.75]}} & \shortstack{1.00\\{[1.00, 1.00]}} & \shortstack{0.79\\{[0.61, 0.97]}} & \shortstack{1.00\\{[1.00, 1.00]}}\\[3pt]
+\bottomrule\end{tabular}\end{table}
+\begin{table}[htbp]\centering\footnotesize
+\caption{Complete mixed-deadline single-host on-time goodput (requests/s). Cells show the three-run mean above its run-level 95\% interval; intervals are reproduced without clipping. Offered rates are totals, split equally between the two deadline classes.}
+\label{tab:full-mixed}
+\begin{tabular}{llrrrr}\toprule
+Total rate & Deadline & Tide & Bare & Ray Serve & KubeEdge\\\midrule
+20/s & 100 ms & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}}\\[3pt]
+20/s & 500 ms & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}} & \shortstack{10.00\\{[10.00, 10.00]}}\\[3pt]
+40/s & 100 ms & \shortstack{0.83\\{[0.42, 1.25]}} & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{1.33\\{[1.33, 1.33]}} & \shortstack{20.00\\{[20.00, 20.00]}}\\[3pt]
+40/s & 500 ms & \shortstack{19.61\\{[19.37, 19.85]}} & \shortstack{20.00\\{[20.00, 20.00]}} & \shortstack{8.72\\{[8.48, 8.96]}} & \shortstack{20.00\\{[20.00, 20.00]}}\\[3pt]
+80/s & 100 ms & \shortstack{0.33\\{[0.33, 0.33]}} & \shortstack{0.83\\{[0.83, 0.83]}} & \shortstack{0.33\\{[0.33, 0.33]}} & \shortstack{0.83\\{[0.83, 0.83]}}\\[3pt]
+80/s & 500 ms & \shortstack{11.67\\{[10.42, 12.91]}} & \shortstack{4.61\\{[4.37, 4.85]}} & \shortstack{2.28\\{[2.04, 2.52]}} & \shortstack{4.56\\{[4.08, 5.03]}}\\[3pt]
+\bottomrule\end{tabular}\end{table}

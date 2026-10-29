@@ -1,0 +1,692 @@
+[
+  {
+    "id": "latency-1",
+    "phase": "http_enter",
+    "ns": 144349871,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "submit",
+    "ns": 144383827,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "enqueue",
+    "ns": 144404639,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "dispatch",
+    "ns": 144424927,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "resource_acquired",
+    "ns": 144442435,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "pool_get",
+    "ns": 144458782,
+    "related": ""
+  },
+  {
+    "id": "9a359852-6889-4c54-810e-bb273ffaec28",
+    "phase": "container_create_start",
+    "ns": 144624599,
+    "related": ""
+  },
+  {
+    "id": "9a359852-6889-4c54-810e-bb273ffaec28",
+    "phase": "container_create_end",
+    "ns": 245780005,
+    "related": ""
+  },
+  {
+    "id": "9a359852-6889-4c54-810e-bb273ffaec28",
+    "phase": "container_start_start",
+    "ns": 245781705,
+    "related": ""
+  },
+  {
+    "id": "9a359852-6889-4c54-810e-bb273ffaec28",
+    "phase": "container_start_end",
+    "ns": 255009325,
+    "related": ""
+  },
+  {
+    "id": "9a359852-6889-4c54-810e-bb273ffaec28",
+    "phase": "executor_ready",
+    "ns": 258322237,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "pool_acquired",
+    "ns": 258406138,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-1",
+    "phase": "execute",
+    "ns": 266977417,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "exit_received",
+    "ns": 288208969,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-1",
+    "phase": "http_result",
+    "ns": 288242112,
+    "related": ""
+  },
+  {
+    "id": "latency-1",
+    "phase": "http_written",
+    "ns": 288247757,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "http_enter",
+    "ns": 339585459,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "submit",
+    "ns": 339594432,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "enqueue",
+    "ns": 339602134,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "dispatch",
+    "ns": 339611526,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "resource_acquired",
+    "ns": 339619849,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "pool_get",
+    "ns": 339625648,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "pool_acquired",
+    "ns": 339626892,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-2",
+    "phase": "execute",
+    "ns": 348186447,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "exit_received",
+    "ns": 369139562,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-2",
+    "phase": "http_result",
+    "ns": 369170675,
+    "related": ""
+  },
+  {
+    "id": "latency-2",
+    "phase": "http_written",
+    "ns": 369179287,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "http_enter",
+    "ns": 420377981,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "submit",
+    "ns": 420391783,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "enqueue",
+    "ns": 420419485,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "dispatch",
+    "ns": 420428835,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "resource_acquired",
+    "ns": 420435181,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "pool_get",
+    "ns": 420441924,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "pool_acquired",
+    "ns": 420443487,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-3",
+    "phase": "execute",
+    "ns": 429977072,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "exit_received",
+    "ns": 451033019,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-3",
+    "phase": "http_result",
+    "ns": 451059152,
+    "related": ""
+  },
+  {
+    "id": "latency-3",
+    "phase": "http_written",
+    "ns": 451068809,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "http_enter",
+    "ns": 502378678,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "submit",
+    "ns": 502386034,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "enqueue",
+    "ns": 502393970,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "dispatch",
+    "ns": 502402340,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "resource_acquired",
+    "ns": 502411250,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "pool_get",
+    "ns": 502418598,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "pool_acquired",
+    "ns": 502419997,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-4",
+    "phase": "execute",
+    "ns": 512062627,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "exit_received",
+    "ns": 532859003,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-4",
+    "phase": "http_result",
+    "ns": 532891556,
+    "related": ""
+  },
+  {
+    "id": "latency-4",
+    "phase": "http_written",
+    "ns": 532897526,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "http_enter",
+    "ns": 584441763,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "submit",
+    "ns": 584454493,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "enqueue",
+    "ns": 584462774,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "dispatch",
+    "ns": 584471660,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "resource_acquired",
+    "ns": 584480181,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "pool_get",
+    "ns": 584487893,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "pool_acquired",
+    "ns": 584489253,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-5",
+    "phase": "execute",
+    "ns": 594016029,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "exit_received",
+    "ns": 615081207,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-5",
+    "phase": "http_result",
+    "ns": 615106930,
+    "related": ""
+  },
+  {
+    "id": "latency-5",
+    "phase": "http_written",
+    "ns": 615204419,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "http_enter",
+    "ns": 666368915,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "submit",
+    "ns": 666375096,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "enqueue",
+    "ns": 666401238,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "dispatch",
+    "ns": 666408237,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "resource_acquired",
+    "ns": 666414319,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "pool_get",
+    "ns": 666420316,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "pool_acquired",
+    "ns": 666421325,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-6",
+    "phase": "execute",
+    "ns": 676190280,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "exit_received",
+    "ns": 697137334,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-6",
+    "phase": "http_result",
+    "ns": 697161877,
+    "related": ""
+  },
+  {
+    "id": "latency-6",
+    "phase": "http_written",
+    "ns": 697166142,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "http_enter",
+    "ns": 748327276,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "submit",
+    "ns": 748339908,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "enqueue",
+    "ns": 748347840,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "dispatch",
+    "ns": 748359644,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "resource_acquired",
+    "ns": 748366644,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "pool_get",
+    "ns": 748373237,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "pool_acquired",
+    "ns": 748374739,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-7",
+    "phase": "execute",
+    "ns": 757308661,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "exit_received",
+    "ns": 778151995,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-7",
+    "phase": "http_result",
+    "ns": 778185896,
+    "related": ""
+  },
+  {
+    "id": "latency-7",
+    "phase": "http_written",
+    "ns": 778197187,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "http_enter",
+    "ns": 829297343,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "submit",
+    "ns": 829309241,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "enqueue",
+    "ns": 829315537,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "dispatch",
+    "ns": 829321476,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "resource_acquired",
+    "ns": 829330872,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "pool_get",
+    "ns": 829337171,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "pool_acquired",
+    "ns": 829338071,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-8",
+    "phase": "execute",
+    "ns": 838052845,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "exit_received",
+    "ns": 859068198,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-8",
+    "phase": "http_result",
+    "ns": 859095625,
+    "related": ""
+  },
+  {
+    "id": "latency-8",
+    "phase": "http_written",
+    "ns": 859102489,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "http_enter",
+    "ns": 910298269,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "submit",
+    "ns": 910306039,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "enqueue",
+    "ns": 910313776,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "dispatch",
+    "ns": 910322389,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "resource_acquired",
+    "ns": 910334616,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "pool_get",
+    "ns": 910342825,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "pool_acquired",
+    "ns": 910343937,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-9",
+    "phase": "execute",
+    "ns": 919172036,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "exit_received",
+    "ns": 939864347,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-9",
+    "phase": "http_result",
+    "ns": 939895259,
+    "related": ""
+  },
+  {
+    "id": "latency-9",
+    "phase": "http_written",
+    "ns": 939899885,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "http_enter",
+    "ns": 991113666,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "submit",
+    "ns": 991121871,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "enqueue",
+    "ns": 991128911,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "dispatch",
+    "ns": 991136378,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "resource_acquired",
+    "ns": 991145190,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "pool_get",
+    "ns": 991152124,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "pool_acquired",
+    "ns": 991153106,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-10",
+    "phase": "execute",
+    "ns": 1000626231,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "exit_received",
+    "ns": 1021478436,
+    "related": "9a359852-6889-4c54-810e-bb273ffaec28"
+  },
+  {
+    "id": "latency-10",
+    "phase": "http_result",
+    "ns": 1021506153,
+    "related": ""
+  },
+  {
+    "id": "latency-10",
+    "phase": "http_written",
+    "ns": 1021511935,
+    "related": ""
+  }
+]

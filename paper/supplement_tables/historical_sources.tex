@@ -1,0 +1,47 @@
+\clearpage
+\section*{Source and protocol ledger for restored heterogeneous results}
+The original conference results~\cite{Tide2025} are supplemented by two primary descriptions: Zheng's 2023 master's thesis~\cite{zheng2023tideThesis} and Yan's 2025 master's thesis~\cite{yan2025tideThesis}. PDF page numbers below count from the first physical page; printed page numbers are given in parentheses. Source recovery establishes reported methods and summaries, not new experimental reproduction or recovery of per-request logs.
+
+\paragraph{Input aggregation and versions.}
+Zheng PDF 66/67/69 (52/53/55) describes three Raspberry Pi clients and defines Ideal as their combined submission rate. Thus the labeled per-client rate $r$ gives total input $3r$, not three model invocations per request. The distributed comparison uses KubeEdge 1.12.2, Kubernetes 1.23.0 and Ray 2.2.0 Task/Actor configurations. Its clients run independent Tide applications sharing cluster resources. The KubeEdge 2C 4C/3C 8C labels specify resource lower/upper bounds, not lower/upper replica counts. Hardware-visible CPU counts do not specify actual per-application allocations.
+
+\paragraph{Placement and allocation sources.}
+Zheng PDF 72 (58), Table 5-9, supplies 100 platform/rate cells:10 platforms at 5--50 requests/s per client. Its 200 edge/cloud percentages were extracted directly and compared with the original PDF's native vector curves, using independent axis ticks; the largest discrepancy is 0.00352 percentage points. The totals in the source are decimal-valued summaries, not individual integer-event records; the source does not specify their averaging count. The portable file \texttt{plotting/historical\_sources/zheng-table\_5\_9\_placement.csv} retains all 100 rows, their reported execution totals and page provenance. It does not convert those execution shares into fractions of all submitted requests.
+
+Zheng PDF 73 (59), Fig.5-11, supplies the matching resource-space trace and describes Metrics Server and HPA in the tested deployment. The approximate 40-s expansion is an observation of this pipeline, not a universal platform constant or a measured decomposition into controller/launch/loading stages. The plotted logical CPU allocation must not be interpreted as CPU utilization or freed executor memory.
+
+\paragraph{Goodput sources and numerical agreement.}
+Yan PDF 70 (54), Sec.4.3.2, defines goodput as qualifying task count divided by observation time, and yield as qualifying count divided by total task count. PDF 71 (55), Fig.4-8, compares 300/350-ms QoS over KubeEdge, Bare Metal, Ray Actor-40, Ray Task and Tide. Its text and abstract report 87.3\% yield at high load. Its referenced application protocol in PDF 59 (43) describes YOLOX, the old platform versions and sliding-window QoS-first Tide scheduling.
+
+We recovered 100 approximate values from the two-deadline thesis curves and 50 pairs of throughput/goodput values from the TMC graphic, using native PDF vector geometry. For the 25 shared platform/rate points under 350~ms,23 differ by less than 0.02 tasks/s. The two remaining thesis values are KubeEdge at 40/s (approximately 0.238) and Ray Task at 30/s (approximately 0.052); the TMC graphic does not draw their goodput hatching. The exact reason for these near-zero differences is unknown. Geometry has small quantization errors; values around-0.001 near zero are not negative experimental goodput. The CSVs retain patch-presence flags and geometric values rather than inventing exact original counts.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Approximate 350-ms goodput recovered from Yan Fig.4-8, with the matching TMC Tide values. All rates are tasks/s; the offered rate is per client. These are graphic-derived summaries, not original per-request precision.}
+\label{tab:historical-source-goodput}
+\begin{tabular}{lrrrrr}
+\toprule
+Platform / per-client rate &10&20&30&40&50\\
+\midrule
+KubeEdge &29.37&57.86&6.77&0.24&$\approx 0$\\
+Bare Metal &21.76&13.37&1.68&$\approx 0$&$\approx 0$\\
+Ray Actor-40 &3.15&6.70&8.95&11.04&12.00\\
+Ray Task &14.16&5.47&0.05&$\approx 0$&$\approx 0$\\
+Tide (thesis) &28.31&54.80&80.85&106.30&131.15\\
+Tide (TMC) &28.31&54.80&80.85&106.31&131.16\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The source text's 87.3\% differs slightly from 131.15/150$\approx$87.43\% recovered from its vector plot (about 0.13 percentage points). Ordinary rounding to one decimal does not remove that discrepancy, whose cause is unresolved. The main text therefore uses ``approximately 87\%.'' At 50/s per client, approximately 131/12 supports the stated high-load ratio; at 10/20/s KubeEdge's goodput is slightly higher. Relative to the strongest baseline in the complete TMC plot, Tide's ratios at 30/40/50 are approximately 4.2/6.3/10.9, not uniformly 10.9. The additional KubeEdge 2C 4C/3C 8C and Ray Actor-15/20/25 goodput configurations are retained as originally reported, but are not independently corroborated by Yan's five-platform graph. No per-request counts or uncertainty intervals are synthesized for them.
+
+\paragraph{Distinct protocols and remaining boundaries.}
+Zheng PDF 64/66/67 (50/52/53) reports 60-s input, exclusion of initialization, and 50-ms cloud emulation with 5-ms variation. Yan PDF 54/55/59 (38/39/43) reports 10-ms variation,120-s application runs, five repetitions and analysis of the final 90\% of tasks. The goodput section references that environment without independently restating every crop/repetition/drain detail. These differences are preserved as source-specific descriptions. Exact deadline boundary handling, qualifying cohorts, time denominators after startup trimming and response drain remain unconfirmed. ``About 87\% of ideal input'' is not the same denominator as timely completions divided by successful completions.
+
+Yan specifies YOLOX for distributed application/goodput tests. FaceNet is used separately in Sec.3.4.3's sliding-window tests and Sec.5.5's development/deployment example. Neither source establishes a combined-model goodput request graph, nor that the distributed request repeats the single-host ablation's ten inferences. The existing 33-run native validation retains those ten-inference requests, fixed estimates, one ingress and unshaped LAN as explicit changed conditions. Its data and unfavorable outcomes are preserved; it is not a validation or refutation of the original comparative magnitudes.
+
+\paragraph{Portable recovered summaries.}
+The portable artifacts include the placement CSV, both goodput CSVs, native-vector SVGs and comparison JSON. They are in the \texttt{historical\_sources} subdirectory of \texttt{plotting}. The script \texttt{extract\_goodput\_vectors.py}, run with Python 3 in that directory, regenerates the goodput summaries and all 25 differences. These artifacts distinguish recovered table entries from geometry-derived approximations; the original thesis PDFs and per-request logs are not supplied as if they were experimental raw data.
+
+\paragraph{Editable main-text redraws.}
+Figure~6 is redrawn from the 100-row placement table, retaining all 200 percentages. Figure~7 uses all 77 native polyline vertices (15/13/49 for the two KubeEdge configurations/Tide), with coordinates calibrated independently from the original 0--100-s and 0--35-CPU ticks. These are plotted vertices, not recovered sampling events; PDF coordinate quantization is retained. The original linear segments, short peaks and final drops are preserved without smoothing, integer rounding or invented intermediate samples. Figure~8 uses all 50 throughput/goodput pairs and original hatch-presence flags recovered from native vector rectangles, in one row of five panels. These graph-derived values are approximate reported summaries; no raw request counts or uncertainty intervals are created. The original PDFs remain in Figs.~S2/S3/S9. The notebook embeds the new rendering code and all three data tables; standalone code is in \texttt{plotting/historical\_redraw.py}. The allocation CSV and its SVG extractor are in \texttt{plotting/historical\_sources}.

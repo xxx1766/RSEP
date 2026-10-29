@@ -1,0 +1,49 @@
+% THREE-NODE-MIXED-20261016: audited appendix integration
+\section*{Three-node mixed-deadline CPU experiment}
+\label{sec:three-node-mixed}
+This is a new three-node experiment for heterogeneous request deadlines, distinct from the earlier single-host measurements retained in Table~S4. It complements the resource-diversity experiment in main-text Fig.~5. NJ-k1 is the cloud node; NJ-k2/NJ-k3 are request origins with local execution capacity. The three Debian~13 KVM virtual machines expose 16 logical CPUs each; NJ-k1/NJ-k2 use Xeon Platinum 8163 processors and NJ-k3 uses a faster Xeon Gold 6442Y. The unshaped LAN and fixed warm deployment do not represent WAN, mobility, accelerator or autoscaling conditions.
+
+\paragraph{Shared workers and resource scope.}
+Every system has four prestarted serial Go execution slots allocated 2/1/1. Each application worker has a two-CPU quota, a 512-MiB memory limit and Go parallelism one. Bare, Ray and KubeEdge use cloud CPU masks 0,1 and 2,3; native Tide/PAIX uses 0,2 and 1,3. Both use four cloud logical CPUs, but the grouping is not identical. End-side workers use CPUs 0,1; new control processes and clients use CPUs 8--15. Framework control/runtime processes are outside the application-worker limits, and their total budgets are not identical. All four deployments remain resident, with traffic applied to one system at a time. All requests use the same Go kernel: 65,536 bytes and 100 SHA-256 iterations, with independently checked returned checksums and processed-byte counts.
+
+\paragraph{Fresh calibration and frozen settings.}
+Twenty sequential calibration samples after three excluded warmups per node give Bare service-time medians 20.699456/20.7434155/4.1519125~ms and complete local native Tide path medians 33.2802745/31.8464075/9.0587625~ms for NJ-k1/NJ-k2/NJ-k3. The latter are rounded up to execution estimates 34/32/10~ms. With $s_i$ denoting Bare service time in seconds, $C_{\rm CPU}=2/s_1+1/s_2+1/s_3=385.6818254$ requests/s. The nominal 30\%/80\%/120\% targets round to 116/309/463 total requests/s across both origins. Capacity is a pre-outcome service-time reference, not a prediction of framework throughput. Slot-count round robin does not compensate for NJ-k3's faster processor.
+
+Tide retains equal score weights $(1,1,1)$, a 100-ms latency scale, 5000-ms maximum state age, 1-ms configured per-node network estimates and a 24-hour Stub TTL. The native request function names \texttt{cpu-qos100} and \texttt{cpu-qos500} map to actual 100-ms and 500-ms admission deadlines through \texttt{qos\_by\_function\_ms}. Native admission stamps \texttt{SubmitTime} when the receiving ingress accepts the request; client QoS scoring instead uses actual origin submission-to-return latency, including ingress and return transport. Thus the configured native deadline and the measured client deadline have distinct starting boundaries. Both classes share the same four workers; there are no class-specific worker pools. In the baseline deployments, the Go worker does not use the deadline field for admission; the same classes set client-side evaluation deadlines, with the existing framework queues and routing retained. Ray Serve~2.58.0 retains four fixed replicas, one ongoing request each and native routing with local-node preference. KubeEdge~1.23.1 uses real EdgeCore workers on both end-side VMs and Kubernetes-managed cloud workers. Bare/KubeEdge use four-slot round robin with an origin phase offset. Ray's local HTTP forwarding and KubeEdge's explicit ingress adapters are included in end-to-end measurements. This comparison measures integrated admission, queueing, routing and framework effects and does not isolate an individual scheduling mechanism.
+
+\paragraph{Class-balanced traces and measurement.}
+Only deterministic uniform arrivals are tested. The frozen trace divides offers equally between origins and globally equally between 100-ms and 500-ms classes. Each origin's class counts differ by at most one. Classes are balanced over eight requests per origin so each round-robin slot receives both classes; they are not a strictly alternating global deadline sequence. The same class-bearing workload bodies and trace are used for all systems. Each offer is attempted once, without retries, a client concurrency cap or a serial client queue.
+
+Five paired repetitions randomize the three load cells and four systems within each cell. The complete campaign has 60 treatments, 120 origin runs and 177,600 offers. Each treatment has a 10-s submission/observation window. Latency is measured from actual origin-local monotonic submission to return, with an inclusive class deadline. On-time goodput counts checksum-valid returns that meet that deadline and return inside the fixed half-open window, divided by 10~s. Cohort yield divides all timely successful returns (including drain) by all class offers; failures and timeouts remain in denominators. Planned-arrival-to-return timing, replay lateness and successful latency including drain remain in the audit. Successful-latency and returned-destination statistics exclude failed offers and cannot describe their destinations. Wall-clock mapping supports ordering, not cross-host latency or queue-time inference.
+
+The independent raw audit verifies every frozen offer, class/function body, origin commit and checksum, and all 24 aggregate class cells. It retains 51,308 failed offers. Treatments wait for responses and observed quiescence before proceeding; bounded CPU/socket/thread checks do not prove an exact empty native admission queue. Intervals are pointwise, unclipped Student-$t$ 95\% intervals over five treatment-level class results, each combining both origins (four degrees of freedom); they do not establish simultaneous coverage. One three-VM allocation, only uniform arrivals and five repetitions limit generalization. Table~\ref{tab:three-node-mixed} reports every system, class and load, including unfavorable outcomes. Earlier single-host results remain separately reported in Table~S4; differences between experiments cannot be attributed to topology alone.
+
+\paragraph{Observed tradeoff.}
+At the 80\% target (309 total requests/s), 100/500-ms class goodput is Tide 3.06/147.10, Bare 39.76/47.16, Ray Serve 2.46/8.58, KubeEdge 39.78/47.10 requests/s. At the 120\% target (463 total requests/s), 100/500-ms class goodput is Tide 1.70/147.50, Bare 58.64/63.34, Ray Serve 1.24/5.86, KubeEdge 58.66/63.42 requests/s. The higher-load advantage is confined to the 500-ms class; Tide underperforms Bare/KubeEdge for the 100-ms class. These results do not establish a general advantage across deadline classes.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{revision-figs/evaluation/figS7_cluster_mixed.pdf}
+\caption{Three-node mixed-deadline CPU measurements at nominal 30\%/80\%/120\% of freshly calibrated CPU capacity (116/309/463 total requests/s). The 100-ms and 500-ms classes share four warm serial workers per system, allocated 2/1/1. Bars show means and error bars show pointwise run-level 95\% confidence intervals from five paired 10-s runs. Dotted references show each class's offered rate, half the total rate; failures remain in all-offer cohort denominators. The comparison includes integrated admission, queueing and framework paths.}
+\label{fig:three-node-mixed}
+\end{figure}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Complete three-node mixed-deadline CPU on-time goodput (requests/s). Each cell is the five-run mean $\pm$ its run-level 95\% confidence half-width; all 24 class/load/system cells are retained. Percentages denote nominal calibrated-capacity targets before rounding.}
+\label{tab:three-node-mixed}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrr@{}}
+\toprule
+\shortstack{Class\\(ms)} & \shortstack{Load (\% of $C_{\rm CPU}$)\\(total requests/s)} & Tide & Bare & Ray Serve & KubeEdge\\
+\midrule
+100 & 30 [116] & $57.84 \pm 0.07$ & $57.90 \pm 0.00$ & $55.52 \pm 6.61$ & $57.90 \pm 0.00$\\
+100 & 80 [309] & $3.06 \pm 0.14$ & $39.76 \pm 0.07$ & $2.46 \pm 0.88$ & $39.78 \pm 0.06$\\
+100 & 120 [463] & $1.70 \pm 0.12$ & $58.64 \pm 0.26$ & $1.24 \pm 0.27$ & $58.66 \pm 0.11$\\
+\midrule
+500 & 30 [116] & $57.76 \pm 0.07$ & $58.00 \pm 0.00$ & $55.82 \pm 5.78$ & $58.00 \pm 0.00$\\
+500 & 80 [309] & $147.10 \pm 1.52$ & $47.16 \pm 0.19$ & $8.58 \pm 2.02$ & $47.10 \pm 0.36$\\
+500 & 120 [463] & $147.50 \pm 2.79$ & $63.34 \pm 0.30$ & $5.86 \pm 0.53$ & $63.42 \pm 0.16$\\
+\bottomrule
+\end{tabular*}
+\end{table}

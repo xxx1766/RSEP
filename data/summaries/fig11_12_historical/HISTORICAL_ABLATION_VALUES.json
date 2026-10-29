@@ -1,0 +1,737 @@
+[
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.9985559503125656
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.42800709131086795
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.391440498252917
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.41193224076816054
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.44260895812993173
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.0029610669849973
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.3081092956424591
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.3202721676807998
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.2893583575596735
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.3135377325273076
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.99219105027837
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.11193572620781074
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.0968542332133407
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.1449596937672148
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.1829228846143502
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 1.005607481149768
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.42923747218898867
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.6194953608629292
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.7206364843843177
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.7973330271263986
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.9894631051034798
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.1919043590987627
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.2740232283000694
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.2586501816430052
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.2684908565845079
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 1.006377712795035
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.02208069347689602
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.023476970633112763
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.05130537168894298
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.11609970426406993
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.9989251783317946
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.1412665525862105
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.2031607257040846
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.1802539657329343
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI off",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.1682180802977216
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.9984756150001675
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.6283005729997388
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.5740694185689021
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.6805209818059716
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI off, EI on",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.5838721432993121
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0040796474288247
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 4.753054250013388
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 4.1608202013617195
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 3.3223089505863967
+  },
+  {
+    "mechanism": "Concurrency control",
+    "condition": "PI on, EI on",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 2.571534567787275
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.3434395952025102
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 2.705474983324564
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 3.2217882790637966
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.9277040808240042
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.646594960905788
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.3290134451145803
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.9828957168073409
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.9743083066008157
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.9657208300003224
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.9606496086212106
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 1.3704965141258405
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 8.392794896019396
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 11.269192361249976
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 4.832536468405155
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 2.20562649554172
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 1.3939247862458586
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.9656827618912411
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.9654893118558933
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.9585729966898069
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.9537478747206106
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.986483270911211
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.351131275211173
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.38948326508488856
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.5244079003352591
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC off, EI on",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.6416720329992927
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.9920199952512576
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0249618698349214
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0295415299605406
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0367291333487232
+  },
+  {
+    "mechanism": "Physical isolation",
+    "condition": "CC on, EI on",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.041802408749223
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.0110304575505291
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.6673500583446192
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.13956120960372295
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.06366367345393671
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.028801411664893785
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 1,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 1.0154906053504578
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 2,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.48040502271531776
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 4,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.11418739584543161
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 8,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.04472001500172543
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 16,
+    "metric": "mean_latency_ratio_on_off",
+    "value": 0.02040250008755
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 1.042451655658183
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.7492105666679385
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.14923108360489504
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.07046512982643609
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.033930139540452195
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 1,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 1.0257157702809394
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 2,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.3349585787401343
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 4,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.06600982973491375
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 8,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.025291279339925497
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 16,
+    "metric": "p95_latency_ratio_on_off",
+    "value": 0.011425504675355337
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0323783004342209
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.7121392048904442
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.7805349793073938
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.7210128051154339
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC off, PI off",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 0.7578580016380454
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 1,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.031913681623613
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 2,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0160436865086302
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 4,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.021157202693845
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 8,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0266240845840486
+  },
+  {
+    "mechanism": "Environment isolation",
+    "condition": "CC on, PI off",
+    "rate": 16,
+    "metric": "throughput_ratio_on_off",
+    "value": 1.0275052215123004
+  }
+]

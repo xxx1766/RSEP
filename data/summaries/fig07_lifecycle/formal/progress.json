@@ -1,0 +1,746 @@
+{
+  "status": "completed",
+  "pid": 1469087,
+  "jobs": [
+    {
+      "name": "b01-cold",
+      "block": 1,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b01-warm",
+      "block": 1,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b02-cold",
+      "block": 2,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b02-warm",
+      "block": 2,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b03-cold",
+      "block": 3,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b03-warm",
+      "block": 3,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b04-warm",
+      "block": 4,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b04-cold",
+      "block": 4,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b05-warm",
+      "block": 5,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b05-cold",
+      "block": 5,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b06-warm",
+      "block": 6,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b06-cold",
+      "block": 6,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b07-warm",
+      "block": 7,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b07-cold",
+      "block": 7,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b08-warm",
+      "block": 8,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b08-cold",
+      "block": 8,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b09-cold",
+      "block": 9,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b09-warm",
+      "block": 9,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b10-cold",
+      "block": 10,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b10-warm",
+      "block": 10,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b11-cold",
+      "block": 11,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b11-warm",
+      "block": 11,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b12-cold",
+      "block": 12,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b12-warm",
+      "block": 12,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b13-cold",
+      "block": 13,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b13-warm",
+      "block": 13,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b14-warm",
+      "block": 14,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b14-cold",
+      "block": 14,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b15-warm",
+      "block": 15,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b15-cold",
+      "block": 15,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b16-warm",
+      "block": 16,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b16-cold",
+      "block": 16,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b17-cold",
+      "block": 17,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b17-warm",
+      "block": 17,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b18-cold",
+      "block": 18,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b18-warm",
+      "block": 18,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b19-cold",
+      "block": 19,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b19-warm",
+      "block": 19,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b20-cold",
+      "block": 20,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b20-warm",
+      "block": 20,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b21-cold",
+      "block": 21,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b21-warm",
+      "block": 21,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b22-cold",
+      "block": 22,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b22-warm",
+      "block": 22,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b23-cold",
+      "block": 23,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b23-warm",
+      "block": 23,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b24-warm",
+      "block": 24,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b24-cold",
+      "block": 24,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b25-warm",
+      "block": 25,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b25-cold",
+      "block": 25,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b26-warm",
+      "block": 26,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b26-cold",
+      "block": 26,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b27-warm",
+      "block": 27,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b27-cold",
+      "block": 27,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b28-cold",
+      "block": 28,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b28-warm",
+      "block": 28,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b29-cold",
+      "block": 29,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b29-warm",
+      "block": 29,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b30-cold",
+      "block": 30,
+      "kind": "lifecycle",
+      "initial": 0,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "b30-warm",
+      "block": 30,
+      "kind": "lifecycle",
+      "initial": 1,
+      "traced": true,
+      "count": 10,
+      "status": "completed"
+    },
+    {
+      "name": "p01-off",
+      "block": 1,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p01-on",
+      "block": 1,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p02-off",
+      "block": 2,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p02-on",
+      "block": 2,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p03-off",
+      "block": 3,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p03-on",
+      "block": 3,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p04-on",
+      "block": 4,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p04-off",
+      "block": 4,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p05-off",
+      "block": 5,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p05-on",
+      "block": 5,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p06-on",
+      "block": 6,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p06-off",
+      "block": 6,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p07-on",
+      "block": 7,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p07-off",
+      "block": 7,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p08-on",
+      "block": 8,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p08-off",
+      "block": 8,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p09-off",
+      "block": 9,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p09-on",
+      "block": 9,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p10-on",
+      "block": 10,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": true,
+      "count": 51,
+      "status": "completed"
+    },
+    {
+      "name": "p10-off",
+      "block": 10,
+      "kind": "perturbation",
+      "initial": 1,
+      "traced": false,
+      "count": 51,
+      "status": "completed"
+    }
+  ],
+  "started_ns": 1791166660016987636,
+  "binary_sha256": "698f07a296a06c49b7bbd1bcc6311bc871da2e657a8c5477eb385e09f16ceae5",
+  "worker_sha256": "7a7a6f3af52810394d02737b23ecc0f62c7c715d474ec72c9b44b0d1e8bf3659",
+  "script_sha256": "c175e6dbae0ac9ea01bd5f5bc2fe8549608580001027ba819a4670979504a343",
+  "protocol": {
+    "seed": 20261005,
+    "ddl_ms": 1000,
+    "work": {
+      "kind": "cpu",
+      "bytes": 65536,
+      "iterations": 100
+    },
+    "application_cpus": [
+      0,
+      1
+    ],
+    "application_gomaxprocs": 1,
+    "image_cached": true
+  },
+  "ended_ns": 1791166869206129967
+}

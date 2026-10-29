@@ -1,0 +1,626 @@
+{
+  "initial": 1,
+  "traced": false,
+  "status": "completed",
+  "requests": [
+    {
+      "index": 0,
+      "id": "latency-1",
+      "status": 200,
+      "start_ns": 7334416125880320,
+      "end_ns": 7334416178532698,
+      "latency_ms": 52.652378,
+      "worker_service_ns": 21514594,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21514594}"
+    },
+    {
+      "index": 1,
+      "id": "latency-2",
+      "status": 200,
+      "start_ns": 7334416228992549,
+      "end_ns": 7334416260638091,
+      "latency_ms": 31.645542,
+      "worker_service_ns": 20922710,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20922710}"
+    },
+    {
+      "index": 2,
+      "id": "latency-3",
+      "status": 200,
+      "start_ns": 7334416311151143,
+      "end_ns": 7334416342012748,
+      "latency_ms": 30.861605,
+      "worker_service_ns": 20911344,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20911344}"
+    },
+    {
+      "index": 3,
+      "id": "latency-4",
+      "status": 200,
+      "start_ns": 7334416392484140,
+      "end_ns": 7334416423416579,
+      "latency_ms": 30.932439,
+      "worker_service_ns": 21071138,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21071138}"
+    },
+    {
+      "index": 4,
+      "id": "latency-5",
+      "status": 200,
+      "start_ns": 7334416473885343,
+      "end_ns": 7334416505021813,
+      "latency_ms": 31.13647,
+      "worker_service_ns": 21499637,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21499637}"
+    },
+    {
+      "index": 5,
+      "id": "latency-6",
+      "status": 200,
+      "start_ns": 7334416555516759,
+      "end_ns": 7334416586273565,
+      "latency_ms": 30.756806,
+      "worker_service_ns": 21425929,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21425929}"
+    },
+    {
+      "index": 6,
+      "id": "latency-7",
+      "status": 200,
+      "start_ns": 7334416636749202,
+      "end_ns": 7334416668297807,
+      "latency_ms": 31.548605,
+      "worker_service_ns": 21621394,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21621394}"
+    },
+    {
+      "index": 7,
+      "id": "latency-8",
+      "status": 200,
+      "start_ns": 7334416718803822,
+      "end_ns": 7334416749096744,
+      "latency_ms": 30.292922,
+      "worker_service_ns": 20800037,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20800037}"
+    },
+    {
+      "index": 8,
+      "id": "latency-9",
+      "status": 200,
+      "start_ns": 7334416799627995,
+      "end_ns": 7334416830188186,
+      "latency_ms": 30.560191,
+      "worker_service_ns": 21121853,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21121853}"
+    },
+    {
+      "index": 9,
+      "id": "latency-10",
+      "status": 200,
+      "start_ns": 7334416880638940,
+      "end_ns": 7334416910406591,
+      "latency_ms": 29.767651,
+      "worker_service_ns": 20801124,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20801124}"
+    },
+    {
+      "index": 10,
+      "id": "latency-11",
+      "status": 200,
+      "start_ns": 7334416960909146,
+      "end_ns": 7334416991533239,
+      "latency_ms": 30.624093,
+      "worker_service_ns": 21114481,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21114481}"
+    },
+    {
+      "index": 11,
+      "id": "latency-12",
+      "status": 200,
+      "start_ns": 7334417042045559,
+      "end_ns": 7334417072645890,
+      "latency_ms": 30.600331,
+      "worker_service_ns": 21254251,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21254251}"
+    },
+    {
+      "index": 12,
+      "id": "latency-13",
+      "status": 200,
+      "start_ns": 7334417123187908,
+      "end_ns": 7334417154372935,
+      "latency_ms": 31.185027,
+      "worker_service_ns": 21231887,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21231887}"
+    },
+    {
+      "index": 13,
+      "id": "latency-14",
+      "status": 200,
+      "start_ns": 7334417204950482,
+      "end_ns": 7334417235400905,
+      "latency_ms": 30.450423,
+      "worker_service_ns": 21209925,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21209925}"
+    },
+    {
+      "index": 14,
+      "id": "latency-15",
+      "status": 200,
+      "start_ns": 7334417285943653,
+      "end_ns": 7334417316376622,
+      "latency_ms": 30.432969,
+      "worker_service_ns": 21121789,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21121789}"
+    },
+    {
+      "index": 15,
+      "id": "latency-16",
+      "status": 200,
+      "start_ns": 7334417366882855,
+      "end_ns": 7334417397194851,
+      "latency_ms": 30.311996,
+      "worker_service_ns": 21122370,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21122370}"
+    },
+    {
+      "index": 16,
+      "id": "latency-17",
+      "status": 200,
+      "start_ns": 7334417447696516,
+      "end_ns": 7334417478117101,
+      "latency_ms": 30.420585,
+      "worker_service_ns": 21099541,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21099541}"
+    },
+    {
+      "index": 17,
+      "id": "latency-18",
+      "status": 200,
+      "start_ns": 7334417528616734,
+      "end_ns": 7334417558646506,
+      "latency_ms": 30.029772,
+      "worker_service_ns": 21360868,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21360868}"
+    },
+    {
+      "index": 18,
+      "id": "latency-19",
+      "status": 200,
+      "start_ns": 7334417609114278,
+      "end_ns": 7334417640510678,
+      "latency_ms": 31.3964,
+      "worker_service_ns": 21687627,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21687627}"
+    },
+    {
+      "index": 19,
+      "id": "latency-20",
+      "status": 200,
+      "start_ns": 7334417691156483,
+      "end_ns": 7334417723930568,
+      "latency_ms": 32.774085,
+      "worker_service_ns": 21787752,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21787752}"
+    },
+    {
+      "index": 20,
+      "id": "latency-21",
+      "status": 200,
+      "start_ns": 7334417774772922,
+      "end_ns": 7334417806863006,
+      "latency_ms": 32.090084,
+      "worker_service_ns": 21025545,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21025545}"
+    },
+    {
+      "index": 21,
+      "id": "latency-22",
+      "status": 200,
+      "start_ns": 7334417857515326,
+      "end_ns": 7334417888647385,
+      "latency_ms": 31.132059,
+      "worker_service_ns": 20868179,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20868179}"
+    },
+    {
+      "index": 22,
+      "id": "latency-23",
+      "status": 200,
+      "start_ns": 7334417939393099,
+      "end_ns": 7334417971122665,
+      "latency_ms": 31.729566,
+      "worker_service_ns": 21057401,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21057401}"
+    },
+    {
+      "index": 23,
+      "id": "latency-24",
+      "status": 200,
+      "start_ns": 7334418021732001,
+      "end_ns": 7334418052726280,
+      "latency_ms": 30.994279,
+      "worker_service_ns": 20998096,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20998096}"
+    },
+    {
+      "index": 24,
+      "id": "latency-25",
+      "status": 200,
+      "start_ns": 7334418103486569,
+      "end_ns": 7334418134607366,
+      "latency_ms": 31.120797,
+      "worker_service_ns": 21184160,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21184160}"
+    },
+    {
+      "index": 25,
+      "id": "latency-26",
+      "status": 200,
+      "start_ns": 7334418185255732,
+      "end_ns": 7334418216346256,
+      "latency_ms": 31.090524,
+      "worker_service_ns": 21089359,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21089359}"
+    },
+    {
+      "index": 26,
+      "id": "latency-27",
+      "status": 200,
+      "start_ns": 7334418266989217,
+      "end_ns": 7334418297246660,
+      "latency_ms": 30.257443,
+      "worker_service_ns": 20739133,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20739133}"
+    },
+    {
+      "index": 27,
+      "id": "latency-28",
+      "status": 200,
+      "start_ns": 7334418347868495,
+      "end_ns": 7334418379007912,
+      "latency_ms": 31.139417,
+      "worker_service_ns": 21188384,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21188384}"
+    },
+    {
+      "index": 28,
+      "id": "latency-29",
+      "status": 200,
+      "start_ns": 7334418429723053,
+      "end_ns": 7334418460787569,
+      "latency_ms": 31.064516,
+      "worker_service_ns": 20846953,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20846953}"
+    },
+    {
+      "index": 29,
+      "id": "latency-30",
+      "status": 200,
+      "start_ns": 7334418511529947,
+      "end_ns": 7334418543020845,
+      "latency_ms": 31.490898,
+      "worker_service_ns": 21475019,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21475019}"
+    },
+    {
+      "index": 30,
+      "id": "latency-31",
+      "status": 200,
+      "start_ns": 7334418593590255,
+      "end_ns": 7334418623962844,
+      "latency_ms": 30.372589,
+      "worker_service_ns": 20747157,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20747157}"
+    },
+    {
+      "index": 31,
+      "id": "latency-32",
+      "status": 200,
+      "start_ns": 7334418674607881,
+      "end_ns": 7334418706077811,
+      "latency_ms": 31.46993,
+      "worker_service_ns": 20977901,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20977901}"
+    },
+    {
+      "index": 32,
+      "id": "latency-33",
+      "status": 200,
+      "start_ns": 7334418756659480,
+      "end_ns": 7334418786938689,
+      "latency_ms": 30.279209,
+      "worker_service_ns": 20692252,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20692252}"
+    },
+    {
+      "index": 33,
+      "id": "latency-34",
+      "status": 200,
+      "start_ns": 7334418837529304,
+      "end_ns": 7334418867508141,
+      "latency_ms": 29.978837,
+      "worker_service_ns": 21053944,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21053944}"
+    },
+    {
+      "index": 34,
+      "id": "latency-35",
+      "status": 200,
+      "start_ns": 7334418918095239,
+      "end_ns": 7334418949717910,
+      "latency_ms": 31.622671,
+      "worker_service_ns": 21188434,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21188434}"
+    },
+    {
+      "index": 35,
+      "id": "latency-36",
+      "status": 200,
+      "start_ns": 7334419000337139,
+      "end_ns": 7334419030790282,
+      "latency_ms": 30.453143,
+      "worker_service_ns": 20813083,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20813083}"
+    },
+    {
+      "index": 36,
+      "id": "latency-37",
+      "status": 200,
+      "start_ns": 7334419081331631,
+      "end_ns": 7334419111617639,
+      "latency_ms": 30.286008,
+      "worker_service_ns": 20911937,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20911937}"
+    },
+    {
+      "index": 37,
+      "id": "latency-38",
+      "status": 200,
+      "start_ns": 7334419162298442,
+      "end_ns": 7334419192385388,
+      "latency_ms": 30.086946,
+      "worker_service_ns": 20878051,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20878051}"
+    },
+    {
+      "index": 38,
+      "id": "latency-39",
+      "status": 200,
+      "start_ns": 7334419242937456,
+      "end_ns": 7334419273291872,
+      "latency_ms": 30.354416,
+      "worker_service_ns": 21031792,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21031792}"
+    },
+    {
+      "index": 39,
+      "id": "latency-40",
+      "status": 200,
+      "start_ns": 7334419323905259,
+      "end_ns": 7334419354698516,
+      "latency_ms": 30.793257,
+      "worker_service_ns": 20824424,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20824424}"
+    },
+    {
+      "index": 40,
+      "id": "latency-41",
+      "status": 200,
+      "start_ns": 7334419405320004,
+      "end_ns": 7334419435707921,
+      "latency_ms": 30.387917,
+      "worker_service_ns": 20796147,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20796147}"
+    },
+    {
+      "index": 41,
+      "id": "latency-42",
+      "status": 200,
+      "start_ns": 7334419486282541,
+      "end_ns": 7334419517043448,
+      "latency_ms": 30.760907,
+      "worker_service_ns": 21599901,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21599901}"
+    },
+    {
+      "index": 42,
+      "id": "latency-43",
+      "status": 200,
+      "start_ns": 7334419567631654,
+      "end_ns": 7334419597898663,
+      "latency_ms": 30.267009,
+      "worker_service_ns": 20983509,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20983509}"
+    },
+    {
+      "index": 43,
+      "id": "latency-44",
+      "status": 200,
+      "start_ns": 7334419648469659,
+      "end_ns": 7334419678430507,
+      "latency_ms": 29.960848,
+      "worker_service_ns": 20797106,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20797106}"
+    },
+    {
+      "index": 44,
+      "id": "latency-45",
+      "status": 200,
+      "start_ns": 7334419728990178,
+      "end_ns": 7334419759181431,
+      "latency_ms": 30.191253,
+      "worker_service_ns": 20714556,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20714556}"
+    },
+    {
+      "index": 45,
+      "id": "latency-46",
+      "status": 200,
+      "start_ns": 7334419809763229,
+      "end_ns": 7334419840400849,
+      "latency_ms": 30.63762,
+      "worker_service_ns": 20902686,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20902686}"
+    },
+    {
+      "index": 46,
+      "id": "latency-47",
+      "status": 200,
+      "start_ns": 7334419891034304,
+      "end_ns": 7334419922498580,
+      "latency_ms": 31.464276,
+      "worker_service_ns": 21037224,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21037224}"
+    },
+    {
+      "index": 47,
+      "id": "latency-48",
+      "status": 200,
+      "start_ns": 7334419973078827,
+      "end_ns": 7334420003547147,
+      "latency_ms": 30.46832,
+      "worker_service_ns": 20736181,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20736181}"
+    },
+    {
+      "index": 48,
+      "id": "latency-49",
+      "status": 200,
+      "start_ns": 7334420054238056,
+      "end_ns": 7334420085645232,
+      "latency_ms": 31.407176,
+      "worker_service_ns": 21042706,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21042706}"
+    },
+    {
+      "index": 49,
+      "id": "latency-50",
+      "status": 200,
+      "start_ns": 7334420136206661,
+      "end_ns": 7334420166270637,
+      "latency_ms": 30.063976,
+      "worker_service_ns": 20663967,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20663967}"
+    },
+    {
+      "index": 50,
+      "id": "latency-51",
+      "status": 200,
+      "start_ns": 7334420216852003,
+      "end_ns": 7334420247928611,
+      "latency_ms": 31.076608,
+      "worker_service_ns": 21392012,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":21392012}"
+    }
+  ],
+  "work": {
+    "kind": "cpu",
+    "bytes": 65536,
+    "iterations": 100
+  },
+  "launcher_pid": 1486529,
+  "workers_before": [
+    {
+      "pid": 1486569,
+      "ppid": 1486546,
+      "ticks": 1,
+      "start": 733441595,
+      "rss_kib": 11716.0,
+      "comm": "worker",
+      "cmd": "/worker --mode=paix ",
+      "cgroup": "0::/tide/42273fbe-ee27-484a-bd82-c3e26df5f7a5"
+    }
+  ],
+  "worker_after": {
+    "pid": 1486569,
+    "ppid": 1486546,
+    "ticks": 111,
+    "start": 733441595,
+    "rss_kib": 16028.0,
+    "comm": "worker",
+    "cmd": "/worker --mode=paix ",
+    "cgroup": "0::/tide/90f893ba-b04d-407c-8f3e-20f493f0f3bf",
+    "sha256": "7a7a6f3af52810394d02737b23ecc0f62c7c715d474ec72c9b44b0d1e8bf3659",
+    "thread_affinity": {
+      "1486569": [
+        0,
+        1
+      ],
+      "1486582": [
+        0,
+        1
+      ],
+      "1486583": [
+        0,
+        1
+      ],
+      "1486584": [
+        0,
+        1
+      ],
+      "1486585": [
+        0,
+        1
+      ]
+    }
+  },
+  "exit_code": 0,
+  "cleanup": {
+    "tasks": "TASK    PID    STATUS    \n",
+    "containers": "CONTAINER    IMAGE    RUNTIME    \n",
+    "queues": [],
+    "child_cgroups": []
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "system": "tide",
+    "metric": "cpu_pct",
+    "high_minus_low": 8.485404295913833,
+    "ci95_low": 7.638936625773661,
+    "ci95_high": 9.331871966054006,
+    "n": 3,
+    "low_rate": 10,
+    "high_rate": 80
+  },
+  {
+    "system": "tide",
+    "metric": "pss_mib",
+    "high_minus_low": -5.384236738955849,
+    "ci95_low": -67.83861758508309,
+    "ci95_high": 57.070144107171394,
+    "n": 3,
+    "low_rate": 10,
+    "high_rate": 80
+  },
+  {
+    "system": "kubeedge",
+    "metric": "cpu_pct",
+    "high_minus_low": -0.2590477332415346,
+    "ci95_low": -2.2558523439287326,
+    "ci95_high": 1.7377568774456635,
+    "n": 3,
+    "low_rate": 10,
+    "high_rate": 80
+  },
+  {
+    "system": "kubeedge",
+    "metric": "pss_mib",
+    "high_minus_low": 1.4473966871403263,
+    "ci95_low": -15.65644980218271,
+    "ci95_high": 18.551243176463363,
+    "n": 3,
+    "low_rate": 10,
+    "high_rate": 80
+  },
+  {
+    "system": "ray",
+    "metric": "cpu_pct",
+    "high_minus_low": 279.1654126406105,
+    "ci95_low": 266.35454604368573,
+    "ci95_high": 291.97627923753527,
+    "n": 3,
+    "low_rate": 10,
+    "high_rate": 80
+  },
+  {
+    "system": "ray",
+    "metric": "pss_mib",
+    "high_minus_low": -11.20018672262745,
+    "ci95_low": -328.81330227771946,
+    "ci95_high": 306.41292883246456,
+    "n": 3,
+    "low_rate": 10,
+    "high_rate": 80
+  }
+]

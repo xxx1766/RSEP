@@ -1,0 +1,52 @@
+{
+  "campaign": "fig14-regular-rates-20261027",
+  "rates": [
+    10,
+    20,
+    40,
+    80
+  ],
+  "ddls_ms": [
+    200
+  ],
+  "systems": [
+    "tide",
+    "ray",
+    "kubeedge"
+  ],
+  "repeats": 3,
+  "duration_s": 30,
+  "idle_s": 20,
+  "formal_requests": 40500,
+  "warmup_requests": 90,
+  "loaded_cells": 36,
+  "idle_windows": 9,
+  "created_ns": 1793090776653654000,
+  "worker_sha256": "7a7a6f3af52810394d02737b23ecc0f62c7c715d474ec72c9b44b0d1e8bf3659",
+  "tide_sha256": "013ccc535728fe50698a349a11e8390cda99bac1f9e4f3119778352267c5307c",
+  "scope": {
+    "tide": [
+      "core",
+      "runtime_support",
+      "shared_host_runtime"
+    ],
+    "ray": [
+      "core",
+      "request_path"
+    ],
+    "kubeedge": [
+      "cloudcore",
+      "edgecore",
+      "dedicated_cluster_support"
+    ]
+  },
+  "source_sha256": {
+    "analyze_control_comparison.py": "3c96391ccaf8464f496e5863d7d9db36372f64787d689f0f459c9b95b577beb5",
+    "control_metrics.py": "519fe94f2c6ed1d699b5c416bd8c9e7fd611f2552ade9ffb1d042fd41cf17c12",
+    "ray_serve_baseline.py": "cbf4f04d1c64f04fde21a2f871235e4c6df4670fce4e3a01eed06cafec6e23f0",
+    "audit_control_comparison.py": "e17897664131febff635307698de9a052ecc806b07b93fccc4d022e7e72a9a0e",
+    "run_kubeedge_matrix.py": "340ca28c24d5bb14dcdfa82487f9973772c3b8ea7ab8db61e9920e886c71fb50",
+    "run_control_comparison.py": "855f898a124112c198482d993d61a1bf5fea2eff8f6846883acc007e52d4c172"
+  },
+  "coordinator_sha256": "444db1796f4b0af7a934fae4896fe853297303b5ba1a4da2edb0958d4aca2b05"
+}

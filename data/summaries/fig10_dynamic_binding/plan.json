@@ -1,0 +1,71 @@
+{
+  "image_digest": "sha256:defacfb3b2342c9a72fbdb6504844eccadb61a234647d33c34fc02b0019daa0a",
+  "stage": "smoke",
+  "seed": 2026101201,
+  "rates": {
+    "10": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16
+    ]
+  },
+  "deadline_sec": 180,
+  "application_cpus": "2-7",
+  "driver_cpus": "0-1",
+  "throughput_window": "max(submission window,last response) including drain",
+  "selection": "User specified rates before new runs; all five independent blocks retained",
+  "cases": [
+    {
+      "inferences": 10,
+      "cell": "C1",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20
+    },
+    {
+      "inferences": 10,
+      "cell": "C2",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20
+    },
+    {
+      "inferences": 10,
+      "cell": "C3",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20
+    },
+    {
+      "inferences": 10,
+      "cell": "C4",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20
+    },
+    {
+      "inferences": 10,
+      "cell": "C5",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20
+    },
+    {
+      "inferences": 10,
+      "cell": "C6",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20
+    },
+    {
+      "inferences": 10,
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20
+    }
+  ]
+}

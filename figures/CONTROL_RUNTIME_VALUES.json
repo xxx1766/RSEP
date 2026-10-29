@@ -1,0 +1,130 @@
+{
+  "included_groups": {
+    "tide": [
+      "core",
+      "runtime_support",
+      "shared_host_runtime"
+    ],
+    "kubeedge": [
+      "cloudcore",
+      "edgecore",
+      "dedicated_cluster_support"
+    ],
+    "ray": [
+      "core",
+      "request_path"
+    ]
+  },
+  "tide_host_containerd": "Full sampled daemon cost, without subtracting other host activity.",
+  "excluded": "Application worker processes, other host services, and unsampled outer kind shims.",
+  "contrasts": [
+    {
+      "system": "tide",
+      "factor": "pressure",
+      "condition": 200,
+      "mean": 11.159103230561406,
+      "sd": 0.11947937645286874,
+      "ci95_low": 10.862300005721139,
+      "ci95_high": 11.455906455401674
+    },
+    {
+      "system": "tide",
+      "factor": "deadline",
+      "condition": 5,
+      "mean": 0.1333494037870233,
+      "sd": 0.20823565085142245,
+      "ci95_low": -0.3839366294539909,
+      "ci95_high": 0.6506354370280375
+    },
+    {
+      "system": "tide",
+      "factor": "deadline",
+      "condition": 20,
+      "mean": -0.1331356557621414,
+      "sd": 0.2513140389796589,
+      "ci95_low": -0.7574343375201567,
+      "ci95_high": 0.4911630259958739
+    },
+    {
+      "system": "tide",
+      "factor": "deadline",
+      "condition": 80,
+      "mean": 0.39851477507525485,
+      "sd": 0.2740354874971743,
+      "ci95_low": -0.28222711381400073,
+      "ci95_high": 1.0792566639645105
+    },
+    {
+      "system": "kubeedge",
+      "factor": "pressure",
+      "condition": 200,
+      "mean": -0.30013417936921033,
+      "sd": 0.5530520979975386,
+      "ci95_low": -1.6739917526475332,
+      "ci95_high": 1.0737233939091126
+    },
+    {
+      "system": "kubeedge",
+      "factor": "deadline",
+      "condition": 5,
+      "mean": -0.3555182109267303,
+      "sd": 0.9403620545158521,
+      "ci95_low": -2.6915070533846,
+      "ci95_high": 1.9804706315311393
+    },
+    {
+      "system": "kubeedge",
+      "factor": "deadline",
+      "condition": 20,
+      "mean": 0.5994761621802613,
+      "sd": 0.9846536804452563,
+      "ci95_low": -1.8465391785699867,
+      "ci95_high": 3.0454915029305094
+    },
+    {
+      "system": "kubeedge",
+      "factor": "deadline",
+      "condition": 80,
+      "mean": 0.041558584991414925,
+      "sd": 0.7344366926981257,
+      "ci95_low": -1.7828833003394227,
+      "ci95_high": 1.8660004703222524
+    },
+    {
+      "system": "ray",
+      "factor": "pressure",
+      "condition": 200,
+      "mean": 285.3445335560083,
+      "sd": 2.7837799773691243,
+      "ci95_low": 278.42924073260747,
+      "ci95_high": 292.2598263794091
+    },
+    {
+      "system": "ray",
+      "factor": "deadline",
+      "condition": 5,
+      "mean": -0.24428267131428782,
+      "sd": 0.7498180637298619,
+      "ci95_low": -2.10693400048571,
+      "ci95_high": 1.6183686578571346
+    },
+    {
+      "system": "ray",
+      "factor": "deadline",
+      "condition": 20,
+      "mean": -0.04437354476861325,
+      "sd": 0.7311587144163956,
+      "ci95_low": -1.8606724806310322,
+      "ci95_high": 1.7719253910938055
+    },
+    {
+      "system": "ray",
+      "factor": "deadline",
+      "condition": 80,
+      "mean": -3.1814245545663766,
+      "sd": 3.5508750476601705,
+      "ci95_low": -12.002287170685884,
+      "ci95_high": 5.639438061553131
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+# Compiled binaries
+/bin/
+
+# Experiment output (regeneratable; see scripts/run-matrix.sh)
+/results/C*/
+/results/summary*/
+/results/plots/
+/results/run-matrix-*.log
+# Old 16-core scaled run, preserved as comparison vs paper-aligned results/
+/results-16core/C*/
+/results-16core/summary*/
+/results-16core/plots/
+/results-16core/run-matrix-*.log
+# Light-workload (1 detection/req) variant, preserved alongside paper-matched
+# heavy (10 detections/req) data in /results/.
+/results-light/C*/
+/results-light/summary*/
+/results-light/plots/
+/results-light/run-matrix-*.log
+# Phase-4 ablation iterations (preserved for the three-round root-cause story
+# in results/REPORT-phase4.md): pre-P1P2 baseline and P1P2-intra1 stage.
+/results-pre-p1p2/C*/
+/results-pre-p1p2/summary*/
+/results-pre-p1p2/plots/
+/results-pre-p1p2/*.log
+/results-p1p2-intra1/C*/
+/results-p1p2-intra1/summary*/
+/results-p1p2-intra1/plots/
+/results-p1p2-intra1/*.log
+# Smoke run (raw data only, no analysis artifacts) — fully regeneratable.
+/results-smoke/
+# Reports, env-check.md, and plots_raw/ are kept (analysis artifacts, small).
+
+# Private / user-specific
+CLAUDE.local.md
+/.claude/settings.local.json
+/.claude-flow/
+
+# RuFlo / Claude Code auto-generated tooling — not part of Tide research.
+# The project-specific tide-rsep-ablation skill is kept (already tracked).
+/.claude/agents/
+/.claude/commands/
+/.claude/helpers/
+/.claude/settings.json
+/.claude/skills/*
+!/.claude/skills/tide-rsep-ablation/
+
+# User-supplied reference PDFs (potentially copyrighted; see docs/ for
+# in-repo design refs)
+*.pdf
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Model weights — downloaded at image build time by workload/Dockerfile
+workload/yolox_nano.onnx
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store

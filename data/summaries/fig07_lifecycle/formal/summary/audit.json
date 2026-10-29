@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "sessions": 80,
+  "requests": 1620,
+  "lifecycle_blocks": 30,
+  "perturbation_blocks": 10,
+  "paired_cold_minus_warm_ms": {
+    "n": 30,
+    "mean": 102.19784536666667,
+    "sd": 18.541683690883865,
+    "p50": 103.194792,
+    "p95": 131.785366,
+    "ci95_half": 6.923578476003601
+  },
+  "trace_on_minus_off_ms": {
+    "n": 10,
+    "mean": 0.016403230000000234,
+    "sd": 0.3672799317277803,
+    "p50": 0.06944295999999994,
+    "p95": 0.5547015199999983,
+    "off_mean_ms": 30.948400022,
+    "relative_pct": 0.05300186758714448,
+    "ci95_half": 0.2627362355923938
+  },
+  "worker_sha256": "7a7a6f3af52810394d02737b23ecc0f62c7c715d474ec72c9b44b0d1e8bf3659",
+  "binary_sha256": "698f07a296a06c49b7bbd1bcc6311bc871da2e657a8c5477eb385e09f16ceae5",
+  "raw_files": 230
+}

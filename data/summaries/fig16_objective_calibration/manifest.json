@@ -1,0 +1,33 @@
+{
+  "arch": "arm64",
+  "artifact_sha256": {
+    "decisions.csv.gz": "af2e6ae48dbb0fd57a5ff836089d5bb6b881e21c2aac8de9243424732ea13111",
+    "inputs.json": "2d4feabec0badba347fac59b0e073fd6b0a3c89f4a0a1eacd521011aedd77327",
+    "lambda_sensitivity.json": "3005592fa63c9a3fde81e75eb64ad71d0495f3c62023bcb94b9e92e2e76bd1c2",
+    "selection.json": "b9f2ba3cb8ce850da20264eb38079c4f3f24c3f2e71b220943f24e92ce1331b2",
+    "summary.jsonl": "f06b54409b58349fb9e3aa8542b5e6a23e0ec21a0f6df028412fbfe3e12de381"
+  },
+  "command": [
+    "/var/folders/q3/k25tn8z177b3qxnp5dm2rqhr0000gn/T/go-build4204934089/b001/exe/revision-calibrate",
+    "-out",
+    "results-objective-20261005"
+  ],
+  "decision_count": 4882536,
+  "finished_utc": "2026-10-05T03:37:47.224776Z",
+  "go": "go1.26.3",
+  "metric_scope": "U is simulated execution occupancy of CPU and memory tokens; not measured CPU/RSS or fixed stub reservation. R is outage-arrival deadline yield, distinct from structural R_cap.",
+  "notes": "Latency is conditional on returned responses, capped mean deadline ratio for selection (1 if none); counts and uncapped latency are retained. No training/test seed overlap. Workload scale is historical measured calibration; factors, capacities, network budgets, memory tokens and actual-time error are stipulated simulation inputs.",
+  "os": "darwin",
+  "run_count": 4896,
+  "scope": "restricted simulation; fixed preferences choose online score weights offline; not native Tide execution",
+  "selection_rule": "calibration-only mean reward; tie within 1e-12 prefers closest to equal online weights, then grid order",
+  "source_sha256": {
+    "cmd/revision-calibrate/main.go": "807942637d8115162749fccfa9d77c7aefc916981b7f9f60aace2c522d9e4d38",
+    "cmd/revision-calibrate/model.go": "c874577259ce171a47fc2f2636e751b47ef66cea3cb028e534fe1df3e97a9ba1",
+    "cmd/revision-calibrate/model_test.go": "43b196fc23cdc910327cab242a932b3ad12b757845fe246f3ae167dde0abccb9",
+    "pkg/schedpolicy/score.go": "62f2f544b37c2fa0df7db462324d00d75a8a32f470618da23d5521a1d05d1feb",
+    "results-revision-20260928/weights-02/calibration.json": "c411c658d120b2e554f18bd52310456ae0d5ea6656a85b226bfdc8d58de78cfc"
+  },
+  "started_utc": "2026-10-05T03:37:34.855886Z",
+  "trace_count": 36
+}

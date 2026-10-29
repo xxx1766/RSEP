@@ -1,0 +1,1044 @@
+{
+  "control": [
+    {
+      "system": "tide",
+      "rps": 10,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 4.2665173680999695,
+      "runtime": 3.1887474198437236,
+      "mean": 7.455264787943693,
+      "ci95_half": 0.9946241129310264
+    },
+    {
+      "system": "tide",
+      "rps": 20,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 5.399713100514254,
+      "runtime": 5.077501355153374,
+      "mean": 10.477214455667628,
+      "ci95_half": 1.2834701626585874
+    },
+    {
+      "system": "tide",
+      "rps": 40,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 6.658975813033436,
+      "runtime": 7.843356057678819,
+      "mean": 14.502331870712256,
+      "ci95_half": 2.244331365180703
+    },
+    {
+      "system": "tide",
+      "rps": 80,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 7.921223983431653,
+      "runtime": 8.07498838358911,
+      "mean": 15.996212367020764,
+      "ci95_half": 1.0340021010357603
+    },
+    {
+      "system": "kubeedge",
+      "rps": 10,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 10.055121769237562,
+      "runtime": 1.1777114518149874,
+      "mean": 11.232833221052548,
+      "ci95_half": 2.7442932477148845
+    },
+    {
+      "system": "kubeedge",
+      "rps": 20,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 10.15489242610304,
+      "runtime": 1.2442673213919455,
+      "mean": 11.399159747494984,
+      "ci95_half": 1.3635114214123059
+    },
+    {
+      "system": "kubeedge",
+      "rps": 40,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 9.777281508897142,
+      "runtime": 1.2110357827744391,
+      "mean": 10.98831729167158,
+      "ci95_half": 2.2800734630818393
+    },
+    {
+      "system": "kubeedge",
+      "rps": 80,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 9.920878138917342,
+      "runtime": 1.1315769863944993,
+      "mean": 11.052455125311841,
+      "ci95_half": 1.4161536223982407
+    },
+    {
+      "system": "ray",
+      "rps": 10,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 4.588645794670879,
+      "runtime": 4.444175503522473,
+      "mean": 9.032821298193351,
+      "ci95_half": 1.332313932816458
+    },
+    {
+      "system": "ray",
+      "rps": 20,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 4.477646798540342,
+      "runtime": 4.444344176258942,
+      "mean": 8.921990974799284,
+      "ci95_half": 0.8929590772687643
+    },
+    {
+      "system": "ray",
+      "rps": 40,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 4.636302154353799,
+      "runtime": 15.668082231581991,
+      "mean": 20.30438438593579,
+      "ci95_half": 1.9998789315633199
+    },
+    {
+      "system": "ray",
+      "rps": 80,
+      "ddl_ms": 200,
+      "metric": "cpu_pct",
+      "management": 4.751249822366368,
+      "runtime": 16.072582236547092,
+      "mean": 20.82383205891346,
+      "ci95_half": 1.0568084373005402
+    },
+    {
+      "system": "tide",
+      "rps": 10,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 59.80886545254609,
+      "runtime": 103.77696899733694,
+      "mean": 163.58583444988304,
+      "ci95_half": 61.37033463943618
+    },
+    {
+      "system": "tide",
+      "rps": 20,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 41.33769888561876,
+      "runtime": 103.52007908913397,
+      "mean": 144.85777797475274,
+      "ci95_half": 13.786765401412515
+    },
+    {
+      "system": "tide",
+      "rps": 40,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 48.702132012291145,
+      "runtime": 105.04055794058452,
+      "mean": 153.74268995287565,
+      "ci95_half": 66.42232593777527
+    },
+    {
+      "system": "tide",
+      "rps": 80,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 53.56143558369953,
+      "runtime": 104.71054616873674,
+      "mean": 158.27198175243626,
+      "ci95_half": 1.0990898046442859
+    },
+    {
+      "system": "kubeedge",
+      "rps": 10,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 1023.036779808158,
+      "runtime": 226.93641888547177,
+      "mean": 1249.9731986936297,
+      "ci95_half": 21.940653235018647
+    },
+    {
+      "system": "kubeedge",
+      "rps": 20,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 1023.3942667711327,
+      "runtime": 227.05050083164673,
+      "mean": 1250.4447676027794,
+      "ci95_half": 8.189572959061682
+    },
+    {
+      "system": "kubeedge",
+      "rps": 40,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 1023.0579662786046,
+      "runtime": 227.25213204275255,
+      "mean": 1250.3100983213571,
+      "ci95_half": 10.40797519819727
+    },
+    {
+      "system": "kubeedge",
+      "rps": 80,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 1024.714540711163,
+      "runtime": 226.5890662849857,
+      "mean": 1251.3036069961486,
+      "ci95_half": 11.523914931470516
+    },
+    {
+      "system": "ray",
+      "rps": 10,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 555.5885512280448,
+      "runtime": 808.4364387654354,
+      "mean": 1364.0249899934802,
+      "ci95_half": 3.999954454028238
+    },
+    {
+      "system": "ray",
+      "rps": 20,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 554.3698352615561,
+      "runtime": 809.5215561541611,
+      "mean": 1363.8913914157172,
+      "ci95_half": 5.2644215002933334
+    },
+    {
+      "system": "ray",
+      "rps": 40,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 557.030116778857,
+      "runtime": 810.6581172424719,
+      "mean": 1367.6882340213288,
+      "ci95_half": 11.503399744159902
+    },
+    {
+      "system": "ray",
+      "rps": 80,
+      "ddl_ms": 200,
+      "metric": "pss_mib",
+      "management": 555.7093632870865,
+      "runtime": 814.4333626143052,
+      "mean": 1370.1427259013917,
+      "ci95_half": 5.776105882753465
+    }
+  ],
+  "ablation": [
+    {
+      "feature": "Concurrency control",
+      "lines": [
+        {
+          "condition": "PI off, EI off",
+          "off": [
+            0,
+            0,
+            0
+          ],
+          "on": [
+            0,
+            0,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 4,
+              "on_source_row": 5,
+              "mean_latency_ratio_on_off": 0.9985559503125656,
+              "p95_latency_ratio_on_off": 1.005607481149768,
+              "throughput_ratio_on_off": 0.9989251783317946
+            },
+            {
+              "rate": 2,
+              "off_source_row": 10,
+              "on_source_row": 11,
+              "mean_latency_ratio_on_off": 0.42800709131086795,
+              "p95_latency_ratio_on_off": 0.42923747218898867,
+              "throughput_ratio_on_off": 1.1412665525862105
+            },
+            {
+              "rate": 4,
+              "off_source_row": 16,
+              "on_source_row": 17,
+              "mean_latency_ratio_on_off": 0.391440498252917,
+              "p95_latency_ratio_on_off": 0.6194953608629292,
+              "throughput_ratio_on_off": 1.2031607257040846
+            },
+            {
+              "rate": 8,
+              "off_source_row": 22,
+              "on_source_row": 23,
+              "mean_latency_ratio_on_off": 0.41193224076816054,
+              "p95_latency_ratio_on_off": 0.7206364843843177,
+              "throughput_ratio_on_off": 1.1802539657329343
+            },
+            {
+              "rate": 16,
+              "off_source_row": 28,
+              "on_source_row": 29,
+              "mean_latency_ratio_on_off": 0.44260895812993173,
+              "p95_latency_ratio_on_off": 0.7973330271263986,
+              "throughput_ratio_on_off": 1.1682180802977216
+            }
+          ]
+        },
+        {
+          "condition": "PI off, EI on",
+          "off": [
+            0,
+            1,
+            0
+          ],
+          "on": [
+            0,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 6,
+              "on_source_row": 7,
+              "mean_latency_ratio_on_off": 1.0029610669849973,
+              "p95_latency_ratio_on_off": 0.9894631051034798,
+              "throughput_ratio_on_off": 0.9984756150001675
+            },
+            {
+              "rate": 2,
+              "off_source_row": 12,
+              "on_source_row": 13,
+              "mean_latency_ratio_on_off": 0.3081092956424591,
+              "p95_latency_ratio_on_off": 0.1919043590987627,
+              "throughput_ratio_on_off": 1.6283005729997388
+            },
+            {
+              "rate": 4,
+              "off_source_row": 18,
+              "on_source_row": 19,
+              "mean_latency_ratio_on_off": 0.3202721676807998,
+              "p95_latency_ratio_on_off": 0.2740232283000694,
+              "throughput_ratio_on_off": 1.5740694185689021
+            },
+            {
+              "rate": 8,
+              "off_source_row": 24,
+              "on_source_row": 25,
+              "mean_latency_ratio_on_off": 0.2893583575596735,
+              "p95_latency_ratio_on_off": 0.2586501816430052,
+              "throughput_ratio_on_off": 1.6805209818059716
+            },
+            {
+              "rate": 16,
+              "off_source_row": 30,
+              "on_source_row": 31,
+              "mean_latency_ratio_on_off": 0.3135377325273076,
+              "p95_latency_ratio_on_off": 0.2684908565845079,
+              "throughput_ratio_on_off": 1.5838721432993121
+            }
+          ]
+        },
+        {
+          "condition": "PI on, EI on",
+          "off": [
+            1,
+            1,
+            0
+          ],
+          "on": [
+            1,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 8,
+              "on_source_row": 9,
+              "mean_latency_ratio_on_off": 0.99219105027837,
+              "p95_latency_ratio_on_off": 1.006377712795035,
+              "throughput_ratio_on_off": 1.0040796474288247
+            },
+            {
+              "rate": 2,
+              "off_source_row": 14,
+              "on_source_row": 15,
+              "mean_latency_ratio_on_off": 0.11193572620781074,
+              "p95_latency_ratio_on_off": 0.02208069347689602,
+              "throughput_ratio_on_off": 4.753054250013388
+            },
+            {
+              "rate": 4,
+              "off_source_row": 20,
+              "on_source_row": 21,
+              "mean_latency_ratio_on_off": 0.0968542332133407,
+              "p95_latency_ratio_on_off": 0.023476970633112763,
+              "throughput_ratio_on_off": 4.1608202013617195
+            },
+            {
+              "rate": 8,
+              "off_source_row": 26,
+              "on_source_row": 27,
+              "mean_latency_ratio_on_off": 0.1449596937672148,
+              "p95_latency_ratio_on_off": 0.05130537168894298,
+              "throughput_ratio_on_off": 3.3223089505863967
+            },
+            {
+              "rate": 16,
+              "off_source_row": 32,
+              "on_source_row": 33,
+              "mean_latency_ratio_on_off": 0.1829228846143502,
+              "p95_latency_ratio_on_off": 0.11609970426406993,
+              "throughput_ratio_on_off": 2.571534567787275
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "Physical isolation",
+      "lines": [
+        {
+          "condition": "CC off, EI on",
+          "off": [
+            0,
+            1,
+            0
+          ],
+          "on": [
+            1,
+            1,
+            0
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 6,
+              "on_source_row": 8,
+              "mean_latency_ratio_on_off": 1.3434395952025102,
+              "p95_latency_ratio_on_off": 1.3704965141258405,
+              "throughput_ratio_on_off": 0.986483270911211
+            },
+            {
+              "rate": 2,
+              "off_source_row": 12,
+              "on_source_row": 14,
+              "mean_latency_ratio_on_off": 2.705474983324564,
+              "p95_latency_ratio_on_off": 8.392794896019396,
+              "throughput_ratio_on_off": 0.351131275211173
+            },
+            {
+              "rate": 4,
+              "off_source_row": 18,
+              "on_source_row": 20,
+              "mean_latency_ratio_on_off": 3.2217882790637966,
+              "p95_latency_ratio_on_off": 11.269192361249976,
+              "throughput_ratio_on_off": 0.38948326508488856
+            },
+            {
+              "rate": 8,
+              "off_source_row": 24,
+              "on_source_row": 26,
+              "mean_latency_ratio_on_off": 1.9277040808240042,
+              "p95_latency_ratio_on_off": 4.832536468405155,
+              "throughput_ratio_on_off": 0.5244079003352591
+            },
+            {
+              "rate": 16,
+              "off_source_row": 30,
+              "on_source_row": 32,
+              "mean_latency_ratio_on_off": 1.646594960905788,
+              "p95_latency_ratio_on_off": 2.20562649554172,
+              "throughput_ratio_on_off": 0.6416720329992927
+            }
+          ]
+        },
+        {
+          "condition": "CC on, EI on",
+          "off": [
+            0,
+            1,
+            1
+          ],
+          "on": [
+            1,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 7,
+              "on_source_row": 9,
+              "mean_latency_ratio_on_off": 1.3290134451145803,
+              "p95_latency_ratio_on_off": 1.3939247862458586,
+              "throughput_ratio_on_off": 0.9920199952512576
+            },
+            {
+              "rate": 2,
+              "off_source_row": 13,
+              "on_source_row": 15,
+              "mean_latency_ratio_on_off": 0.9828957168073409,
+              "p95_latency_ratio_on_off": 0.9656827618912411,
+              "throughput_ratio_on_off": 1.0249618698349214
+            },
+            {
+              "rate": 4,
+              "off_source_row": 19,
+              "on_source_row": 21,
+              "mean_latency_ratio_on_off": 0.9743083066008157,
+              "p95_latency_ratio_on_off": 0.9654893118558933,
+              "throughput_ratio_on_off": 1.0295415299605406
+            },
+            {
+              "rate": 8,
+              "off_source_row": 25,
+              "on_source_row": 27,
+              "mean_latency_ratio_on_off": 0.9657208300003224,
+              "p95_latency_ratio_on_off": 0.9585729966898069,
+              "throughput_ratio_on_off": 1.0367291333487232
+            },
+            {
+              "rate": 16,
+              "off_source_row": 31,
+              "on_source_row": 33,
+              "mean_latency_ratio_on_off": 0.9606496086212106,
+              "p95_latency_ratio_on_off": 0.9537478747206106,
+              "throughput_ratio_on_off": 1.041802408749223
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "Environment isolation",
+      "lines": [
+        {
+          "condition": "CC off, PI off",
+          "off": [
+            0,
+            0,
+            0
+          ],
+          "on": [
+            0,
+            1,
+            0
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 4,
+              "on_source_row": 6,
+              "mean_latency_ratio_on_off": 1.0110304575505291,
+              "p95_latency_ratio_on_off": 1.042451655658183,
+              "throughput_ratio_on_off": 1.0323783004342209
+            },
+            {
+              "rate": 2,
+              "off_source_row": 10,
+              "on_source_row": 12,
+              "mean_latency_ratio_on_off": 0.6673500583446192,
+              "p95_latency_ratio_on_off": 0.7492105666679385,
+              "throughput_ratio_on_off": 0.7121392048904442
+            },
+            {
+              "rate": 4,
+              "off_source_row": 16,
+              "on_source_row": 18,
+              "mean_latency_ratio_on_off": 0.13956120960372295,
+              "p95_latency_ratio_on_off": 0.14923108360489504,
+              "throughput_ratio_on_off": 0.7805349793073938
+            },
+            {
+              "rate": 8,
+              "off_source_row": 22,
+              "on_source_row": 24,
+              "mean_latency_ratio_on_off": 0.06366367345393671,
+              "p95_latency_ratio_on_off": 0.07046512982643609,
+              "throughput_ratio_on_off": 0.7210128051154339
+            },
+            {
+              "rate": 16,
+              "off_source_row": 28,
+              "on_source_row": 30,
+              "mean_latency_ratio_on_off": 0.028801411664893785,
+              "p95_latency_ratio_on_off": 0.033930139540452195,
+              "throughput_ratio_on_off": 0.7578580016380454
+            }
+          ]
+        },
+        {
+          "condition": "CC on, PI off",
+          "off": [
+            0,
+            0,
+            1
+          ],
+          "on": [
+            0,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 5,
+              "on_source_row": 7,
+              "mean_latency_ratio_on_off": 1.0154906053504578,
+              "p95_latency_ratio_on_off": 1.0257157702809394,
+              "throughput_ratio_on_off": 1.031913681623613
+            },
+            {
+              "rate": 2,
+              "off_source_row": 11,
+              "on_source_row": 13,
+              "mean_latency_ratio_on_off": 0.48040502271531776,
+              "p95_latency_ratio_on_off": 0.3349585787401343,
+              "throughput_ratio_on_off": 1.0160436865086302
+            },
+            {
+              "rate": 4,
+              "off_source_row": 17,
+              "on_source_row": 19,
+              "mean_latency_ratio_on_off": 0.11418739584543161,
+              "p95_latency_ratio_on_off": 0.06600982973491375,
+              "throughput_ratio_on_off": 1.021157202693845
+            },
+            {
+              "rate": 8,
+              "off_source_row": 23,
+              "on_source_row": 25,
+              "mean_latency_ratio_on_off": 0.04472001500172543,
+              "p95_latency_ratio_on_off": 0.025291279339925497,
+              "throughput_ratio_on_off": 1.0266240845840486
+            },
+            {
+              "rate": 16,
+              "off_source_row": 29,
+              "on_source_row": 31,
+              "mean_latency_ratio_on_off": 0.02040250008755,
+              "p95_latency_ratio_on_off": 0.011425504675355337,
+              "throughput_ratio_on_off": 1.0275052215123004
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "latency": [
+    {
+      "name": "Tide",
+      "source_key": "23042301tide-noconf-noconf",
+      "points": [
+        {
+          "rate": 5,
+          "mean_ms": 131.707982463786,
+          "p95_ms": 171.01843771666663,
+          "mean_case_count": 810.0
+        },
+        {
+          "rate": 10,
+          "mean_ms": 175.11817396300285,
+          "p95_ms": 305.36851329999996,
+          "mean_case_count": 1613.0
+        },
+        {
+          "rate": 15,
+          "mean_ms": 196.12656189497366,
+          "p95_ms": 316.0264771,
+          "mean_case_count": 2145.3333333333335
+        },
+        {
+          "rate": 20,
+          "mean_ms": 221.79952208667916,
+          "p95_ms": 383.57742950000005,
+          "mean_case_count": 3212.6666666666665
+        },
+        {
+          "rate": 25,
+          "mean_ms": 214.1652867708441,
+          "p95_ms": 368.3321318333333,
+          "mean_case_count": 4007.6666666666665
+        },
+        {
+          "rate": 30,
+          "mean_ms": 234.63700164953863,
+          "p95_ms": 390.92784421666664,
+          "mean_case_count": 4784.666666666667
+        },
+        {
+          "rate": 35,
+          "mean_ms": 246.94384372905677,
+          "p95_ms": 390.8825361333333,
+          "mean_case_count": 5493.0
+        },
+        {
+          "rate": 40,
+          "mean_ms": 257.3135178683861,
+          "p95_ms": 394.26370403333334,
+          "mean_case_count": 6298.333333333333
+        },
+        {
+          "rate": 45,
+          "mean_ms": 275.9882208832385,
+          "p95_ms": 399.02304634999996,
+          "mean_case_count": 7128.333333333333
+        },
+        {
+          "rate": 50,
+          "mean_ms": 303.99268349796284,
+          "p95_ms": 432.88374303333245,
+          "mean_case_count": 7881.333333333333
+        }
+      ]
+    },
+    {
+      "name": "Bare metal",
+      "source_key": "23041801metal-cloud_edge-noconf",
+      "points": [
+        {
+          "rate": 5,
+          "mean_ms": 220.0117743058699,
+          "p95_ms": 452.77968034285703,
+          "mean_case_count": 808.0
+        },
+        {
+          "rate": 10,
+          "mean_ms": 237.1896572889237,
+          "p95_ms": 463.58867409285716,
+          "mean_case_count": 1600.2857142857142
+        },
+        {
+          "rate": 15,
+          "mean_ms": 306.55860679190494,
+          "p95_ms": 693.1091823642855,
+          "mean_case_count": 2390.5714285714284
+        },
+        {
+          "rate": 20,
+          "mean_ms": 3778.4236393174915,
+          "p95_ms": 10444.796857085716,
+          "mean_case_count": 3163.0
+        },
+        {
+          "rate": 25,
+          "mean_ms": 9154.458740444272,
+          "p95_ms": 20638.924376392853,
+          "mean_case_count": 3763.0
+        },
+        {
+          "rate": 30,
+          "mean_ms": 14880.950560103785,
+          "p95_ms": 33514.92806669285,
+          "mean_case_count": 3595.714285714286
+        },
+        {
+          "rate": 35,
+          "mean_ms": 18115.86330936527,
+          "p95_ms": 36391.48154977142,
+          "mean_case_count": 3757.0
+        },
+        {
+          "rate": 40,
+          "mean_ms": 19857.07337955356,
+          "p95_ms": 37973.47815647857,
+          "mean_case_count": 3703.0
+        },
+        {
+          "rate": 45,
+          "mean_ms": 21827.53008200281,
+          "p95_ms": 41282.30778567143,
+          "mean_case_count": 3693.1428571428573
+        },
+        {
+          "rate": 50,
+          "mean_ms": 23394.214210854447,
+          "p95_ms": 44744.95633453572,
+          "mean_case_count": 3697.0
+        }
+      ]
+    },
+    {
+      "name": "KubeEdge",
+      "source_key": "23041801kube-cloud_edge-all",
+      "points": [
+        {
+          "rate": 5,
+          "mean_ms": 211.05018119318586,
+          "p95_ms": 354.29088886428565,
+          "mean_case_count": 807.7142857142857
+        },
+        {
+          "rate": 10,
+          "mean_ms": 207.00371119065838,
+          "p95_ms": 317.32781432142855,
+          "mean_case_count": 1602.2857142857142
+        },
+        {
+          "rate": 15,
+          "mean_ms": 201.59132407470915,
+          "p95_ms": 319.8251696357143,
+          "mean_case_count": 2389.8571428571427
+        },
+        {
+          "rate": 20,
+          "mean_ms": 210.86658541390332,
+          "p95_ms": 326.8735902857143,
+          "mean_case_count": 3169.0
+        },
+        {
+          "rate": 25,
+          "mean_ms": 8716.405469610252,
+          "p95_ms": 22570.48266974286,
+          "mean_case_count": 3665.285714285714
+        },
+        {
+          "rate": 30,
+          "mean_ms": 15141.035371328499,
+          "p95_ms": 30493.071799171423,
+          "mean_case_count": 3815.0
+        },
+        {
+          "rate": 35,
+          "mean_ms": 20678.30872755142,
+          "p95_ms": 38348.3382847357,
+          "mean_case_count": 3605.8571428571427
+        },
+        {
+          "rate": 40,
+          "mean_ms": 23473.73661122759,
+          "p95_ms": 42730.07775865714,
+          "mean_case_count": 3514.1428571428573
+        },
+        {
+          "rate": 45,
+          "mean_ms": 25653.592607312665,
+          "p95_ms": 45502.18163895714,
+          "mean_case_count": 3509.0
+        },
+        {
+          "rate": 50,
+          "mean_ms": 26952.53868664424,
+          "p95_ms": 47247.52481397857,
+          "mean_case_count": 3521.1428571428573
+        }
+      ]
+    },
+    {
+      "name": "KubeEdge 2C4C",
+      "source_key": "23041801kube-edge_perfer-2c4c-init_1",
+      "points": [
+        {
+          "rate": 5,
+          "mean_ms": 17237.93864190681,
+          "p95_ms": 37237.407357378564,
+          "mean_case_count": 776.2857142857143
+        },
+        {
+          "rate": 10,
+          "mean_ms": 34794.74719443614,
+          "p95_ms": 52822.433100307135,
+          "mean_case_count": 1125.2857142857142
+        },
+        {
+          "rate": 15,
+          "mean_ms": 39219.78659321538,
+          "p95_ms": 55922.51999308571,
+          "mean_case_count": 1390.142857142857
+        },
+        {
+          "rate": 20,
+          "mean_ms": 45044.53528987755,
+          "p95_ms": 59896.697035714285,
+          "mean_case_count": 1382.2857142857142
+        },
+        {
+          "rate": 25,
+          "mean_ms": 47707.95868170888,
+          "p95_ms": 62040.04926657143,
+          "mean_case_count": 1388.857142857143
+        },
+        {
+          "rate": 30,
+          "mean_ms": 48023.908044947486,
+          "p95_ms": 61862.31453435713,
+          "mean_case_count": 1515.2857142857142
+        },
+        {
+          "rate": 35,
+          "mean_ms": 48404.245257264105,
+          "p95_ms": 63023.19509057857,
+          "mean_case_count": 1613.142857142857
+        },
+        {
+          "rate": 40,
+          "mean_ms": 51907.97771473112,
+          "p95_ms": 65421.73459581429,
+          "mean_case_count": 1400.0
+        },
+        {
+          "rate": 45,
+          "mean_ms": 51461.234230425885,
+          "p95_ms": 65813.06966310713,
+          "mean_case_count": 1535.0
+        },
+        {
+          "rate": 50,
+          "mean_ms": 52519.34515534505,
+          "p95_ms": 65949.67980955,
+          "mean_case_count": 1539.4285714285713
+        }
+      ]
+    },
+    {
+      "name": "Ray Task",
+      "source_key": "23042002ray-cloud_edge-task",
+      "points": [
+        {
+          "rate": 5,
+          "mean_ms": 376.6973309516755,
+          "p95_ms": 598.7406189714284,
+          "mean_case_count": 810.0
+        },
+        {
+          "rate": 10,
+          "mean_ms": 405.04367521364185,
+          "p95_ms": 645.7680383999999,
+          "mean_case_count": 1614.857142857143
+        },
+        {
+          "rate": 15,
+          "mean_ms": 654.4065090252708,
+          "p95_ms": 2249.0475337142852,
+          "mean_case_count": 2413.285714285714
+        },
+        {
+          "rate": 20,
+          "mean_ms": 3086.6162398239567,
+          "p95_ms": 11786.24922331428,
+          "mean_case_count": 3190.0
+        },
+        {
+          "rate": 25,
+          "mean_ms": 11002.640161451523,
+          "p95_ms": 31227.0473344,
+          "mean_case_count": 3230.4285714285716
+        },
+        {
+          "rate": 30,
+          "mean_ms": 15565.138955923405,
+          "p95_ms": 35954.65131702857,
+          "mean_case_count": 2197.714285714286
+        },
+        {
+          "rate": 35,
+          "mean_ms": 18701.409068925128,
+          "p95_ms": 39012.68611839999,
+          "mean_case_count": 2180.1428571428573
+        },
+        {
+          "rate": 40,
+          "mean_ms": 22586.908214589446,
+          "p95_ms": 47660.45288228572,
+          "mean_case_count": 1754.2857142857142
+        },
+        {
+          "rate": 45,
+          "mean_ms": 23194.87981916097,
+          "p95_ms": 46045.177883428565,
+          "mean_case_count": 1856.142857142857
+        },
+        {
+          "rate": 50,
+          "mean_ms": 24652.782865317364,
+          "p95_ms": 47305.72536502858,
+          "mean_case_count": 1837.7142857142858
+        }
+      ]
+    },
+    {
+      "name": "Ray Actor-40",
+      "source_key": "23042102ray-cloud_edge-actor",
+      "points": [
+        {
+          "rate": 5,
+          "mean_ms": 464.3864068899521,
+          "p95_ms": 794.4373247999999,
+          "mean_case_count": 209.0
+        },
+        {
+          "rate": 10,
+          "mean_ms": 415.3285670026525,
+          "p95_ms": 649.7419776,
+          "mean_case_count": 377.0
+        },
+        {
+          "rate": 15,
+          "mean_ms": 407.7118342759796,
+          "p95_ms": 606.3990527999996,
+          "mean_case_count": 587.0
+        },
+        {
+          "rate": 20,
+          "mean_ms": 370.3024904126984,
+          "p95_ms": 531.498496,
+          "mean_case_count": 756.0
+        },
+        {
+          "rate": 25,
+          "mean_ms": 595.2727957582185,
+          "p95_ms": 1361.8718975999998,
+          "mean_case_count": 943.0
+        },
+        {
+          "rate": 30,
+          "mean_ms": 388.75548187725633,
+          "p95_ms": 550.116864,
+          "mean_case_count": 1108.0
+        },
+        {
+          "rate": 35,
+          "mean_ms": 393.76046472901675,
+          "p95_ms": 549.971584,
+          "mean_case_count": 1251.0
+        },
+        {
+          "rate": 40,
+          "mean_ms": 399.43451740957823,
+          "p95_ms": 560.1801727999999,
+          "mean_case_count": 1399.0
+        },
+        {
+          "rate": 45,
+          "mean_ms": 451.020189028427,
+          "p95_ms": 627.1268095999999,
+          "mean_case_count": 1583.0
+        },
+        {
+          "rate": 50,
+          "mean_ms": 457.26844558107325,
+          "p95_ms": 669.6881152,
+          "mean_case_count": 1733.0
+        }
+      ]
+    }
+  ]
+}

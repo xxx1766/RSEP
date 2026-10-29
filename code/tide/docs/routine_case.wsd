@@ -1,0 +1,73 @@
+@startuml
+
+actor User as Actor
+participant Stub as Stub
+queue "Routine\nQueue" as RoutineQ
+database "Executor\nPool" as ExecPool
+participant "Processor\nManager" as ProcM
+participant Executor as Executor
+participant "Event\nChannel" as EvtCh 
+participant "Executor\nInstance" as ExecIns 
+participant "Input\nQueue" as InQue
+participant "Output\nQueue" as OutQue
+control Container as Ctn
+
+Stub -> RoutineQ: Subscribe new routine
+Ctn -> InQue: Subscribe new routine
+ExecIns -> OutQue: Subscribe new event
+...
+
+Actor -> Stub: Submit a routine
+Stub -> RoutineQ: Push the routine to queue
+...
+
+RoutineQ -> Stub: Notice new routine
+
+Stub -> ProcM: Acquire a processor
+activate ProcM
+ProcM -> Stub: Response processor
+deactivate ProcM
+
+Stub -> ExecPool: Acquire a executor
+activate ExecPool
+ExecPool --> ExecPool: Create new executor
+ExecPool -> Stub: Response executor
+deactivate ExecPool
+
+Stub -> Executor: Bind the processor and the routine to executor
+
+Stub -> Executor: Notice executor to execute
+activate Executor
+
+Executor -> ExecIns: Send the routine to Instance
+activate ExecIns
+
+ExecIns -> InQue: Send the routine to container
+
+InQue -> Ctn: Notice the new routine
+Ctn -> Ctn: Execute the routine
+
+ExecIns -> Executor: Response event channel
+deactivate ExecIns
+
+Executor -> Stub: Response event channel
+deactivate Executor
+
+Stub -> EvtCh: Listen the event channel, until receive a EXIT_SUCC/EXIT_FAIL event
+...
+Ctn -> OutQue: Send the exit event
+OutQue -> ExecIns: Notice the new event
+ExecIns -> EvtCh: Notice the new event
+EvtCh -> Stub: Notice the new event
+
+Stub -> Executor: Get bound processor
+activate Executor
+Executor -> Stub: Response processor
+deactivate Executor
+
+Stub -> ProcM: Return the processor
+Stub -> Executor: Notice unbind the processor and the routine
+Stub -> ExecPool: Return the executor
+
+
+@enduml

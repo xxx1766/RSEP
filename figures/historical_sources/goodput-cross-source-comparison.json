@@ -1,0 +1,189 @@
+{
+  "method": "Native PDF->SVG path geometry, source zero/scale from the Ideal=3r curve; TMC zero from patch baseline and scale independently from neighboring grid-line tick spacing. No pixel digitization, fitting to desired outcomes or new experimental evidence.",
+  "source_rows": 100,
+  "tmc_rows": 50,
+  "shared_rows": 25,
+  "shared_rows_within_0_02_rps": 23,
+  "maximum_rps_difference": 0.2379197994565815,
+  "comparisons": [
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 10,
+      "thesis350_goodput": 21.758737992896375,
+      "tmc_goodput": 21.759700392093958,
+      "absolute_rps_difference": 0.0009623991975828972
+    },
+    {
+      "platform": "KubeEdge",
+      "rate_rps_per_client": 10,
+      "thesis350_goodput": 29.373322397384385,
+      "tmc_goodput": 29.374863862585034,
+      "absolute_rps_difference": 0.001541465200649128
+    },
+    {
+      "platform": "Ray Task",
+      "rate_rps_per_client": 10,
+      "thesis350_goodput": 14.154771364621677,
+      "tmc_goodput": 14.157778304641441,
+      "absolute_rps_difference": 0.003006940019764315
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 10,
+      "thesis350_goodput": 3.1498760700996855,
+      "tmc_goodput": 3.154922976744454,
+      "absolute_rps_difference": 0.0050469066447687005
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 10,
+      "thesis350_goodput": 28.3106432729878,
+      "tmc_goodput": 28.31276913749541,
+      "absolute_rps_difference": 0.0021258645076080995
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 20,
+      "thesis350_goodput": 13.368463005775489,
+      "tmc_goodput": 13.368951580120862,
+      "absolute_rps_difference": 0.000488574345373749
+    },
+    {
+      "platform": "KubeEdge",
+      "rate_rps_per_client": 20,
+      "thesis350_goodput": 57.85848452054022,
+      "tmc_goodput": 57.865507865638236,
+      "absolute_rps_difference": 0.007023345098012612
+    },
+    {
+      "platform": "Ray Task",
+      "rate_rps_per_client": 20,
+      "thesis350_goodput": 5.471889075565719,
+      "tmc_goodput": 5.473595492817066,
+      "absolute_rps_difference": 0.0017064172513467923
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 20,
+      "thesis350_goodput": 6.699651032446775,
+      "tmc_goodput": 6.703211341198328,
+      "absolute_rps_difference": 0.0035603087515525544
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 20,
+      "thesis350_goodput": 54.80237824759122,
+      "tmc_goodput": 54.80534617411909,
+      "absolute_rps_difference": 0.0029679265278659273
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 30,
+      "thesis350_goodput": 1.6835815628652893,
+      "tmc_goodput": 1.6842314924258661,
+      "absolute_rps_difference": 0.0006499295605768562
+    },
+    {
+      "platform": "KubeEdge",
+      "rate_rps_per_client": 30,
+      "thesis350_goodput": 6.768902346400268,
+      "tmc_goodput": 6.772058641869943,
+      "absolute_rps_difference": 0.0031562954696751078
+    },
+    {
+      "platform": "Ray Task",
+      "rate_rps_per_client": 30,
+      "thesis350_goodput": 0.05201302791448904,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.05201302791448904
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 30,
+      "thesis350_goodput": 8.952700850677488,
+      "tmc_goodput": 8.95432720014881,
+      "absolute_rps_difference": 0.0016263494713228965
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 30,
+      "thesis350_goodput": 80.84973257069116,
+      "tmc_goodput": 80.85139632144096,
+      "absolute_rps_difference": 0.0016637507497989645
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 40,
+      "thesis350_goodput": -0.0011814375148144146,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.0011814375148144146
+    },
+    {
+      "platform": "KubeEdge",
+      "rate_rps_per_client": 40,
+      "thesis350_goodput": 0.2379197994565815,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.2379197994565815
+    },
+    {
+      "platform": "Ray Task",
+      "rate_rps_per_client": 40,
+      "thesis350_goodput": -0.0011814375148144146,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.0011814375148144146
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 40,
+      "thesis350_goodput": 11.041009549304949,
+      "tmc_goodput": 11.041303949206107,
+      "absolute_rps_difference": 0.00029439990115776027
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 40,
+      "thesis350_goodput": 106.30516074494437,
+      "tmc_goodput": 106.30659562790846,
+      "absolute_rps_difference": 0.0014348829640908889
+    },
+    {
+      "platform": "Bare Metal",
+      "rate_rps_per_client": 50,
+      "thesis350_goodput": -0.0011814375148144146,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.0011814375148144146
+    },
+    {
+      "platform": "KubeEdge",
+      "rate_rps_per_client": 50,
+      "thesis350_goodput": -0.0011814375148144146,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.0011814375148144146
+    },
+    {
+      "platform": "Ray Task",
+      "rate_rps_per_client": 50,
+      "thesis350_goodput": -0.0011814375148144146,
+      "tmc_goodput": 0.0,
+      "absolute_rps_difference": 0.0011814375148144146
+    },
+    {
+      "platform": "Ray-Actor-40",
+      "rate_rps_per_client": 50,
+      "thesis350_goodput": 12.002951798332617,
+      "tmc_goodput": 12.00311746279022,
+      "absolute_rps_difference": 0.00016566445760268778
+    },
+    {
+      "platform": "Tide",
+      "rate_rps_per_client": 50,
+      "thesis350_goodput": 131.1515450984975,
+      "tmc_goodput": 131.1592478896687,
+      "absolute_rps_difference": 0.007702791171197987
+    }
+  ],
+  "source_files_sha256": {
+    "goodput-source-page71.svg": "b57fda8a9ce5b91d4048d7917aa93bdc6bd854986f7aa744457e09fdd2a49aed",
+    "goodput-tmc.svg": "378d0746fbd06d56884973418b772bb9721fd7bef4968f31680890203aacd2df"
+  }
+}

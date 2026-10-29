@@ -1,0 +1,456 @@
+{
+  "schema": 1,
+  "phase": "formal",
+  "seed": 2026101901,
+  "budgets": {
+    "B6": {
+      "driver_cpus": [
+        0,
+        1
+      ],
+      "app_cpus": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "app_mask": "2-7",
+      "driver_mask": "0-1",
+      "workers": 3,
+      "mapping": [
+        2,
+        4,
+        3,
+        5,
+        6,
+        7
+      ],
+      "pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    "B8": {
+      "driver_cpus": [
+        0,
+        1
+      ],
+      "app_cpus": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "app_mask": "2-9",
+      "driver_mask": "0-1",
+      "workers": 4,
+      "mapping": [
+        2,
+        4,
+        3,
+        5,
+        6,
+        8,
+        7,
+        9
+      ],
+      "pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ]
+      ]
+    },
+    "B12": {
+      "driver_cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "app_cpus": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "app_mask": "4-15",
+      "driver_mask": "0-3",
+      "workers": 6,
+      "mapping": [
+        4,
+        6,
+        5,
+        7,
+        8,
+        10,
+        9,
+        11,
+        12,
+        14,
+        13,
+        15
+      ],
+      "pairs": [
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          14,
+          15
+        ]
+      ]
+    }
+  },
+  "cases": [
+    {
+      "budget": "B6",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B6",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B12",
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "budget": "B8",
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    }
+  ],
+  "deadline_sec": 180,
+  "image": "docker.io/tide/fig5-piei-20261010:amd64",
+  "image_digest": "sha256:defacfb3b2342c9a72fbdb6504844eccadb61a234647d33c34fc02b0019daa0a",
+  "input_sha256": "6818cd9ad787e555879a52a706f66652be180b9f9d62a08397d74012705a9620",
+  "model_sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d",
+  "repetitions": 3,
+  "scope": "Exploratory C4/C6 sensitivity; B12 changes driver and application allocation together.",
+  "estimands": "success-only mean/P95; successes / max(nominal duration, final reply); failed offers retained"
+}

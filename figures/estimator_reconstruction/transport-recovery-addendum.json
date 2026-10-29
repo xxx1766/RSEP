@@ -1,0 +1,10 @@
+{
+  "created_ns": 1792472382982891000,
+  "case": "formal-b2-n10-r25-fixed",
+  "failure": "SSH control receipt lost after remote collection completed; underlying transport cause undetermined.",
+  "retained_original_progress": "evidence/formal-progress-before-transport-recovery.json",
+  "qualification": "750 offers and750 valid returns; native750 execution samples and all window means rederived;455 feedback rounds had0 errors; processor sampling valid. Clock mapping changed less than0.013ms across the measurement. Raw full-cohort goodput3.9req/s retained.",
+  "change": "Only SSH keepalive15s/4misses for remaining original frozen cases15--24; runtime, model, inference counts, CPU budgets, kernels, estimates, deadlines, cases/order and measurement scripts unchanged.",
+  "no_cohorts_replayed": true,
+  "continuation_sha256": "a4971972f3ab130f1d7bf8bbeb593644424d049917524d7db51d62c3298e6496"
+}

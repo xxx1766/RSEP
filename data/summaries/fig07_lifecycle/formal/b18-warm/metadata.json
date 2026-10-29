@@ -1,0 +1,175 @@
+{
+  "initial": 1,
+  "traced": true,
+  "status": "completed",
+  "requests": [
+    {
+      "index": 0,
+      "id": "latency-1",
+      "status": 200,
+      "start_ns": 7334289911922265,
+      "end_ns": 7334289961865940,
+      "latency_ms": 49.943675,
+      "worker_service_ns": 20796250,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20796250}"
+    },
+    {
+      "index": 1,
+      "id": "latency-2",
+      "status": 200,
+      "start_ns": 7334290012309022,
+      "end_ns": 7334290043011233,
+      "latency_ms": 30.702211,
+      "worker_service_ns": 20726687,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20726687}"
+    },
+    {
+      "index": 2,
+      "id": "latency-3",
+      "status": 200,
+      "start_ns": 7334290093461735,
+      "end_ns": 7334290124375802,
+      "latency_ms": 30.914067,
+      "worker_service_ns": 20687311,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20687311}"
+    },
+    {
+      "index": 3,
+      "id": "latency-4",
+      "status": 200,
+      "start_ns": 7334290174823636,
+      "end_ns": 7334290205106199,
+      "latency_ms": 30.282563,
+      "worker_service_ns": 20510562,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20510562}"
+    },
+    {
+      "index": 4,
+      "id": "latency-5",
+      "status": 200,
+      "start_ns": 7334290255579699,
+      "end_ns": 7334290286607823,
+      "latency_ms": 31.028124,
+      "worker_service_ns": 20521534,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20521534}"
+    },
+    {
+      "index": 5,
+      "id": "latency-6",
+      "status": 200,
+      "start_ns": 7334290337024728,
+      "end_ns": 7334290367733706,
+      "latency_ms": 30.708978,
+      "worker_service_ns": 20740300,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20740300}"
+    },
+    {
+      "index": 6,
+      "id": "latency-7",
+      "status": 200,
+      "start_ns": 7334290418250773,
+      "end_ns": 7334290449542534,
+      "latency_ms": 31.291761,
+      "worker_service_ns": 20986819,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20986819}"
+    },
+    {
+      "index": 7,
+      "id": "latency-8",
+      "status": 200,
+      "start_ns": 7334290500074476,
+      "end_ns": 7334290531316841,
+      "latency_ms": 31.242365,
+      "worker_service_ns": 20700517,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20700517}"
+    },
+    {
+      "index": 8,
+      "id": "latency-9",
+      "status": 200,
+      "start_ns": 7334290581800501,
+      "end_ns": 7334290612764546,
+      "latency_ms": 30.964045,
+      "worker_service_ns": 20783968,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20783968}"
+    },
+    {
+      "index": 9,
+      "id": "latency-10",
+      "status": 200,
+      "start_ns": 7334290663365688,
+      "end_ns": 7334290693929404,
+      "latency_ms": 30.563716,
+      "worker_service_ns": 20653907,
+      "bytes_processed": 6553600,
+      "body": "{\"result\":{\"checksum\":8843627163163507496,\"bytes_processed\":6553600},\"service_ns\":20653907}"
+    }
+  ],
+  "work": {
+    "kind": "cpu",
+    "bytes": 65536,
+    "iterations": 100
+  },
+  "launcher_pid": 1475093,
+  "workers_before": [
+    {
+      "pid": 1475133,
+      "ppid": 1475110,
+      "ticks": 0,
+      "start": 733428974,
+      "rss_kib": 11756.0,
+      "comm": "worker",
+      "cmd": "/worker --mode=paix ",
+      "cgroup": "0::/tide/3258d326-2c76-4c55-afcf-972e011f1192"
+    }
+  ],
+  "worker_after": {
+    "pid": 1475133,
+    "ppid": 1475110,
+    "ticks": 21,
+    "start": 733428974,
+    "rss_kib": 11884.0,
+    "comm": "worker",
+    "cmd": "/worker --mode=paix ",
+    "cgroup": "0::/tide/69c9831c-fc9e-4478-8f75-316af0344a0e",
+    "sha256": "7a7a6f3af52810394d02737b23ecc0f62c7c715d474ec72c9b44b0d1e8bf3659",
+    "thread_affinity": {
+      "1475133": [
+        0,
+        1
+      ],
+      "1475146": [
+        0,
+        1
+      ],
+      "1475147": [
+        0,
+        1
+      ],
+      "1475148": [
+        0,
+        1
+      ],
+      "1475149": [
+        0,
+        1
+      ]
+    }
+  },
+  "exit_code": 0,
+  "cleanup": {
+    "tasks": "TASK    PID    STATUS    \n",
+    "containers": "CONTAINER    IMAGE    RUNTIME    \n",
+    "queues": [],
+    "child_cgroups": []
+  }
+}

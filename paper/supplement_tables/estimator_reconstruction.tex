@@ -1,0 +1,57 @@
+\clearpage
+\section*{Independent workload and execution-estimator reconstruction}
+\label{sec:estimator-reconstruction}
+The original distributed YOLOX function and sliding-window code were not recovered from the accessible repositories, history or archives. This experiment therefore tests a declared reconstruction of the reported mechanism; it is not a reproduction of Figs.~6--8 or a new cross-platform comparison. All earlier 33 runs in Figs.~S10--S12 remain unchanged.
+
+\paragraph{Matched controls and workload.}
+NJ-k1 is the cloud, NJ-k2 the single ingress/edge, and NJ-k3 an execution edge. Each 16-vCPU KVM host reserves vCPUs 0--11 for applications and 12--15 for control/measurement. Both modes use the same native source, input JPEG, YOLOX-Nano model, ONNX Runtime 1.18.1 (two intra-operation threads and one inter-operation thread), unshaped LAN, cold edge-function inventory and 2-s expiry. Requests perform one or ten actual model inferences, verified by output digests and per-execution witnesses. Neither inference count is asserted to be the original distributed workload.
+
+The reconstructed estimator is an arithmetic window with 20 slots initially seeded by independent per-node calibration. Each successful native executor launch-to-completion observation replaces one slot; this boundary excludes admission, resource and executor-pool waits. Sequenced snapshots are exchanged every 100~ms using an experiment-owned HTTP path. Fixed controls collect the same samples and use the same feedback transport but keep calibrated decision estimates. Sliding mode updates the estimates and admitted edge-function pending-work costs. The initial NJ-k1/k2/k3 estimates are 28/36/18~ms for one inference and 273/358/179~ms for ten. The unchanged 350-ms eligibility rule therefore excludes the ten-inference origin at initialization. No original interference-recovery probes, multi-application windows or cloud-admission policy are claimed reconstructed; the finite cloud retains unconditional native fallback.
+
+\paragraph{Frozen design and denominators.}
+One/ten inferences, fixed/sliding estimates and 25/40 aggregate requests/s form eight cells, run in three complete randomized blocks (seed 2026102002). Each run submits for 30~s, with a 5-s baseline, 10-s recovery, all client responses drained and at least 3~s after the final response. Primary goodput is the number of returns within 350~ms of actual client submission divided by 30~s; yield divides the same timely count by all offers. Effective throughput divides valid returns by the greater of 30~s and the last client return time relative to the scheduled start. A separate final-90\% view selects by planned arrival index and divides by its matching 27-s offered duration; it does not replace the full cohort.
+
+\begin{table}[htbp]
+\centering\small
+\caption{All eight reconstruction cells, each over three randomized blocks. Goodput is mean $\pm$ pointwise 95\% run-level Student-$t$ half-width ($df=2$). Yield and latency are run means. Final-90\% goodput is shown separately; all rates are aggregate tasks/s.}
+\label{tab:estimator-reconstruction-cells}
+\begin{tabular}{rrlrrrr}
+\toprule
+Inferences & Input & Estimate & Goodput & Yield (\%) & Latency (ms) & Final 90\%\\
+\midrule
+1 & 25 & Fixed & $25.00\pm0.00$ & 100.00 & 31.47 & 25.00\\
+1 & 25 & Sliding & $25.00\pm0.00$ & 100.00 & 33.52 & 25.00\\
+1 & 40 & Fixed & $40.00\pm0.00$ & 100.00 & 37.97 & 40.00\\
+1 & 40 & Sliding & $40.00\pm0.00$ & 100.00 & 35.51 & 40.00\\
+10 & 25 & Fixed & $9.79\pm31.71$ & 39.16 & 374.00 & 9.68\\
+10 & 25 & Sliding & $20.44\pm8.59$ & 81.78 & 299.88 & 20.86\\
+10 & 40 & Fixed & $6.41\pm13.37$ & 16.03 & 685.54 & 6.70\\
+10 & 40 & Sliding & $19.31\pm6.82$ & 48.28 & 406.16 & 19.91\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Paired sliding-minus-fixed goodput effects, retaining all three blocks. Intervals are pointwise, not simultaneous. A negative interval bound is retained rather than clipped.}
+\label{tab:estimator-reconstruction-pairs}
+\begin{tabular}{rrrl}
+\toprule
+Inferences & Input & Mean $\pm$95\% half-width & Three paired differences (tasks/s)\\
+\midrule
+1 & 25 & $0.00\pm0.00$ & 0.00, 0.00, 0.00\\
+1 & 40 & $0.00\pm0.00$ & 0.00, 0.00, 0.00\\
+10 & 25 & $10.66\pm23.47$ & -0.03, 14.10, 17.90\\
+10 & 40 & $12.90\pm16.71$ & 13.57, 5.87, 19.27\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\paragraph{Results and uncertainty.}
+One-inference requests achieve 100\% yield at both inputs in all three blocks, leaving no observed goodput separation between estimators. With ten inferences, mean goodput changes from 9.79 to 20.44 tasks/s at input 25, and from 6.41 to 19.31 at input 40. At 40/s all three paired differences are positive; at 25/s the first is slightly negative. Both ten-inference paired 95\% intervals include zero, so these three blocks do not establish a stable population-level benefit. Large fixed-mode variation is retained. These outcomes show sensitivity to declared request work and estimation policy, but cannot identify the original workload or validate its historical comparative ratio.
+
+All 23,400 offers returned valid results, accounting for 128,700 actual forward passes and 23,400 independently recomputed native execution samples. Feedback-error rounds and invalid CPU observations were both zero. In block 2's ten-inference, 25/s fixed run, an SSH control receipt was lost after the remote measurement completed. Its original 750 requests, complete execution/feedback/CPU records and 3.90 tasks/s goodput passed the recorded checks and remain included. No measured cohort was replayed. Only SSH keepalives were added for the originally unstarted remainder; the transport cause is unresolved and is not asserted to explain low goodput.
+
+\paragraph{Scope and artifacts.}
+The single ingress, unshaped network, finite cloud, current model/runtime and new window implementation differ from the historical three-client deployment. The final-90\% view is a declared arrival-based diagnostic, not a recovered original trimming rule. Three-block intervals are pointwise run-level summaries; zero observed variation for one inference is not a guarantee for other runs. No newly measured Tide values are combined with old KubeEdge/Ray values. Fig.~5 retains its fixed-inventory, frozen-estimate protocol, and the 4+12 ablation remains unchanged; these YOLOX outcomes do not establish the behavior of its CPU/memory/I/O kernels or physical-SMT isolation. Portable summaries are in \texttt{plotting/estimator\_reconstruction}; the experiment directory retains frozen source/configuration, all 24 runs, archive hashes, estimator sequences and cleanup records.

@@ -1,0 +1,510 @@
+{
+  "file_to_generate": [
+    "proto/cluster/event.proto"
+  ],
+  "parameter": "module=github.com/ict/tide/proto",
+  "proto_file": [
+    {
+      "name": "proto/common/resource.proto",
+      "package": "common",
+      "message_type": [
+        {
+          "name": "Resource",
+          "field": [
+            {
+              "name": "cpu_num",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_INT32",
+              "json_name": "cpuNum"
+            },
+            {
+              "name": "gpu_num",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_INT32",
+              "json_name": "gpuNum"
+            }
+          ]
+        }
+      ],
+      "options": {
+        "go_package": "github.com/ict/tide/proto/commpb"
+      },
+      "syntax": "proto3"
+    },
+    {
+      "name": "proto/cluster/event.proto",
+      "package": "cluster",
+      "dependency": [
+        "proto/common/resource.proto"
+      ],
+      "message_type": [
+        {
+          "name": "EventList",
+          "field": [
+            {
+              "name": "events",
+              "number": 1,
+              "label": "LABEL_REPEATED",
+              "type": "TYPE_MESSAGE",
+              "type_name": ".cluster.Event",
+              "json_name": "events"
+            }
+          ]
+        },
+        {
+          "name": "Event",
+          "field": [
+            {
+              "name": "type",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "type"
+            },
+            {
+              "name": "from",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "from"
+            },
+            {
+              "name": "content",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BYTES",
+              "json_name": "content"
+            }
+          ]
+        },
+        {
+          "name": "EventResult"
+        },
+        {
+          "name": "StubCreateEvent",
+          "field": [
+            {
+              "name": "app_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "appId"
+            },
+            {
+              "name": "image_name",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "imageName"
+            },
+            {
+              "name": "commands",
+              "number": 3,
+              "label": "LABEL_REPEATED",
+              "type": "TYPE_STRING",
+              "json_name": "commands"
+            },
+            {
+              "name": "mode",
+              "number": 4,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_ENUM",
+              "type_name": ".cluster.StubMode",
+              "json_name": "mode"
+            },
+            {
+              "name": "volume_pair",
+              "number": 5,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "volumePair"
+            }
+          ]
+        },
+        {
+          "name": "StubStopEvent",
+          "field": [
+            {
+              "name": "stub_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "stubId"
+            }
+          ]
+        },
+        {
+          "name": "AppStopEvent",
+          "field": [
+            {
+              "name": "app_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "appId"
+            }
+          ]
+        },
+        {
+          "name": "NodeSyncEvent",
+          "field": [
+            {
+              "name": "remain_resource",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_MESSAGE",
+              "type_name": ".common.Resource",
+              "json_name": "remainResource"
+            }
+          ]
+        },
+        {
+          "name": "NodeNewEvent",
+          "field": [
+            {
+              "name": "node_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "nodeId"
+            },
+            {
+              "name": "address",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "address"
+            },
+            {
+              "name": "role",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_INT32",
+              "json_name": "role"
+            },
+            {
+              "name": "total_resource",
+              "number": 4,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_MESSAGE",
+              "type_name": ".common.Resource",
+              "json_name": "totalResource"
+            },
+            {
+              "name": "app_list",
+              "number": 5,
+              "label": "LABEL_REPEATED",
+              "type": "TYPE_STRING",
+              "json_name": "appList"
+            },
+            {
+              "name": "is_reply",
+              "number": 6,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BOOL",
+              "json_name": "isReply"
+            }
+          ]
+        },
+        {
+          "name": "StubSyncEvent",
+          "field": [
+            {
+              "name": "stub_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "stubId"
+            },
+            {
+              "name": "est_wait_time",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_UINT64",
+              "json_name": "estWaitTime"
+            },
+            {
+              "name": "update_time",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_INT64",
+              "json_name": "updateTime"
+            }
+          ]
+        },
+        {
+          "name": "AppNewEvent",
+          "field": [
+            {
+              "name": "app_id",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "appId"
+            },
+            {
+              "name": "image_name",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "imageName"
+            },
+            {
+              "name": "commands",
+              "number": 4,
+              "label": "LABEL_REPEATED",
+              "type": "TYPE_STRING",
+              "json_name": "commands"
+            }
+          ]
+        },
+        {
+          "name": "StubNewEvent",
+          "field": [
+            {
+              "name": "stub_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "stubId"
+            },
+            {
+              "name": "app_id",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "appId"
+            },
+            {
+              "name": "mode",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_ENUM",
+              "type_name": ".cluster.StubMode",
+              "json_name": "mode"
+            },
+            {
+              "name": "create_time",
+              "number": 4,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_INT64",
+              "json_name": "createTime"
+            }
+          ]
+        },
+        {
+          "name": "RoutineSubmitEvent",
+          "field": [
+            {
+              "name": "rtn_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "rtnId"
+            },
+            {
+              "name": "fn_name",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "fnName"
+            },
+            {
+              "name": "args",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BYTES",
+              "json_name": "args"
+            },
+            {
+              "name": "submit_time",
+              "number": 4,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_INT64",
+              "json_name": "submitTime"
+            },
+            {
+              "name": "init_sid",
+              "number": 5,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "initSid"
+            },
+            {
+              "name": "require_local_capacity",
+              "number": 6,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BOOL"
+            },
+            {
+              "name": "local_node_id",
+              "number": 7,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING"
+            },
+            {
+              "name": "resource_req",
+              "number": 8,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_MESSAGE",
+              "type_name": ".common.Resource"
+            }
+          ]
+        },
+        {
+          "name": "RoutineReceiveEvent",
+          "field": [
+            {
+              "name": "rtn_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "rtnId"
+            },
+            {
+              "name": "receiver_id",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "receiverId"
+            },
+            {
+              "name": "to_cloud",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BOOL",
+              "json_name": "toCloud"
+            }
+          ]
+        },
+        {
+          "name": "RoutineWaitGetEvent",
+          "field": [
+            {
+              "name": "with_data",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BOOL",
+              "json_name": "withData"
+            },
+            {
+              "name": "rtn_id",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "rtnId"
+            },
+            {
+              "name": "req_sid",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "reqSid"
+            }
+          ]
+        },
+        {
+          "name": "RoutineDoneEvent",
+          "field": [
+            {
+              "name": "rtn_id",
+              "number": 1,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "json_name": "rtnId"
+            },
+            {
+              "name": "status",
+              "number": 2,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_ENUM",
+              "type_name": ".cluster.RoutineDoneEvent.Status",
+              "json_name": "status"
+            },
+            {
+              "name": "with_data",
+              "number": 3,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BOOL",
+              "json_name": "withData"
+            },
+            {
+              "name": "result",
+              "number": 4,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_BYTES",
+              "oneof_index": 0,
+              "json_name": "result",
+              "proto3_optional": true
+            },
+            {
+              "name": "error",
+              "number": 5,
+              "label": "LABEL_OPTIONAL",
+              "type": "TYPE_STRING",
+              "oneof_index": 1,
+              "json_name": "error",
+              "proto3_optional": true
+            }
+          ],
+          "enum_type": [
+            {
+              "name": "Status",
+              "value": [
+                {
+                  "name": "SUCC",
+                  "number": 0
+                },
+                {
+                  "name": "FAIL",
+                  "number": 1
+                }
+              ]
+            }
+          ],
+          "oneof_decl": [
+            {
+              "name": "_result"
+            },
+            {
+              "name": "_error"
+            }
+          ]
+        }
+      ],
+      "enum_type": [
+        {
+          "name": "StubMode",
+          "value": [
+            {
+              "name": "ENTRY",
+              "number": 0
+            },
+            {
+              "name": "FN",
+              "number": 1
+            }
+          ]
+        }
+      ],
+      "service": [
+        {
+          "name": "EventService",
+          "method": [
+            {
+              "name": "SendEvent",
+              "input_type": ".cluster.EventList",
+              "output_type": ".cluster.EventResult"
+            }
+          ]
+        }
+      ],
+      "options": {
+        "go_package": "github.com/ict/tide/proto/eventpb"
+      },
+      "syntax": "proto3"
+    }
+  ]
+}

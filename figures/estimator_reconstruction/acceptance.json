@@ -1,0 +1,455 @@
+{
+  "status": "PASS",
+  "time_ns": 1792473003645470000,
+  "frozen_files_checked": 435,
+  "raw_archives_checked": 72,
+  "launches": [
+    {
+      "attempt": "formal-b1-n10-r25-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r25-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r25-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r25-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r25-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r25-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r40-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r40-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r40-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r40-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r40-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r40-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r40-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r40-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r40-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r25-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r25-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r25-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r40-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r40-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n10-r40-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r25-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r25-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b1-n1-r25-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r40-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r40-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r40-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r25-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r25-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r25-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r40-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r40-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r40-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r40-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r40-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r40-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r40-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r40-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r40-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r25-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r25-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r25-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r25-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r25-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n10-r25-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r25-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r25-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b2-n1-r25-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r25-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r25-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r25-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r40-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r40-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r40-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r40-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r40-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r40-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r40-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r40-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r40-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r25-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r25-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r25-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r40-sliding",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r40-sliding",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r40-sliding",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r25-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r25-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n10-r25-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r25-fixed",
+      "host": "NJ-k1",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r25-fixed",
+      "host": "NJ-k2",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    },
+    {
+      "attempt": "formal-b3-n1-r25-fixed",
+      "host": "NJ-k3",
+      "binary_sha256": "86a836e03f27fb1b3b57d14ae61dc34a0166d65cce2a667e9457f757634dc3e3",
+      "cleanup": "PASS"
+    }
+  ],
+  "totals": {
+    "runs": 24,
+    "offers": 23400,
+    "valid_successes": 23400,
+    "failures": 0,
+    "timely": 16736,
+    "validated_forward_passes": 128700,
+    "estimate_observations": 23400,
+    "feedback_error_rounds": 0,
+    "invalid_processor_observations": 0
+  },
+  "final_host_state": "PASS",
+  "all_original_cases_retained": true,
+  "no_cohorts_replayed": true,
+  "transport_interruption_addendum": "protocol/transport-recovery-addendum.json"
+}

@@ -1,0 +1,62 @@
+{
+  "per_cell.csv": {
+    "source": "code/Tide/results-revision-20260928/fourway-analysis-01/per_cell.csv",
+    "sha256": "521adb50bf1fb81c7ce240760a9254040f7ddee6601f83c782dd1038323be9ca"
+  },
+  "mixed_per_cell.csv": {
+    "source": "code/Tide/results-revision-20260928/fourway-analysis-01/mixed_per_cell.csv",
+    "sha256": "f0a37adb236835664067fd990a14d101da2f450bc96fe9a9baacfd4bf92e4586"
+  },
+  "plot_data.json": {
+    "source": "code/Tide/results-objective-20261005/plot_data.json",
+    "sha256": "deaf4a17e0f9ca2b816c28fd699cb7c25620dfa3e41ffa9b15def6ec40b9da18"
+  },
+  "control_summary.csv": {
+    "source": "code/Tide/results-control-20261004/confirmatory-02/summary/summary.csv",
+    "sha256": "633fefc14f6b45f0130c623edf600639ad318adba70ca5f62996816b897e53eb"
+  },
+  "archived_ablation_replot.json": {
+    "source": "revision-figs/evaluation/archived_ablation_replot.json",
+    "sha256": "6b9e9772efd5e0b85eab4bdcae56a7629e95c72a0af7f1d5b1c0716c0b22aa68"
+  },
+  "archived_latency_replot.json": {
+    "source": "revision-figs/evaluation/archived_latency_replot.json",
+    "sha256": "21ba7b82f939c912c30cc737a191ae682b3fed197216337cc2575d7ca81df807"
+  },
+  "control_components.csv": {
+    "source": "code/Tide/results-control-20261004/confirmatory-02/summary/components.csv",
+    "sha256": "f2ec6833eb6c54092c6dfa914c0316c542e68cb99bbd620e89a325cdb884408c"
+  },
+  "control_runtime_summary.csv": {
+    "source": "Derived by plotting/control_runtime_scope.py from control_summary.csv and control_components.csv",
+    "sha256": "864f5decc74862a3847e14cf4bb18bf9e0555b070d572e0c6c7bf08d0b9a852e"
+  },
+  "control_fig14_regular.csv": {
+    "source": "<REPO>/code/Tide/results-fig14-regular-rates-20261027/publication/control_fig14_regular.csv",
+    "sha256": "c9d255892717e9c158cf4d83335edd9c127c3833814843ce480d97c017464226"
+  },
+  "control_management_fig14.csv": {
+    "source": "<REPO>/code/Tide/results-fig14-regular-rates-20261027/diagnosis/role-classification/control_management_fig14.csv",
+    "sha256": "306a25185c62b990e6a9ca9a99fddf896b912794b159a444381da1b441ccb9d2",
+    "method": "Post-hoc process-role reclassification of the unchanged October 27 raw snapshots; all old totals retained in role_summary.csv",
+    "raw_measurements_unchanged": true
+  },
+  "fig14_role_summary.csv": {
+    "source": "<REPO>/code/Tide/results-fig14-regular-rates-20261027/diagnosis/role-classification/role_summary.csv",
+    "sha256": "b03e90d49f5fe2a6fff619b856a297104564f3470a3e004ec82bfd6adc189e9a",
+    "method": "Post-hoc process-role reclassification of the unchanged October 27 raw snapshots; all old totals retained in role_summary.csv",
+    "raw_measurements_unchanged": true
+  },
+  "fig14_role_per_run.csv": {
+    "source": "<REPO>/code/Tide/results-fig14-regular-rates-20261027/diagnosis/role-classification/role_per_run.csv",
+    "sha256": "d28e15c4493c262c26a3ad2be570a740ba70a5063fc95bec249357104681301d",
+    "method": "Post-hoc process-role reclassification of the unchanged October 27 raw snapshots; all old totals retained in role_summary.csv",
+    "raw_measurements_unchanged": true
+  },
+  "fig14_process_roles.csv": {
+    "source": "<REPO>/code/Tide/results-fig14-regular-rates-20261027/diagnosis/role-classification/process_roles.csv",
+    "sha256": "5638e5ed22f12b50d6be7deaec88bec3d2dfd1cf8b0931e9aea821afd734134c",
+    "method": "Post-hoc process-role reclassification of the unchanged October 27 raw snapshots; all old totals retained in role_summary.csv",
+    "raw_measurements_unchanged": true
+  }
+}

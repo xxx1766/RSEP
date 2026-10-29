@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "loaded_conditions": 12,
+  "idle_conditions": 3,
+  "loaded_runs": 36,
+  "idle_runs": 9,
+  "requests": 40500,
+  "warmup_requests": 90,
+  "included_groups": {
+    "tide": [
+      "core",
+      "runtime_support",
+      "shared_host_runtime"
+    ],
+    "kubeedge": [
+      "cloudcore",
+      "edgecore",
+      "dedicated_cluster_support"
+    ],
+    "ray": [
+      "core",
+      "request_path"
+    ]
+  },
+  "tide_shared_containerd": "Full sampled host daemon; no subtraction for unrelated host activity",
+  "independent_audit_sha256": "a6b222ca65e09873d310a2d4d113d9bf39b8883445236e16980885f23dff7043",
+  "csv_sha256": "c9d255892717e9c158cf4d83335edd9c127c3833814843ce480d97c017464226",
+  "tide_shim_scope": {
+    "preexisting_shim_count": 38,
+    "all_preexisting_before_first_campaign_launch": true,
+    "first_campaign_start_ticks": 925852973,
+    "identities": [
+      {
+        "pid": 2171513,
+        "start": 859408881,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 5de42f74-5d01-495f-afa2-e867e455557f -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2214406,
+        "start": 859532388,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id bb1c7eb5-f9e4-42f1-b204-b1f2b569f8f2 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2214675,
+        "start": 859533127,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 42d1d556-740f-4d96-8d54-e208972e8e26 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2218978,
+        "start": 859537748,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id f88cc6d7-bad2-479d-8da2-07c6a9f9fe24 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2219174,
+        "start": 859538484,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 30273fa2-189f-45b8-8d49-b76e1f9ea8ea -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2219207,
+        "start": 859538487,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 972834a2-8841-4c05-8555-aa159d7e3c30 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2219239,
+        "start": 859538489,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id bc310450-3cdc-4053-afcb-6ac1f3af58ff -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2219310,
+        "start": 859538493,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 0f15025f-8ba5-45ab-9a4a-2d169dcf1350 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2221974,
+        "start": 859543816,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id d61f38f0-6741-4447-b804-0cc847655dba -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2222008,
+        "start": 859543820,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id c3e0c23d-7e89-4868-aad2-7c0037ac0b67 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2223169,
+        "start": 859548371,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id c90bb1cb-96cb-4182-997d-db5354825494 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2223172,
+        "start": 859548372,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 0a2493f7-ea43-4eba-af16-50a51d54f225 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2223427,
+        "start": 859549617,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 4f3b18c7-c31f-4656-a879-e810cf895955 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2223460,
+        "start": 859549621,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 503b11c5-f3cc-4114-b5da-242b640a7ba8 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2223514,
+        "start": 859549625,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 108a79ef-4484-41e1-b390-78d54270ba47 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2223563,
+        "start": 859549629,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id bf2a3792-881b-4940-8ea5-d92c2e4978cc -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2639853,
+        "start": 863881711,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 3f58f20a-2f04-42d6-b8b1-dd78011554e8 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2639864,
+        "start": 863881711,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 92dd282d-d3a3-46eb-a049-0c07c34b7558 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2640071,
+        "start": 863882535,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 260969c4-b84a-44ef-9f6c-cae8d7c56047 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2640871,
+        "start": 863887146,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id f38c0463-8cdb-4dc7-b81f-836e65948d1d -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2640874,
+        "start": 863887146,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id b6b7ca30-af1f-4b52-998d-66d768d335d2 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2641079,
+        "start": 863887929,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 53e0b323-bbb3-4e53-ae5b-24d7f22eead5 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2641119,
+        "start": 863887932,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 0935979d-b76c-4459-a0cc-e276b2baa516 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2641182,
+        "start": 863887937,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 3031764c-cc75-4aff-96af-4334f9f7dceb -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2641280,
+        "start": 863887950,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id c8ce941a-78ca-4d81-ba8e-e9a19e504816 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2643286,
+        "start": 863898069,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id c7a20c71-5bce-43ff-8639-809863d2bc90 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2643288,
+        "start": 863898069,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id ed64202f-2ac4-4139-bdb5-8e627048138b -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2643499,
+        "start": 863898846,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 8b67d665-5466-488a-afb3-72e0d42fd8b5 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2643531,
+        "start": 863898849,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 3a315bb0-c248-4072-8ae7-ffbbe5d220b0 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2643582,
+        "start": 863898852,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id c7436bb1-065f-4350-94de-f56946d07e26 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2643637,
+        "start": 863898854,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 90e49250-bfd6-4785-8019-a355526149b3 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2676353,
+        "start": 864033839,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id cfac8ce2-fb2d-4efa-a98b-389bdeb5dd17 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2676354,
+        "start": 864033839,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 6e82cdb9-9374-49e4-b9f7-5ff613a0e2cf -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2676634,
+        "start": 864034598,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id ca2012a3-f414-4fc4-8853-2ac67217677a -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2676696,
+        "start": 864034605,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 0b00103a-7da9-469f-9294-cf6b5b0fd23e -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2676767,
+        "start": 864034616,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 865b1715-3cba-4068-ab21-a8e9b89cfdcc -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2676813,
+        "start": 864034621,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id 21eca937-858c-4648-bf10-1d7384ce720c -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      },
+      {
+        "pid": 2678016,
+        "start": 864040064,
+        "command": "/usr/bin/containerd-shim-runc-v2 -namespace tide -id d399b0c1-df3c-4294-a4be-db0dcfb46418 -address /run/containerd/containerd.sock ",
+        "group": "runtime_support"
+      }
+    ],
+    "measurement_scope": "All sampled Tide-namespace shims, including these pre-existing residual shims, are charged in full. No baseline subtraction."
+  }
+}
