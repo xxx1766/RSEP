@@ -1,0 +1,26 @@
+{
+  "family": "ttl_retention",
+  "description": "Three-burst idle-reservation and response measurements.",
+  "cohort": {
+    "ttl_ms": [
+      100,
+      500,
+      2000
+    ],
+    "repetitions": 3,
+    "offers_per_run": 12,
+    "idle_window_s": 3.76
+  },
+  "units": {
+    "idle_reserved_cpu_s": "CPU seconds",
+    "later_burst_first_latency_ms": "milliseconds"
+  },
+  "files": [
+    {
+      "path": "runs.csv",
+      "bytes": 591,
+      "sha256": "9e073bde52c621546243aaf02b01837fe9c93168d0cdb3ae675ec8f0cae8dbe8",
+      "rows": 9
+    }
+  ]
+}

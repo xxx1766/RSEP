@@ -8,7 +8,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// NodeState represents the state of a node.
 type NodeState struct {
 	mu      sync.RWMutex
 	Id      string
@@ -21,14 +20,12 @@ type NodeState struct {
 	UpdateTime time.Time
 }
 
-// Capacity returns one consistent resource/heartbeat snapshot.
 func (ns *NodeState) Capacity() (total, remaining *routine.Resource, updated time.Time) {
 	ns.mu.RLock()
 	defer ns.mu.RUnlock()
 	return ns.ResTotal.Copy(), ns.ResRemain.Copy(), ns.UpdateTime
 }
 
-// AddNodeOpts represents the options for adding a node.
 type AddNodeOpts struct {
 	Nid      string
 	Address  string
@@ -37,13 +34,11 @@ type AddNodeOpts struct {
 	Role     NodeRole
 }
 
-// UpdateNodeOpts represents the options for updating a node.
 type UpdateNodeOpts struct {
 	Nid       string
 	ResRemain *routine.Resource
 }
 
-// AddNode adds a new node to the cluster.
 func (cs *ClusterState) AddNode(opts *AddNodeOpts) *NodeState {
 	cs.nodeMu.RLock()
 	if idx, ok := cs.nid2idx[opts.Nid]; ok {
@@ -67,11 +62,9 @@ func (cs *ClusterState) AddNode(opts *AddNodeOpts) *NodeState {
 	return ns
 }
 
-// UpdateNode updates the node with the given UpdateNodeOpts.
 func (cs *ClusterState) UpdateNode(opts *UpdateNodeOpts) {
 	ns := cs.GetNode(opts.Nid)
 
-	// TODO: 不优雅
 	if ns == nil {
 		return
 	}
@@ -81,7 +74,6 @@ func (cs *ClusterState) UpdateNode(opts *UpdateNodeOpts) {
 	ns.UpdateTime = time.Now()
 }
 
-// ContainNode checks if the cluster contains a node with the given Id.
 func (cs *ClusterState) ContainNode(nid string) bool {
 	cs.nodeMu.RLock()
 	defer cs.nodeMu.RUnlock()
@@ -89,7 +81,6 @@ func (cs *ClusterState) ContainNode(nid string) bool {
 	return ok
 }
 
-// GetNode returns the node with the given Id.
 func (cs *ClusterState) GetNode(nid string) *NodeState {
 	cs.nodeMu.RLock()
 	defer cs.nodeMu.RUnlock()
@@ -99,39 +90,32 @@ func (cs *ClusterState) GetNode(nid string) *NodeState {
 	return nil
 }
 
-// GetIdx returns the index of the node with the given Id.
 func (cs *ClusterState) GetIdx(sid string) int {
 	cs.nodeMu.RLock()
 	defer cs.nodeMu.RUnlock()
 	return cs.sid2idx[sid]
 }
 
-// ListNode returns all the nodes in the cluster.
 func (cs *ClusterState) ListNode() []*NodeState {
 	return cs.nodes
 }
 
-// GetSelf returns the self node.
 func (cs *ClusterState) GetSelf() *NodeState {
 	return cs.self
 }
 
-// ListStub returns all the stubs in the cluster.
 func (cs *ClusterState) ListStub() []*StubState {
 	return cs.stubs
 }
 
-// ListEdgeNode returns all the edge nodes in the cluster.
 func (cs *ClusterState) ListEdgeNode() []*NodeState {
 	return cs.ListNodeByRole(EDGE)
 }
 
-// ListCloudNode returns all the cloud nodes in the cluster.
 func (cs *ClusterState) ListCloudNode() []*NodeState {
 	return cs.ListNodeByRole(CLOUD)
 }
 
-// ListNodeByRole returns all the nodes with the given role in the cluster.
 func (cs *ClusterState) ListNodeByRole(r NodeRole) []*NodeState {
 	cs.nodeMu.RLock()
 	defer cs.nodeMu.RUnlock()

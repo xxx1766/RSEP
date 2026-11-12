@@ -1,4 +1,3 @@
-// Restricted offline calibration, not a simulation of Tide's complete runtime.
 package main
 
 import (
@@ -68,8 +67,6 @@ func Simulate(tr Trace, nodes []Node, w [3]float64) ([]Decision, Metrics) {
 			if (!n.Local && inOutage) || r.Memory > n.Memory || n.Quota > n.CPU {
 				continue
 			}
-			// Observably empty queue resets prediction; actual future finishes
-			// are never used to estimate the currently busy queue.
 			if actualEnd[j] <= r.Arrival {
 				predictedEnd[j] = r.Arrival
 			}
@@ -215,8 +212,6 @@ func ModelNodes(high bool) []Node {
 	return n
 }
 
-// Service scales are recorded p95 values from weights-02/calibration.json.
-// Node factors, memory tokens and multiplicative errors are model inputs.
 func GenerateTrace(seed int64, rate float64, pattern, split string, nodes []Node) Trace {
 	tr := Trace{ID: fmt.Sprintf("%s-%s-r%g-s%d", split, pattern, rate, seed), Split: split, Pattern: pattern, Seed: seed, Rate: rate, Duration: 300000, OutStart: 100000, OutEnd: 200000}
 	rng := rand.New(rand.NewSource(seed))

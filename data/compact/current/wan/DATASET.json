@@ -1,0 +1,79 @@
+{
+  "cohort": {
+    "arms": [
+      "tide",
+      "k0"
+    ],
+    "deadline_ms": 135,
+    "offers_per_run": 1000,
+    "patterns": [
+      "gradual",
+      "burst"
+    ],
+    "repeats": 1,
+    "rtt_ms": 65,
+    "runs": 4
+  },
+  "description": "Four original65 runs at a 65 ms emulated remote RTT, comparing native Tide with default ClusterIP Service routing.",
+  "family": "wan",
+  "files": [
+    {
+      "path": "plot_data.json",
+      "bytes": 3798,
+      "sha256": "18262ac714d61528d777cca6b021d36e013ee2dff91342232dad151675b13243"
+    },
+    {
+      "path": "requests.csv.gz",
+      "bytes": 146649,
+      "sha256": "64cfcfc856e22d4a078711965c6ce5472986753500cc7071f79a402be8da229a",
+      "rows": 4000
+    },
+    {
+      "path": "runs.csv",
+      "bytes": 1007,
+      "sha256": "e543f78538d463b24d61130c2521d1f0351285e46f865ea8bea04941c5e95f6a",
+      "rows": 4
+    },
+    {
+      "path": "summary.json",
+      "bytes": 3122,
+      "sha256": "9b9eadeee44c58aca14945c9983ccfbbc07eee3b8adfe403d85682194bd40896"
+    }
+  ],
+  "sanitization": {
+    "endpoints": "worker and peer identifiers replaced with logical local/remote labels",
+    "relative_time": "milliseconds from each run start",
+    "removed": [
+      "transport addresses and ports",
+      "absolute timestamps",
+      "queue names"
+    ]
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-issue29-three-pair-pilot-20261031",
+    "relative_paths": [
+      "RSEP/results-issue29-three-pair-pilot-20261031/summary.csv",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-tide/run.json",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-k0/run.json",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-tide/run.json",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-k0/run.json",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-tide/requests.jsonl",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-k0/requests.jsonl",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-tide/requests.jsonl",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-k0/requests.jsonl"
+    ],
+    "source_sha256": {
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-k0/requests.jsonl": "48013a143021ad9b6b53139ff6377eb589cea3f8754d3775ab247c68e030e712",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-k0/run.json": "cd6f633b5e3193d2ecd07d5268b4089e36991ed3b94f924b508561bdc2771d35",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-tide/requests.jsonl": "f5dd2b716c12012627527ee2cf8abb39e2c4e2e55d7c755fd155dae9d09880ac",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-burst-tide/run.json": "45e1f7ec4cdc8e2f117ef2b86a7106551c7476fe63fa489fdbf099a2a65436e4",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-k0/requests.jsonl": "b9d70d2d7c93bab415ab4cde1dff88b5222f384bbd513eb33d9c3b2ccee7ff1d",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-k0/run.json": "e7bd2fb1096444fe4499da62f43334f3101d742522e1bb7cd17154c2e722cd3a",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-tide/requests.jsonl": "5556fc6ca9cb1d40b97c96204b98d56c93bb119ee7e9355d33b39d0a9269aef9",
+      "RSEP/results-issue29-three-pair-pilot-20261031/runs/original65-gradual-tide/run.json": "a1c617acd203be3d288f8a664c386bd9d6e2c061fec4303d15e515503fc86aad",
+      "RSEP/results-issue29-three-pair-pilot-20261031/summary.csv": "2ec98f473e6173ad64afa343f3ca72eff0229cc542a65a9804b110c87133bc55"
+    }
+  },
+  "title": "WAN 3+3 native Service comparison"
+}

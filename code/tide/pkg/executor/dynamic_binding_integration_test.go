@@ -23,8 +23,6 @@ import (
 	"github.com/ict/tide/pkg/routine"
 )
 
-// Same real Executor, same loaded inference session, different Processor for
-// each request. Checking only the allowed CPU union misses a stale binding.
 func TestExecutorRebindsAcrossRequests(t *testing.T) {
 	if os.Getenv("TIDE_BINDING_INTEGRATION") != "1" || os.Geteuid() != 0 {
 		t.Skip("requires explicit TIDE_BINDING_INTEGRATION=1 on the isolated Linux host")
@@ -104,8 +102,6 @@ func TestExecutorRebindsAcrossRequests(t *testing.T) {
 			t.Fatal(err)
 		}
 		wait(interfaces.EXIT)
-		// The EXIT queue message can arrive before containerd's stdout copier
-		// persists the application's already-flushed evidence line.
 		var data []byte
 		for deadline := time.Now().Add(2 * time.Second); ; {
 			data, err = os.ReadFile(filepath.Join("/tmp/tide/exec-logs", exec.Id(), "stdout"))

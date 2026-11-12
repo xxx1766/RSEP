@@ -10,8 +10,6 @@ import (
 	"github.com/ict/tide/pkg/routine"
 )
 
-// BenchmarkRevisionRank measures the actual candidate filter/rank hook only.
-// It excludes RPC, queue reservation, dispatch, and executor time.
 func BenchmarkRevisionRank(b *testing.B) {
 	old := dev.CurrentConfig()
 	defer dev.SetConfig(old)

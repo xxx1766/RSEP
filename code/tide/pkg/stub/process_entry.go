@@ -27,7 +27,6 @@ func (s *stub) processEntry(exec interfaces.Executor) {
 	}
 	s.listenEvt(exec)
 
-	// clear processor and executor, after executing
 	if _, err := exec.UnbindProc(); err != nil {
 		logger.Error("Stub: failed to unbind processor, ", err)
 	}
@@ -36,7 +35,6 @@ func (s *stub) processEntry(exec interfaces.Executor) {
 	}
 	s.bindCh <- struct{}{}
 
-	// broadcast to stubs of this app that this app is done
 	stStopEvtPb := &eventpb.AppStopEvent{AppId: s.appId}
 	content, err := proto.Marshal(stStopEvtPb)
 	if err != nil {

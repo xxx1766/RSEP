@@ -6,7 +6,6 @@ import (
 	"github.com/ict/tide/pkg/routine"
 )
 
-// ClusterState represents the state of the cluster.
 type ClusterState struct {
 	apps  map[string]*AppState
 	appMu sync.RWMutex
@@ -35,7 +34,6 @@ func init() {
 	}
 }
 
-// Init initializes the cluster state.
 func Init(selfId, selfAddr string, role NodeRole, resTotal *routine.Resource) {
 	clsStat.self = clsStat.AddNode(&AddNodeOpts{
 		Nid:      selfId,
@@ -45,12 +43,10 @@ func Init(selfId, selfAddr string, role NodeRole, resTotal *routine.Resource) {
 	})
 }
 
-// Singleton returns the singleton instance of ClusterState.
 func Singleton() *ClusterState {
 	return clsStat
 }
 
-// GetApp returns the application with the given Id.
 func (cs *ClusterState) GetApp(aid string) *AppState {
 	cs.appMu.RLock()
 	defer cs.appMu.RUnlock()
@@ -60,7 +56,6 @@ func (cs *ClusterState) GetApp(aid string) *AppState {
 	return nil
 }
 
-// AddApp adds a new application to the cluster.
 func (cs *ClusterState) AddApp(opts *AddAppOpts) *AppState {
 	appStat := &AppState{
 		AppId:      opts.AppId,
@@ -76,10 +71,8 @@ func (cs *ClusterState) AddApp(opts *AddAppOpts) *AppState {
 	return appStat
 }
 
-// RmApp removes the application with the given Id.
 func (cs *ClusterState) RmApp(aid string) {
 	cs.appMu.Lock()
 	defer cs.appMu.Unlock()
 	delete(cs.apps, aid)
-	// TODO: 清理 stub
 }

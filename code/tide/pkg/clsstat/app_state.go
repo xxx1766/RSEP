@@ -2,7 +2,6 @@ package clsstat
 
 import "sync"
 
-// AppState represents the state of an application.
 type AppState struct {
 	AppId     string
 	ImageName string
@@ -13,17 +12,14 @@ type AppState struct {
 	mu         sync.Mutex
 }
 
-// AddAppOpts represents the options for adding an application.
 type AddAppOpts struct {
 	AppId     string
 	ImageName string
 	Commands  []string
 }
 
-// ApplicationId represents the Id of App.
 type ApplicationId string
 
-// AddStub adds a new stub to the application.
 func (as *AppState) AddStub(ss *StubState) {
 	as.mu.Lock()
 	defer as.mu.Unlock()
@@ -34,7 +30,6 @@ func (as *AppState) AddStub(ss *StubState) {
 	as.newStubSig.L.Unlock()
 }
 
-// RmStub removes a stub from the application.
 func (as *AppState) RmStub(ss *StubState) {
 	as.mu.Lock()
 	defer as.mu.Unlock()
@@ -47,7 +42,6 @@ func (as *AppState) RmStub(ss *StubState) {
 	}
 }
 
-// WaitNewStub waits for a new stub to be added to the application.
 func (as *AppState) WaitNewStub() <-chan struct{} {
 	ch := make(chan struct{})
 	go func() {

@@ -19,7 +19,6 @@ import (
 )
 
 func TestSubmitExternalRecordsOriginAndRequestsRemoteData(t *testing.T) {
-	// Isolate process-wide cluster/communicator singletons from other fixtures.
 	if os.Getenv("TIDE_EXTERNAL_SUBMIT_CHILD") != "1" {
 		cmd := exec.Command(os.Args[0], "-test.run=^TestSubmitExternalRecordsOriginAndRequestsRemoteData$", "-test.v")
 		cmd.Env = append(os.Environ(), "TIDE_EXTERNAL_SUBMIT_CHILD=1")
@@ -31,7 +30,7 @@ func TestSubmitExternalRecordsOriginAndRequestsRemoteData(t *testing.T) {
 	s, _ := newTTLStub(t, time.Hour)
 	cfg := dev.CurrentConfig()
 	cfg.QoSMS = 1
-	cfg.ExecutionMS = 1000 // Force native scheduler cloud fallback, not local execution.
+	cfg.ExecutionMS = 1000
 	if err := dev.SetConfig(cfg); err != nil {
 		t.Fatal(err)
 	}
@@ -126,10 +125,7 @@ func TestExternalLocalNoticeDoesNotSetDataTwice(t *testing.T) {
 	s.rtnStore.Record(r)
 	r.Succ()
 	r.SetResult([]byte("local-result"))
-	// The external adapter must return for self without a cluster lookup,
-	// because cloud-local stubs need not be in the edge routing inventory.
 	waitExternalReceive(context.Background(), s, r)
-	// Native self wait may observe data after execution already closed dataSig.
 	s.NoticeRtnData(r.Id, routine.EXIT_SUCC, []byte("local-result"), "")
 	if string(r.Result()) != "local-result" {
 		t.Fatal("native self-wait changed the completed result")

@@ -1,0 +1,13 @@
+level,system,rate_rps,qos_classes,goodput_rps_total,note
+high,bare,309,2,86.92,sum of QoS class means; no total confidence interval
+high,kubeedge,309,2,86.88,sum of QoS class means; no total confidence interval
+high,ray,309,2,11.04,sum of QoS class means; no total confidence interval
+high,tide,309,2,150.16,sum of QoS class means; no total confidence interval
+low,bare,116,2,115.9,sum of QoS class means; no total confidence interval
+low,kubeedge,116,2,115.9,sum of QoS class means; no total confidence interval
+low,ray,116,2,111.34,sum of QoS class means; no total confidence interval
+low,tide,116,2,115.6,sum of QoS class means; no total confidence interval
+overload,bare,463,2,121.98,sum of QoS class means; no total confidence interval
+overload,kubeedge,463,2,122.08,sum of QoS class means; no total confidence interval
+overload,ray,463,2,7.1,sum of QoS class means; no total confidence interval
+overload,tide,463,2,149.2,sum of QoS class means; no total confidence interval

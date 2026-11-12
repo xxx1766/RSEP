@@ -21,7 +21,6 @@ func TestC4RejectsExpansionWithoutLocalCPU(t *testing.T) {
 	target := &clsstat.NodeState{Id: "c4-remote", ResTotal: &routine.Resource{CpuNum: 8}, ResRemain: &routine.Resource{CpuNum: 8}, UpdateTime: time.Now()}
 	r := routine.NewSubmittedRtn("c4", "cpu", nil, dev.GetReqResource())
 	r.SubmitTime = time.Now().UnixNano()
-	// JSON keeps this regression executable against the pre-C4 Routine type.
 	if err := json.Unmarshal([]byte(`{"RequireLocalCapacity":true,"LocalNodeID":"c4-small"}`), r); err != nil {
 		t.Fatal(err)
 	}
@@ -36,8 +35,6 @@ func TestC4AllPathsRejectMissingAnchor(t *testing.T) {
 	r.SubmitTime = time.Now().Add(-time.Hour).UnixNano()
 	sk := New("not-registered", "", nil)
 	defer sk.Close()
-	// No app or communicator is initialized: rejection must precede any send,
-	// queue reservation or expansion, including the expired-deadline fast path.
 	if ok, _ := sk.Schedule(context.Background(), r); ok {
 		t.Fatal("scheduled invalid critical request")
 	}

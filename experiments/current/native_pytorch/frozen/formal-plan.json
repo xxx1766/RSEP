@@ -1,0 +1,1320 @@
+{
+  "schema": 2,
+  "phase": "formal",
+  "seed": 202611034103,
+  "cases": [
+    {
+      "cell": "C5",
+      "rps": 1,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 4,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 1,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 1,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 2,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 4,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 2,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 1,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 4,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 2,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 4,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 2,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 32,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 2,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 4,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 1,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 8,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 1,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 4,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 2,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 16,
+      "repeat": 1,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 1,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 2,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 8,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 1,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 2,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 2,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 8,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 4,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 2,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 8,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 1,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 4,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 8,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 8,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 4,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 16,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 1,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 1,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 1,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 4,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 4,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 2,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 2,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 4,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 8,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 2,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 2,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 8,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 4,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 1,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 2,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 1,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 8,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 4,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 4,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 8,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 1,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 4,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 8,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 2,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 4,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 2,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 8,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 1,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 4,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 2,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 8,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 1,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 32,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 2,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 16,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 1,
+      "repeat": 3,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 4,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 8,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 16,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 1,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 4,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 1,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 8,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 32,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 4,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 32,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 16,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 2,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 8,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 1,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 8,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 1,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 4,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 4,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 2,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 16,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 1,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 16,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 2,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 8,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 32,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 2,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 1,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 8,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 2,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 4,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 2,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 32,
+      "repeat": 4,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 2,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 16,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 32,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 16,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 1,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 8,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 32,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 8,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 16,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 1,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 1,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 2,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 4,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 8,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 2,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 2,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 4,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 4,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 4,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 32,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 1,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 8,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C2",
+      "rps": 4,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 1,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 1,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 8,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 16,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 16,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 32,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 32,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C1",
+      "rps": 2,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 32,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C3",
+      "rps": 8,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C5",
+      "rps": 2,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C6",
+      "rps": 4,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    },
+    {
+      "cell": "C4",
+      "rps": 16,
+      "repeat": 5,
+      "duration_sec": 20,
+      "inferences": 10
+    }
+  ],
+  "driver_cpus": [
+    0,
+    1
+  ],
+  "app_cpus": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "driver_mask": "0-1",
+  "app_mask": "2-7",
+  "mapping": [
+    2,
+    4,
+    3,
+    5,
+    6,
+    7
+  ],
+  "pairs": [
+    [
+      2,
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6,
+      7
+    ]
+  ],
+  "device_cpus": 16,
+  "cpu_per_request": "C7:1; C1-C6:2",
+  "torch_threads": "C7:1; C1-C6:2",
+  "opencv_threads": 1,
+  "torch_interop": 8,
+  "deadline_sec": 180,
+  "image": "docker.io/tide/fig5-piei-20261010:amd64",
+  "image_digest": "sha256:defacfb3b2342c9a72fbdb6504844eccadb61a234647d33c34fc02b0019daa0a",
+  "input_sha256": "6818cd9ad787e555879a52a706f66652be180b9f9d62a08397d74012705a9620",
+  "model_sha256": "cd28f55fbbc1829f99d9ac9b38a16d259a22889739c8728ea877610201feff7b",
+  "inferences": 10,
+  "repetitions": 5,
+  "expected_runs": 180,
+  "expected_measured": 37800,
+  "expected_warmups": 3240,
+  "observation": "20s open-loop arrivals,180s client deadline from submission,owned teardown after all client outcomes",
+  "estimands": "valid-return mean/P95/SD; valid returns / full observed window including bounded drain; all-offer success yield and timeout/partial-work census"
+}

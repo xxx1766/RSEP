@@ -34,7 +34,7 @@ func records(t *testing.T, b []byte) []Record {
 func TestRealFixedWorkAndOrderedProgress(t *testing.T) {
 	r := NewRunner("test-node", t.TempDir())
 	got := r.Run(testConfig("real_run", 3))
-	const golden uint64 = 8843627163163507496 // Independently computed with Python hashlib.
+	const golden uint64 = 8843627163163507496
 	wantChecksum := golden
 	wantChecksum += golden
 	wantChecksum += golden

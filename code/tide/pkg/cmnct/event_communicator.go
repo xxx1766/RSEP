@@ -71,7 +71,6 @@ func (ec *evtCommunicator) NodeStateSync(evt *event.Event) error {
 	return ec.BroadcastToEdgThg(evts...)
 }
 
-// BroadcastToAllNode sends events to all nodes in the cluster.
 func (ec *evtCommunicator) BroadcastToAllNode(evts ...*event.Event) error {
 	var err error
 	ndStats := ec.clsStat.ListNode()
@@ -84,7 +83,6 @@ func (ec *evtCommunicator) BroadcastToAllNode(evts ...*event.Event) error {
 	return err
 }
 
-// BroadcastToEdgThg sends events to all edge and thing nodes in the cluster.
 func (ec *evtCommunicator) BroadcastToEdgThg(evts ...*event.Event) error {
 	var err error
 	ndStats := ec.clsStat.ListNode()
@@ -100,27 +98,19 @@ func (ec *evtCommunicator) BroadcastToEdgThg(evts ...*event.Event) error {
 	return err
 }
 
-// SendToNode sends events to a certain node in the cluster.
 func (ec *evtCommunicator) SendToNode(nid string, evt *event.Event) error {
 	ndStat := ec.clsStat.GetNode(nid)
 
 	logrus.WithFields(logrus.Fields{"NodeId": nid}).Debugf("Communicator: Send to certain address %v, %v", ndStat.Address, evt)
 
-	// logrus.Debugf("clsStat is %v", ec.clsStat)
-
-	// logrus.WithFields(logrus.Fields{"nodes": ec.clsStat.ListNode(), "stubs": ec.clsStat.ListStub()}).Debug("nodes and stubs")
-
 	return ec.SendToAddress(ndStat.Address, evt)
 }
 
-// SendToAddress sends events to a certain address.
 func (ec *evtCommunicator) SendToAddress(addr string, evts ...*event.Event) error {
 	logrus.WithFields(logrus.Fields{"TargetAddr": addr, "EvtNum": len(evts)}).Trace("send some events to destination")
 
-	// if send to itsely, just dispatch
 	if ec.selfAddr == addr {
 		for _, evt := range evts {
-			// Broadcasts share the input event with asynchronous readers.
 			copyEvt := *evt
 			copyEvt.From = ec.selfId
 			go ec.evtDispr.DispatchEvent(&copyEvt)
@@ -149,7 +139,6 @@ func (ec *evtCommunicator) SendToAddress(addr string, evts ...*event.Event) erro
 	return nil
 }
 
-// SendToStub sends events to a certain stub in the cluster.
 func (ec *evtCommunicator) SendToStub(sid string, evt *event.Event) error {
 
 	logrus.Debugf("clsStat is %v", ec.clsStat)

@@ -1,8 +1,0 @@
-{
-  "execution_ms": 50,
-  "qos_ms": 500,
-  "ttl_ms": 2000,
-  "weights": [1, 1, 1],
-  "latency_scale_ms": 100,
-  "state_max_age_ms": 5000
-}

@@ -22,8 +22,6 @@ import (
 var ttlInit sync.Once
 var ttlStubs sync.Map
 
-// Only the container executor is replaced: admission, dispatch, completion,
-// idle timer, stop broadcast, Close and processor accounting are real.
 type ttlExecutor struct {
 	rtn         *routine.Routine
 	proc        *processor.Processor
@@ -57,8 +55,6 @@ func (e *ttlExecutor) Close() error                              { e.finish(); r
 func (e *ttlExecutor) finish()                                   { e.once.Do(func() { close(e.release) }) }
 func (e *ttlExecutor) Execute() error {
 	close(e.started)
-	// Production Execute sends the request and returns; completion arrives
-	// later on the event channel rather than blocking the launch call.
 	go func() {
 		<-e.release
 		e.events <- &interfaces.Event{Type: interfaces.EXIT, Status: routine.EXIT_SUCC}
@@ -207,8 +203,6 @@ func TestTTLCloseIsConcurrentAndIdempotent(t *testing.T) {
 		go func() { defer wg.Done(); s.Close() }()
 	}
 	wg.Wait()
-	// ProcessorManager fatals if the bound resource is returned twice. A full
-	// allocation also proves that Close returned it at least once.
 	ctx, cancel := context.WithTimeout(context.WithValue(context.Background(), clsstat.ApplicationId("appid"), s.appId), time.Second)
 	defer cancel()
 	p, err := s.procM.Apply(ctx, &routine.Resource{CpuNum: 2})
@@ -331,7 +325,6 @@ func TestTTLClosedStubNeverReturnsBoundProcessor(t *testing.T) {
 
 func TestTTLClosedStubCancelsAdmittedDispatch(t *testing.T) {
 	s, e := newTTLStub(t, time.Hour)
-	// Model an accepted request whose dispatch goroutine has not run yet.
 	s.mu.Lock()
 	atomic.AddInt64(&s.noExecuting, 1)
 	atomic.AddUint64(&s.noSubmitted, 1)

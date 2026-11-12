@@ -1,0 +1,17 @@
+{
+  "note": "Configure the new experiment hosts before running a driver. Documentation addresses are placeholders, not a connection inventory.",
+  "hosts": {
+    "cloud": {
+      "ssh_alias": "your-cloud",
+      "address": "198.51.100.11"
+    },
+    "edge1": {
+      "ssh_alias": "your-edge1",
+      "address": "198.51.100.12"
+    },
+    "edge2": {
+      "ssh_alias": "your-edge2",
+      "address": "198.51.100.13"
+    }
+  }
+}

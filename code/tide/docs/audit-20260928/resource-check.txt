@@ -1,8 +1,0 @@
-=== RUN   TestAuditCPUOnlyFilter
-    resource_test.go:8: CONFIRMED: CPU-only node has enough capacity but current Greater(empty) candidate filter excludes it
---- PASS: TestAuditCPUOnlyFilter (0.00s)
-=== RUN   TestAuditIncomparableCapacity
-    resource_test.go:13: available<=request=false; request<=available=false
---- PASS: TestAuditIncomparableCapacity (0.00s)
-PASS
-ok  	rsep-audit	0.617s

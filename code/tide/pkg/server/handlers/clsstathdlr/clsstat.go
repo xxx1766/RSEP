@@ -26,7 +26,7 @@ func RegisterEventHandler(evtDispr event.EventDispatcher) {
 
 func NodeNewHdlr() event.EventHandler {
 	cs := clsstat.Singleton()
-	self := cs.GetSelf() // 保证 clsstat Init 在此之前
+	self := cs.GetSelf()
 
 	return func(evt *event.Event) {
 		ndNewEvt := &eventpb.NodeNewEvent{}
@@ -116,7 +116,6 @@ func stubNewHdlr() event.EventHandler {
 			mode = interfaces.StubFn
 		}
 
-		// TODO: Resource 可配置
 		opts := &clsstat.AddStubOpts{
 			StubId:     stNewEvt.StubId,
 			Mode:       mode,

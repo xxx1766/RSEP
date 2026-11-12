@@ -24,7 +24,9 @@ func TestExitedWorkerReturnsAndUnlinksOwnedQueues(t *testing.T) {
 		if err == nil {
 			t.Fatal("expected child failure")
 		}
-		if !strings.Contains(err.Error(),"worker exited before reply") { t.Fatalf("wrong failure path: %v",err) }
+		if !strings.Contains(err.Error(), "worker exited before reply") {
+			t.Fatalf("wrong failure path: %v", err)
+		}
 	case <-time.After(2 * time.Second):
 		t.Fatal("failed worker leaves PAIX receive hanging")
 	}

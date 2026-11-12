@@ -32,14 +32,6 @@ func (s *stub) processFnLoop() {
 			return
 
 		case r := <-s.rtnStore.Pop():
-			// Run dispatch in parallel so multiple routines can be in
-			// acquireProcessor / pool.Get concurrently. Without this, the
-			// dispatch loop serializes on acquireProcessor and caps throughput
-			// at ~1/T_request (≈3-4 RPS for our 430 ms heavy workload), even
-			// when 6 long-lived executors are available. procM and the
-			// executor pool both have proper internal locking so concurrent
-			// callers are safe; queueing of contended routines is handled by
-			// procM's waiter list.
 			go s.processOne(r)
 		}
 	}
@@ -53,11 +45,10 @@ func (s *stub) processOne(r *routine.Routine) {
 	logger.Debug("Stub: start to process this routine, and acquire a proc")
 
 	proc := s.acquireProcessor(r)
-	if proc == nil { // stub is closed
+	if proc == nil {
 		s.finishRoutine()
 		return
 	}
-	// logger.WithField("ProcessorId", proc.Id).Debug("Stub: got a processor")
 	logger.WithFields(logrus.Fields{
 		"ProcessorId":      proc.Id,
 		"logic resource":   proc.LogicRes,
@@ -67,9 +58,6 @@ func (s *stub) processOne(r *routine.Routine) {
 }
 
 func (s *stub) acquireProcessor(r *routine.Routine) (proc *processor.Processor) {
-	// A ready processor channel can win select even when done is closed.
-	// Serialize the handoff with Close, including blocked acquisitions that
-	// wake after shutdown. Close owns the bound processor's sole return.
 	defer func() {
 		if proc == nil {
 			return
@@ -84,7 +72,6 @@ func (s *stub) acquireProcessor(r *routine.Routine) (proc *processor.Processor) 
 			proc = nil
 		}
 	}()
-	// EXP 如果不并发控制，则直接使用高优资源
 	if dev.RSEPTest && !dev.EnableConcurrencyControl {
 		return s.bindProc
 	}
@@ -96,7 +83,7 @@ func (s *stub) acquireProcessor(r *routine.Routine) (proc *processor.Processor) 
 	case <-s.bindCh:
 		return s.bindProc
 
-	default: // 先尝试bindCh，没有再尝试ProcM抢用
+	default:
 		ctx, cancel := context.WithCancel(context.Background())
 		ctx = context.WithValue(ctx, clsstat.ApplicationId("appid"), s.appId)
 		defer cancel()
@@ -124,20 +111,16 @@ func (s *stub) executeRoutine(proc *processor.Processor, rtn *routine.Routine) {
 
 	logger.Debug("Stub: try to get executor")
 	exec := s.execPool.Get()
-	if exec == nil { // executor pool exitd, the stub also exited
+	if exec == nil {
 		s.returnProc(proc)
 		return
 	}
-	// Close uses the same lock: checking the state and launching execution
-	// form one transition, not a check followed by an unprotected Execute.
 	s.startMu.Lock()
 	s.mu.Lock()
 	stopped := s.status == STOPPING || s.status == STOPPED
 	s.mu.Unlock()
 	if stopped {
 		s.startMu.Unlock()
-		// Executor acquisition can also outlive Close; do not start queued
-		// work on a processor that shutdown has already released.
 		s.execPool.Return(exec)
 		s.returnProc(proc)
 		return
@@ -149,7 +132,6 @@ func (s *stub) executeRoutine(proc *processor.Processor, rtn *routine.Routine) {
 	}
 
 	var executeErr error
-	// TODO: need handle the routine
 	if err := exec.BindProc(proc); err != nil {
 		logrus.WithFields(logrus.Fields{
 			"StubId":     s.id,
@@ -170,7 +152,6 @@ func (s *stub) executeRoutine(proc *processor.Processor, rtn *routine.Routine) {
 		s.rtnOnBindProc = rtn
 		s.startTime = time.Now()
 	}
-	// 队列长度减小，队列中等待执行执行的预估等待时间发生改变
 	s.accExecTimeInQue -= int64(dev.GetEstExecTime(clsstat.Singleton().GetSelf().Id))
 	go s.noticeStubUpdate(s.estWaitTime(), time.Now())
 	s.mu.Unlock()
@@ -205,7 +186,6 @@ func (s *stub) postProcess(exec interfaces.Executor) error {
 	})
 	logger.Debug("Stub: start post process")
 
-	// unbind routine
 	rtn, err := exec.UnbindRtn()
 	if err != nil {
 		logger.Fatal("Stub: failed to unbind routine, ", err)
@@ -214,23 +194,18 @@ func (s *stub) postProcess(exec interfaces.Executor) error {
 	logger.Debug("Stub: finish processing one routine")
 	defer logger.Debug("Stub: finish post process")
 
-	// unbind processor
 	proc, err := exec.UnbindProc()
 	if err != nil {
 		logger.Error("Stub: failed to unbind processor, ", err)
 		return err
 	}
 
-	// 必须先还Executor，再还Processor
-	// 如果先还Processor，Stub获取后又申请新的Executor，而这里有一个空闲的Executor尚未归还，导致创建新的Executor
-	// 但是会导致Proc有一个空闲时间
 	s.execPool.Return(exec)
 	s.returnProc(proc)
 	return nil
 }
 
 func (s *stub) returnProc(proc *processor.Processor) {
-	// EXP
 	if dev.RSEPTest && !dev.EnableConcurrencyControl {
 		return
 	}

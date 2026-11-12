@@ -1,0 +1,56 @@
+{
+  "cohort": {
+    "anchors_ms": {
+      "cold_first": 163.41014046666666,
+      "subsequent_reuse": 31.317887605555555,
+      "warm_first": 61.2122951
+    },
+    "blocks": 30,
+    "cold_blocks": 30,
+    "lifecycle_requests": 600,
+    "requests_per_block": 10,
+    "warm_blocks": 30
+  },
+  "description": "Thirty paired cold/warm blocks with ten requests each, including the request table and block-level component decomposition.",
+  "family": "lifecycle",
+  "files": [
+    {
+      "path": "block_lifecycle.csv",
+      "bytes": 13786,
+      "sha256": "97c149a5712e3e2b63f11dd482f9ec7cdacc02eb7bff013152c1dcf1db56dd74",
+      "rows": 60
+    },
+    {
+      "path": "requests.csv",
+      "bytes": 113424,
+      "sha256": "2bf7a750577264a802970376578285c5167d4681656c6463b22b3b20a82c95fc",
+      "rows": 600
+    },
+    {
+      "path": "summary.csv",
+      "bytes": 3234,
+      "sha256": "72909cb3f648700a24e71207629897f999d3d37ed4ed7d946280af0d1f423008",
+      "rows": 38
+    }
+  ],
+  "sanitization": {
+    "removed": [
+      "none required in the lifecycle request table"
+    ]
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "fig07_lifecycle/formal",
+    "relative_paths": [
+      "RSEP/data/summaries/fig07_lifecycle/formal/summary/requests.csv",
+      "RSEP/data/summaries/fig07_lifecycle/formal/summary/lifecycle.csv",
+      "RSEP/data/summaries/fig07_lifecycle/formal/summary/summary.csv"
+    ],
+    "source_sha256": {
+      "RSEP/data/summaries/fig07_lifecycle/formal/summary/lifecycle.csv": "21a21bfeeef559cbc6402c9722fa9151ffdb6a11e47fe4affe275e2880976f52",
+      "RSEP/data/summaries/fig07_lifecycle/formal/summary/requests.csv": "5c04e424803f9f2d36f13432a11d0c017e77e651cc4732eb5919aec1b409b80a",
+      "RSEP/data/summaries/fig07_lifecycle/formal/summary/summary.csv": "eb3387c32ef6006d50df4dc97fd2dddc7f1b7866487dc21710a5480239a4d70c"
+    }
+  },
+  "title": "Executor lifecycle latency"
+}

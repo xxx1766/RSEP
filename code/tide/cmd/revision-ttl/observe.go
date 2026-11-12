@@ -62,8 +62,6 @@ func (o *observer) sampleLocked(total, remaining int, source string) {
 }
 
 func (o *observer) heartbeat() {
-	// Capacity() returns a locked copy of the snapshot published by the
-	// allocator's existing 5 ms heartbeat, not a prediction from configured TTL.
 	o.mu.Lock()
 	defer o.mu.Unlock()
 	if o.closed {
@@ -140,7 +138,6 @@ func (o *observer) finish() (allocationStats, error) {
 	return integrateAllocation(o.samples)
 }
 
-// Observe the real dispatcher without replacing its state transitions.
 type observedDispatcher struct {
 	event.EventDispatcher
 	observer *observer
@@ -156,8 +153,6 @@ func (d *observedDispatcher) DispatchEvent(evt *event.Event) {
 		}
 		d.observer.emit("stub_stop_received", map[string]any{"stub_id": stop.StubId})
 		d.EventDispatcher.DispatchEvent(evt)
-		// The original handler has now closed the stub, returned its bound
-		// processor and marked its cluster-state entry STOPPED.
 		d.observer.state("stub_stop_handled", stop.StubId, false)
 		return
 	}

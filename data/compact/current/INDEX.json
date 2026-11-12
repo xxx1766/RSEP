@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "paper_version": "16 page revision, Figures 1--14",
+  "datasets": {
+    "native_pytorch": {
+      "path": "data/compact/current/native_pytorch/plot_data.json",
+      "figures": [
+        5,
+        6
+      ],
+      "sha256": "15b020d23f3633d1c8d638df59aa0469f9693904314e0664821217a126f17f3d",
+      "bytes": 310920
+    },
+    "elasticity": {
+      "path": "data/compact/current/elasticity/plot_data.json",
+      "figures": [
+        8
+      ],
+      "sha256": "b2d5aeb53091ee890858a3d8f08fb2d838b26a7a28f1af67c5cbc0a0be0d41b1",
+      "bytes": 2101898
+    },
+    "wan": {
+      "path": "data/compact/current/wan/plot_data.json",
+      "figures": [
+        13
+      ],
+      "sha256": "18262ac714d61528d777cca6b021d36e013ee2dff91342232dad151675b13243",
+      "bytes": 3798
+    }
+  },
+  "scope": "Compact datasets used by the current manuscript and supplementary material.",
+  "families": {
+    "admission_offline": "data/compact/current/admission_offline/DATASET.json",
+    "capacity_sweep": "data/compact/current/capacity_sweep/DATASET.json",
+    "control_cost": "data/compact/current/control_cost/DATASET.json",
+    "domain_outage": "data/compact/current/domain_outage/DATASET.json",
+    "elasticity": "data/compact/current/elasticity/DATASET.json",
+    "lifecycle": "data/compact/current/lifecycle/DATASET.json",
+    "mixed_qos": "data/compact/current/mixed_qos/DATASET.json",
+    "native_pytorch": "data/compact/current/native_pytorch/DATASET.json",
+    "native_weight_study": "data/compact/current/native_weight_study/DATASET.json",
+    "paix_ipc": "data/compact/current/paix_ipc/DATASET.json",
+    "score_calibration": "data/compact/current/score_calibration/DATASET.json",
+    "ttl_retention": "data/compact/current/ttl_retention/DATASET.json",
+    "wan": "data/compact/current/wan/DATASET.json"
+  }
+}

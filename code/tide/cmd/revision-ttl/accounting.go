@@ -20,8 +20,6 @@ type allocationStats struct {
 	MaxHeartbeatGapNS int64 `json:"max_observed_heartbeat_gap_ns"`
 }
 
-// Integrate piecewise-constant observed allocator snapshots. These are runtime
-// heartbeat observations, not exact internal allocation-transition timestamps.
 func integrateAllocation(samples []resourceSample) (allocationStats, error) {
 	var out allocationStats
 	if len(samples) < 2 {

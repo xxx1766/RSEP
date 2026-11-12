@@ -1,0 +1,82 @@
+[
+  {
+    "heuristic_matches_optimum": 11,
+    "instances": 15,
+    "max_objective_gap": 1,
+    "mean_heuristic_over_optimum": 0.9400000000000001,
+    "mean_objective_gap": 0.26666666666666666,
+    "min_heuristic_over_optimum": 0.75,
+    "nodes": 2,
+    "tasks": 6
+  },
+  {
+    "heuristic_matches_optimum": 10,
+    "instances": 15,
+    "max_objective_gap": 1,
+    "mean_heuristic_over_optimum": 0.9211111111111113,
+    "mean_objective_gap": 0.3333333333333333,
+    "min_heuristic_over_optimum": 0.6666666666666666,
+    "nodes": 3,
+    "tasks": 6
+  },
+  {
+    "heuristic_matches_optimum": 9,
+    "instances": 15,
+    "max_objective_gap": 2,
+    "mean_heuristic_over_optimum": 0.9203174603174602,
+    "mean_objective_gap": 0.4666666666666667,
+    "min_heuristic_over_optimum": 0.7142857142857143,
+    "nodes": 2,
+    "tasks": 8
+  },
+  {
+    "heuristic_matches_optimum": 11,
+    "instances": 15,
+    "max_objective_gap": 1,
+    "mean_heuristic_over_optimum": 0.9565079365079365,
+    "mean_objective_gap": 0.26666666666666666,
+    "min_heuristic_over_optimum": 0.8,
+    "nodes": 3,
+    "tasks": 8
+  },
+  {
+    "heuristic_matches_optimum": 7,
+    "instances": 15,
+    "max_objective_gap": 2,
+    "mean_heuristic_over_optimum": 0.9193650793650794,
+    "mean_objective_gap": 0.6666666666666666,
+    "min_heuristic_over_optimum": 0.75,
+    "nodes": 2,
+    "tasks": 10
+  },
+  {
+    "heuristic_matches_optimum": 5,
+    "instances": 15,
+    "max_objective_gap": 3,
+    "mean_heuristic_over_optimum": 0.8792592592592593,
+    "mean_objective_gap": 0.8,
+    "min_heuristic_over_optimum": 0.5,
+    "nodes": 3,
+    "tasks": 10
+  },
+  {
+    "heuristic_matches_optimum": 5,
+    "instances": 15,
+    "max_objective_gap": 2,
+    "mean_heuristic_over_optimum": 0.9044444444444447,
+    "mean_objective_gap": 0.9333333333333333,
+    "min_heuristic_over_optimum": 0.75,
+    "nodes": 2,
+    "tasks": 12
+  },
+  {
+    "heuristic_matches_optimum": 2,
+    "instances": 15,
+    "max_objective_gap": 3,
+    "mean_heuristic_over_optimum": 0.8819456469456467,
+    "mean_objective_gap": 1.1333333333333333,
+    "min_heuristic_over_optimum": 0.7,
+    "nodes": 3,
+    "tasks": 12
+  }
+]

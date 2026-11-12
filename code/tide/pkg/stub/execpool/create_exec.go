@@ -13,9 +13,6 @@ type ExecutorPool interface {
 	Get() interfaces.Executor
 	Return(interfaces.Executor)
 
-	// 创建完后才返回，而非后台创建，
-	// 可以使得Stub是在Executor创建并初始化结束后再广播创建成功，
-	// 避免广播成功后，接受到Routine，Executor却未初始化完成
 	IncInstance(delta int)
 }
 

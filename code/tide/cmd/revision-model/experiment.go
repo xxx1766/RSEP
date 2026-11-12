@@ -53,7 +53,6 @@ func Generate(c map[string]Calibration, seed int64, n, m int, pressure float64) 
 		}
 		in.Tasks = append(in.Tasks, task)
 	}
-	// Load pressure changes only the common deadline, not selected outcomes.
 	in.HorizonTicks = int(math.Ceil(pressure * baselineSum / float64(m) / in.TickMS))
 	return in
 }

@@ -4,7 +4,6 @@ package main
 
 import "time"
 
-// Portable API contract tests only. The measurement command is Linux-only.
 var testClockStart = time.Now()
 
 func readClock() (clockSample, error) {

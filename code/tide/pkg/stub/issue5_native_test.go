@@ -12,7 +12,6 @@ import (
 	"github.com/ict/tide/pkg/revisionworkload"
 )
 
-// issue5GenerateTrace freezes arrival times before comparing candidate weights.
 func issue5GenerateTrace(seed int64, rate int, duration time.Duration, pattern string) []time.Duration {
 	rng := rand.New(rand.NewSource(seed))
 	n := int(duration.Seconds() * float64(rate))
@@ -51,8 +50,6 @@ func TestIssue5PairedTrace(t *testing.T) {
 	}
 }
 
-// The smoke test must exercise two independently served remote Tide stubs,
-// collect actual CPU results, and observe a weight-dependent native decision.
 func TestIssue5NativeTwoCandidateSmoke(t *testing.T) {
 	issue5RunSmoke(t)
 }

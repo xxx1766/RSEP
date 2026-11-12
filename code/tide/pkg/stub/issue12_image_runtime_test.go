@@ -16,9 +16,6 @@ import (
 	"github.com/ict/tide/pkg/routine"
 )
 
-// These adapters are only linked into the experiment test binary. They retain
-// native Stub scheduling/receipt/result paths and use the same verified image
-// service as the Kubernetes baseline through a local HTTP executor adapter.
 var issue12ImagePayloads [][]byte
 var issue12ImageClient = &http.Client{Timeout: 10 * time.Second}
 

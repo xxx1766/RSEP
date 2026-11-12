@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-// DeadlineClasses maps an offered request ID to a fixed deadline class. It is
-// shared by experiment adapters; it introduces no priority or reordering.
 type DeadlineClasses []int
 
 func ParseDeadlineClasses(raw string) (DeadlineClasses, error) {

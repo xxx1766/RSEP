@@ -33,13 +33,11 @@ type stub struct {
 	noFail      uint64
 	rtnStore    rtnstore.RoutineStore
 
-	// the infomation about estimated wait time,
-	// update below in the critical section
-	accExecTimeInQue int64            // The accumulative estimated execution time of all tasks in the task queue, atomic update
-	rtnOnBindProc    *routine.Routine // the routine binding 'bindProc'
-	startTime        time.Time        // the start time of task binding 'bindProc'
+	accExecTimeInQue int64
+	rtnOnBindProc    *routine.Routine
+	startTime        time.Time
 
-	waiterStore waiters.WaiterStore // wait/get waiters
+	waiterStore waiters.WaiterStore
 	execPool    execpool.ExecutorPool
 
 	bindProc *processor.Processor
@@ -48,19 +46,17 @@ type stub struct {
 
 	done chan struct{}
 
-	// when target routine reached, notice the waiter
 	reachWaiters sync.Map
 
 	timer         *time.Timer
 	timerGap      time.Duration
 	mu            sync.Mutex
-	startMu       sync.Mutex // serializes Bind/Execute with Close's resource return
-	lastActivity  time.Time  // guarded by mu; acceptance or completion, not lifetime submissions
+	startMu       sync.Mutex
+	lastActivity  time.Time
 	closeOnce     sync.Once
-	ablationProcs map[string]*processor.Processor // stable oversubscribed slots for CC-off experiments
+	ablationProcs map[string]*processor.Processor
 	ablationSlots []*processor.PhysicResource
 
-	// To ensure that invalid notices can be discarded
 	lastUpdateTime int64
 }
 

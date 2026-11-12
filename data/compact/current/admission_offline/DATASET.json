@@ -1,0 +1,90 @@
+{
+  "cohort": {
+    "evidence_type": "simulated restricted instances; service times calibrated from measured p95 values",
+    "horizon_multipliers": [
+      0.55,
+      0.75,
+      0.95
+    ],
+    "instances": 120,
+    "nodes": [
+      2,
+      3
+    ],
+    "objective": "maximize accepted requests; all tasks have unit importance",
+    "repetitions": 5,
+    "tasks_per_instance": [
+      6,
+      8,
+      10,
+      12
+    ]
+  },
+  "description": "120 simulated restricted instances with heuristic and exact branch-and-bound outcomes, assignments and MILP corroboration.",
+  "family": "admission_offline",
+  "files": [
+    {
+      "path": "assignments.csv",
+      "bytes": 15900,
+      "sha256": "8cf736dc3f18f48437a64ef9ee42c7a00a52edb0f3ca793916e97daaf4201b56",
+      "rows": 120
+    },
+    {
+      "path": "instances.json",
+      "bytes": 288239,
+      "sha256": "f81231474419ebe585bd0f929f06010f3295ed2e4e5d6510717c56a8e402e890"
+    },
+    {
+      "path": "milp_results.csv",
+      "bytes": 9239,
+      "sha256": "54cc09d60d1b0b908ed7366aad5433e405418caf269d3f58a89bec84ff41656d",
+      "rows": 120
+    },
+    {
+      "path": "results.csv",
+      "bytes": 12025,
+      "sha256": "fde22fba4eb9182da19ead28667ed4478fefd6497a77967c963ba3a5294ec739",
+      "rows": 120
+    },
+    {
+      "path": "summary.json",
+      "bytes": 2150,
+      "sha256": "e1c2fd3cf814074517eaf0bf6de5bebcb658e8b3d8f4bb765a6e14009924bde4"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 499,
+      "sha256": "85856640626d6fd57bb5f10a05f8c5b73ff5635a8d43fa545d43c1e29d32bc02"
+    }
+  ],
+  "sanitization": {
+    "removed": [
+      "solver build paths",
+      "process and temporary-directory identifiers"
+    ],
+    "units": "compute times are nanoseconds; deadlines and horizons are as stored"
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-revision-20260928/model-01",
+    "relative_paths": [
+      "code/Tide/results-revision-20260928/model-01/instances.json",
+      "code/Tide/results-revision-20260928/model-01/results.json",
+      "code/Tide/results-revision-20260928/model-01/summary.json",
+      "code/Tide/results-revision-20260928/model-01/results.csv",
+      "code/Tide/results-revision-20260928/model-01/milp_validation.json",
+      "code/Tide/results-revision-20260928/model-01/validation.json",
+      "code/Tide/results-revision-20260928/model-01/calibration.json"
+    ],
+    "source_sha256": {
+      "code/Tide/results-revision-20260928/model-01/calibration.json": "c411c658d120b2e554f18bd52310456ae0d5ea6656a85b226bfdc8d58de78cfc",
+      "code/Tide/results-revision-20260928/model-01/instances.json": "bf0e32869b89e4e5bbd7755cddd483e9d9848f78048d4c6e4feefc2e9d0cb40c",
+      "code/Tide/results-revision-20260928/model-01/milp_validation.json": "ed67137c90ca791e3f99faf2d901b02171a7108aff071114fe9664d033891212",
+      "code/Tide/results-revision-20260928/model-01/results.csv": "fde22fba4eb9182da19ead28667ed4478fefd6497a77967c963ba3a5294ec739",
+      "code/Tide/results-revision-20260928/model-01/results.json": "bf505083516ade51496ca996868c777f0addebb6acb8b7e1e9b576b34b311318",
+      "code/Tide/results-revision-20260928/model-01/summary.json": "c5c0e669f85304883118f7cca3526191b0de4fc764a7a2922c28bfa5a0165f74",
+      "code/Tide/results-revision-20260928/model-01/validation.json": "bcdebdce5933178b6bd76a973b07c8fba69976a0d4ef6ae13decc4ee8d950e23"
+    }
+  },
+  "title": "Restricted offline admission and assignment simulation"
+}

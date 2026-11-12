@@ -1,7 +1,5 @@
 package execpool
 
-//deprecated: use stack_exec_pool.go instead
-
 import (
 	"sync"
 
@@ -16,11 +14,11 @@ type chanExecPool struct {
 	commands   []string
 	mode       interfaces.StubMode
 
-	noConcurrency int32 // 当前并发的Executor数量
-	noTotal       int32 // 当前创建的Executor数量，包括正在创建的
+	noConcurrency int32
+	noTotal       int32
 	idleExec      chan interfaces.Executor
 
-	listMu    sync.Mutex // 使executors并发安全
+	listMu    sync.Mutex
 	executors []interfaces.Executor
 
 	done chan struct{}
@@ -75,9 +73,6 @@ func (p *chanExecPool) Close() error {
 func (p *chanExecPool) Get() interfaces.Executor {
 	p.mu.Lock()
 	p.noConcurrency++
-	// 枚举每个时刻的并发量（即最大并发量）与当前Executor数量（包括正在创建的）的比较
-	// 如果并发量小于数量，则等待idle chan即可
-	// 否则，需要创建新的executor
 	if p.noConcurrency <= p.noTotal {
 		p.mu.Unlock()
 		return <-p.idleExec
@@ -98,7 +93,6 @@ func (p *chanExecPool) Return(exe interfaces.Executor) {
 
 func (p *chanExecPool) IncInstance(delta int) {
 	p.mu.Lock()
-	//TODO: 最大数量还应和Routine需求有关
 	max_delta := clsstat.Singleton().GetSelf().ResTotal.CpuNum - int(p.noTotal)
 	if delta > max_delta {
 		delta = max_delta

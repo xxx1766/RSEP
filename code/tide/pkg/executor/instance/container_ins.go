@@ -3,12 +3,8 @@ package instance
 import (
 	"github.com/containerd/containerd"
 	"github.com/ict/tide/pkg/clsstat"
-	"github.com/ict/tide/pkg/dev"
-	// NB: on this cgroup v2 host the v1 containerx ops (e.g. MoveCtn's
-	// cg.Add with cgroups.Cpuset) silently hang or error; we route through
-	// the cgroup v2 port instead. pkg/containerx is preserved untouched as
-	// the ablation baseline but is no longer in the executor hot path.
 	containerx "github.com/ict/tide/pkg/containerxv2"
+	"github.com/ict/tide/pkg/dev"
 	"github.com/ict/tide/pkg/interfaces"
 	"github.com/ict/tide/pkg/processor"
 	"github.com/ict/tide/pkg/routine"
@@ -51,7 +47,6 @@ func newContainerIns(args *NewInstanceArgs) (Instance, error) {
 		stringx.Concat("TIDE_MODE=", ctrMode),
 	)
 
-	// TODO: Command 可配置化
 	opts := &containerx.CreateCtnOpts{
 		ImageName:  args.ImageName,
 		VolumePair: args.VolumePair,
@@ -83,9 +78,6 @@ func (ins *containerIns) AllocResource(physRes *processor.PhysicResource) error 
 		logrus.Fatal("ContainerIns: when alloc, instance physics resource is not nil")
 	}
 	ins.physRes = physRes
-	// In the ablation, PI-off means every worker may use the shared parent
-	// CPU slice, as in the HTTP baseline. Moving them into a shared per-pair
-	// quota cgroup accidentally reduced the entire CC-off cell to two CPUs.
 	if dev.RSEPTest && !dev.EnableCpuset {
 		return nil
 	}
@@ -104,7 +96,6 @@ func (ins *containerIns) WithdrawResource() error {
 	}
 	ins.physRes = nil
 	return nil
-	// return containerx.UpdateRes(ins.ctr, processor.EmptyResourse)
 }
 
 func (ins *containerIns) SendRoutine(rtn *routine.Routine) error {

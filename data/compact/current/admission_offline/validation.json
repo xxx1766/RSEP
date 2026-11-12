@@ -1,0 +1,15 @@
+{
+  "all_objectives_match": true,
+  "all_solver_gaps_zero": true,
+  "assignment_certificates_checked": 240,
+  "independent_full_enumeration_instances": 30,
+  "instances_checked": 120,
+  "note": "MILP corroboration and independent assignment-certificate checks for the saved restricted instances.",
+  "status": "passed",
+  "summary": {
+    "heuristic_matches_optimum": 60,
+    "max_objective_gap": 3,
+    "mean_heuristic_over_optimum": 0.9153688672438672,
+    "min_heuristic_over_optimum": 0.5
+  }
+}

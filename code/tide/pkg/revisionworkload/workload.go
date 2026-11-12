@@ -1,5 +1,3 @@
-// Package revisionworkload contains fixed-work kernels shared by all revision
-// experiment adapters. It performs real work; it never fabricates latency.
 package revisionworkload
 
 import (
@@ -40,8 +38,6 @@ func Run(c Config) (Result, error) {
 			r.Checksum = binary.LittleEndian.Uint64(sum[:8])
 		}
 	case "memory":
-		// Sequential read/modify/write over an explicitly reported working set.
-		// This is called a memory-access workload, not assumed memory-bound.
 		buf := make([]byte, c.Bytes)
 		for it := 0; it < c.Iterations; it++ {
 			for i := range buf {

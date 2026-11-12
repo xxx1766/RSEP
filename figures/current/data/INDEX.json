@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "files": {
+    "calibration/plot_data.json": "9c10ee4a4c4839a5d8b9a15ef3b8c5112270588f42e961340832194496b9396e",
+    "capacity/cells.csv": "2fd44eb4a558df7ef91539af1e868b3a3629bce5d10aac35c7d1e8e2d6487daa",
+    "capacity/rates.json": "a5daece84bc5f38bbc99d70a7e76217990d72c6b559cb7d3c8ad9ca843978208",
+    "control/management.csv": "57d704341415f07063dc992540db929bbba8d1a7443edb17730d360dcc049e49",
+    "domain/meta.json": "4322c47b25bd58e858fe6f1a73be0e6ca0c55e10d1432ad0253d52f2ba790356",
+    "domain/r-srv.csv": "275c492f7ea3991b64216e002ee196762d6db19f9cfa5e9f63e46e08716ae616",
+    "domain/return-counts.csv": "b749fa2611b8ccf8ef24f057cd580530c775ca5a1225627744dcb69cb3d9ebba",
+    "historical/allocation.csv": "197dbdbcc497860bb644db7348f4b29fa507b7818cce08cc6270d9e2e8d929b1",
+    "historical/archived_ablation.json": "c14bcb50685a7dfafdba18d1887eecd7496a0f9f2bb6a2fbad9ef2c34fe3980e",
+    "historical/goodput.csv": "fc5bcedfa31bd46213f779b98459816115f1fc32c4921b3733c3bd84d0910927",
+    "historical/latency.json": "8ba89c2949d8d459afe74cd84b731551c7068f26c6f8436b028d577b90dcfc29",
+    "historical/placement.csv": "2bb8421f266336c3e29f5e35c577ab3e45736b710962e2f4afceb517b084bc4b",
+    "motivation/CPU-usage.pdf": "1868b459e33397debfecfcd7d7317642238795314b5153c97eaa7e60ea6b3d63",
+    "motivation/HPA-analysis.pdf": "e4424bb4da1c99d65109bc347dcbc2633515f505249232241b23f1aa0c85c94b",
+    "motivation/resource_expansion_timeline.pdf": "1fc55d087d0bfa9d42c66c5e76bc1b8a81a6d0572fc082863e62315df85ff910",
+    "supplement_originals/historical_ablation_original_style_embedded.pdf": "8103e9b61c0dd201e50caa0903ad9efa75ebc3e90720e81df9ca74472fcc400e",
+    "supplement_originals/historical_allocation.pdf": "203bbf66902e5de5abbfd2c825ac8bfa234b73e098b8d049520a508131d135e3",
+    "supplement_originals/historical_cc_relative.pdf": "5794d581d74509350b35a52b6120c1703b1c3a602c9867a06ae5be2fa80d9b8a",
+    "supplement_originals/historical_ei_relative.pdf": "1b318bfda1e7bd79ddab073be7f624ecf12328c163a3af528c2d0ab22ad2f8cd",
+    "supplement_originals/historical_goodput_original.pdf": "e706c2268b0eac437a9022163658228df5401a504b9a699badf3f993436b4e45",
+    "supplement_originals/historical_latency_original.pdf": "7dfc96a21e3c490d3e0d70c46a1550847e8d9831a363f128247bc20a3e42ea07",
+    "supplement_originals/historical_pi_relative.pdf": "77e5ff1c341c7849f2e549ed4458845ba90ecb44ab82a6a0f9840244cfa36407",
+    "supplement_originals/historical_placement_original.pdf": "fd3db1727d4597177a045debc2134d70b7d7428d6b5dbaa0f6868ed80505a709",
+    "supplement_originals/historical_wan.pdf": "7c7f2589aca72df966dde7507fb87cf511654e8b1c9ee95a0023c3c70f9b4007",
+    "tables/admission_results.csv": "fde22fba4eb9182da19ead28667ed4478fefd6497a77967c963ba3a5294ec739",
+    "tables/mixed_cells.csv": "e0d468ba71c880bc5baf42e7daef80e630184dd37e71f6448da414f487f6778d",
+    "tables/mixed_meta.json": "5feefe0eab94fcb418c095ff9171d511b50f54d68368a244bb5920301fa919a4"
+  },
+  "scope": "Packaged measured inputs for main Figures 2,5-14 and supplement historical figures S1-S9; table sources for 120-instance admission and mixed QoS."
+}

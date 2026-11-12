@@ -1,5 +1,3 @@
-// revision-control is a persistent adapter around Tide's actual SubmitRoutine.
-// Its external load generator is a separate process and is not sampled as Tide.
 package main
 
 import (
@@ -66,8 +64,6 @@ func main() {
 	stubhdlr.RegisterEventHandler(dispatch, st)
 	clsstat.Singleton().AddStub(&clsstat.AddStubOpts{StubId: st.Id(), AppId: appID, NodeId: selfID, Mode: interfaces.StubFn, CreateTime: createStart})
 	procM.StartHeartbeat()
-	// Allow the existing asynchronous processFnLoop to enter RUNNING. This is
-	// setup time, recorded separately and outside the measured arrival window.
 	time.Sleep(100 * time.Millisecond)
 
 	var seq atomic.Uint64

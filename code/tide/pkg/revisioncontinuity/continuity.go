@@ -1,4 +1,3 @@
-// Package revisioncontinuity runs fixed-count CPU work with durable observations.
 package revisioncontinuity
 
 import (
@@ -17,8 +16,6 @@ import (
 	"github.com/ict/tide/pkg/revisionworkload"
 )
 
-// GoldenChecksum was calculated independently using Python hashlib.sha256 for
-// the revisionworkload CPU initialization and 100 iterations over 65536 bytes.
 const GoldenChecksum uint64 = 8843627163163507496
 const BytesPerStep int64 = 65536 * 100
 
@@ -50,8 +47,6 @@ type Reply struct {
 	StepsErrors    int                     `json:"steps_errors"`
 }
 
-// MonotonicNS is elapsed monotonic time since this worker instance booted. It is
-// meaningful within worker_instance, while UnixNS allows cross-node alignment.
 type Record struct {
 	Sequence       int    `json:"sequence"`
 	Event          string `json:"event"`
@@ -113,8 +108,6 @@ func validate(c Config) error {
 	return nil
 }
 
-// Run serializes work but not Progress or Identity. No task deadline or HTTP
-// request context truncates an accepted fixed-count run.
 func (r *Runner) Run(c Config) (reply Reply) {
 	r.serial.Lock()
 	defer r.serial.Unlock()
@@ -227,7 +220,6 @@ func (r *Runner) remoteStep(endpoint string) (uint64, error) {
 	return reply.Result.Checksum, nil
 }
 
-// Progress returns only complete records, including during an active run.
 func (r *Runner) Progress(id string) ([]byte, error) {
 	if !safeID.MatchString(id) {
 		return nil, fmt.Errorf("invalid run_id")

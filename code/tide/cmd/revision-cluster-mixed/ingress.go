@@ -14,8 +14,6 @@ import (
 	"github.com/ict/tide/pkg/revisionworkload"
 )
 
-// The function identifies scheduling QoS; the unchanged payload kind selects the
-// CPU kernel inside the shared worker. No worker or stub is created per class.
 type mixedRequest struct {
 	revisionworkload.Config
 	DeadlineMS int `json:"deadline_ms"`
@@ -73,8 +71,6 @@ func mixedHandler(submit nativeSubmit, nextID func() string) http.Handler {
 		w.Header().Set("X-Tide-Function", function)
 		w.Header().Set("X-Tide-Deadline-Ms", strconv.Itoa(work.DeadlineMS))
 		w.Header().Set("X-Tide-Effective-Deadline-Ms", strconv.FormatFloat(float64(effective)/float64(time.Millisecond), 'f', -1, 64))
-		// Explicit map membership is mandatory: a coincidentally matching global QoS
-		// fallback cannot silently substitute for a missing per-function class.
 		if err := validateClassConfig(dev.CurrentConfig()); err != nil {
 			http.Error(w, err.Error(), 503)
 			return

@@ -186,8 +186,6 @@ func issue5NewStub(t *testing.T, totalCPU int, kernel revisionworkload.Config) (
 	}
 	st := NewStub(&CreateStubOpts{AppId: issue5App, Mode: interfaces.StubFn,
 		ResReq: dev.GetStubResource(), ExecPool: &issue5Pool{kernel: kernel}, Proc: p, ProcM: pm}).(*stub)
-	// NewStub starts processFnLoop. Wait for its startup read of the generated
-	// ID to finish before assigning the deterministic ID used across hosts.
 	deadline := time.Now().Add(time.Second)
 	for {
 		st.mu.Lock()

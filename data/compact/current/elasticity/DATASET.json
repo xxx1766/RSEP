@@ -1,0 +1,24 @@
+{
+  "family": "elasticity",
+  "description": "Three paired runs of executor reservation and readiness timelines.",
+  "cohort": {
+    "runs": 6,
+    "repetitions_per_system": 3,
+    "load_rps": 42,
+    "load_s": 60,
+    "recovery_s": 360
+  },
+  "files": [
+    {
+      "path": "plot_data.json",
+      "bytes": 2101898,
+      "sha256": "b2d5aeb53091ee890858a3d8f08fb2d838b26a7a28f1af67c5cbc0a0be0d41b1"
+    },
+    {
+      "path": "summary.csv",
+      "bytes": 818,
+      "sha256": "30c478177559d9ff062264cff2612d706838acb03c808a22069e0dffaee6356d",
+      "rows": 6
+    }
+  ]
+}

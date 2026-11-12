@@ -1,20 +1,19 @@
-# Python / build artefacts
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 *.egg-info/
 .pytest_cache/
-
-# Notebook checkpoints and local editor state
 .ipynb_checkpoints/
 .DS_Store
 *.swp
-
-# Go build output
-code/tide/bin/
-code/tide/dist/
-
-# Local campaign output (not part of the curated artifact)
+**/bin/
+**/dist/
 results-*/
 *.log
+.env
+.env.*
+*.pem
+*.key
+figures/rendered/
+data/generated/

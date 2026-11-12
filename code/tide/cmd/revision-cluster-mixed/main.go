@@ -1,6 +1,3 @@
-// revision-cluster-mixed supplies measurement ingress and fixed warm deployment for
-// the native Tide Stub, scheduler, container executor and cloud event handlers.
-// It does not replace any request-placement or execution logic.
 package main
 
 import (
@@ -56,7 +53,11 @@ func main() {
 	httpAddr := flag.String("http", "0.0.0.0:29801", "HTTP measurement ingress")
 	roleArg := flag.String("role", "edge", "edge or cloud")
 	cpus := flag.Int("cpus", 2, "application logical CPUs (IDs 0..N-1)")
-	ioDir := flag.String("io-dir", "/root/tmc-fig6-cluster-20261014/io-data", "host-backed I/O directory")
+	defaultIO := os.Getenv("RSEP_IO_DIR")
+	if defaultIO == "" {
+		defaultIO = "/var/lib/rsep/io-data"
+	}
+	ioDir := flag.String("io-dir", defaultIO, "host-backed I/O directory")
 	logPath := flag.String("log", "runtime.jsonl", "native runtime log")
 	configPath := flag.String("config", "", "scheduling config")
 	flag.Parse()
@@ -71,7 +72,6 @@ func main() {
 		must(dev.LoadConfig(*configPath))
 		must(validateClassConfig(dev.CurrentConfig()))
 	}
-	// Fixed warm inventory: disable expiry for the bounded experiment duration.
 	cfg := dev.CurrentConfig()
 	cfg.TTLMS = 86400000
 	must(dev.SetConfig(cfg))
@@ -107,7 +107,6 @@ func main() {
 	if role == clsstat.CLOUD {
 		cloudhdlr.RegisterStubHandlers(dispatch, st)
 	}
-	// Cloud is reached by the native cloud fallback, not inserted into edge ranking.
 	if role != clsstat.CLOUD {
 		clsstat.Singleton().AddStub(&clsstat.AddStubOpts{StubId: st.Id(), AppId: appID, NodeId: *name, Mode: interfaces.StubFn, CreateTime: time.Now()})
 	}
@@ -117,7 +116,6 @@ func main() {
 	grpcServer := grpc.NewServer()
 	eventpb.RegisterEventServiceServer(grpcServer, server.NewEventServer(dispatch))
 	go func() { must(grpcServer.Serve(lis)) }()
-	// Idle processors still publish their native resource state.
 	pm.StartHeartbeat()
 	var sequence atomic.Uint64
 	var joined atomic.Bool

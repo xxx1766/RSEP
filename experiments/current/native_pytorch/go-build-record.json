@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "steps": [
+    {
+      "command": [
+        "/usr/local/go/bin/gofmt",
+        "-w",
+        "cmd/resptestv2/main.go",
+        "cmd/resptestv2/exp.go",
+        "cmd/resptestv2/experiment_config.go",
+        "cmd/resptestv2/experiment_config_test.go",
+        "cmd/httpbase/main.go",
+        "cmd/httpbase/client_validation_test.go"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/go/bin/go",
+        "test",
+        "./cmd/resptestv2",
+        "./cmd/httpbase"
+      ],
+      "returncode": 0,
+      "stdout": "ok  \tgithub.com/ict/tide/cmd/resptestv2\t0.011s\nok  \tgithub.com/ict/tide/cmd/httpbase\t12.301s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/go/bin/go",
+        "build",
+        "-o",
+        "bin/resptestv2-cpu-budget",
+        "./cmd/resptestv2"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/go/bin/go",
+        "build",
+        "-o",
+        "bin/httpbase",
+        "./cmd/httpbase"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "binaries": {
+    "httpbase": "00810dd73ba163c84168ff487bf7e7f60e742aa7fb6bd60b3e6b17a93e658fdf",
+    "resptestv2-cpu-budget": "1579f847b377ec2361f99f2ffdf15713a4648e9e5f088a9e7ebcef9cea81daa2"
+  }
+}

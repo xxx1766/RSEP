@@ -22,7 +22,7 @@ type stackExecPool struct {
 
 	noConcurrency int32
 	noTotal       int32
-	maxTotal      int32 // zero permits normal runtime growth; ablation fixes a worker budget
+	maxTotal      int32
 	idleStack     list.List
 	waiters       list.List
 	mu            sync.Mutex
@@ -79,7 +79,6 @@ func (p *stackExecPool) Close() error {
 }
 
 func (p *stackExecPool) Get() (exec interfaces.Executor) {
-	// EXP
 	if dev.RSEPTest && !dev.EnableContainerPerRoutine {
 		elem := p.idleStack.Back()
 		return elem.Value.(interfaces.Executor)
@@ -113,7 +112,6 @@ func (p *stackExecPool) Get() (exec interfaces.Executor) {
 }
 
 func (p *stackExecPool) Return(e interfaces.Executor) {
-	// EXP
 	if dev.RSEPTest && !dev.EnableContainerPerRoutine {
 		return
 	}
@@ -122,7 +120,7 @@ func (p *stackExecPool) Return(e interfaces.Executor) {
 	defer p.mu.Unlock()
 
 	p.noConcurrency--
-	if p.waiters.Len() > 0 { // 如果有等待的，直接给他
+	if p.waiters.Len() > 0 {
 		elem := p.waiters.Front()
 		w := elem.Value.(*waiter)
 		w.ready <- e
@@ -133,13 +131,11 @@ func (p *stackExecPool) Return(e interfaces.Executor) {
 }
 
 func (p *stackExecPool) IncInstance(delta int) {
-	// EXP
 	if p.noTotal == 0 && dev.RSEPTest && !dev.EnableContainerPerRoutine {
 		delta = 1
 	}
 
 	p.mu.Lock()
-	//TODO: 最大数量还应和Routine需求有关
 	max_delta := clsstat.Singleton().GetSelf().ResTotal.CpuNum - int(p.noTotal)
 	if delta > max_delta {
 		delta = max_delta
@@ -178,7 +174,7 @@ func (p *stackExecPool) createThread() {
 	default:
 		p.mu.Lock()
 		p.executors = append(p.executors, newExec)
-		if p.waiters.Len() > 0 { // 如果有等待的，直接给他
+		if p.waiters.Len() > 0 {
 			elem := p.waiters.Front()
 			w := elem.Value.(*waiter)
 			w.ready <- newExec

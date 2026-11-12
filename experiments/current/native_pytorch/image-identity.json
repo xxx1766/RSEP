@@ -1,0 +1,5 @@
+{
+  "status": "PREPARED",
+  "dependencies": 22420,
+  "image": "docker.io/tide/fig5-piei-20261010:amd64                                                                application/vnd.oci.image.manifest.v1+json                sha256:defacfb3b2342c9a72fbdb6504844eccadb61a234647d33c34fc02b0019daa0a 164.6 MiB linux/amd64             -      "
+}

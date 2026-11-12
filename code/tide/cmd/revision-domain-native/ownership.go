@@ -145,8 +145,6 @@ func (o *ownership) snapshot() ownershipSnapshot {
 	return snapshot
 }
 
-// An installed peer advertises its actually created warm stub. This records
-// bootstrap inventory without manufacturing a native StubNew event in traces.
 func (o *ownership) registerInitialStub(id, node string) {
 	o.mu.Lock()
 	defer o.mu.Unlock()

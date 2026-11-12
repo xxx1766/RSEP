@@ -92,9 +92,6 @@ func init() {
 }
 
 func initEnv() {
-	// go func() {
-	// 	log.Println(http.ListenAndServe(":9998", nil))
-	// }()
 
 	var rLim unix.Rlimit
 	if err := unix.Getrlimit(unix.RLIMIT_MSGQUEUE, &rLim); err != nil {
@@ -109,33 +106,15 @@ func initEnv() {
 	}
 	logrus.Info("Rlimit final: ", rLim)
 
-	// setup logger
 	level, err := logrus.ParseLevel(logLevel)
 	if err != nil {
 		logrus.Fatal(err)
 	}
 	logrus.SetLevel(level)
-	// logrus.SetFormatter(&logrus.TextFormatter{
-	// 	FullTimestamp:   true,
-	// 	TimestampFormat: "2006-01-02T15:04:05.000000000",
-	// })
 	logrus.SetFormatter(&logrus.JSONFormatter{
 		TimestampFormat: "2006-01-02T15:04:05.000000000",
 	})
-	// logrus.SetFormatter(&nested.Formatter{
-	// 	NoColors:        true,
-	// 	TimestampFormat: "2006-01-02 15:04:05",
-	// 	// 显示输出的文件和函数名, 便于定位
-	// 	// CallerFirst:     true,
-	// 	// CustomCallerFormatter: func(f *runtime.Frame) string {
-	// 	// 	s := strings.Split(f.Function, ".")
-	// 	// 	funcName := s[len(s)-1]
-	// 	// 	return fmt.Sprintf(" [%s#%d][%s()]", path.Base(f.File), f.Line, funcName)
-	// 	// },
-	// })
-	// logrus.SetReportCaller(true)
 
-	// 若文件夹不存在则创建
 	if logPath == "-" {
 		logrus.SetOutput(os.Stderr)
 		return
@@ -158,7 +137,6 @@ func initFlags() *tideServeConfig {
 		logrus.Fatalf("unknown role type, `%s`", roleParam)
 	}
 
-	// build self infomation
 	selfId := stringx.GenerateId()
 	if nodeName != "" {
 		selfId = nodeName
@@ -198,7 +176,6 @@ func serveTide() {
 	procM := procmgr.NewProcMgr(config.SelfRes)
 	stubM := stubmgr.NewStubMgr(procM)
 
-	// setup event server
 	evtDispr := event.NewEventDispatcher()
 	if config.SelfRole != clsstat.CLOUD {
 		stubmgrhdlr.RegisterEventHandler(evtDispr, stubM)
@@ -210,7 +187,6 @@ func serveTide() {
 
 	cmnct.Init(config.NodeName, config.OutboundAddr, evtDispr)
 
-	// setup grpc server
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
 		logrus.Fatalf("failed to listen: %v", err)
@@ -218,20 +194,17 @@ func serveTide() {
 	grpcSvr := grpc.NewServer()
 	eventpb.RegisterEventServiceServer(grpcSvr, evtSvr)
 
-	// start daemon goroutine
 	go func() {
 		logrus.Infof("grpc server listening at %v", lis.Addr())
 		if err := grpcSvr.Serve(lis); err != nil {
 			logrus.Fatalf("failed to serve: %v", err)
 		}
 	}()
-	// only EDGE node boradcast its resource state
 	if config.SelfRole == clsstat.EDGE {
 		procM.StartHeartbeat()
 	}
 	broadcastJoin(config.NodeName, config.OutboundAddr, config.SelfRole, config.SelfRes)
 
-	// graceful exit
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGTERM, os.Interrupt)
 	onErr := func(err error) {
@@ -257,8 +230,6 @@ func serveTide() {
 	}()
 
 	<-exitCh
-	// sig := <-c
-	// logrus.Infof("Got %s signal. Aborting...", sig)
 	grpcSvr.GracefulStop()
 	onErr(stubM.Close())
 	onErr(procM.Close())
@@ -293,7 +264,6 @@ func broadcastJoin(selfId, selfAddr string, role clsstat.NodeRole, selfRes *rout
 	}
 }
 
-// Get preferred outbound ip of this machine
 func getOutboundIP() string {
 	conn, err := net.Dial("udp", "8.8.8.8:80")
 	if err != nil {

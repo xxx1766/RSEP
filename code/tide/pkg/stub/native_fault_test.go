@@ -291,8 +291,6 @@ func TestNativeIssue7Parent(t *testing.T) {
 			result.ObservedReceiver = "rejected-at-origin"
 		} else {
 			if wantRoute == "remote" {
-				// The real originating executor registers its waiter before
-				// sending the remote wait event. Reproduce that protocol step.
 				origin.waiterStore.Push(&waiters.Waiter{RefIds: []string{r.Id}, Exec: &issue7Executor{events: make(chan *interfaces.Event, 1)}, WithData: true})
 				select {
 				case <-r.WaitReceive():

@@ -1,9 +1,5 @@
 package containerxv2
 
-// cgroup_pool.go — cgroup v2 port of pkg/containerx/cgroup_pool.go.
-// Logic is identical; only CreateCgroup / DeleteCgroup symbols differ in
-// their cgroups library binding.
-
 import (
 	"runtime"
 
@@ -28,10 +24,6 @@ func InitCgroup() {
 	}
 }
 
-// initCgroup is the private, per-resource pool variant from v1. We keep the
-// structure parity but remove the hardcoded {4,8,96} NumCPU allowlist so it
-// runs on this 16-core host. The v1 Fatal check was defensive and not on the
-// hot RSEP path; preserving the check would be a regression.
 func initCgroup() {
 	totalCgroup := clsstat.Singleton().GetSelf().ResTotal.CpuNum / dev.GetStubResource().CpuNum
 	devCpuNum := runtime.NumCPU()

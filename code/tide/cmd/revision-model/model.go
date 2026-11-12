@@ -1,5 +1,3 @@
-// revision-model compares a score-based admission heuristic with an exact
-// cardinality assignment solver in an explicitly restricted offline model.
 package main
 
 import (
@@ -45,8 +43,6 @@ type Solution struct {
 	Stats      SearchStats `json:"search"`
 }
 
-// Network is a fixed per-node response budget, not serial executor work.
-// Thus a node's entire batch needs sum(service) + network <= deadline.
 func ValidateAssignment(in Instance, s Solution) error {
 	if len(s.Assignment) != len(in.Tasks) {
 		return fmt.Errorf("assignment length mismatch")
@@ -73,7 +69,6 @@ func ValidateAssignment(in Instance, s Solution) error {
 	return nil
 }
 
-// Input order is preserved. Ties use the first feasible node by index.
 func Heuristic(in Instance, weights [3]float64, latencyScale float64) Solution {
 	result := Solution{Assignment: make([]int, len(in.Tasks))}
 	loads := make([]int, len(in.Nodes))
@@ -100,10 +95,6 @@ func Heuristic(in Instance, weights [3]float64, latencyScale float64) Solution {
 	return result
 }
 
-// Exact explores assignment or rejection for every task, independently of the
-// heuristic. The optimistic bound pools residual capacities and gives each
-// remaining task its cheapest currently feasible node cost. This relaxation
-// can only overestimate the number of additional admissions.
 func Exact(in Instance) Solution {
 	n := len(in.Tasks)
 	order := make([]int, n)

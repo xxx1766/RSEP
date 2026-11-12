@@ -11,8 +11,6 @@ import (
 	"time"
 )
 
-// Config contains fixed, recorded inputs for a run. Timing estimates are
-// calibrated before evaluation; these values are not measured outcomes.
 type Config struct {
 	C4Functions     map[string]bool    `json:"c4_functions,omitempty"`
 	ExecutionMS     int                `json:"execution_ms"`
@@ -123,7 +121,6 @@ func LoadConfig(path string) error {
 			return fmt.Errorf("unknown or noncanonical config field %q", key)
 		}
 	}
-	// encoding/json otherwise treats null numbers as unchanged defaults.
 	tokens := json.NewDecoder(bytes.NewReader(body))
 	for {
 		token, err := tokens.Token()

@@ -16,8 +16,6 @@ func servePAIX() error {
 	if inName == "" || outName == "" {
 		return fmt.Errorf("missing TIDE_IN_MQ/TIDE_OUT_MQ")
 	}
-	// Open existing queues. The library uses this size for its receive buffer;
-	// it does not alter attributes of already-created queues.
 	attr := &posix_mq.MessageQueueAttribute{MsgSize: 1 << 24}
 	in, err := posix_mq.NewMessageQueue("/"+strings.TrimPrefix(inName, "/"), posix_mq.O_RDWR, 0600, attr)
 	if err != nil {

@@ -1,0 +1,75 @@
+{
+  "cohort": {
+    "blocks": 5,
+    "cells": 36,
+    "offers": 37800,
+    "rates_rps": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "repeats_per_cell": 5,
+    "runs": 180
+  },
+  "description": "180-run native PyTorch cohort with compact per-request outcomes and the existing cell and contrast summaries.",
+  "family": "native_pytorch",
+  "files": [
+    {
+      "path": "cells.csv",
+      "bytes": 47865,
+      "sha256": "f7fdec5e71fc5bb5cf9b8316633d908fed893b5f74edee0c77ddc355b23d2b11",
+      "rows": 36
+    },
+    {
+      "path": "contrasts.csv",
+      "bytes": 83148,
+      "sha256": "dc694607d01b47f8ed23ecd7991451309c4322a823e53f28abf95c101fba412f",
+      "rows": 420
+    },
+    {
+      "path": "per_run.csv",
+      "bytes": 62234,
+      "sha256": "360c354e56a3f58f2c945a6c03f432c36aca2fba833b9622b6b4a7dd89d3725f",
+      "rows": 180
+    },
+    {
+      "path": "plot_data.json",
+      "bytes": 310920,
+      "sha256": "15b020d23f3633d1c8d638df59aa0469f9693904314e0664821217a126f17f3d"
+    },
+    {
+      "path": "requests.csv.gz",
+      "bytes": 1193129,
+      "sha256": "493784d00e056c2f086bdce306a4002243b4e48acaca39044348d5f4484feef6",
+      "rows": 37800
+    }
+  ],
+  "sanitization": {
+    "relative_time": "milliseconds from the run-relative submit clock recorded by the campaign",
+    "removed": [
+      "none required in the request table"
+    ]
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-issue42-native-direct-evidence-20261103/analysis/formal",
+    "relative_paths": [
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/requests.csv",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/per_run.csv",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/cells.csv",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/contrasts.csv",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/results.json"
+    ],
+    "source_sha256": {
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/cells.csv": "f7fdec5e71fc5bb5cf9b8316633d908fed893b5f74edee0c77ddc355b23d2b11",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/contrasts.csv": "dc694607d01b47f8ed23ecd7991451309c4322a823e53f28abf95c101fba412f",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/per_run.csv": "360c354e56a3f58f2c945a6c03f432c36aca2fba833b9622b6b4a7dd89d3725f",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/requests.csv": "8ce2f5ad5114b881e0182787d489965e476328c99be53d1f1add5b4cadbd9f68",
+      "RSEP/results-issue42-native-direct-evidence-20261103/analysis/formal/results.json": "c399841d5dbc6854592831477af2a94ad13007cda4543d7ada295f13e2e89049"
+    }
+  },
+  "title": "Native PyTorch ablation and request archive"
+}

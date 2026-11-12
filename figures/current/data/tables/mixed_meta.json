@@ -1,0 +1,25 @@
+{
+ "source": "code/Tide/results-fig7-cluster-mixed-20261016/audit/cells.csv",
+ "runs_source": "code/Tide/results-fig7-cluster-mixed-20261016/audit/runs.csv",
+ "levels": [
+  "low",
+  "high",
+  "overload"
+ ],
+ "display_rates": {
+  "low": 120,
+  "high": 310,
+  "overload": 460
+ },
+ "actual_rates": {
+  "low": 116,
+  "high": 309,
+  "overload": 463
+ },
+ "n": 5,
+ "repeats": 5,
+ "treatments": 60,
+ "offers": 177600,
+ "window_s": 10,
+ "rounding": "Rates rounded to nearest ten for display; class means and CI half-widths remain exact."
+}

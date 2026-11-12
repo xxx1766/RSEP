@@ -48,7 +48,6 @@ def read_records(path, expected_count=None):
         if (not math.isfinite(latency) or latency < 0 or row['t_submit_ns'] < 0
                 or row['t_reply_ns'] < row['t_submit_ns']):
             raise ValueError('invalid timestamp or latency')
-        # Legacy binaries round latency to three decimal places.
         if abs(latency - (row['t_reply_ns'] - row['t_submit_ns']) / 1e6) > .0011:
             raise ValueError('latency does not match timestamps')
     if expected_count is not None and len(rows) != expected_count:

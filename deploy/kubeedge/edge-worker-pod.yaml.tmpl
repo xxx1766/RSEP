@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ${KUBEEDGE_NODE}
+  namespace: ${KUBEEDGE_NAMESPACE}
+  labels:
+    app: ${KUBEEDGE_NODE}
+spec:
+  nodeName: ${KUBEEDGE_NODE}
+  hostNetwork: true
+  dnsPolicy: Default
+  restartPolicy: Never
+  automountServiceAccountToken: false
+  terminationGracePeriodSeconds: 1
+  containers:
+  - name: worker
+    image: ${WORKER_IMAGE}
+    imagePullPolicy: Never
+    command: ["/worker", "--mode=http", "--listen=0.0.0.0:19280"]
+    env:
+    - name: GOMAXPROCS
+      value: "1"
+    resources:
+      requests:
+        cpu: "2"
+        memory: 512Mi
+      limits:
+        cpu: "2"
+        memory: 512Mi
+    readinessProbe:
+      httpGet:
+        host: 127.0.0.1
+        path: /health
+        port: 19280
+      periodSeconds: 1

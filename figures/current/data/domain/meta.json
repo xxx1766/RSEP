@@ -1,0 +1,19 @@
+{
+ "tide_first_B_timely_return_s": [
+  47.619457464,
+  47.619789685,
+  47.439089347
+ ],
+ "bin_width_s": 5,
+ "duration_s": 150,
+ "cloud_cut_s": [
+  20,
+  110
+ ],
+ "systems": [
+  "tide",
+  "kubeedge",
+  "ray"
+ ],
+ "scope": "Three cold-start interrupted runs per system; run-level series plus cached mean_n3 bins."
+}

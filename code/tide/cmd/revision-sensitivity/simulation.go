@@ -1,5 +1,3 @@
-// revision-sensitivity is an explicitly restricted online selection simulation.
-// It reuses the runtime score but is not an execution of the Tide runtime.
 package main
 
 import (
@@ -61,8 +59,6 @@ type Summary struct {
 	P95AcceptedLatencyMS  float64 `json:"p95_accepted_latency_ms"`
 }
 
-// Simulate maintains one FIFO service finish time per node. Network is a fixed
-// response budget after service, so it does not occupy the serial executor.
 func Simulate(trace Trace, nodes []Node, weights [3]float64, scale float64) ([]Decision, Summary) {
 	finish := make([]int64, len(nodes))
 	decisions := make([]Decision, 0, len(trace.Requests))

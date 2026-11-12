@@ -59,11 +59,6 @@ func New(imgName, volumePair string, commands []string, mode interfaces.StubMode
 			exec.Close()
 			return nil, err
 		}
-		// if err := exec.ins.Pause(); err != nil {
-		// 	logger.Error("Exec: failed to pause instance, ", err)
-		// 	exec.Close()
-		// 	return nil, err
-		// }
 	}
 
 	return exec, nil

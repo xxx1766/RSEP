@@ -1,0 +1,90 @@
+{
+  "rtt_ms": 65,
+  "deadline_ms": 135,
+  "compute_vms": "3 local + 3 remote",
+  "baseline": "native Kubernetes default ClusterIP Service (k0)",
+  "scope": "3 local and 3 remote nested VMs; emulated remote RTT 65 ms",
+  "cases": [
+    {
+      "pattern": "gradual",
+      "systems": {
+        "tide": {
+          "name": "original65-gradual-tide",
+          "offered": 1000,
+          "on_time": 903,
+          "goodput_rps": 3.342773057915487,
+          "yield_pct": 90.3,
+          "repeats": 1,
+          "ci95_halfwidth": null,
+          "exec_local": 906,
+          "exec_remote": 0,
+          "admission_rejections": 94
+        },
+        "k0": {
+          "name": "original65-gradual-k0",
+          "offered": 1000,
+          "on_time": 446,
+          "goodput_rps": 1.6510263386825106,
+          "yield_pct": 44.6,
+          "repeats": 1,
+          "ci95_halfwidth": null,
+          "exec_local": 492,
+          "exec_remote": 508,
+          "admission_rejections": 0
+        }
+      },
+      "trace_sha256": "903d6ef38d6c19252f31eae34523dc53aa361f877017ffc315a4a8495603c17b",
+      "pair_idle_s": 79.982907394,
+      "ratio_tide_over_default": 2.024663677130045
+    },
+    {
+      "pattern": "burst",
+      "systems": {
+        "tide": {
+          "name": "original65-burst-tide",
+          "offered": 1000,
+          "on_time": 803,
+          "goodput_rps": 3.3439523601307597,
+          "yield_pct": 80.3,
+          "repeats": 1,
+          "ci95_halfwidth": null,
+          "exec_local": 804,
+          "exec_remote": 0,
+          "admission_rejections": 196
+        },
+        "k0": {
+          "name": "original65-burst-k0",
+          "offered": 1000,
+          "on_time": 302,
+          "goodput_rps": 1.2576259187540342,
+          "yield_pct": 30.2,
+          "repeats": 1,
+          "ci95_halfwidth": null,
+          "exec_local": 399,
+          "exec_remote": 601,
+          "admission_rejections": 0
+        }
+      },
+      "trace_sha256": "e511f38b4221b9a0cf98e39613d1a63641ec87d0aa62cc61431400ac81511acb",
+      "pair_idle_s": 79.171807243,
+      "ratio_tide_over_default": 2.6589403973509933
+    }
+  ],
+  "source_sha256": {
+    "pilot_summary.json": "ba6f4737f9c6e7ccf4ffc3425ab74a43bfe4238ddbfc4f95ed65a8e2eda0ca5d",
+    "runs/original65-gradual-tide/audit.json": "a055bdd041dba51d6b24d822630bc491a9be9e682130d89635e838b22f541b57",
+    "runs/original65-gradual-tide/run.json": "a1c617acd203be3d288f8a664c386bd9d6e2c061fec4303d15e515503fc86aad",
+    "runs/original65-gradual-tide/requests.jsonl": "5556fc6ca9cb1d40b97c96204b98d56c93bb119ee7e9355d33b39d0a9269aef9",
+    "traces/gradual.jsonl": "903d6ef38d6c19252f31eae34523dc53aa361f877017ffc315a4a8495603c17b",
+    "runs/original65-gradual-k0/audit.json": "1c95a6e6541a9f41f299a5639b64a607cd9aabcb4393736f774cd49e4d93e55f",
+    "runs/original65-gradual-k0/run.json": "e7bd2fb1096444fe4499da62f43334f3101d742522e1bb7cd17154c2e722cd3a",
+    "runs/original65-gradual-k0/requests.jsonl": "b9d70d2d7c93bab415ab4cde1dff88b5222f384bbd513eb33d9c3b2ccee7ff1d",
+    "runs/original65-burst-tide/audit.json": "39ad3dad462575c5365116ee94bc29d875d4997a27fd7dbd6a3d6295f6eec9a6",
+    "runs/original65-burst-tide/run.json": "45e1f7ec4cdc8e2f117ef2b86a7106551c7476fe63fa489fdbf099a2a65436e4",
+    "runs/original65-burst-tide/requests.jsonl": "f5dd2b716c12012627527ee2cf8abb39e2c4e2e55d7c755fd155dae9d09880ac",
+    "traces/burst.jsonl": "e511f38b4221b9a0cf98e39613d1a63641ec87d0aa62cc61431400ac81511acb",
+    "runs/original65-burst-k0/audit.json": "e4699254a152b57f04c3e58d5d1d033492449cd4687da833e20dd73774e6f308",
+    "runs/original65-burst-k0/run.json": "cd6f633b5e3193d2ecd07d5268b4089e36991ed3b94f924b508561bdc2771d35",
+    "runs/original65-burst-k0/requests.jsonl": "48013a143021ad9b6b53139ff6377eb589cea3f8754d3775ab247c68e030e712"
+  }
+}

@@ -46,7 +46,6 @@ func New(appId, imgName string, commands []string) *Scheduler {
 
 		done: make(chan struct{}),
 	}
-	// go schd.Start()
 	return schd
 }
 
@@ -55,7 +54,6 @@ func (skdr *Scheduler) Close() {
 }
 
 func (skdr *Scheduler) Schedule(ctx context.Context, rtn *routine.Routine) (toCloud bool, cloudId string) {
-	// skdr.pending <- rtn
 	return skdr.scheduleOne(ctx, rtn)
 }
 
@@ -77,7 +75,6 @@ func (skdr *Scheduler) scheduleOne(ctx context.Context, rtn *routine.Routine) (t
 
 	var sortedStub []*clsstat.StubState
 
-	// 如果不能满足，直接抛到云上
 	endBefore := rtn.SubmitTime + int64(dev.GetToleranceTimeFor(rtn.FnName))
 
 	logrus.WithFields(logrus.Fields{"RoutineId": rtn.Id, "SubmitTime": rtn.SubmitTime, "endBefore": endBefore, "Timenow": time.Now().UnixNano()}).Debug("Sched: judging where to submit")
@@ -88,7 +85,6 @@ func (skdr *Scheduler) scheduleOne(ctx context.Context, rtn *routine.Routine) (t
 		}
 	}
 
-	// try to submit to suitable stub
 	sortedStub = skdr.sortStubFn(rtn, appStat.Stubs)
 	logrus.WithFields(logrus.Fields{"sortedStub": sortedStub}).Debug("Get sortedStub")
 	for _, stStat := range sortedStub {
@@ -102,7 +98,6 @@ func (skdr *Scheduler) scheduleOne(ctx context.Context, rtn *routine.Routine) (t
 		}
 
 		if err := skdr.submitToStub(rtn, stStat); err != nil {
-			// TODO: 减刚才加的时间
 			logrus.Warn("Sched: failed to submit routine to stub, ", err)
 			continue
 		}
@@ -139,14 +134,12 @@ func (skdr *Scheduler) scheduleOne(ctx context.Context, rtn *routine.Routine) (t
 		}
 	}
 
-	// if there is no suitable stub, just throw to cloud
 	toCloud, cloudId = skdr.trySubmitToCloud(ctx, rtn, clsStat)
 
 ret:
 	return
 }
 
-// Network time consumes deadline slack, but does not occupy the execution queue.
 func reserveStub(st *clsstat.StubState, deadline int64) bool {
 	budget := dev.GetNetworkBudget(st.NodeId).Nanoseconds()
 	if deadline <= budget {

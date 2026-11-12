@@ -1,9 +1,5 @@
 package containerx
 
-/*
-边缘侧设备创建两核所有组合的Cgroup
-*/
-
 import (
 	"fmt"
 	"runtime"
@@ -39,7 +35,6 @@ func InitCombCgroup() {
 	}
 }
 
-// TODO： 核心可配置
 func rsepInitCombCgroup() {
 	devCpuNum := 8
 	cpuNum := 6

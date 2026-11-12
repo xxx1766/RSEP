@@ -39,9 +39,6 @@ func newPosixMQ(name string) (que Queue, err error) {
 	return &posixMQ{name: name, mq: mq}, nil
 }
 
-// Keep legacy defaults; small-payload experiments can use the host's existing
-// queue limits without changing system-wide sysctls. All peers must fit payloads
-// within the configured message size.
 func messageQueueAttributes() (*posix_mq.MessageQueueAttribute, error) {
 	a := &posix_mq.MessageQueueAttribute{MsgSize: 1 << 24, MaxMsg: 65535}
 	for _, item := range []struct {

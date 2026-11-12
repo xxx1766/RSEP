@@ -50,7 +50,7 @@ func buildApp(evtDispr event.EventDispatcher, stubm *stubmgr.StubManager, appId,
 		Commands:   commands,
 		Mode:       interfaces.StubFn,
 		ResReq:     dev.GetStubResource(),
-		InitExecNo: 2, // TODO: 设置为 容忍时间 / 预估时间 + 1 较为合理
+		InitExecNo: 2,
 	}
 	st, err := stubm.CreateStub(opts)
 	if err != nil {
@@ -60,8 +60,6 @@ func buildApp(evtDispr event.EventDispatcher, stubm *stubmgr.StubManager, appId,
 	RegisterStubHandlers(evtDispr, st)
 }
 
-// RegisterStubHandlers exposes the native cloud request path for a prestarted
-// function stub, allowing controlled deployments to fix the worker inventory.
 func RegisterStubHandlers(evtDispr event.EventDispatcher, st interfaces.Stub) {
 	evtDispr.RegisterHandler(interfaces.CldRtnSbmEvt(st.AppId()), rtnSbmHdlr(st))
 	evtDispr.RegisterHandler(interfaces.CldRtnWaitEvt(st.AppId()), rtnWaitHdlr(st))
@@ -91,8 +89,6 @@ func rtnWaitHdlr(stub interfaces.Stub) event.EventHandler {
 		logrus.WithFields(logrus.Fields{"RoutineId": rtnWGEvtPb.RtnId, "StubId": stub.Id()}).
 			Debug("StubHdlr: start waitting routine done")
 
-		// request stub receives `routine received by cloud` event from offloaded stub,
-		// so, for cloud, wait event can be reached earlier than submit event
 		ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 		defer cancel()
 		if clsstat.Singleton().GetSelf().Role == clsstat.CLOUD && !stub.WaitRoutineReach(ctx, rtnWGEvtPb.RtnId) {
@@ -104,7 +100,6 @@ func rtnWaitHdlr(stub interfaces.Stub) event.EventHandler {
 		logrus.WithFields(logrus.Fields{"RoutineId": rtnWGEvtPb.RtnId, "StubId": stub.Id()}).
 			Debug("StubHdlr: finish waiting routine done")
 
-		// 等待该Routine的Stub与执行该Routine的Stub，为同一个Stub，直接通知即可
 		if rtnWGEvtPb.ReqSid == stub.Id() {
 			stub.NoticeRtnData(rtn.Id, rtn.Status(), rtn.Result(), rtn.Error())
 			return

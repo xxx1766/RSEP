@@ -3,8 +3,6 @@ package main
 import "testing"
 
 func TestAllocationIntegralUsesObservedTransitionsAndIdleWindows(t *testing.T) {
-	// A used stub holds two CPUs from t=10 to t=70; only t=40..70 is
-	// in the measured post-response idle interval. No TTL input is involved.
 	samples := []resourceSample{
 		{NS: 0, TotalCPU: 2, RemainingCPU: 2, Source: "heartbeat"},
 		{NS: 10, TotalCPU: 2, RemainingCPU: 0, Source: "heartbeat"},

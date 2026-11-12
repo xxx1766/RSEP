@@ -86,7 +86,6 @@ func TestReservationRetainsNetworkBudgetAfterQueueGrowth(t *testing.T) {
 	cs.AddStub(&clsstat.AddStubOpts{StubId: "reservation-stub", NodeId: "reservation-node", Mode: interfaces.StubFn})
 	st := cs.GetStub("reservation-stub")
 	deadline := time.Now().Add(400 * time.Millisecond).UnixNano()
-	// This competing reservation can occur between candidate sorting and admission.
 	if !cs.TryUpdateEstWaitTime(st.Id, uint64(100*time.Millisecond), uint64(deadline)) {
 		t.Fatal("fixture reservation failed")
 	}

@@ -9,7 +9,6 @@ import (
 	"testing"
 )
 
-// Enumerate all (nodes+1)^tasks assignments, without solver pruning or memoization.
 func bruteForce(in Instance) int {
 	count := 1
 	for range in.Tasks {

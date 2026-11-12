@@ -1,0 +1,42 @@
+// execins PAIX protocol — wire format for the POSIX mqueue carrying events
+// between a Tide Stub (Go) and an executor container (Python workload).
+//
+// Reconstructed 2026-04-21 from proto/execinspb/proto.pb.go because the
+// upstream .proto was not checked in. Field numbers and enum values matched
+// byte-for-byte with the generated Go so existing binaries keep working.
+//
+// Regenerate Go bindings (optional — we didn't touch proto.pb.go):
+//   protoc --go_out=. --go_opt=paths=source_relative proto/execinspb/proto.proto
+// Regenerate Python bindings (used by workload/paix_worker.py):
+//   python3 -m grpc_tools.protoc -I proto \
+//       --python_out=workload proto/execinspb/proto.proto
+
+syntax = "proto3";
+package execins;
+option go_package = "github.com/ict/tide/proto/execinspb";
+
+message Routine {
+  string id      = 1;
+  string fn_name = 2;
+  bytes  args    = 3;
+}
+
+message Event {
+  enum Type {
+    ROUTINE_SUBMIT = 0;
+    GET_WAIT       = 1;
+    EXIT           = 2;
+    INIT           = 3;
+  }
+  enum Status {
+    SUCC = 0;
+    FAIL = 1;
+  }
+  Type              type      = 1;
+  optional bool     with_data = 2;
+  repeated string   ref_ids   = 3;
+  optional Status   status    = 4;
+  optional bytes    result    = 5;
+  optional string   error     = 6;
+  optional Routine  routine   = 7;
+}

@@ -1,0 +1,28 @@
+{
+  "family": "control_cost",
+  "description": "Management and runtime CPU and PSS for Fig.12.",
+  "cohort": {
+    "systems": 3,
+    "rates_rps": [
+      10,
+      20,
+      40,
+      80
+    ],
+    "repetitions": 3,
+    "role_rows": 72,
+    "deadline_ms": 200
+  },
+  "units": {
+    "cpu_pct": "percent of one CPU",
+    "pss_mib": "MiB"
+  },
+  "files": [
+    {
+      "path": "runs.csv",
+      "bytes": 4519,
+      "sha256": "1476b07ea409208bf92871cbf844e55e6e7bc0ff93fd42502d0a55ce19b34d61",
+      "rows": 72
+    }
+  ]
+}

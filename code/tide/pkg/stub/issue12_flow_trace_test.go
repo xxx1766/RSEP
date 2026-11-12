@@ -7,8 +7,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// These opt-in process wrappers only change log formatting. Native admission,
-// scheduling, transport, executors and result handling remain unchanged.
 type issue12FlowClock struct{}
 
 func (issue12FlowClock) Levels() []logrus.Level { return logrus.AllLevels }

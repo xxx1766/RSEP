@@ -1,0 +1,61 @@
+{
+  "cohort": {
+    "measured_per_run": 3000,
+    "padding_bytes": 64,
+    "runs": 3,
+    "semantics": "sequential round trips between two OS processes over POSIX message queues",
+    "warmups_per_run": 50
+  },
+  "description": "Three runs of 3,000 measured sequential protobuf exchanges after 50 warmups each, with per-run wall-clock accounting.",
+  "family": "paix_ipc",
+  "files": [
+    {
+      "path": "exchanges.csv.gz",
+      "bytes": 112722,
+      "sha256": "d800071632e8628cac1c91e206e9fa02aa49205dbcd201d2376e3fd4beee01a3",
+      "rows": 9000
+    },
+    {
+      "path": "runs.csv",
+      "bytes": 543,
+      "sha256": "f500c86b0d332cfd0975a6d5a37024c4684734ca0d8e80ad4ea34c2454d1ccea",
+      "rows": 3
+    },
+    {
+      "path": "warmups.csv.gz",
+      "bytes": 2279,
+      "sha256": "8ebde87a447e6c5a2d3e96fc0b9b420bf596552ad379fb87610397acf4bfedd7",
+      "rows": 150
+    }
+  ],
+  "sanitization": {
+    "removed": [
+      "process identifiers",
+      "queue names",
+      "absolute filesystem paths",
+      "worker build paths"
+    ],
+    "time": "nanoseconds as measured; wall rate includes client validation and CSV recording"
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-revision-20260928/control-matrix-01/padding64",
+    "relative_paths": [
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run1/run/raw.csv",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run2/run/raw.csv",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run3/run/raw.csv",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run1/run/run.json",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run2/run/run.json",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run3/run/run.json"
+    ],
+    "source_sha256": {
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run1/run/raw.csv": "bfee519cfbf1318a245762dd29b45c7b0a963775c9a8c5b6afa1c1f269efc9e8",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run1/run/run.json": "d074498b1b992f57a49b04d3d07faaccac6023d44ffe927dde4acf64986f2535",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run2/run/raw.csv": "b55c8d4a28e40077cc29ca8119655b0bbd38ac1f04adc2124de38e31f3eaceb6",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run2/run/run.json": "7158d55a3e49cd71862d6be473f1dc3b89d750c38013008ca076b303f6520a20",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run3/run/raw.csv": "4dcce8f272d92523b750a6af59b1043e5b7d4cf167e4a0d961699f088f3a928c",
+      "code/Tide/results-revision-20260928/control-matrix-01/padding64/run3/run/run.json": "a6f13829040f810460731801b174f35c4a0dfdcb72bcf946ac50c369af7c0bb3"
+    }
+  },
+  "title": "PAIX sequential two-process IPC measurements"
+}

@@ -5,10 +5,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// CC-off deliberately oversubscribes the six-CPU slice with six workers.
-// Each worker keeps a two-CPU slot; two workers share each slot when all six
-// are busy. Reusing bindProc for every worker incorrectly confined the entire
-// C5 cell to one two-CPU slot (and C3 to a shared two-CPU quota).
 func (s *stub) ablationProcForExecutor(execID string) *processor.Processor {
 	s.mu.Lock()
 	defer s.mu.Unlock()

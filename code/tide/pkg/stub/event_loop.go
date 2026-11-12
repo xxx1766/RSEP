@@ -45,8 +45,6 @@ loop:
 	}
 }
 
-// Event Handler
-
 var evtHdlrMap map[interfaces.EventType]func(*stub, interfaces.Executor, *interfaces.Event) error
 
 func init() {
@@ -116,7 +114,7 @@ func sendRtnWaitEvt(rtn *routine.Routine, reqAppId, reqSid string, withData bool
 
 	logrus.WithFields(logrus.Fields{"RoutineId": rtn.Id, "StubId": reqSid}).Debug("Stub: send rtn wait event")
 
-	<-rtn.WaitReceive() // TODO: 此处默认由InitStub发起，如果以rtn为参数传输后，会出现问题
+	<-rtn.WaitReceive()
 
 	logrus.WithFields(logrus.Fields{"RoutineId": rtn.Id, "StubId": reqSid}).Debug("Stub: send rtn wait event over")
 

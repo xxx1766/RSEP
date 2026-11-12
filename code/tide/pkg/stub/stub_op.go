@@ -26,7 +26,6 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// CreateStubOpts is the options for creating a stub.
 type CreateStubOpts struct {
 	AppId      string
 	ImgName    string
@@ -42,7 +41,6 @@ type CreateStubOpts struct {
 	ProcM *procmgr.ProcessorManager
 }
 
-// NewStub creates a new stub(interface).
 func NewStub(opts *CreateStubOpts) interfaces.Stub {
 	id := stringx.GenerateId()
 	logger := logrus.WithFields(logrus.Fields{
@@ -90,7 +88,6 @@ func NewStub(opts *CreateStubOpts) interfaces.Stub {
 	return st
 }
 
-// build a stub in entry mode
 func buildEntryStub(st *stub) {
 	exec, err := executor.New(st.imgName, st.volumePair, st.commands, st.mode)
 	if err != nil {
@@ -99,7 +96,6 @@ func buildEntryStub(st *stub) {
 	go st.processEntry(exec)
 }
 
-// build a stub in fn mode
 func buildFnStub(st *stub) {
 	st.lastActivity = time.Now()
 	if clsstat.Singleton().GetSelf().Role != clsstat.CLOUD && !dev.RSEPTest {
@@ -109,7 +105,6 @@ func buildFnStub(st *stub) {
 	go st.processFnLoop()
 }
 
-// SubmitRoutine is used by stub to receive routine.
 func (s *stub) SubmitRoutine(rtn *routine.Routine) {
 	rtn.RequireLocalCapacity = rtn.RequireLocalCapacity || dev.CurrentConfig().C4Functions[rtn.FnName]
 	if rtn.RequireLocalCapacity && rtn.InitSid == s.id && rtn.LocalNodeID == "" {
@@ -119,8 +114,6 @@ func (s *stub) SubmitRoutine(rtn *routine.Routine) {
 		s.rejectRoutine(rtn, err, false)
 		return
 	}
-	// Every request must fit the receiving function stub's reserved processor.
-	// Keeping the origin capable (C4) does not replace destination feasibility.
 	if s.mode == interfaces.StubFn && (rtn.ResReq == nil || s.bindProc == nil || !s.bindProc.LogicRes.GreaterOrEqual(rtn.ResReq)) {
 		s.rejectRoutine(rtn, errors.New("request exceeds destination stub capacity"), false)
 		return
@@ -131,17 +124,14 @@ func (s *stub) SubmitRoutine(rtn *routine.Routine) {
 	})
 	logger.Debug("Stub: receive a routine submitting")
 
-	// TODO: 预估执行时间等可配置
 	estExecTime := dev.GetEstExecTime(clsstat.Singleton().GetSelf().Id)
 	endBefore := rtn.SubmitTime + int64(dev.GetToleranceTimeFor(rtn.FnName))
-	// TODO: 已经超出endbefore的情况如何处理
 	if s.mode == interfaces.StubFn {
 		s.mu.Lock()
 		logrus.WithFields(logrus.Fields{"RoutineId": rtn.Id, "SubmitTime": rtn.SubmitTime, "endBefore": endBefore, "Timenow": time.Now().UnixNano(), "estWaitTime": s.estWaitTime()}).Debug("StubFn submit: self condition")
 		if s.status == RUNNING &&
 			time.Now().UnixNano()+s.estWaitTime()+int64(estExecTime) <= endBefore {
-			// (endBefore < time.Now().UnixNano() || s.estWaitTime()+int64(estExecTime) < int64(dev.GetToleranceTime())) {
-			atomic.AddInt64(&s.noExecuting, 1) // Includes admitted work still waiting in the queue.
+			atomic.AddInt64(&s.noExecuting, 1)
 			atomic.AddUint64(&s.noSubmitted, 1)
 			s.lastActivity = time.Now()
 			s.accExecTimeInQue += int64(estExecTime)
@@ -168,21 +158,16 @@ func (s *stub) SubmitRoutine(rtn *routine.Routine) {
 	}()
 }
 
-// SetReceiver sets the receiver of a routine.
 func (s *stub) SetReceiver(rtnId string, toCloud bool, recvId string) {
 	s.rtnStore.Get(rtnId).SetReceiver(toCloud, recvId)
 }
 
-// WaitRoutineReach waits for a routine to reach.
 func (s *stub) WaitRoutineReach(ctx context.Context, rid string) bool {
 	reachCh := make(chan struct{})
 	val, _ := s.reachWaiters.LoadOrStore(rid, reachCh)
 	reachCh = val.(chan struct{})
 
 	if s.rtnStore.Exist(rid) {
-		// the key may be delete by submit procedure, so cannot close directly.
-		// if the key is not existed, it is deleted by submit procedure or
-		// the following goroutine of another wait procedure
 		if _, ok := s.reachWaiters.LoadAndDelete(rid); ok {
 			close(reachCh)
 		}
@@ -198,7 +183,6 @@ func (s *stub) WaitRoutineReach(ctx context.Context, rid string) bool {
 }
 
 func noticeRtnReceived(rtn *routine.Routine, toCloud bool, receiverId string) {
-	// offloaded task is received by itself
 	if !toCloud && rtn.InitSid == receiverId {
 		rtn.SetReceiver(false, receiverId)
 		return
@@ -235,7 +219,6 @@ onerr:
 	}).Error(err)
 }
 
-// WaitRtnDone waits for a routine to be done.
 func (s *stub) WaitRtnDone(rid string) <-chan *routine.Routine {
 	rtn := s.rtnStore.Get(rid)
 	ch := make(chan *routine.Routine, 1)
@@ -248,7 +231,6 @@ func (s *stub) WaitRtnDone(rid string) <-chan *routine.Routine {
 	return ch
 }
 
-// NoticeRtnDone notices certain routine is done.
 func (s *stub) NoticeRtnDone(rid string, status routine.Status) {
 	rtn := s.rtnStore.Get(rid)
 	toCloud, recvId := rtn.Receiver()
@@ -267,7 +249,6 @@ func (s *stub) NoticeRtnDone(rid string, status routine.Status) {
 	}
 }
 
-// NoticeRtnData notices that a routine is done with data.
 func (s *stub) NoticeRtnData(rid string, status routine.Status, result []byte, err string) {
 	rtn := s.rtnStore.Get(rid)
 	toCloud, recvId := rtn.Receiver()
@@ -288,7 +269,6 @@ func (s *stub) NoticeRtnData(rid string, status routine.Status, result []byte, e
 	}
 }
 
-// TODO: 需要返回一个Rtn结果数组
 func (s *stub) responseToExec(w *waiters.Waiter, rtn *routine.Routine) {
 	logrus.WithFields(logrus.Fields{
 		"StubId":     s.id,
@@ -311,15 +291,12 @@ func (s *stub) responseToExec(w *waiters.Waiter, rtn *routine.Routine) {
 	w.Exec.SendEvt(evt)
 }
 
-// CloudSubmitRoutine is used by cloud to receive routine.
 func (s *stub) CloudSubmitRoutine(rtn *routine.Routine) {
 	rtn.RequireLocalCapacity = rtn.RequireLocalCapacity || dev.CurrentConfig().C4Functions[rtn.FnName]
 	if err := c4.Check(rtn); err != nil {
 		s.rejectRoutine(rtn, err, true)
 		return
 	}
-	// Every request must fit the receiving function stub's reserved processor.
-	// Keeping the origin capable (C4) does not replace destination feasibility.
 	if s.mode == interfaces.StubFn && (rtn.ResReq == nil || s.bindProc == nil || !s.bindProc.LogicRes.GreaterOrEqual(rtn.ResReq)) {
 		s.rejectRoutine(rtn, errors.New("request exceeds destination stub capacity"), true)
 		return
@@ -335,8 +312,6 @@ func (s *stub) CloudSubmitRoutine(rtn *routine.Routine) {
 		s.mu.Unlock()
 		rtn.Fail()
 		rtn.SetError("stub is stopping")
-		// Cloud wait events may arrive before submission. Retain the failure
-		// for those waiters without admitting execution on the stopped stub.
 		s.rtnStore.Record(rtn)
 		go s.noticeReachWaiter(rtn)
 		return
@@ -366,7 +341,6 @@ func (st *stub) noticeStubUpdate(estWaitTime int64, updateTime time.Time) {
 		return
 	}
 
-	// It is guaranteed that only the last call is executed when called concurrently
 	ts := updateTime.UnixNano()
 	for {
 		lastUpdateTime := atomic.LoadInt64(&st.lastUpdateTime)
@@ -396,9 +370,7 @@ func (st *stub) noticeStubUpdate(estWaitTime int64, updateTime time.Time) {
 	cmnct.Singleton().CacheStubSyncEvt(st.id, evt)
 }
 
-// EXP
 func (s *stub) SubmitRoutineExp(rtn *routine.Routine) {
-	// This direct experimental API is also a source ingress.
 	if rtn.InitSid == "" {
 		rtn.InitSid = s.id
 	}
@@ -410,8 +382,6 @@ func (s *stub) SubmitRoutineExp(rtn *routine.Routine) {
 		s.rejectRoutine(rtn, err, false)
 		return
 	}
-	// Every request must fit the receiving function stub's reserved processor.
-	// Keeping the origin capable (C4) does not replace destination feasibility.
 	if s.mode == interfaces.StubFn && (rtn.ResReq == nil || s.bindProc == nil || !s.bindProc.LogicRes.GreaterOrEqual(rtn.ResReq)) {
 		s.rejectRoutine(rtn, errors.New("request exceeds destination stub capacity"), false)
 		return
@@ -444,14 +414,12 @@ func (s *stub) SubmitRoutineExp(rtn *routine.Routine) {
 	logger.Debug("Stub: push a routine to queue")
 }
 
-// estimate wait time, should be called in the critical section
 func (s *stub) estWaitTime() int64 {
 	var remainTime int64 = 0
 	if s.rtnOnBindProc != nil {
-		// Elapsed time of routine executing on 'bindProc'
 		elspsedTime := time.Since(s.startTime).Nanoseconds()
 		estExecTime := int64(dev.GetEstExecTime(clsstat.Singleton().GetSelf().Id))
-		if elspsedTime > estExecTime { // TODO: 实际执行时间已超出预估执行时间，如何处理？
+		if elspsedTime > estExecTime {
 			remainTime = estExecTime
 		} else {
 			remainTime = estExecTime - elspsedTime
@@ -460,18 +428,14 @@ func (s *stub) estWaitTime() int64 {
 	return s.accExecTimeInQue + remainTime
 }
 
-// Close closes the stub.
 func (s *stub) Close() error {
 	s.closeOnce.Do(func() {
-		// EXP: 等待所有任务执行结束
 		if dev.RSEPTest {
 			for atomic.LoadUint64(&s.noSubmitted) != atomic.LoadUint64(&s.noSucc)+atomic.LoadUint64(&s.noFail) {
 				time.Sleep(time.Second)
 			}
 		}
 
-		// An execution launch that won this lock must finish Bind/Execute
-		// before its processor can be released. Later launches see STOPPED.
 		s.startMu.Lock()
 		defer s.startMu.Unlock()
 		s.mu.Lock()
@@ -481,8 +445,6 @@ func (s *stub) Close() error {
 		s.scheduler.Close()
 
 		s.procM.Return(s.bindProc, true)
-		// Keep the bound processor's identity stable: a concurrent execution's
-		// cleanup must not mistake it for a borrowed processor and return it again.
 
 		logrus.WithFields(logrus.Fields{
 			"StubId":      s.id,
@@ -511,8 +473,6 @@ func (st *stub) exitWhenIdle() {
 			}
 			remaining := st.timerGap - time.Since(st.lastActivity)
 			if st.status == RUNNING && atomic.LoadInt64(&st.noExecuting) == 0 && remaining <= 0 {
-				// Admission uses the same lock: queued and running work both
-				// count as executing, and no work can enter after STOPPING.
 				st.status = STOPPING
 				st.mu.Unlock()
 				logrus.WithField("StubId", st.id).Info("idle TTL expired, exiting")
@@ -523,14 +483,12 @@ func (st *stub) exitWhenIdle() {
 				remaining = st.timerGap
 			}
 			st.mu.Unlock()
-			// Only this goroutine resets the timer, after receiving its tick.
 			st.timer.Reset(remaining)
 		}
 	}
 }
 
 func stubExit(sid string) {
-	// EXP
 	if dev.RSEPTest {
 		return
 	}
@@ -546,8 +504,6 @@ func stubExit(sid string) {
 	}
 }
 
-// Rejection is a terminal result, not an execution admission. Keep the normal
-// wait protocol usable, including cloud wait events that arrive before submit.
 func (s *stub) rejectRoutine(rtn *routine.Routine, err error, cloud bool) {
 	rtn.Fail()
 	rtn.SetError(err.Error())

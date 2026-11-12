@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+IFS= read -r edge_join_token < /root/edge-join-token
+exec /usr/local/bin/keadm join \
+  --cloudcore-ipport=${CLOUDCORE_ENDPOINT} \
+  --edgenode-name=${KUBEEDGE_NODE} \
+  --kubeedge-version=${KUBEEDGE_VERSION} \
+  --cgroupdriver=systemd \
+  --remote-runtime-endpoint=unix:///run/containerd/containerd.sock \
+  --tarballpath=/root \
+  --token="$edge_join_token"

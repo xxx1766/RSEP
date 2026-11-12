@@ -13,7 +13,6 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// ProcessorManager starts the heartbeat loop.
 func (pm *ProcessorManager) StartHeartbeat() {
 	logrus.Info("ProcMgr: enter heartbeat loop")
 	cmnctr := cmnct.Singleton()
@@ -26,7 +25,6 @@ func (pm *ProcessorManager) StartHeartbeat() {
 			}
 
 			pm.heartbeat(cmnctr)
-			// TODO: 时间可配置化
 			time.Sleep(5 * time.Millisecond)
 		}
 	}()

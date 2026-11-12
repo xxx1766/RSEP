@@ -1,0 +1,51 @@
+resptestv2-cpu-budget: go1.26.2
+	path	github.com/ict/tide/cmd/resptestv2
+	mod	github.com/ict/tide	(devel)	
+	dep	github.com/aceofkid/posix_mq	v0.0.3	h1:xOZWVHpSrqLzQplUD+tqgtzup5k3yjsX7lnbBmISUL0=
+	dep	github.com/cilium/ebpf	v0.16.0	h1:+BiEnHL6Z7lXnlGUsXQPPAE7+kenAd4ES8MQ5min0Ok=
+	dep	github.com/containerd/cgroups/v3	v3.0.3	h1:S5ByHZ/h9PMe5IOQoN7E+nMc2UcLEM/V48DGDJ9kip0=
+	dep	github.com/containerd/containerd	v1.6.9	h1:IN/r8DUes/B5lEGTNfIiUkfZBtIQJGx2ai703dV6lRA=
+	dep	github.com/containerd/continuity	v0.3.0	h1:nisirsYROK15TAMVukJOUyGJjz4BNQJBVsNvAXZJ/eg=
+	dep	github.com/containerd/fifo	v1.0.0	h1:6PirWBr9/L7GDamKr+XM0IeUFXu5mf3M/BPpH9gaLBU=
+	dep	github.com/containerd/ttrpc	v1.1.0	h1:GbtyLRxb0gOLR0TYQWt3O6B0NvT8tMdorEHqIQo/lWI=
+	dep	github.com/containerd/typeurl	v1.0.2	h1:Chlt8zIieDbzQFzXzAeBEF92KhExuE4p9p92/QmY7aY=
+	dep	github.com/coreos/go-systemd/v22	v22.5.0	h1:RrqgGjYQKalulkV8NGVIfkXQf6YYmOyiJKk8iXXhfZs=
+	dep	github.com/docker/go-events	v0.0.0-20190806004212-e31b211e4f1c	h1:+pKlWGMw7gf6bQ+oDZB4KHQFypsfjYlq/C4rfL7D3g8=
+	dep	github.com/godbus/dbus/v5	v5.1.0	h1:4KLkAxT3aOY8Li4FRJe/KvhoNFFxo0m6fNuFUO8QJUk=
+	dep	github.com/gogo/googleapis	v1.4.0	h1:zgVt4UpGxcqVOw97aRGxT4svlcmdK35fynLNctY32zI=
+	dep	github.com/gogo/protobuf	v1.3.2	h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=
+	dep	github.com/golang/protobuf	v1.5.2	h1:ROPKBNFfQgOUMifHyP+KYbvpjbdoFNs+aK7DXlji0Tw=
+	dep	github.com/google/uuid	v1.2.0	h1:qJYtXnJRWmpe7m/3XlyhrsLrEURqHRM2kxzoxXqyUDs=
+	dep	github.com/ict/tide/proto	v0.0.0-00010101000000-000000000000
+	=>	./proto	(devel)	
+	
+	dep	github.com/klauspost/compress	v1.11.13	h1:eSvu8Tmq6j2psUJqJrLcWH6K3w5Dwc+qipbaA6eVEN4=
+	dep	github.com/moby/locker	v1.0.1	h1:fOXqR41zeveg4fFODix+1Ch4mj/gT0NE1XJbp/epuBg=
+	dep	github.com/moby/sys/mountinfo	v0.5.0	h1:2Ks8/r6lopsxWi9m58nlwjaeSzUX9iiL1vj5qB/9ObI=
+	dep	github.com/moby/sys/signal	v0.6.0	h1:aDpY94H8VlhTGa9sNYUFCFsMZIUh5wm0B6XkIoJj/iY=
+	dep	github.com/opencontainers/go-digest	v1.0.0	h1:apOUWs51W5PlhuyGyz9FCeeBIOUDA/6nW8Oi/yOhh5U=
+	dep	github.com/opencontainers/image-spec	v1.0.3-0.20211202183452-c5a74bcca799	h1:rc3tiVYb5z54aKaDfakKn0dDjIyPpTtszkjuMzyt7ec=
+	dep	github.com/opencontainers/runc	v1.1.2	h1:2VSZwLx5k/BfsBxMMipG/LYUnmqOD/BPkIVgQUcTlLw=
+	dep	github.com/opencontainers/runtime-spec	v1.0.3-0.20210326190908-1c3f411f0417	h1:3snG66yBm59tKhhSPQrQ/0bCrv1LQbKt40LnUPiUxdc=
+	dep	github.com/opencontainers/selinux	v1.10.1	h1:09LIPVRP3uuZGQvgR+SgMSNBd1Eb3vlRbGqQpoHsF8w=
+	dep	github.com/pkg/errors	v0.9.1	h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+	dep	github.com/sirupsen/logrus	v1.9.3	h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=
+	dep	golang.org/x/exp	v0.0.0-20241108190413-2d47ceb2692f	h1:XdNn9LlyWAhLVp6P/i8QYBW+hlyhrhei9uErw2B5GJo=
+	dep	golang.org/x/net	v0.23.0	h1:7EYJ93RZ9vYSZAIb2x3lnuvqO5zneoD6IvWjuhfxjTs=
+	dep	golang.org/x/sync	v0.9.0	h1:fEo0HyrW1GIgZdpbhCRO0PkJajUS5H9IFUztCgEo2jQ=
+	dep	golang.org/x/sys	v0.27.0	h1:wBqf8DvsY9Y/2P8gAfPDEYNuS30J4lPHJxXSb/nJZ+s=
+	dep	golang.org/x/text	v0.14.0	h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=
+	dep	google.golang.org/genproto	v0.0.0-20220502173005-c8bf987b8c21	h1:hrbNEivu7Zn1pxvHk6MBrq9iE22woVILTHqexqBxe6I=
+	dep	google.golang.org/grpc	v1.51.0	h1:E1eGv1FTqoLIdnBCZufiSHgKjlqG6fKFf6pPWtMTh8U=
+	dep	google.golang.org/protobuf	v1.35.2	h1:8Ar7bF+apOIoThw1EdZl0p1oWvMqTHmpA2fRTyZO8io=
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	DefaultGODEBUG=asynctimerchan=1,containermaxprocs=0,cryptocustomrand=1,decoratemappings=0,gotestjsonbuildtext=1,gotypesalias=0,httpcookiemaxnum=0,httpservecontentkeepheaders=1,multipathtcp=0,randseednop=0,rsa1024min=0,tls3des=1,tlsmlkem=0,tlssecpmlkem=0,tlssha1=1,updatemaxprocs=0,urlmaxqueryparams=0,urlstrictcolons=0,winreadlinkvolume=0,winsymlink=0,x509keypairleaf=0,x509negativeserial=1,x509rsacrt=0,x509sha256skid=0,x509usepolicies=0
+	build	CGO_ENABLED=1
+	build	CGO_CFLAGS=
+	build	CGO_CPPFLAGS=
+	build	CGO_CXXFLAGS=
+	build	CGO_LDFLAGS=
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

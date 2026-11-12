@@ -1,0 +1,408 @@
+{
+  "source": "historical case-summary workbook",
+  "source_sha256": "889e51ead8be63ad04c53d37cc358148ffdde2eeb64b704f3d0b4ccb96655223",
+  "scope": "historical case-summary statistics",
+  "definition": "ratio = statistic with one mechanism enabled / statistic with that mechanism disabled",
+  "comparisons": [
+    {
+      "feature": "Concurrency control",
+      "lines": [
+        {
+          "condition": "PI off, EI off",
+          "off": [
+            0,
+            0,
+            0
+          ],
+          "on": [
+            0,
+            0,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 4,
+              "on_source_row": 5,
+              "mean_latency_ratio_on_off": 0.9985559503125656,
+              "p95_latency_ratio_on_off": 1.005607481149768,
+              "throughput_ratio_on_off": 0.9989251783317946
+            },
+            {
+              "rate": 2,
+              "off_source_row": 10,
+              "on_source_row": 11,
+              "mean_latency_ratio_on_off": 0.42800709131086795,
+              "p95_latency_ratio_on_off": 0.42923747218898867,
+              "throughput_ratio_on_off": 1.1412665525862105
+            },
+            {
+              "rate": 4,
+              "off_source_row": 16,
+              "on_source_row": 17,
+              "mean_latency_ratio_on_off": 0.391440498252917,
+              "p95_latency_ratio_on_off": 0.6194953608629292,
+              "throughput_ratio_on_off": 1.2031607257040846
+            },
+            {
+              "rate": 8,
+              "off_source_row": 22,
+              "on_source_row": 23,
+              "mean_latency_ratio_on_off": 0.41193224076816054,
+              "p95_latency_ratio_on_off": 0.7206364843843177,
+              "throughput_ratio_on_off": 1.1802539657329343
+            },
+            {
+              "rate": 16,
+              "off_source_row": 28,
+              "on_source_row": 29,
+              "mean_latency_ratio_on_off": 0.44260895812993173,
+              "p95_latency_ratio_on_off": 0.7973330271263986,
+              "throughput_ratio_on_off": 1.1682180802977216
+            }
+          ]
+        },
+        {
+          "condition": "PI off, EI on",
+          "off": [
+            0,
+            1,
+            0
+          ],
+          "on": [
+            0,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 6,
+              "on_source_row": 7,
+              "mean_latency_ratio_on_off": 1.0029610669849973,
+              "p95_latency_ratio_on_off": 0.9894631051034798,
+              "throughput_ratio_on_off": 0.9984756150001675
+            },
+            {
+              "rate": 2,
+              "off_source_row": 12,
+              "on_source_row": 13,
+              "mean_latency_ratio_on_off": 0.3081092956424591,
+              "p95_latency_ratio_on_off": 0.1919043590987627,
+              "throughput_ratio_on_off": 1.6283005729997388
+            },
+            {
+              "rate": 4,
+              "off_source_row": 18,
+              "on_source_row": 19,
+              "mean_latency_ratio_on_off": 0.3202721676807998,
+              "p95_latency_ratio_on_off": 0.2740232283000694,
+              "throughput_ratio_on_off": 1.5740694185689021
+            },
+            {
+              "rate": 8,
+              "off_source_row": 24,
+              "on_source_row": 25,
+              "mean_latency_ratio_on_off": 0.2893583575596735,
+              "p95_latency_ratio_on_off": 0.2586501816430052,
+              "throughput_ratio_on_off": 1.6805209818059716
+            },
+            {
+              "rate": 16,
+              "off_source_row": 30,
+              "on_source_row": 31,
+              "mean_latency_ratio_on_off": 0.3135377325273076,
+              "p95_latency_ratio_on_off": 0.2684908565845079,
+              "throughput_ratio_on_off": 1.5838721432993121
+            }
+          ]
+        },
+        {
+          "condition": "PI on, EI on",
+          "off": [
+            1,
+            1,
+            0
+          ],
+          "on": [
+            1,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 8,
+              "on_source_row": 9,
+              "mean_latency_ratio_on_off": 0.99219105027837,
+              "p95_latency_ratio_on_off": 1.006377712795035,
+              "throughput_ratio_on_off": 1.0040796474288247
+            },
+            {
+              "rate": 2,
+              "off_source_row": 14,
+              "on_source_row": 15,
+              "mean_latency_ratio_on_off": 0.11193572620781074,
+              "p95_latency_ratio_on_off": 0.02208069347689602,
+              "throughput_ratio_on_off": 4.753054250013388
+            },
+            {
+              "rate": 4,
+              "off_source_row": 20,
+              "on_source_row": 21,
+              "mean_latency_ratio_on_off": 0.0968542332133407,
+              "p95_latency_ratio_on_off": 0.023476970633112763,
+              "throughput_ratio_on_off": 4.1608202013617195
+            },
+            {
+              "rate": 8,
+              "off_source_row": 26,
+              "on_source_row": 27,
+              "mean_latency_ratio_on_off": 0.1449596937672148,
+              "p95_latency_ratio_on_off": 0.05130537168894298,
+              "throughput_ratio_on_off": 3.3223089505863967
+            },
+            {
+              "rate": 16,
+              "off_source_row": 32,
+              "on_source_row": 33,
+              "mean_latency_ratio_on_off": 0.1829228846143502,
+              "p95_latency_ratio_on_off": 0.11609970426406993,
+              "throughput_ratio_on_off": 2.571534567787275
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "Physical isolation",
+      "lines": [
+        {
+          "condition": "CC off, EI on",
+          "off": [
+            0,
+            1,
+            0
+          ],
+          "on": [
+            1,
+            1,
+            0
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 6,
+              "on_source_row": 8,
+              "mean_latency_ratio_on_off": 1.3434395952025102,
+              "p95_latency_ratio_on_off": 1.3704965141258405,
+              "throughput_ratio_on_off": 0.986483270911211
+            },
+            {
+              "rate": 2,
+              "off_source_row": 12,
+              "on_source_row": 14,
+              "mean_latency_ratio_on_off": 2.705474983324564,
+              "p95_latency_ratio_on_off": 8.392794896019396,
+              "throughput_ratio_on_off": 0.351131275211173
+            },
+            {
+              "rate": 4,
+              "off_source_row": 18,
+              "on_source_row": 20,
+              "mean_latency_ratio_on_off": 3.2217882790637966,
+              "p95_latency_ratio_on_off": 11.269192361249976,
+              "throughput_ratio_on_off": 0.38948326508488856
+            },
+            {
+              "rate": 8,
+              "off_source_row": 24,
+              "on_source_row": 26,
+              "mean_latency_ratio_on_off": 1.9277040808240042,
+              "p95_latency_ratio_on_off": 4.832536468405155,
+              "throughput_ratio_on_off": 0.5244079003352591
+            },
+            {
+              "rate": 16,
+              "off_source_row": 30,
+              "on_source_row": 32,
+              "mean_latency_ratio_on_off": 1.646594960905788,
+              "p95_latency_ratio_on_off": 2.20562649554172,
+              "throughput_ratio_on_off": 0.6416720329992927
+            }
+          ]
+        },
+        {
+          "condition": "CC on, EI on",
+          "off": [
+            0,
+            1,
+            1
+          ],
+          "on": [
+            1,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 7,
+              "on_source_row": 9,
+              "mean_latency_ratio_on_off": 1.3290134451145803,
+              "p95_latency_ratio_on_off": 1.3939247862458586,
+              "throughput_ratio_on_off": 0.9920199952512576
+            },
+            {
+              "rate": 2,
+              "off_source_row": 13,
+              "on_source_row": 15,
+              "mean_latency_ratio_on_off": 0.9828957168073409,
+              "p95_latency_ratio_on_off": 0.9656827618912411,
+              "throughput_ratio_on_off": 1.0249618698349214
+            },
+            {
+              "rate": 4,
+              "off_source_row": 19,
+              "on_source_row": 21,
+              "mean_latency_ratio_on_off": 0.9743083066008157,
+              "p95_latency_ratio_on_off": 0.9654893118558933,
+              "throughput_ratio_on_off": 1.0295415299605406
+            },
+            {
+              "rate": 8,
+              "off_source_row": 25,
+              "on_source_row": 27,
+              "mean_latency_ratio_on_off": 0.9657208300003224,
+              "p95_latency_ratio_on_off": 0.9585729966898069,
+              "throughput_ratio_on_off": 1.0367291333487232
+            },
+            {
+              "rate": 16,
+              "off_source_row": 31,
+              "on_source_row": 33,
+              "mean_latency_ratio_on_off": 0.9606496086212106,
+              "p95_latency_ratio_on_off": 0.9537478747206106,
+              "throughput_ratio_on_off": 1.041802408749223
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "Environment isolation",
+      "lines": [
+        {
+          "condition": "CC off, PI off",
+          "off": [
+            0,
+            0,
+            0
+          ],
+          "on": [
+            0,
+            1,
+            0
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 4,
+              "on_source_row": 6,
+              "mean_latency_ratio_on_off": 1.0110304575505291,
+              "p95_latency_ratio_on_off": 1.042451655658183,
+              "throughput_ratio_on_off": 1.0323783004342209
+            },
+            {
+              "rate": 2,
+              "off_source_row": 10,
+              "on_source_row": 12,
+              "mean_latency_ratio_on_off": 0.6673500583446192,
+              "p95_latency_ratio_on_off": 0.7492105666679385,
+              "throughput_ratio_on_off": 0.7121392048904442
+            },
+            {
+              "rate": 4,
+              "off_source_row": 16,
+              "on_source_row": 18,
+              "mean_latency_ratio_on_off": 0.13956120960372295,
+              "p95_latency_ratio_on_off": 0.14923108360489504,
+              "throughput_ratio_on_off": 0.7805349793073938
+            },
+            {
+              "rate": 8,
+              "off_source_row": 22,
+              "on_source_row": 24,
+              "mean_latency_ratio_on_off": 0.06366367345393671,
+              "p95_latency_ratio_on_off": 0.07046512982643609,
+              "throughput_ratio_on_off": 0.7210128051154339
+            },
+            {
+              "rate": 16,
+              "off_source_row": 28,
+              "on_source_row": 30,
+              "mean_latency_ratio_on_off": 0.028801411664893785,
+              "p95_latency_ratio_on_off": 0.033930139540452195,
+              "throughput_ratio_on_off": 0.7578580016380454
+            }
+          ]
+        },
+        {
+          "condition": "CC on, PI off",
+          "off": [
+            0,
+            0,
+            1
+          ],
+          "on": [
+            0,
+            1,
+            1
+          ],
+          "points": [
+            {
+              "rate": 1,
+              "off_source_row": 5,
+              "on_source_row": 7,
+              "mean_latency_ratio_on_off": 1.0154906053504578,
+              "p95_latency_ratio_on_off": 1.0257157702809394,
+              "throughput_ratio_on_off": 1.031913681623613
+            },
+            {
+              "rate": 2,
+              "off_source_row": 11,
+              "on_source_row": 13,
+              "mean_latency_ratio_on_off": 0.48040502271531776,
+              "p95_latency_ratio_on_off": 0.3349585787401343,
+              "throughput_ratio_on_off": 1.0160436865086302
+            },
+            {
+              "rate": 4,
+              "off_source_row": 17,
+              "on_source_row": 19,
+              "mean_latency_ratio_on_off": 0.11418739584543161,
+              "p95_latency_ratio_on_off": 0.06600982973491375,
+              "throughput_ratio_on_off": 1.021157202693845
+            },
+            {
+              "rate": 8,
+              "off_source_row": 23,
+              "on_source_row": 25,
+              "mean_latency_ratio_on_off": 0.04472001500172543,
+              "p95_latency_ratio_on_off": 0.025291279339925497,
+              "throughput_ratio_on_off": 1.0266240845840486
+            },
+            {
+              "rate": 16,
+              "off_source_row": 29,
+              "on_source_row": 31,
+              "mean_latency_ratio_on_off": 0.02040250008755,
+              "p95_latency_ratio_on_off": 0.011425504675355337,
+              "throughput_ratio_on_off": 1.0275052215123004
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,21 +7,17 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// PhysicResource represents the physical resource of a processor.
 type PhysicResource struct {
 	CpuSet []int32
-	cpuOrd []int // cpu访问顺序，按照将同一个物理CPU的核心安排在相邻
+	cpuOrd []int
 }
 
 var EmptyResourse *PhysicResource = &PhysicResource{
 	CpuSet: make([]int32, 0),
 }
 
-// GetAndSubtract gets and subtracts the resource.
 func (r *PhysicResource) GetAndSubtract(req *routine.Resource) *PhysicResource {
 	if r.cpuOrd == nil {
-		// 构建CPU访问顺序，使同一块物理核心的CPU相邻
-		// 0, 2, 1, 3, 4, 6, 5, 7, ...
 		r.cpuOrd = make([]int, len(r.CpuSet))
 		for i := 0; i < len(r.cpuOrd); i += 4 {
 			if i+2 >= len(r.cpuOrd) {
@@ -58,7 +54,6 @@ func (r *PhysicResource) GetAndSubtract(req *routine.Resource) *PhysicResource {
 	return retRes
 }
 
-// Add adds some resource.
 func (r *PhysicResource) Add(delta *PhysicResource) {
 	for i, used := range delta.CpuSet {
 		if used == 0 {

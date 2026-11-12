@@ -43,8 +43,6 @@ func stubCreateHdlr(evtDispr event.EventDispatcher, stubm *stubmgr.StubManager) 
 			mode = interfaces.StubFn
 		}
 
-		// create stub
-		// TODO: ResReq 和 InitExecNo 可配置
 		initExecNo := dev.GetToleranceTime()/dev.GetEstExecTime(clsstat.Singleton().GetSelf().Id) + 1
 		opts := &stubmgr.CreateStubOpts{
 			AppId:      stCrtEvt.AppId,
@@ -67,7 +65,6 @@ func stubCreateHdlr(evtDispr event.EventDispatcher, stubm *stubmgr.StubManager) 
 		}
 		stubhdlr.RegisterEventHandler(evtDispr, st)
 
-		// An Application is started, notice to all nodes this message
 		if mode == interfaces.StubEntry {
 			appNewEvtPb = &eventpb.AppNewEvent{
 				AppId:     stCrtEvt.AppId,
@@ -88,7 +85,6 @@ func stubCreateHdlr(evtDispr event.EventDispatcher, stubm *stubmgr.StubManager) 
 			}
 		}
 
-		// notice to all node that add this stub to their ClusterState
 		stNewEvtPb = &eventpb.StubNewEvent{
 			StubId:     st.Id(),
 			AppId:      st.AppId(),
@@ -138,7 +134,6 @@ func stubStopHdlr(stubm *stubmgr.StubManager) event.EventHandler {
 			return
 		}
 		logrus.WithField("StubId", stStopEvtPb.StubId).Debug("StubMgrHdlr: find handler and start to stop stub")
-		// if this stub is on this device, then try to stop this stub
 		stubm.StopStub(stStopEvtPb.StubId)
 		clsstat.Singleton().RmStub(stStopEvtPb.StubId)
 	}

@@ -104,7 +104,7 @@ def verify(root, output):
                 latencies.append(latency)
             total += 1
     finish_run()
-    # A zero-arrival trace has summary rows but no CSV decisions.
+    
     assert seen == {rid for rid, run in runs.items() if traces[run["trace_id"]]["requests"]}
     assert total == manifest["request_decision_count"]
     report = {

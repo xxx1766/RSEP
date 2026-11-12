@@ -34,8 +34,6 @@ type executorGetter interface {
 	GetEventChan() <-chan *Event
 }
 
-// The event stuct between executor and instance
-
 type Event struct {
 	Type     EventType
 	WithData bool
@@ -80,7 +78,6 @@ func UnmarshalEvent(data []byte) (*Event, error) {
 	case execinspb.Event_ROUTINE_SUBMIT:
 		evt.Type = SUBMIT_ROUTINE
 		rtnPb := evtPb.Routine
-		// TODO: the resource requirement of routine
 		resReq := dev.GetReqResource()
 		evt.Routine = routine.NewSubmittedRtn(rtnPb.Id, rtnPb.FnName, rtnPb.Args, resReq)
 		evt.Routine.SubmitTime = time.Now().UnixNano()

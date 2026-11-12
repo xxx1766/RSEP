@@ -1,7 +1,5 @@
 package containerxv2
 
-// image.go — containerd image helpers. Client lifetime is managed in common.go.
-
 import (
 	"context"
 	"log"

@@ -1,5 +1,3 @@
-// revision-worker exposes identical fixed-work kernels through HTTP, PAIX,
-// and a one-shot calibration command. No response-time simulation is used.
 package main
 
 import (

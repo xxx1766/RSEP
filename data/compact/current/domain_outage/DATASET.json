@@ -1,0 +1,64 @@
+{
+  "cohort": {
+    "aggregate_rows": 216,
+    "deadline_ms": 500,
+    "fault": [
+      false,
+      true
+    ],
+    "initials": [
+      "cold",
+      "warm"
+    ],
+    "offers": 33480,
+    "repeats": 3,
+    "runs": 36,
+    "scopes": [
+      "overall",
+      "normal",
+      "transition_on",
+      "outage",
+      "transition_off",
+      "recovery"
+    ],
+    "systems": [
+      "tide",
+      "kubeedge",
+      "ray"
+    ]
+  },
+  "description": "Thirty-six qualified runs across three systems, two initial deployments and two connectivity conditions; six scopes per run.",
+  "family": "domain_outage",
+  "files": [
+    {
+      "path": "runs.csv",
+      "bytes": 21876,
+      "sha256": "472206a2cd4418b5fdbb3af489daa0b6d2bcd693b258efda9f6d4519a2161a5e",
+      "rows": 216
+    },
+    {
+      "path": "summary.csv",
+      "bytes": 3458,
+      "sha256": "6c87c71576c542304c4da2333cdf977ac214a55d300fa70f9726b7418e63e63f",
+      "rows": 72
+    }
+  ],
+  "sanitization": {
+    "labels": "systems use public comparison names; scopes are plan-relative",
+    "removed": [
+      "host names",
+      "transport endpoints"
+    ]
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-domain-resilience-20261027",
+    "relative_paths": [
+      "code/Tide/results-domain-resilience-20261027/report/comparison-v3-results.csv"
+    ],
+    "source_sha256": {
+      "code/Tide/results-domain-resilience-20261027/report/comparison-v3-results.csv": "4645301f832da2f7dccbc39e1073ea9032122bd15f43bd055d964b76b5a48bc9"
+    }
+  },
+  "title": "Domain-local service during cloud-link interruption"
+}

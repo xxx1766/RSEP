@@ -1,16 +1,5 @@
 package containerxv2
 
-// comb_cg_pool.go — cgroup v2 port of pkg/containerx/comb_cg_pool.go.
-//
-// Two changes vs v1:
-//   1. CreateCgroup / DeleteCgroup calls target the v2 manager.
-//   2. The hardcoded {devCpuNum=8, cpuIds=[0,1,2,4,5,6]} in rsepInitCombCgroup
-//      is replaced with env-var-driven configuration (TIDE_COMB_DEV_CPUNUM,
-//      TIDE_COMB_CPUIDS). On the 16-core test host we default to
-//      {devCpuNum=16, cpuIds=[2-7]} → 6 logical cores for experiments,
-//      cores 0-1 reserved for system (matching the paper’s "reserve 1
-//      physical core" constraint, adapted to 16 logical cores = 8 SMT pairs).
-
 import (
 	"fmt"
 	"os"
@@ -27,19 +16,11 @@ import (
 
 var cgMap map[string]string
 
-// combConfig captures the RSEP combined-cgroup pool layout.
-// cpuIds lists the logical core indices the experiment is allowed to use.
-// The pool creates cgroups for every 2-combination of cpuIds.
 type combConfig struct {
 	devCpuNum int
 	cpuIds    []int
 }
 
-// defaultCombConfig: 6 logical cores (2-7) used for experiments,
-// 0-1 reserved for system. Override via env:
-//
-//	TIDE_COMB_DEV_CPUNUM=16
-//	TIDE_COMB_CPUIDS=2,3,4,5,6,7
 func defaultCombConfig() combConfig {
 	cfg := combConfig{
 		devCpuNum: runtime.NumCPU(),
@@ -65,8 +46,6 @@ func defaultCombConfig() combConfig {
 	return cfg
 }
 
-// InitCombCgroup mirrors pkg/containerx/comb_cg_pool.go:InitCombCgroup.
-// Creates one cgroup per 2-combination of available cores.
 func InitCombCgroup() {
 	if dev.RSEPTest {
 		rsepInitCombCgroup()
@@ -89,8 +68,6 @@ func InitCombCgroup() {
 	}
 }
 
-// rsepInitCombCgroup mirrors the v1 equivalent but without the hardcoded
-// 8-core / {0,1,2,4,5,6} layout — see defaultCombConfig.
 func rsepInitCombCgroup() {
 	cfg := defaultCombConfig()
 	logrus.WithFields(logrus.Fields{

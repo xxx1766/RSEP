@@ -1,5 +1,3 @@
-// revision-ttl measures real local stub expiration and recreation under bursts.
-// It does not simulate requests or exercise a distributed originating stub.
 package main
 
 import (
@@ -170,8 +168,6 @@ func (r *localRuntime) ensureStub() (interfaces.Stub, string, int64, error) {
 	r.creations++
 	r.observe.state("stub_created", st.Id(), true)
 	r.observe.emit("stub_create_end", map[string]any{"stub_id": st.Id(), "creation_kind": kind, "create_ns": createNS})
-	// NewStub launches its process loop asynchronously. This small, disclosed
-	// settle interval is included in caller latency and is shorter than all TTLs.
 	time.Sleep(5 * time.Millisecond)
 	if err := r.observeContainers("after_stub_create"); err != nil {
 		return nil, kind, createNS, err

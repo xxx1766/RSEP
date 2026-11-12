@@ -17,7 +17,6 @@ func TestDeadlineEqualityAndCapacityTime(t *testing.T) {
 	if d[0].Status != "on_time" || m.WindowOnTime != 1 || m.Accepted != 1 {
 		t.Fatalf("deadline equality: %+v %+v", d, m)
 	}
-	// 20/100 CPU time, (50/100)*(20/100) memory time.
 	if math.Abs(m.CPUUtil-.2) > 1e-12 || math.Abs(m.MemoryUtil-.1) > 1e-12 || math.Abs(m.Util-.15) > 1e-12 {
 		t.Fatalf("wrong capacity-time denominator: %+v", m)
 	}

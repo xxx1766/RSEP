@@ -1,5 +1,3 @@
-// revision-ipc measures real two-process PAIX protobuf request/reply exchanges.
-// The existing worker performs a minimal8-byte SHA256 kernel per exchange.
 package main
 
 import (
@@ -91,7 +89,6 @@ func run(worker, out string, count, padding int) error {
 		cancel()
 		child.Process.Kill()
 		<-childDone
-		// Wake the owned receive loop before closing/freeing its queue buffer.
 		outq.Send([]byte{})
 		<-readDone
 		os.WriteFile(filepath.Join(out, "worker.log"), childlog.Bytes(), 0644)

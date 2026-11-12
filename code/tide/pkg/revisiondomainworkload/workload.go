@@ -1,4 +1,3 @@
-// Package revisiondomainworkload runs independent, real fixed-work requests.
 package revisiondomainworkload
 
 import (
@@ -14,7 +13,6 @@ import (
 	"github.com/ict/tide/pkg/revisionworkload"
 )
 
-// Independently computed using Python hashlib for the existing CPU kernel.
 const GoldenChecksum uint64 = 3147045699343202425
 const BytesProcessed int64 = 65536000
 
@@ -82,11 +80,8 @@ func New(node, dir string) (*Worker, error) {
 	return &Worker{journal: f, identity: Reply{WorkerInstance: fmt.Sprintf("%s-%d-%d", node, pid, boot), Node: node, WorkerPID: pid, WorkerBootNS: boot, HostBootID: strings.TrimSpace(string(hostBoot))}}, nil
 }
 
-// Identity is immutable and does not wait for the serialized request/kernel.
 func (w *Worker) Identity() Reply { return w.identity }
 
-// Ready records a transport-confirmed readiness observation, never boot time.
-// Call only after HTTP net.Listen succeeds or PAIX INIT has been sent.
 func (w *Worker) Ready() error {
 	w.mu.Lock()
 	defer w.mu.Unlock()

@@ -1,6 +1,5 @@
 //go:build linux
 
-// Measurement ingress; native Tide retains scheduling, C4, and cold creation.
 package main
 
 import (
@@ -118,8 +117,6 @@ func main() {
 	clsstat.Singleton().AddApp(&clsstat.AddAppOpts{AppId: appID, ImageName: workerImage, Commands: commands})
 	var function interfaces.Stub
 	if *name == "A" || (*name == "B" && *initial == "warm") {
-		// No bind mount: unchanged cold-creation messages omit VolumePair. Every
-		// executor writes inside /tmp/domain, collected through its real host PID.
 		function, err = sm.CreateStub(&stubmgr.CreateStubOpts{AppId: appID, ImgName: workerImage, Commands: commands, Mode: interfaces.StubFn, ResReq: dev.GetStubResource(), InitExecNo: 1})
 		must(err)
 		if function == nil {

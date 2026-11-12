@@ -13,21 +13,18 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// StubManager manages the stubs.
 type StubManager struct {
 	execPools sync.Map
 	stubs     sync.Map
 	procM     *procmgr.ProcessorManager
 }
 
-// NewStubMgr creates a new StubManager.
 func NewStubMgr(pm *procmgr.ProcessorManager) *StubManager {
 	return &StubManager{
 		procM: pm,
 	}
 }
 
-// Close closes the StubManager.
 func (sm *StubManager) Close() error {
 	var err error
 	sm.stubs.Range(func(key, value any) bool {
@@ -49,7 +46,6 @@ func (sm *StubManager) Close() error {
 	return err
 }
 
-// CreateStubOpts is the options for creating a stub.
 type CreateStubOpts struct {
 	AppId      string
 	ImgName    string
@@ -60,27 +56,16 @@ type CreateStubOpts struct {
 	InitExecNo int
 }
 
-// CreateStub creates a new stub.
 func (sm *StubManager) CreateStub(opts *CreateStubOpts) (interfaces.Stub, error) {
 	ctx, cancel := context.WithCancel(context.Background())
 	ctx = context.WithValue(ctx, clsstat.ApplicationId("appid"), opts.AppId)
 	defer cancel()
-	// proc, err := sm.procM.Apply(context.Background(), opts.ResReq)
 	proc, err := sm.procM.Apply(ctx, opts.ResReq)
 
 	if err != nil {
 		logrus.WithField("AppId", opts.AppId).Warn("StubMgr: failed to apply processor, ", err)
 		return nil, err
 	}
-
-	// cs := clsstat.Singleton()
-	// as := cs.GetApp(opts.AppId)
-	// if opts.Mode == interfaces.StubFn {
-	// 	if as == nil {
-	// 		logrus.WithField("AppId", opts.AppId).Debug("App is not existed anymore!")
-	// 		return nil, nil
-	// 	}
-	// }
 
 	if proc == nil {
 		return nil, nil
@@ -111,7 +96,6 @@ func (sm *StubManager) CreateStub(opts *CreateStubOpts) (interfaces.Stub, error)
 	return st, nil
 }
 
-// StopApp stops the stubs of the app.
 func (sm *StubManager) StopApp(aid string) {
 	var wg sync.WaitGroup
 	sm.stubs.Range(func(key, value any) bool {
@@ -142,7 +126,6 @@ func (sm *StubManager) StopApp(aid string) {
 	}
 }
 
-// StopStub stops the stub.
 func (sm *StubManager) StopStub(sid string) {
 	value, ok := sm.stubs.LoadAndDelete(sid)
 	if !ok {

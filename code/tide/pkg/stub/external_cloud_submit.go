@@ -14,11 +14,6 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// SubmitExternalCloud is explicit cloud-only native admission for a matched
-// measurement baseline. It uses the same routine envelope, source record and
-// result-wait protocol as ordinary external submission, without invoking the
-// edge scheduler. A failed/ambiguous RPC is returned without retries or a
-// receiver claim. Accepted execution is not canceled by the observer context.
 func SubmitExternalCloud(ctx context.Context, st interfaces.Stub, r *routine.Routine, cloudNodeID string) error {
 	s, ok := st.(*stub)
 	if !ok || s == nil {

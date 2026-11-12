@@ -22,7 +22,7 @@ func NewEventServer(evtDispr event.EventDispatcher) *EventServer {
 var result eventpb.EventResult
 
 func (s *EventServer) SendEvent(ctx context.Context, in *eventpb.EventList) (*eventpb.EventResult, error) {
-	go func() { // 不是每个Event创建Goroutine，是因为List中的事件可能有先后顺序
+	go func() {
 		evtPbs := in.Events
 		for _, evtPb := range evtPbs {
 			evt := event.EvtPbToEvent(evtPb)

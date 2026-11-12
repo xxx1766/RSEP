@@ -1,0 +1,34 @@
+{
+  "family": "score_calibration",
+  "description": "Restricted FIFO simulation with calibration and disjoint test seeds.",
+  "cohort": {
+    "grid_points": 68,
+    "preference_profiles": 6,
+    "calibration_seeds": 3,
+    "test_seeds": 3,
+    "selected_weights": [
+      0,
+      0.9,
+      0.1
+    ]
+  },
+  "files": [
+    {
+      "path": "heldout_summary.csv",
+      "bytes": 7588,
+      "sha256": "c584920d1357a993eb303aa7898fa07cbed239b418e3c264a095d6b03222dba3",
+      "rows": 68
+    },
+    {
+      "path": "per_scenario.csv",
+      "bytes": 8425,
+      "sha256": "69d546aec55b00962e909297e5fde0c21538bb1cf459349d352313899850ab90",
+      "rows": 72
+    },
+    {
+      "path": "selection.json",
+      "bytes": 2111,
+      "sha256": "b9f2ba3cb8ce850da20264eb38079c4f3f24c3f2e71b220943f24e92ce1331b2"
+    }
+  ]
+}

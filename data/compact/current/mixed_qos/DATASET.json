@@ -1,0 +1,74 @@
+{
+  "cohort": {
+    "load_levels": [
+      "low",
+      "high",
+      "overload"
+    ],
+    "nominal_rates_rps": [
+      120,
+      310,
+      460
+    ],
+    "offers": 177600,
+    "origin_runs": 120,
+    "qos_classes_ms": [
+      100,
+      500
+    ],
+    "repetitions": 5,
+    "systems": [
+      "bare",
+      "kubeedge",
+      "ray",
+      "tide"
+    ],
+    "treatments": 60,
+    "window_s": 10
+  },
+  "description": "Sixty treatments over five paired repeats with two QoS classes, four systems and three offered load levels.",
+  "family": "mixed_qos",
+  "files": [
+    {
+      "path": "cells.csv",
+      "bytes": 6357,
+      "sha256": "5198cd60c4f7c2a35e425dce7f5d38228e77b3b7e2f36ffe6282bd3d054f7e15",
+      "rows": 24
+    },
+    {
+      "path": "runs.csv",
+      "bytes": 45381,
+      "sha256": "40bfeb4b71547643463874769b5b05c243c96a1ec8d8a27b0fa0d41cd07a953c",
+      "rows": 120
+    },
+    {
+      "path": "totals.csv",
+      "bytes": 980,
+      "sha256": "00945babd973f21627d9d804e3af37d6857857afeb341bad4708845b329fc2d4",
+      "rows": 12
+    }
+  ],
+  "sanitization": {
+    "endpoints": "origin and destination host identifiers replaced with logical edge/cloud labels",
+    "relative_time": "seconds from the first recorded run start",
+    "removed": [
+      "absolute timestamps",
+      "transport endpoints"
+    ]
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-fig7-cluster-mixed-20261016",
+    "relative_paths": [
+      "code/Tide/results-fig7-cluster-mixed-20261016/audit/runs.csv",
+      "code/Tide/results-fig7-cluster-mixed-20261016/audit/cells.csv",
+      "code/Tide/results-fig7-cluster-mixed-20261016/audit/audit.json"
+    ],
+    "source_sha256": {
+      "code/Tide/results-fig7-cluster-mixed-20261016/audit/audit.json": "e7faeb6a3fda0ee45e304783bf20df36ec276a39552caf83ffb4698cc08acb4d",
+      "code/Tide/results-fig7-cluster-mixed-20261016/audit/cells.csv": "8fd733ce0ea2a344aa6ac58336d09e68fd20f2aa5bd748343de43aa8b960a6c2",
+      "code/Tide/results-fig7-cluster-mixed-20261016/audit/runs.csv": "70f8294d73b9e9274fbd7d7728d58dd40aaed0ddf54ae8aeb91bc61e29cc3e2a"
+    }
+  },
+  "title": "Mixed 100/500 ms deadline classes"
+}

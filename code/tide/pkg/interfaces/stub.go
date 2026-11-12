@@ -19,7 +19,6 @@ type Stub interface {
 
 	CloudSubmitRoutine(*routine.Routine)
 
-	// EXP: 实验需要
 	SubmitRoutineExp(rtn *routine.Routine)
 }
 

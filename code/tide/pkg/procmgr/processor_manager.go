@@ -13,10 +13,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// ProcessorManager manages the processors.
-// STAR
-// 模仿信号量，利用列表前后顺序，实现Apply高优占用，Rob低优抢用
-// NOTE: 这里可以用优先级进行排序，进一步加强优先化
 type ProcessorManager struct {
 	logResTotal       *routine.Resource
 	logResRemain      *routine.Resource
@@ -34,10 +30,8 @@ type waiter struct {
 	ready chan<- struct{}
 }
 
-// for transmitting ProcessorId
 type procIdKey string
 
-// NewProcMgr creates a new ProcessorManager.
 func NewProcMgr(selfRes *routine.Resource) *ProcessorManager {
 	return &ProcessorManager{
 		logResTotal:       selfRes.Copy(),
@@ -49,13 +43,11 @@ func NewProcMgr(selfRes *routine.Resource) *ProcessorManager {
 	}
 }
 
-// Close closes the ProcessorManager.
 func (pm *ProcessorManager) Close() error {
 	close(pm.done)
 	return nil
 }
 
-// Apply applies a processor.
 func (pm *ProcessorManager) Apply(ctx context.Context, req *routine.Resource) (*processor.Processor, error) {
 	if !pm.logResTotal.GreaterOrEqual(req) {
 		return nil, errors.New("no enough resource")
@@ -73,7 +65,6 @@ func (pm *ProcessorManager) Apply(ctx context.Context, req *routine.Resource) (*
 	return pm.acquire(ctx, req, true), nil
 }
 
-// Rob robs a processor.
 func (pm *ProcessorManager) Rob(ctx context.Context, req *routine.Resource) <-chan *processor.Processor {
 	id := stringx.GenerateId()
 	logger := logrus.WithFields(logrus.Fields{
@@ -127,7 +118,7 @@ func (pm *ProcessorManager) acquire(ctx context.Context, req *routine.Resource, 
 	ready := make(chan struct{})
 	waiter := &waiter{req: req, ready: ready}
 	var elem *list.Element
-	if highPriority { // 高优占用，优先满足
+	if highPriority {
 		elem = pm.waiters.PushFront(waiter)
 	} else {
 		elem = pm.waiters.PushBack(waiter)
@@ -156,8 +147,6 @@ func (pm *ProcessorManager) acquire(ctx context.Context, req *routine.Resource, 
 		pm.mu.Lock()
 		defer pm.mu.Unlock()
 		if as == nil {
-			// notifyWaiters already reserved logical capacity. If the
-			// application disappeared, return that reservation before leaving.
 			pm.returnLogRes(req)
 			return nil
 		}
@@ -169,7 +158,6 @@ func (pm *ProcessorManager) acquire(ctx context.Context, req *routine.Resource, 
 	}
 }
 
-// Return returns a processor.
 func (pm *ProcessorManager) Return(proc *processor.Processor, used bool) {
 	logger := logrus.WithFields(logrus.Fields{
 		"ProcessorId": proc.Id,
@@ -201,22 +189,11 @@ func (pm *ProcessorManager) notifyWaiters() {
 	for {
 		next := pm.waiters.Front()
 		if next == nil {
-			break // No more waiters blocked.
+			break
 		}
 
 		w := next.Value.(*waiter)
 		if !pm.logResRemain.GreaterOrEqual(w.req) {
-			// Not enough tokens for the next waiter.  We could keep going (to try to
-			// find a waiter with a smaller request), but under load that could cause
-			// starvation for large requests; instead, we leave all remaining waiters
-			// blocked.
-			//
-			// Consider a semaphore used as a read-write lock, with N tokens, N
-			// readers, and one writer.  Each reader can Acquire(1) to obtain a read
-			// lock.  The writer can Acquire(N) to obtain a write lock, excluding all
-			// of the readers.  If we allow the readers to jump ahead in the queue,
-			// the writer will starve — there is always one token available for every
-			// reader.
 			break
 		}
 

@@ -1,4 +1,3 @@
-// Package c4 checks the CPU projection of local capability retention.
 package c4
 
 import (
@@ -7,9 +6,6 @@ import (
 	"github.com/ict/tide/pkg/routine"
 )
 
-// Check uses total, not currently free, CPU. It neither reserves a fallback
-// processor nor guarantees that a remote execution can recover after a fault.
-// Missing metadata and dimensions unsupported by the CPU prototype fail closed.
 func Check(r *routine.Routine) error {
 	if !r.RequireLocalCapacity {
 		return nil

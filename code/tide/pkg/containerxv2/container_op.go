@@ -1,14 +1,5 @@
 package containerxv2
 
-// container_op.go — cgroup v2 port of pkg/containerx/container_op.go.
-//
-// On v2 the controllers are unified. Request-level CPU binding updates the
-// container's own cpuset without moving it out of its runtime-owned cgroup.
-//
-// All other functions (CreateCtn/StartCtr/PauseCtr/...) use containerd's OCI
-// APIs and are cgroup-version-agnostic (P0.3 smoke test verified oci.WithCgroup
-// auto-translates /tide/* paths on v2). They are copied verbatim.
-
 import (
 	"context"
 	"os"
@@ -31,7 +22,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// CreateCtnOpts is the options for creating a container. Mirrors v1.
 type CreateCtnOpts struct {
 	ImageName  string
 	VolumePair string
@@ -41,9 +31,6 @@ type CreateCtnOpts struct {
 	CgroupPath string
 }
 
-// CreateCtn creates a container with the given options. Unchanged vs v1:
-// containerd's oci.WithCgroup produces a runtime-spec path that runc
-// translates into a v2 unified cgroup automatically (verified by P0.3).
 func CreateCtn(opts *CreateCtnOpts) (containerd.Container, error) {
 	if opts.CgroupPath == "" {
 		opts.CgroupPath = getCgroup()
@@ -160,9 +147,6 @@ func pathExists(path string) (bool, error) {
 }
 
 func getGPU() bool {
-	// v1 variant checks /dev/nvidia0 only. On some hosts (e.g. this GCP box)
-	// the device nodes exist but nvidia-container-cli isn't installed, which
-	// would cause nvidia.WithGPUs to fail at container start. Require both.
 	if _, err := os.Stat("/dev/nvidia0"); os.IsNotExist(err) {
 		return false
 	}
@@ -172,10 +156,6 @@ func getGPU() bool {
 	return true
 }
 
-// MoveCtn applies a Processor's CPU set to the container's own cgroup.
-// Moving processes out of that cgroup breaks runc's subsequent process
-// enumeration on v2: task.Pids can then return an empty list. Updating the
-// cpuset in place preserves container ownership and rebinds all its threads.
 func MoveCtn(ctn containerd.Container, phyRes *processor.PhysicResource) error {
 	logger := logrus.WithFields(logrus.Fields{"ExecutorId": ctn.ID()})
 	ctx := namespaces.WithNamespace(context.Background(), "tide")
@@ -226,7 +206,6 @@ func MoveCtn(ctn containerd.Container, phyRes *processor.PhysicResource) error {
 	return nil
 }
 
-// PauseCtr pauses a container (unchanged vs v1 — containerd task APIs).
 func PauseCtr(ctr containerd.Container) error {
 	ctx := namespaces.WithNamespace(context.Background(), "tide")
 	task, err := ctr.Task(ctx, nil)
@@ -240,7 +219,6 @@ func PauseCtr(ctr containerd.Container) error {
 	return nil
 }
 
-// ResumeCtr resumes a container (unchanged).
 func ResumeCtr(ctr containerd.Container) error {
 	ctx := namespaces.WithNamespace(context.Background(), "tide")
 	task, err := ctr.Task(ctx, nil)
@@ -254,7 +232,6 @@ func ResumeCtr(ctr containerd.Container) error {
 	return nil
 }
 
-// StartCtr starts a container (unchanged).
 func StartCtr(ctr containerd.Container) error {
 	ctx := namespaces.WithNamespace(context.Background(), "tide")
 	task, err := ctr.Task(ctx, nil)
@@ -268,7 +245,6 @@ func StartCtr(ctr containerd.Container) error {
 	return nil
 }
 
-// StopCtn stops and deletes a container (unchanged).
 func StopCtn(ctn containerd.Container) error {
 	ctx := namespaces.WithNamespace(context.Background(), "tide")
 	task, err := ctn.Task(ctx, nil)
@@ -285,8 +261,6 @@ func StopCtn(ctn containerd.Container) error {
 	return ctn.Delete(ctx, containerd.WithSnapshotCleanup)
 }
 
-// UpdateRes updates the resources of a container via the containerd task
-// update path (unchanged vs v1 — runc handles v1/v2 translation).
 func UpdateRes(ctn containerd.Container, res *processor.PhysicResource) error {
 	ctx := namespaces.WithNamespace(context.Background(), "tide")
 	task, err := ctn.Task(ctx, nil)

@@ -2,10 +2,6 @@ package procmgr
 
 import "time"
 
-// ProcessorSnapshot is a read-only copy of native CPU accounting. Reservations
-// are high-priority holdings; commitments include low-priority borrowing and
-// may briefly include logical grants to a waiter before its physical handoff.
-// PhysicalOccupiedCPUs counts held CPU-set slots, not measured CPU utilization.
 type ProcessorSnapshot struct {
 	TotalCPUs            int   `json:"total_cpus"`
 	ReservedCPUs         int   `json:"reserved_cpus"`
@@ -15,7 +11,6 @@ type ProcessorSnapshot struct {
 	ObservedNS           int64 `json:"observed_unix_ns"`
 }
 
-// Snapshot does not change reservations, queues, processor grants or policy.
 func (pm *ProcessorManager) Snapshot() ProcessorSnapshot {
 	pm.mu.Lock()
 	defer pm.mu.Unlock()

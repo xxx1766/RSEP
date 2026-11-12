@@ -36,26 +36,19 @@ except ImportError:
           file=sys.stderr)
     sys.exit(3)
 
-# Generated at image build time; path added via PYTHONPATH or script cwd.
 sys.path.insert(0, "/app")
 from execinspb import proto_pb2 as pb  # type: ignore  # noqa: E402
 
 
 MQ_MSG_MAX = 65535
-MQ_MSG_SIZE = 1 << 24  # 16 MiB — matches pkg/executor/instance/ipc/posix_mq.go:25
+MQ_MSG_SIZE = 1 << 24
 BURN = os.environ.get("TIDE_WORKLOAD_FORCE_CPUBURN", "0") == "1"
 BURN_MS = int(os.environ.get("TIDE_WORKLOAD_MS", "40"))
-# RSEP §VI.A: 10 detection tasks per request. Configurable for light-workload
-# comparison; default matches paper.
 DETS_PER_REQ = max(1, int(os.environ.get("TIDE_DETECTIONS_PER_REQ", "10")))
 
 
 def _open_mq(name: str) -> "posix_ipc.MessageQueue":
-    # Go side creates with O_CREAT|O_EXCL. We just open read-write. posix_ipc's
-    # default flags are O_RDWR when flags=0 and we pass a name only.
     full = "/" + name if not name.startswith("/") else name
-    # max_messages / max_message_size must match the queue that already exists
-    # on the host; if we pass different values, posix_ipc.Open returns EINVAL.
     return posix_ipc.MessageQueue(
         full,
         max_messages=MQ_MSG_MAX,
@@ -75,7 +68,6 @@ def _run_inference(args_bytes: bytes) -> None:
     if BURN:
         _cpu_burn(BURN_MS * DETS_PER_REQ)
         return
-    # Lazy import so cpuburn mode doesn't pay ONNX startup cost.
     from infer import infer_once
     for _ in range(DETS_PER_REQ):
         infer_once(args_bytes)
@@ -100,12 +92,10 @@ def main() -> int:
     in_mq = _open_mq(in_name)
     out_mq = _open_mq(out_name)
 
-    # Warm the ORT session before INIT so the first request doesn't pay startup.
     if not BURN:
         from infer import _ensure_session
         _ensure_session()
 
-    # Signal readiness.
     init = pb.Event()
     init.type = pb.Event.INIT
     _send_event(out_mq, init)
@@ -122,14 +112,12 @@ def main() -> int:
     served = 0
     while not stop["flag"]:
         try:
-            # receive blocks; a short timeout lets us react to SIGTERM.
             data, _prio = in_mq.receive(timeout=0.5)
         except posix_ipc.BusyError:
             continue
         except posix_ipc.SignalError:
             continue
         except OSError as e:
-            # Timeout on MQ manifests as OSError/EAGAIN on some kernels via posix_ipc
             if getattr(e, "errno", None) in (11, 35, 110):
                 continue
             raise
@@ -149,7 +137,6 @@ def main() -> int:
             _send_event(out_mq, exit_evt)
             served += 1
         else:
-            # WAIT_GET / INIT shouldn't flow to us in StubFn mode; ignore.
             print(f"paix_worker: ignoring event type={evt.type}", file=sys.stderr)
 
     print(f"paix_worker: exiting after serving {served} routines",

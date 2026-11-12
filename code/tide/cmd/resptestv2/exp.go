@@ -1,12 +1,5 @@
 package main
 
-// exp.go — per-request latency measurement for the RSEP single-machine
-// ablation on cgroup v2. Differs from cmd/resptest/exp.go in two ways:
-//   1. Each submit goroutine waits on rtn.WaitDone() (with a per-request
-//      deadline) to measure end-to-end latency.
-//   2. Results are streamed to a CSV matching cmd/httpbase/ format so
-//      scripts/analyze.py can aggregate both EI=off and EI=on cells uniformly.
-
 import (
 	"embed"
 	"encoding/csv"
@@ -32,10 +25,6 @@ import (
 //go:embed dog.jpg
 var f embed.FS
 
-// Image is parameterised so callers can swap it; default matches the workload
-// image built by scripts/build-workload.sh. NB: container_op.go:40 appends
-// ":<GOARCH>" so we pass the prefix only and tag the image as ":amd64"
-// (scripts/build-workload.sh does that).
 const defaultImage = "docker.io/tide/workload"
 
 type record struct {
@@ -48,7 +37,6 @@ type record struct {
 func runExp(stubM *stubmgr.StubManager, procM *procmgr.ProcessorManager,
 	fps int, duration time.Duration, outfile string, deadline time.Duration) {
 
-	// Both HTTP and PAIX workers run the same YOLOX inference kernel.
 	imgName := defaultImage
 	commands := strings.Split("python3 -u /app/entrypoint.py --mode=paix", " ")
 
@@ -58,8 +46,6 @@ func runExp(stubM *stubmgr.StubManager, procM *procmgr.ProcessorManager,
 		initExecNo = 3
 	}
 
-	// Queued ProcessorManager acquisitions check application membership.
-	// Register exactly as the normal runtime does, before creating the Stub.
 	appID := stringx.GenerateId()
 	clsstat.Singleton().AddApp(&clsstat.AddAppOpts{AppId: appID, ImageName: imgName, Commands: commands})
 	defer clsstat.Singleton().RmApp(appID)
@@ -78,8 +64,6 @@ func runExp(stubM *stubmgr.StubManager, procM *procmgr.ProcessorManager,
 	}
 	logrus.WithField("StubId", stub.Id()).Info("stub created")
 
-	// CreateStub waits for every executor's INIT, which loads the model.
-	// Exercise actual inference as well, rather than treating a sleep as warmup.
 	if *warmup {
 		submitRoutine(stub, initExecNo*4, time.Second, filepath.Join(filepath.Dir(outfile), "warmup.csv"), deadline, "warmup")
 	}
@@ -133,7 +117,7 @@ func submitRoutine(stub interfaces.Stub, fps int, duration time.Duration,
 			)
 			tSub := time.Since(t0).Nanoseconds()
 			stub.SubmitRoutineExp(rtn)
-			status := 1 // 1 = EXIT_SUCC proxy; 2 = EXIT_FAIL; 0 = timeout
+			status := 1
 			select {
 			case <-rtn.WaitDone():
 				if rtn.Status() == routine.EXIT_SUCC {
@@ -152,8 +136,6 @@ func submitRoutine(stub interfaces.Stub, fps int, duration time.Duration,
 	wg.Wait()
 	close(records)
 
-	// Map Tide status codes to the CSV-common "200 = ok" that analyze.py
-	// expects so EI=on and EI=off rows share a schema.
 	var okN, totalN int
 	for r := range records {
 		csvStatus := 200

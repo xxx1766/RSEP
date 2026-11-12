@@ -1,0 +1,77 @@
+{
+  "created_unix_ns": 1793450076952598000,
+  "scope": "Single-repeat3+3native-WANdecisionpilot, notpublicationdata or20hostreproduction",
+  "compute": [
+    "i23-l01",
+    "i23-l02",
+    "i23-l03",
+    "i23-r01",
+    "i23-r02",
+    "i23-r03"
+  ],
+  "support": [
+    "i23-c01",
+    "i23-d01"
+  ],
+  "deadline_ms": 135,
+  "uncensored_calibration_deadline_ms": 2000,
+  "arms": [
+    "tide",
+    "k0-default-Service",
+    "kz-PreferClose",
+    "lf-custom-reference"
+  ],
+  "normalized_loads": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "rtts_ms": [
+    25,
+    65
+  ],
+  "count_per_run": 1000,
+  "repetitions": 1,
+  "original_traces": {
+    "patterns": [
+      "gradual",
+      "burst"
+    ],
+    "rtt_ms": 65,
+    "source": "issue12_trace.generate(pattern,1,1), byte-identical across arms"
+  },
+  "native_local_only_ablation": {
+    "load": 1.2,
+    "rtts_ms": [
+      25,
+      65
+    ],
+    "less_available_capacity": true
+  },
+  "expected_comparison_runs": 34,
+  "capacity": "3unshaped saturation blocks,512perVM,4balancedinputs128each,4persistentchannels; median summed localcapacity; >=90%servicebusy; freezeonce",
+  "predictors": "Archived prospective issue23method:40forcednative uncensored offers1rps pernode/context,3localunshaped+3remote25+3remote65; ceilmedianservice andfullpathresidual; freezeall beforecomparisons; never retune fromrelativegoodput",
+  "fixed_algorithm": {
+    "weights": [
+      1,
+      1,
+      1
+    ],
+    "ttl_ms": 3600000,
+    "latency_scale_ms": 100,
+    "max_inflight": 48
+  },
+  "resources": "original1vCPU/2GiB VM; same YOLOXPod900m/1core,512MiB/1GiB; immutable native binary1f0e75ee76ca53fdf04555bbf4c3b5e23bfca1ff4ba053c63d70323a7b6fc00e",
+  "network": "oldownedaggregateboundary1Gbit/s per direction12/32ms+-5ms,0.1%SKBloss; preserve shared eth0; ping qualification",
+  "metric": "Primary:verified correct returnswithin135ms and withincommonfixedarrivalwindow+135ms, dividedbythatfixedwindow; also cohortyield,late/rejected/failed/emissionlateness andactualexecution destinations",
+  "controls": "No extra periodic inference/health workload duringcomparisons; independent1Hzheartbeats+host5sresources+underlay controls. Clockoffset<5ms overunshaped management beforeeachrun. Hostclock neverchanged; read-only reference -x/CAP_SYS_TIME removed. Runtime long heartbeat gaps>5s markinfrastructureinvalid, retainraw andstopremaining cells.",
+  "order": "25then65; perRTT 80/100/120, tide thenlocal-only at120thenk0,kz,lf; thenoriginal65gradual,burst eachtide,k0,kz,lf",
+  "forbid": [
+    "editingmanuscript",
+    "overwritingoldresults",
+    "retuningfromoutcomes",
+    "discardingfailedruns",
+    "callingcustomLF nativeK8s",
+    "claimingemulatedVMsphysicalservers"
+  ]
+}

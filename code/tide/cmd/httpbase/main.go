@@ -1,27 +1,3 @@
-// httpbase — EI=off baseline for the Tide RSEP single-machine ablation.
-//
-// Models cells C1 (CC=off, PI=off, EI=off) and C2 (CC=on, PI=off, EI=off) of
-// the 6-cell matrix. Per RSEP paper §VI.B, EI=off means "minimal HTTP
-// client–server with a single backend container and a bounded queue".
-//
-// What this binary does:
-//   1. Starts one workload container (docker.io/tide/workload:yolox-nano,
-//      --mode=http) with TIDE_WORKERS=3 (CC=on) or 6 (CC=off).
-//   2. Polls /healthz until 200.
-//   3. Runs an open-loop client: a fixed-interval ticker, one goroutine per
-//      tick, POSTs the embedded JPEG, records (submit_ns, reply_ns, status).
-//   4. Writes per-request CSV and exits. Container is torn down.
-//
-// Usage:
-//   sudo bin/httpbase -cc=on -rps=16 -duration=20s -outfile=results/.../raw.csv
-//
-// Invariants:
-//   - Open-loop: request i+1 is dispatched at tick i+1 regardless of whether
-//     request i has completed (matches paper Fig. 5 intent).
-//   - Per-request deadline (default 30s) caps hung requests.
-//   - Client is pinned to cores 0-1 via taskset in the harness script; this
-//     program does not self-pin (easier to debug by hand).
-
 package main
 
 import (
@@ -137,21 +113,14 @@ func startBackend(cfg *config) error {
 	if cfg.cc == "on" {
 		workers = "3"
 	}
-	// Best-effort cleanup of any stale container from a prior crash.
 	_ = exec.Command("ctr", "-n", ctrNs, "tasks", "kill", "-s", "SIGKILL", cfg.backendID).Run()
 	_ = exec.Command("ctr", "-n", ctrNs, "tasks", "rm", cfg.backendID).Run()
 	_ = exec.Command("ctr", "-n", ctrNs, "containers", "rm", cfg.backendID).Run()
 
-	// WORKLOAD_CPUSET pins the backend Python process (and all forked threads)
-	// to the paper-aligned 6-core slice. Honored by workload/entrypoint.py
-	// via os.sched_setaffinity. Empty string (default) = no pinning.
 	cpuset := os.Getenv("WORKLOAD_CPUSET")
 	if cpuset == "" {
 		cpuset = "2-7"
 	}
-	// TIDE_DETECTIONS_PER_REQ: paper §VI.A says 10 detection tasks per request.
-	// Honored by http_worker.py / paix_worker.py. Override via env to e.g. "1"
-	// for the light-workload sensitivity comparison.
 	detsPerReq := os.Getenv("TIDE_DETECTIONS_PER_REQ")
 	if detsPerReq == "" {
 		detsPerReq = "10"
@@ -190,7 +159,6 @@ func waitHealthy(cfg *config) error {
 			resp.Body.Close()
 			if resp.StatusCode == 200 {
 				fmt.Fprintf(os.Stderr, "[httpbase] backend healthy after %d polls\n", i+1)
-				// A second call after healthz 200 fully warms the ORT session.
 				_, _ = client.Get(url)
 				return nil
 			}
@@ -203,7 +171,7 @@ func waitHealthy(cfg *config) error {
 
 type record struct {
 	reqID  uint64
-	tSub   int64 // ns since monotonic zero
+	tSub   int64
 	tRep   int64
 	status int
 }
@@ -230,9 +198,6 @@ func runClient(cfg *config) error {
 	var wg sync.WaitGroup
 	var idCounter uint64
 
-	// HTTP client tuned for open-loop: big connection pool, no per-request
-	// limit. Timeout = deadline so slow responses don't indefinitely block
-	// goroutines that already had their latency mis-reported.
 	transport := &http.Transport{
 		MaxIdleConns:        cfg.rps * 2,
 		MaxIdleConnsPerHost: cfg.rps * 2,

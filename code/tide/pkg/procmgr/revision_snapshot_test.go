@@ -36,7 +36,6 @@ func TestSnapshotTracksReservationsBorrowingAndReturns(t *testing.T) {
 			t.Fatal("Rob returned nil")
 		}
 		check(2, 4, 2, 4)
-		// The exported observation is a value copy and cannot modify PM state.
 		copy := pm.Snapshot()
 		copy.ReservedCPUs = 99
 		check(2, 4, 2, 4)

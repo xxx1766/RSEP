@@ -62,10 +62,7 @@ func TestReturnedClientKeepsContainerHandleUsable(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	// CreateCtn returns its client before callers finish using its handle.
 	returnClient(retained)
-	// Repeated use must not exhaust a bounded return channel or close a
-	// connection still owned by this handle.
 	for i := 0; i < 101; i++ {
 		client, err := getClient()
 		if err != nil {

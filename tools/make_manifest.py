@@ -1,39 +1,32 @@
 #!/usr/bin/env python3
-"""Write MANIFEST.sha256 for every tracked file (or every file in a zip)."""
+"""Hash the explicit prepared release list, including unstaged curated files."""
 import hashlib
-import subprocess
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-SKIP = {"MANIFEST.sha256"}
+ROOT = Path(__file__).resolve().parents[1]
 
 
-def tracked_files():
-    if (ROOT / ".git").exists():
-        out = subprocess.check_output(
-            ["git", "ls-files"], cwd=ROOT, text=True
-        ).splitlines()
-    else:
-        out = [
-            str(p.relative_to(ROOT))
-            for p in ROOT.rglob("*")
-            if p.is_file()
-        ]
-    return [
-        f for f in out
-        if f not in SKIP
-        and not f.endswith((".pyc", ".DS_Store"))
-        and "__pycache__/" not in f
-    ]
+def release_files():
+    listing = ROOT / "RELEASE_FILES.txt"
+    if not listing.is_file():
+        raise SystemExit("Missing RELEASE_FILES.txt; define the prepared release first.")
+    names = [line.strip() for line in listing.read_text().splitlines() if line.strip()]
+    if len(names) != len(set(names)):
+        raise SystemExit("Duplicate release path")
+    for name in names:
+        path = Path(name)
+        if path.is_absolute() or ".." in path.parts:
+            raise SystemExit("Unsafe release path: " + name)
+        if not (ROOT / name).is_file():
+            raise SystemExit("Missing release file: " + name)
+    return sorted(name for name in names if name != "MANIFEST.sha256")
 
 
 def main():
-    lines = []
-    for name in sorted(tracked_files()):
-        digest = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
-        lines.append(f"{digest}  {name}\n")
-    (ROOT / "MANIFEST.sha256").write_text("".join(lines))
-    print(f"MANIFEST.sha256: {len(lines)} files")
+    lines = [hashlib.sha256((ROOT / name).read_bytes()).hexdigest() + "  " + name
+             for name in release_files()]
+    (ROOT / "MANIFEST.sha256").write_text("\n".join(lines) + "\n")
+    print("Manifest files:", len(lines))
 
 
 if __name__ == "__main__":

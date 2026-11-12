@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fig7-inference
+  namespace: ${NAMESPACE}
+  labels:
+    app: issue30-inference
+    run: elasticity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: issue30-inference
+  template:
+    metadata:
+      labels:
+        app: issue30-inference
+        run: elasticity
+    spec:
+      automountServiceAccountToken: false
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - ${CLOUD_NODE}
+                - ${EDGE1_NODE}
+                - ${EDGE2_NODE}
+      containers:
+      - name: inference
+        image: ${INFERENCE_IMAGE}
+        imagePullPolicy: Never
+        command:
+        - python3
+        - /issue30/issue30_http_worker.py
+        env:
+        - name: POD_UID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.uid
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        resources:
+          requests:
+            cpu: "2"
+            memory: 512Mi
+          limits:
+            cpu: "2"
+            memory: 1Gi
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 19385
+          periodSeconds: 1
+          timeoutSeconds: 1
+          failureThreshold: 3
+        volumeMounts:
+        - name: source
+          mountPath: /issue30
+          readOnly: true
+        - name: evidence
+          mountPath: /evidence
+      terminationGracePeriodSeconds: 180
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      topologySpreadConstraints:
+      - maxSkew: 1
+        minDomains: 3
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        nodeTaintsPolicy: Honor
+        labelSelector:
+          matchLabels:
+            app: issue30-inference
+      volumes:
+      - name: source
+        configMap:
+          name: issue30-source
+      - name: evidence
+        hostPath:
+          path: ${EVIDENCE_PATH}
+          type: Directory

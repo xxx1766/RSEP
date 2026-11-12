@@ -15,7 +15,6 @@ var rootCmd = &cobra.Command{
 	Short: "Tide is a distributed computing framework",
 	Long:  `Tide is a distributed computing framework`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
 	},
 	Args: cobra.MinimumNArgs(1),
 }

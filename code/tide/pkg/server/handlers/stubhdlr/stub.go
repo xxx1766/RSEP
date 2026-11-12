@@ -56,7 +56,6 @@ func rtnWaitHdlr(stub interfaces.Stub) event.EventHandler {
 		logrus.WithFields(logrus.Fields{"RoutineId": rtnWGEvtPb.RtnId, "StubId": stub.Id()}).
 			Debug("StubHdlr: finish waiting routine done")
 
-		// 等待该Routine的Stub与执行该Routine的Stub，为同一个Stub，直接通知即可
 		if rtnWGEvtPb.ReqSid == stub.Id() {
 			stub.NoticeRtnData(rtn.Id, rtn.Status(), rtn.Result(), rtn.Error())
 			return

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: application-cpu-budget
+  namespace: ${NAMESPACE}
+spec:
+  hard:
+    requests.cpu: "36"
+    limits.cpu: "36"
+    pods: "18"

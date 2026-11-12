@@ -1,0 +1,74 @@
+{
+  "cohort": {
+    "layouts": [
+      "edge",
+      "edge-cloud"
+    ],
+    "offers": 210000,
+    "patterns": [
+      "steady",
+      "burst"
+    ],
+    "rates_rps": [
+      50,
+      700,
+      1000
+    ],
+    "repeats": 5,
+    "runs": 180,
+    "weights": [
+      "equal",
+      "latency",
+      "neighbor"
+    ],
+    "window_ms": 2000,
+    "table3_retained_runs": "retained flag in runs.csv"
+  },
+  "description": "Native request records and per-run summaries for the equal, calibrated and neighbor weight settings.",
+  "family": "native_weight_study",
+  "files": [
+    {
+      "path": "requests.csv.gz",
+      "bytes": 9193346,
+      "sha256": "bb7d7a855cb62b308cbd1814842faa4475c26c08ae3a686928beff953ca42460",
+      "rows": 210000
+    },
+    {
+      "path": "runs.csv",
+      "bytes": 41210,
+      "sha256": "f031190e347e1fd53c472d7720ec79668f8d75381f446e7c878e15565307ee94",
+      "rows": 180
+    },
+    {
+      "path": "table3_cells.csv",
+      "bytes": 2320,
+      "sha256": "e8d0a5475c10f819fd5996dfd71cf59eafa105a3fc0b6325d25c8761b68bd16d",
+      "rows": 36
+    }
+  ],
+  "sanitization": {
+    "endpoints": "worker and node identifiers replaced with logical edge/cloud labels",
+    "relative_time": "milliseconds from each run start",
+    "removed": [
+      "transport addresses",
+      "process identifiers",
+      "queue names",
+      "absolute filesystem paths"
+    ]
+  },
+  "schema": 1,
+  "source": {
+    "campaign": "results-issue5-native-20261006",
+    "relative_paths": [
+      "code/Tide/results-issue5-native-20261006/formal_comparison.json",
+      "code/Tide/results-issue5-native-20261006/formal-nj-01/raw/audited_runs.csv",
+      "code/Tide/results-issue5-native-20261006/formal-bj-01/raw/audited_runs.csv"
+    ],
+    "source_sha256": {
+      "code/Tide/results-issue5-native-20261006/formal-bj-01/raw/audited_runs.csv": "1176469f19af5c92e5e8d4c8864d261ee75a5e25b898bc010c17b3a58ad9bc0b",
+      "code/Tide/results-issue5-native-20261006/formal-nj-01/raw/audited_runs.csv": "24dc8e433c1f94fd3e9daf702bd854c48314f892f580783e6c4cda5c0acbf828",
+      "code/Tide/results-issue5-native-20261006/formal_comparison.json": "754cee6d3bc344059a975a003a5bbc3cabd441c28ab83ff3e1d8f514e08c6d7e"
+    }
+  },
+  "title": "Native runtime score-weight sensitivity (Table III)"
+}

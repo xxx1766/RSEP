@@ -1,7 +1,5 @@
 //go:build linux
 
-// This command adds observation/ingress only. Placement, reservations, TTL,
-// container execution and cloud fallback are supplied by the native packages.
 package main
 
 import (
@@ -41,8 +39,6 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// The observer wraps registration, so each native handler still runs once.
-// It never inserts an event or alters native cluster/scheduler state.
 type observedDispatcher struct {
 	event.EventDispatcher
 	ledger *witnessLedger
@@ -51,8 +47,6 @@ type observedDispatcher struct {
 
 func (d *observedDispatcher) RegisterHandler(kind string, h event.EventHandler) {
 	d.EventDispatcher.RegisterHandler(kind, func(e *event.Event) {
-		// Install lifetime attribution before the native new-stub handler makes the
-		// function schedulable. Stop/sync observations follow their native handlers.
 		if e.Type == interfaces.StubNewEvt {
 			d.observe(e)
 		}
@@ -109,8 +103,6 @@ func (p *nativePending) outcome() nativeResult {
 	return nativeResult{Status: int(p.r.Status()), Success: p.r.Status() == routine.EXIT_SUCC, Result: p.r.Result(), Error: p.r.Error()}
 }
 
-// Record only cgroups actually created by this process's package initializer.
-// There is no traversal/deletion of other /tide children at shutdown.
 type cgroupOwnership struct {
 	mu       sync.Mutex
 	paths    map[string]bool
@@ -159,7 +151,11 @@ func main() {
 	address := flag.String("address", "", "advertised gRPC IP:31840")
 	httpAddr := flag.String("http", "0.0.0.0:31841", "HTTP measurement endpoint")
 	cpus := flag.Int("cpus", 0, "native logical CPU budget; even 2..12 per node; formal=12")
-	root := flag.String("root", "/root/tmc-historical-threefig-20261019", "owned campaign directory")
+	defaultRoot := os.Getenv("RSEP_NATIVE_ROOT")
+	if defaultRoot == "" {
+		defaultRoot = "/var/lib/rsep/threefig"
+	}
+	root := flag.String("root", defaultRoot, "owned campaign directory")
 	image := flag.String("image", "docker.io/tide/threefig-20261019", "OCI image prefix (native appends GOARCH)")
 	commandsJSON := flag.String("commands-json", `["env","TIDE_DETECTIONS_PER_REQ=10","ORT_INTRA_THREADS=2","ORT_INTER_THREADS=1","python3","-u","/app/threefig_worker.py"]`, "identical worker argv on every node")
 	configPath := flag.String("config", "", "frozen native configuration JSON")
@@ -198,7 +194,6 @@ func main() {
 	must(os.Setenv("TIDE_MQ_MAX_MESSAGES", fmt.Sprint(*mqMessages)))
 	dir := filepath.Join(*root, "native", *name)
 	must(os.MkdirAll(dir, 0755))
-	// A second process cannot reuse the same owned artifact directory.
 	lock, err := os.OpenFile(filepath.Join(dir, "runtime.lock"), os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0600)
 	must(err)
 	fmt.Fprintln(lock, os.Getpid())
@@ -276,8 +271,6 @@ func main() {
 		r := routine.NewSubmittedRtn(id, "proce_img", body, dev.GetReqResource())
 		r.InitSid = entry.Id()
 		r.SubmitTime = time.Now().UnixNano()
-		// Native baseIns.SendEvt discards queue send errors: reject an oversized
-		// wire message at ingress rather than launch work that can never arrive.
 		wire, err := interfaces.MarshalEvent(&interfaces.Event{Type: interfaces.SUBMIT_ROUTINE, Routine: r})
 		if err != nil {
 			return nil, err
@@ -344,8 +337,6 @@ func main() {
 	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, syscall.SIGTERM, syscall.SIGINT)
 	<-signals
-	// Drain callers before closing native resources; client-side timeouts do not
-	// prove backend drain, so the external campaign must inspect unresolved work.
 	shutdown, cancel := context.WithTimeout(context.Background(), *timeout+5*time.Second)
 	defer cancel()
 	if err := hs.Shutdown(shutdown); err != nil {

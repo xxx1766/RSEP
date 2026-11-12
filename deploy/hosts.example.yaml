@@ -1,0 +1,35 @@
+# Host and image parameters for the deployment templates.
+# Addresses are documentation placeholders, not a connection inventory.
+namespace: tmc-reproduction
+
+cloud:
+  ssh_alias: your-cloud
+  node: cloud-node
+  address: 198.51.100.11
+
+edge1:
+  ssh_alias: your-edge1
+  node: edge1-node
+  address: 198.51.100.12
+
+edge2:
+  ssh_alias: your-edge2
+  node: edge2-node
+  address: 198.51.100.13
+
+# Documentation placeholder for the cloud-core/WAN endpoint.
+doc_ip: 198.51.100.10
+
+kubeedge_node: tmc-ke-worker
+kubeedge_cloud_node: tmc-ke-control-plane
+kubeedge_namespace: tmc-ke-revision
+kubeedge_version: v1.23.1
+cloudcore_endpoint: 198.51.100.10:10000
+
+# Measured identities are listed first. Replace with locally built tags when
+# reproducing on a new testbed.
+worker_image: rsep/cluster-worker:local
+inference_image: docker.io/tide/threefig-20261019:amd64
+
+# Host directory mounted at /evidence by the elasticity Deployment.
+evidence_path: /var/lib/tmc/evidence

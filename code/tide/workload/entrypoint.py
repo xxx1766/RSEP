@@ -46,10 +46,6 @@ def _apply_cpuset() -> None:
 
 def main() -> int:
     _apply_cpuset()
-    # Paper-matched workload weight: 10 detection tasks per request (RSEP
-    # §VI.A). Honored by http_worker.py and paix_worker.py via the same env
-    # name. Keeping it as setdefault allows callers to override (e.g. =1 for
-    # light-workload sensitivity comparison).
     os.environ.setdefault("TIDE_DETECTIONS_PER_REQ", "10")
 
     parser = argparse.ArgumentParser(prog="tide-workload")
@@ -61,12 +57,12 @@ def main() -> int:
              "(NOT TIDE_MODE — Tide uses that for entry|fn).",
     )
     args, passthrough = parser.parse_known_args()
-    sys.argv = [sys.argv[0], *passthrough]  # let sub-modules see remaining args
+    sys.argv = [sys.argv[0], *passthrough]
 
     if args.mode == "http":
         from http_worker import main as run
     elif args.mode == "cpuburn":
-        from http_worker import main as run  # same server, burn mode set via env
+        from http_worker import main as run
         os.environ["TIDE_WORKLOAD_FORCE_CPUBURN"] = "1"
     elif args.mode == "paix":
         from paix_worker import main as run

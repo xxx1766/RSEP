@@ -1,0 +1,179 @@
+{
+  "protocol": "PLAN.md",
+  "frozen_unix_ns": 1793537663244469000,
+  "calibration_capacity_rps": 60.3,
+  "high_rate_rps": 42,
+  "rate_rule": "round(0.7 * median independently measured fixed-inventory capacity)",
+  "calibration_sha256": "460923900d50309d9026b808a99561a4a1fe94b1d4ae3401f98b7a8a4072e88f",
+  "input_sha256": "6818cd9ad787e555879a52a706f66652be180b9f9d62a08397d74012705a9620",
+  "output_sha256": "70342e4b8d42e2cfe364e443400f61d3d9ffa55b44bd20cbf247fe0032eaf365",
+  "image_manifest": "sha256:a1a7ea75ebdc5da69bc51a61f375d1a7378d7dce9889c6659ac31cfac7f5e568",
+  "binary_sha256": "12429bbfbf6b6fcf099f053816051e5b678f53ba1c116a6a3abce9eafac5be12",
+  "units_cpu": 2,
+  "cpu_per_host": 12,
+  "nodes": [
+    [
+      "NJ-k1",
+      "threefig-nj1",
+      "cloud",
+      "198.51.100.11"
+    ],
+    [
+      "NJ-k2",
+      "threefig-nj2",
+      "origin",
+      "198.51.100.12"
+    ],
+    [
+      "NJ-k3",
+      "threefig-nj3",
+      "edge",
+      "198.51.100.13"
+    ]
+  ],
+  "baseline_s": 20,
+  "duration_s": 60,
+  "recovery_s": 360,
+  "request_timeout_s": 180,
+  "deadline_ms": 350,
+  "randomization_seed": 20261101,
+  "order": [
+    {
+      "block": 1,
+      "arm": "hpa",
+      "run": "v2-b1-hpa"
+    },
+    {
+      "block": 1,
+      "arm": "tide",
+      "run": "v2-b1-tide"
+    },
+    {
+      "block": 2,
+      "arm": "hpa",
+      "run": "v2-b2-hpa"
+    },
+    {
+      "block": 2,
+      "arm": "tide",
+      "run": "v2-b2-tide"
+    },
+    {
+      "block": 3,
+      "arm": "tide",
+      "run": "v2-b3-tide"
+    },
+    {
+      "block": 3,
+      "arm": "hpa",
+      "run": "v2-b3-hpa"
+    }
+  ],
+  "traces": {
+    "1": {
+      "path": "traces/v2-block1.jsonl",
+      "sha256": "211299fd71ac610d4185b848b16977c2bd14e1bebb5196fce723ff8200a35ffb",
+      "requests": 2520
+    },
+    "2": {
+      "path": "traces/v2-block2.jsonl",
+      "sha256": "28d9a9d8bdfa006f7fc38e521e35f1d711399f097bf3ebaec206a5b35b0b6ec4",
+      "requests": 2520
+    },
+    "3": {
+      "path": "traces/v2-block3.jsonl",
+      "sha256": "fc0f3e3e6f6851fd08433d55db5f0a0a0887f38a30cc0c2448c0452c0102813d",
+      "requests": 2520
+    }
+  },
+  "native_config": {
+    "execution_ms": 278,
+    "node_execution_ms": {
+      "threefig-nj1": 289,
+      "threefig-nj2": 278,
+      "threefig-nj3": 176
+    },
+    "qos_ms": 350,
+    "ttl_ms": 2000,
+    "weights": [
+      1,
+      1,
+      1
+    ],
+    "latency_scale_ms": 100,
+    "state_max_age_ms": 5000
+  },
+  "hpa": {
+    "apiVersion": "autoscaling/v2",
+    "kind": "HorizontalPodAutoscaler",
+    "metadata": {
+      "name": "fig7-inference",
+      "namespace": "tide-fig7-issue30"
+    },
+    "spec": {
+      "scaleTargetRef": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "fig7-inference"
+      },
+      "minReplicas": 1,
+      "maxReplicas": 18,
+      "metrics": [
+        {
+          "type": "Resource",
+          "resource": {
+            "name": "cpu",
+            "target": {
+              "type": "Utilization",
+              "averageUtilization": 60
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sources": {
+    "node_control_v3.py": "8304f828a8907c1f8fcbfc6baa7d42c0a38bbbe975bb4ee5e73c4e3de132a8b2",
+    "prepare_v2_and_run.py": "8171dbeddfa04ea8856d6fac264334768fc3f095f2fd6cb956c49edbaf1ff41a",
+    "calibrate_capacity_remote.py": "b68e74eddf03941bc51067a4a81f1948ea59ef0041151e28b010d4f6020a3d91",
+    "finish_failed_first_trial.py": "52739d22f75b8af19ca2a944346144e706de9a4cf5ed6a8a5fff144fc3547a81",
+    "qualify_then_run.py": "b1c9bef6b1bbba2c1f731fb7c4277bb99b5d86b24864117c64ee827c525dc743",
+    "calibrate_vision.py": "11ab700dc932c0acd6e10892ee29061299dc6d31cdfae9e4de468ea12b8476c9",
+    "issue30_http_worker.py": "982987ff5852295b72141319d886e90f3e595e4f9b83866d11d93d93e7f21167",
+    "issue30_measurement.py": "fd9e083e63f68c0da0a5174fec2b3faf13548fee637c03e5c88d454451235409",
+    "issue30_client.py": "e93b9297db7a568ac260f8b506d3f044ebc7da18d36b36ad41311312a6935ca0",
+    "smoke_and_launch.py": "b1343272cdb043a45f3653e45c65d27260976fefb8d76e824cf25741d8d5e7ab",
+    "issue30_kube.py": "bac093414dd8f771271a17ad8a953c24737c9806573d4fa79dbd7e3cefe7b6d4",
+    "test_issue30_measurement.py": "a4d6c595759ebe4dd0f8e0ceeac2b5eb8b3c545cc4230ae4d6add432cae6c619",
+    "restore_disk_relief.py": "2c6c2701b81f6188c1f0d09171492c9ad4753d75b63886b2b376758f9bfed915",
+    "resume_after_smoke_collection.py": "c49c242a5e592a6b2c0d73943f47bf8b64929a1d372317387c9002676d7f4dad",
+    "issue30_campaign.py": "5d5e7b5c15fb8d30d9afbc6e216b324d3d4ecdb39ab0494b9a36ca18442d152d",
+    "plot_issue30.py": "85c17d1d17466f0250b5ef15976c6b595aeaff2cb2e607caa69400f50ecd6239",
+    "disk_relief_second.py": "4902c78b6e8143375fd5ced33a6b7097cbfc8a50dff73bec5c9c1d6f1f6e2334",
+    "validate_backend.py": "b29d29827f329720839d6d98d959dd9f46ef3586a9177eb88d9763d5c447f14a",
+    "analyze_issue30.py": "671a5bb6686b106c3ca5761399c876ef413be22b3d5887cd2637f7c14f8a56f6",
+    "issue30_transport.py": "c3ceceab65a58928c29baa5e31a8f5ab314714fcea3b038a7dffa9684b7de748",
+    "continue_calibration.py": "b4c3f468edc1b799b8ef0c788388f2c16afbf8e0d37244097a1623f2b8997358",
+    "collect_measurement.py": "000d38e5e9b8063e913abf4abaaf1a0f592d26f0091cd9fda6ceb2e03724c69e",
+    "restore_disk_relief_second.py": "ffc8ae13919ccdec80fcfd2fc22d7de3e8b51772dd2ac9752b954d78c2c05fc3",
+    "prepare_runtime.py": "14caef2c30b4227d63393c6d69a862f4021b6b529a8cd871e87ff2cfc5a3d812",
+    "start_calibration.py": "8eb7d2d0072a430960c36b18fe934ded191d652c1477ea6986ba2ed7533f19e6",
+    "remote_prepare.py": "1e47360a5ffa7e600e01ec65871c336ef59bd252398751528250f8b4cc129cd6",
+    "qualify_fd_remote.py": "507a919373cacc6a113ed3ca12b6c5655831c9ff77acf0c82340a26608ee2c51",
+    "disk_relief.py": "ebfce3d0dfe496168b64df76bacf3948b07a1026677f035755636ff4ef7a22a2",
+    "qualify_hpa_and_run.py": "5bda66c155692ba26c8adb837b129e8cc7224dab579d0f852192b6ed9e246c1f"
+  },
+  "notes": [
+    "Initial allocation baselines differ; main ordinate is change from own stable baseline.",
+    "CPU grants are distinct from utilization and native borrowing.",
+    "HPA min=1,max=18,target CPU=60%; stock controller/default behavior.",
+    "All failed runs and right-censoring are retained. No best run selection.",
+    "Original b1-hpa retained: infrastructure invalid because a 1024-FD HTTP adapter prevented readiness; it is not interpreted as HPA scheduling behavior.",
+    "Both HTTP ingress paths now have a 65536 soft descriptor limit and passed 1500 concurrent-socket health/inference regression.",
+    "The CPU-HPA must report ScalingActive=True before the baseline clock; all other workload, CPU/memory and scaling settings stay frozen."
+  ],
+  "plan_file": "plan-v2.json",
+  "supersedes_for_qualified_pairs": "plan.json",
+  "original_plan_sha256": "780fb1ca7b62dc8a55d5b884f27ce141d8400299c52f689b39d2e7d86652a968",
+  "transport_nofile_soft_limit": 65536
+}

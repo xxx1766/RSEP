@@ -1,0 +1,13 @@
+{
+  "campaign": "f6-1792867033070427000",
+  "cells": 360,
+  "created_ns": 1793089140871520000,
+  "failed_total": 269015,
+  "offered_total": 1907400,
+  "offers": null,
+  "origin_runs": 3600,
+  "repetitions": 5,
+  "source_audit_sha256": "666a58c7fcb22530929cff05f3036b849e3da1cb1242ac5558be36b7bb293590",
+  "status": "PASS",
+  "treatments": 1800
+}

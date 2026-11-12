@@ -13,12 +13,8 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// cgroupRoot is the unified v2 mount point. Standard on all modern Linux.
 const cgroupRoot = "/sys/fs/cgroup"
 
-// CreateCgroup creates a v2 cgroup at the given path with the given resource.
-// Path is passed like "/tide/<id>"; cgroup2.NewManager expects it relative to
-// cgroupRoot (the library strips the leading slash internally if present).
 func CreateCgroup(path string, res *processor.PhysicResource) {
 	logger := logrus.WithFields(logrus.Fields{"CgroupPath": path})
 	logger.WithField("HasResource", res != nil).Debug("Containerxv2: start creating cgroup")
@@ -27,7 +23,6 @@ func CreateCgroup(path string, res *processor.PhysicResource) {
 	cgRes := &cgroup2.Resources{}
 	if res != nil && (clsstat.Singleton().GetSelf() == nil || clsstat.Singleton().GetSelf().Role != clsstat.THINGS) {
 		if !dev.RSEPTest || dev.EnableCpuset {
-			// PI=on (or non-RSEP): pin to specific logical cores via cpuset.
 			cpuIds := make([]string, 0, 1)
 			for i, used := range res.CpuSet {
 				if used != 0 {
@@ -36,9 +31,6 @@ func CreateCgroup(path string, res *processor.PhysicResource) {
 			}
 			cgRes.CPU = &cgroup2.CPU{Cpus: strings.Join(cpuIds, ",")}
 		} else {
-			// PI=off under RSEP: limit CPU time instead of pinning.
-			// v1 used period=100ms, quota=100ms*cores. v2 uses the "cpu.max"
-			// file with the same (quota, period) semantics (microseconds).
 			var coreNum int64
 			for _, used := range res.CpuSet {
 				if used != 0 {
@@ -59,8 +51,6 @@ func CreateCgroup(path string, res *processor.PhysicResource) {
 	}
 }
 
-// DeleteCgroup deletes the v2 cgroup at the given path.
-// Non-fatal on failure (matches pkg/containerx semantics).
 func DeleteCgroup(path string) {
 	mgr, err := cgroup2.Load(path)
 	if err != nil {

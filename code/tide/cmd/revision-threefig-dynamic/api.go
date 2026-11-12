@@ -399,7 +399,6 @@ func (a *api) runHandler(w http.ResponseWriter, r *http.Request) {
 		response.Error = err.Error()
 	} else {
 		a.submitted.Add(1)
-		// Observe late backend completion even when the HTTP caller has timed out.
 		go func() { <-pending.waitData(); a.completed.Add(1) }()
 		response.Before = pending.receiver()
 		select {

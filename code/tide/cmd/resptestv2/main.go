@@ -1,14 +1,3 @@
-// resptestv2 — cgroup v2 port of cmd/resptest for the RSEP single-machine
-// ablation (cells C3–C6 where EI=on). Identical CLI surface to resptest plus:
-//
-//	-outfile   path to write per-request latency CSV (req_id, t_submit_ns,
-//	           t_reply_ns, latency_ms, status)
-//	-deadline  per-request hard timeout (default 30s) — caps hung routines
-//	           so a single stuck request doesn't hang the whole run
-//	-warmup    fraction/duration we still *record* (analyze.py trims)
-//
-// The switch from pkg/containerx → pkg/containerxv2 is via import alias so
-// exp.go / the containerd calls stay byte-identical to the v1 harness.
 package main
 
 import (
@@ -91,7 +80,7 @@ func main() {
 	dev.RSEPTest = true
 	dev.EnableConcurrencyControl = *enableConcurrencyControl
 	dev.EnableCpuset = *enableCpusets
-	dev.EnableContainerPerRoutine = true // v1 executor path doesn't support false
+	dev.EnableContainerPerRoutine = true
 
 	logrus.WithFields(logrus.Fields{
 		"cgroupVersion":             "v2",
@@ -110,7 +99,7 @@ func main() {
 
 	selfId := stringx.GenerateId()
 	selfRes := &routine.Resource{CpuNum: *resCpuNum, GpuNum: 0}
-	selfRole := clsstat.EDGE // PI requires EDGE; THINGS skips cpuset limits
+	selfRole := clsstat.EDGE
 	logrus.WithFields(logrus.Fields{
 		"SelfID":     selfId,
 		"SelfCpuNum": cpuNum,

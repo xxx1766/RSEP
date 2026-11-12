@@ -4,10 +4,8 @@ title: "RSEP / Tide: Request-Centric Task Scheduling and Resource Allocation for
 abstract: >-
   Curated artifact for the IEEE TMC manuscript. Contains the Tide runtime,
   experiment drivers, audited summary exports behind the reported figures and
-  tables, and representative raw measurements.
+  tables, and compact measured datasets.
 type: software
-version: 1.0.0
-date-released: 2026-10-29
 license: Apache-2.0
 authors:
   - family-names: Xu
@@ -24,7 +22,7 @@ authors:
     affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"
   - family-names: Guo
     given-names: Deke
-    affiliation: "National University of Defense Technology"
+    affiliation: "Sun Yat-sen University"
   - family-names: Xu
     given-names: Zhiwei
     affiliation: "Institute of Computing Technology, Chinese Academy of Sciences"

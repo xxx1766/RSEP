@@ -165,8 +165,6 @@ func execute(out string) error {
 	if e = writeJSON(filepath.Join(out, "selection.json"), selections); e != nil {
 		return e
 	}
-	// Perturb preferences, not metric outcomes. Each new choice still uses
-	// calibration rows only, even though held-out metrics are available.
 	type Perturbation struct {
 		Base       string
 		Coordinate int
